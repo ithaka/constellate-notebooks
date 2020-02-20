@@ -6,10 +6,6 @@ python -m nltk.downloader stopwords wordnet
 
 url=https://gist.githubusercontent.com/lawlesst/9ccb340f15c1aab6846983738cffb4cc/raw/tdm_client.py
 
-srcdir=/usr/lib/src
-mkdir -p $srcdir
-wget -O $srcdir/tdm_client.py $url
-
-export PYTHNOPATH=$PYTHNOPATH:/src/
+wget $url
 
 exec "$@"
