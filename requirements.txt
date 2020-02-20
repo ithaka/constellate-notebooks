@@ -1,0 +1,7 @@
+requests
+pandas
+gensim
+nltk
+pandas
+pyLDAvis
+
