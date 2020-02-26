@@ -5,4 +5,4 @@ nltk
 pandas
 pyLDAvis
 matplotlib
-
+jupyter-notebookparams
