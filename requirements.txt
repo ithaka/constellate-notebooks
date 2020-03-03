@@ -1,0 +1,8 @@
+requests
+pandas
+gensim
+nltk
+pandas
+pyLDAvis
+matplotlib
+jupyter-notebookparams
