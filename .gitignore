@@ -1,4 +1,4 @@
-stopWords.csv
+stop_words.csv
 update_tdm_client.py
 .ipynb_checkpoints/
 tdm_client.py
