@@ -2,6 +2,8 @@
 
 /opt/conda/bin/python3
 
+version=0.1
+
 python -m nltk.downloader stopwords wordnet
 
 url=https://gist.githubusercontent.com/lawlesst/9ccb340f15c1aab6846983738cffb4cc/raw/tdm_client.py
