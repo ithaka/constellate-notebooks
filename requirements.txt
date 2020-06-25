@@ -1,8 +1,10 @@
+
+jupyter-notebookparams
+jupyter_contrib_nbextensions
 requests
+progressbar
 pandas
 gensim
 nltk
-pandas
 pyLDAvis
 matplotlib
-jupyter-notebookparams
