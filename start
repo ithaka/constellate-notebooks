@@ -7,6 +7,7 @@ version=0.1
 python -m nltk.downloader stopwords wordnet
 
 jupyter contrib nbextension install --user
+jupyter nbextension install jupyter_contrib_nbextensions/nbextensions/toc2 --user
 jupyter nbextension enable --py toc2/main
 jupyter nbextension enable --py jupyter_notebookparams
 

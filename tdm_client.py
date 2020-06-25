@@ -20,8 +20,9 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-SERVICE_URL = os.environ.get("TDM_SERVICE") or\
-     'https://www.jstor.org/api/tdm/v1/'
+
+SERVICE_URL = 'https://www.jstor.org/api/tdm/v1/'
+#SERVICE_URL = "http://localhost:5000/"
 
 home = str(Path.home())
 datasets_dir = os.path.join(home, 'datasets')
@@ -54,7 +55,9 @@ def get_description(dataset_id):
     """
     Downloads dataset metadata as JSON.
     """
-    rsp = requests.get(SERVICE_URL + f"nb/v2/dataset/{dataset_id}/info")
+    url = SERVICE_URL + f"nb/dataset/{dataset_id}/meta"
+    print("***", url)
+    rsp = requests.get(url)
     return rsp.json()
 
 
