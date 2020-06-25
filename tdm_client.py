@@ -56,8 +56,7 @@ def get_description(dataset_id):
     Downloads dataset metadata as JSON.
     """
     url = SERVICE_URL + f"nb/dataset/{dataset_id}/meta"
-    print("***", url)
-    rsp = requests.get(url)
+    rsp = requests.get(url, headers={"User-Agent": "labs-tdm-client"})
     return rsp.json()
 
 

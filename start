@@ -8,7 +8,10 @@ python -m nltk.downloader stopwords wordnet
 
 jupyter contrib nbextension install --user
 jupyter nbextension install jupyter_contrib_nbextensions/nbextensions/toc2 --user
-jupyter nbextension enable --py toc2/main
+jupyter nbextension enable toc2/main
 jupyter nbextension enable --py jupyter_notebookparams
 
 exec "$@"
+
+
+https://binder.tdm-pilot.org/v2/gh/ithaka/tdm-notebooks/feature/client-updates?filepath=tdm-client-demo.ipynb&dataset_id="3f0ebf92-a80c-3b36-22ba-4bcb408c06dd"&autorun=true
