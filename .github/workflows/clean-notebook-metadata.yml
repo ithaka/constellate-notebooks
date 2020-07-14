@@ -1,13 +1,12 @@
 name: Ensure Clean Notebook Metadata
-# https://github.com/alan-turing-institute/bridge-data-environment/blob/60a9d115d061d28e1f6665738fc6e09a1db00739/.github/workflows/clean-notebook-metadata.yml
 
 on:
   push:
-    paths:
-      - '/'
+    branches:
+        - '**'
   pull_request:
     branches:
-      - master
+      - '**'
 
 jobs:
   clean-notebooks:
