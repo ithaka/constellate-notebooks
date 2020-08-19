@@ -5,12 +5,12 @@ on:
     branches:
         - '**'
     paths:
-        - '**/.ipynb'
+        - '*.ipynb'
   pull_request:
     branches:
       - '**'
     paths:
-      - '**/.ipynb'
+      - '*.ipynb'
 
 jobs:
   clean-notebooks:
