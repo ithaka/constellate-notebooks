@@ -25,7 +25,7 @@ SERVICE_URL = 'https://www.jstor.org/api/tdm/v1/'
 #SERVICE_URL = "http://localhost:5000/"
 
 home = str(Path.home())
-datasets_dir = os.path.join(home, 'datasets')
+datasets_dir = os.path.join(home, 'data')
 if os.path.exists(datasets_dir) is not True:
     os.mkdir(datasets_dir)
 
