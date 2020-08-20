@@ -4,6 +4,11 @@
 
 version=0.1
 
+cd /tmp
+mv ~/tdm_client.py .
+python tdm_client.py install
+cd -
+
 
 python -m nltk.downloader stopwords wordnet
 

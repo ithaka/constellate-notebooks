@@ -106,3 +106,19 @@ def dataset_reader(file_path):
     with gzip.open(file_path, "rb") as input_file:
         for row in input_file:
             yield json.loads(row)
+
+
+def install():
+    """
+    Install this client as a module.
+    """
+    from setuptools import setup
+
+    setup(
+        name='tdm_client',
+        version='0.1.0',
+        py_modules=['tdm_client'],
+    )
+
+if __name__ == "__main__":
+    install()
