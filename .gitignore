@@ -1,4 +1,4 @@
-stop_words.csv
+data/stop_words.csv
 update_tdm_client.py
 .ipynb_checkpoints/
 clean_nbs.py
