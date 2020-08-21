@@ -14,7 +14,7 @@ import sys
 import progressbar
 import requests
 
-version = 0.2
+version = 0.21
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger()
@@ -60,7 +60,7 @@ def get_description(dataset_id):
     return rsp.json()
 
 
-def get_metadata(dataset_id, fname=None):
+def get_metadata(dataset_id, fname=None, force=False):
     """
     Downloads a CSV of document mentadata for all
     documents in the dataset.
@@ -73,13 +73,16 @@ def get_metadata(dataset_id, fname=None):
         output_file = f"{dataset_id}.csv"
     else:
         output_file = "{fname}.csv"
-    logging.info(f"Downloading {dataset_id} metadata to {output_file}")
     output_path = os.path.join(datasets_dir, output_file)
-    _ = urlretrieve(metadata_url, output_path, ProgressBar())
+    if (force is False) and (os.path.exists(output_path)):
+        logging.info(f"Metdata file {output_path} exists. Not re-downloading.")
+    else:
+        logging.info(f"Downloading {dataset_id} metadata to {output_path}")
+        _ = urlretrieve(metadata_url, output_path, ProgressBar())
     return output_path
 
 
-def get_dataset(dataset_id, fname=None):
+def get_dataset(dataset_id, fname=None, force=False):
     """
     Downloads the gzip'ed JSONL file of all documents
     in the requested dataset.
@@ -93,8 +96,11 @@ def get_dataset(dataset_id, fname=None):
     else:
         output_file = f"{fname}.jsonl.gz"
     output_path = os.path.join(datasets_dir, output_file)
-    logging.info(f"Downloading {dataset_id} to {output_file}")
-    _ = urlretrieve(download_url, output_path, ProgressBar())
+    if (force is False) and (os.path.exists(output_path)):
+        logging.info(f"Dataset file {output_file} exists. Not re-downloading.")
+    else:
+        logging.info(f"Downloading {dataset_id} to {output_file}")
+        _ = urlretrieve(download_url, output_path, ProgressBar())
     return output_path
 
 
