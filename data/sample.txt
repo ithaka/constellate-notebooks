@@ -1,0 +1,10 @@
+A text file can have many words in it
+These words are written on the second line
+Third line
+Fourth line
+Fifth line
+Sixth line
+Seventh line
+Eighth line
+Ninth line
+Tenth line. This is the end of the text file!
