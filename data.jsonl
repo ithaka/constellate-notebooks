@@ -1,2 +1,0 @@
-{"id": "1234", "docType": "article", "title": "placeholder", "wordcount": 7, "outputFormat": ["unigram", "bigram", "trigram"], "unigramCount": {"words": 7}, "bigramCount": {"two words": 8}, "trigramCount": {"three words": 9}}
-{"id": "2", "docType": "article", "title": "placeholder", "wordcount": 7, "outputFormat": ["unigram", "bigram", "trigram"], "unigramCount": {"words": 7}, "bigramCount": {"two words": 8}, "trigramCount": {"three words": 9}}
