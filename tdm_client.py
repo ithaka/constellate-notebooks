@@ -14,7 +14,7 @@ import sys
 import progressbar
 import requests
 
-version = 0.21
+version = 0.23
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger()
@@ -124,7 +124,9 @@ def install():
         name='tdm_client',
         version=version,
         py_modules=['tdm_client'],
+        install_requires=["requests", "progressbar"]
     )
+
 
 if __name__ == "__main__":
     install()
