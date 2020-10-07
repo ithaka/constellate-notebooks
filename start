@@ -16,7 +16,7 @@ jupyter contrib nbextension install --user
 jupyter nbextension install jupyter_contrib_nbextensions/nbextensions/toc2 --user
 jupyter nbextension enable toc2/main
 jupyter nbextension enable livemdpreview/livemdpreview
-jupyter nbextension enable --py jupyter_notebookparams
+jupyter nbextension enable --py itap_jupyter_notebookparams
 
 exec "$@"
 
