@@ -7,3 +7,4 @@ gensim
 nltk
 pyLDAvis
 matplotlib
+vaderSentiment
