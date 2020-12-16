@@ -13,6 +13,7 @@ import sys
 
 import progressbar
 import requests
+from IPython.core.display import display, HTML
 
 version = 0.23
 
@@ -21,13 +22,21 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 
-SERVICE_URL = 'https://www.jstor.org/api/tdm/v1/'
+SERVICE_URL = 'https://backend.tdm-pilot.org/'
 #SERVICE_URL = "http://localhost:5000/"
 
-home = str(Path.home())
+if os.environ.get("COLAB_GPU") is not None:
+    home = "/content"
+else:
+    home = str(Path.home())
+
 datasets_dir = os.path.join(home, 'data')
 if os.path.exists(datasets_dir) is not True:
     os.mkdir(datasets_dir)
+
+def display_terms_of_use():
+    msg = """Use and download of datasets is covered by the <a target="_blank" href="https://tdm-pilot.org/terms-and-conditions/">Terms & Conditions of Use</a>"""
+    display(HTML(msg))
 
 
 class ProgressBar():
@@ -79,6 +88,7 @@ def get_metadata(dataset_id, fname=None, force=False):
     else:
         logging.info(f"Downloading {dataset_id} metadata to {output_path}")
         _ = urlretrieve(metadata_url, output_path, ProgressBar())
+    display_terms_of_use()
     return output_path
 
 
@@ -101,6 +111,7 @@ def get_dataset(dataset_id, fname=None, force=False):
     else:
         logging.info(f"Downloading {dataset_id} to {output_file}")
         _ = urlretrieve(download_url, output_path, ProgressBar())
+    display_terms_of_use()
     return output_path
 
 
