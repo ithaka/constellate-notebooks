@@ -4,18 +4,21 @@ This project is in a pilot stage and functionality may change.
 """
 
 import logging
+import glob
 import gzip
 import json
 from pathlib import Path
 import os
 from urllib.request import urlretrieve
 import sys
+import zipfile
 
 import progressbar
 import requests
+
 from IPython.core.display import display, HTML
 
-version = 0.23
+version = 0.25
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger()
@@ -31,8 +34,8 @@ else:
     home = str(Path.home())
 
 datasets_dir = os.path.join(home, 'data')
-if os.path.exists(datasets_dir) is not True:
-    os.mkdir(datasets_dir)
+Path(datasets_dir).mkdir(parents=True, exist_ok=True)
+
 
 def display_terms_of_use():
     msg = """Use and download of datasets is covered by the <a target="_blank" href="https://tdm-pilot.org/terms-and-conditions/">Terms & Conditions of Use</a>"""
@@ -123,6 +126,21 @@ def dataset_reader(file_path):
     with gzip.open(file_path, "rb") as input_file:
         for row in input_file:
             yield json.loads(row)
+
+
+def download_gutenberg_sample():
+    """
+    Helper to download and unzip sample full text data.
+    """
+    tp = os.path.join(datasets_dir, "gutenberg-sample.zip")
+    p = os.path.join(datasets_dir, "gutenberg-sample")
+    url = "https://ithaka-labs-public.s3.amazonaws.com/tdm/gutenberg-sample.zip"
+    _ = urlretrieve(url, tp, ProgressBar())
+    with zipfile.ZipFile(tp) as zr:
+        zr.extractall(datasets_dir)
+    os.remove(tp)
+    logging.info(f"Gutenberg sample files downloaded to: {p}")
+    return p
 
 
 def install():
