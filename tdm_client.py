@@ -18,7 +18,7 @@ import requests
 
 from IPython.core.display import display, HTML
 
-version = 0.25
+version = 0.26
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger()
@@ -41,6 +41,8 @@ def display_terms_of_use():
     msg = """Use and download of datasets is covered by the <a target="_blank" href="https://tdm-pilot.org/terms-and-conditions/">Terms & Conditions of Use</a>"""
     display(HTML(msg))
 
+def display_description(description):
+    display(HTML(f"<p>{description.get('search_description')}</p><p>{description['num_documents']} documents.</p>"))
 
 class ProgressBar():
     """
@@ -78,6 +80,7 @@ def get_metadata(dataset_id, fname=None, force=False):
     documents in the dataset.
     """
     description = get_description(dataset_id)
+    _ = display_description()
     metadata_url = description.get("metadata_url")
     if metadata_url is None:
         raise Exception(f"Dataset {dataset_id} not found.")
@@ -101,6 +104,7 @@ def get_dataset(dataset_id, fname=None, force=False):
     in the requested dataset.
     """
     description = get_description(dataset_id)
+    _ = display_description(description)
     download_url = description.get("download_url")
     if download_url is None:
         raise Exception(f"Dataset {dataset_id} not found.")
