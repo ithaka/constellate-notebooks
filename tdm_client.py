@@ -41,8 +41,10 @@ def display_terms_of_use():
     msg = """Use and download of datasets is covered by the <a target="_blank" href="https://tdm-pilot.org/terms-and-conditions/">Terms & Conditions of Use</a>"""
     display(HTML(msg))
 
+
 def display_description(description):
     display(HTML(f"<p>{description.get('search_description')}</p><p>{description['num_documents']} documents.</p>"))
+
 
 class ProgressBar():
     """
@@ -80,7 +82,7 @@ def get_metadata(dataset_id, fname=None, force=False):
     documents in the dataset.
     """
     description = get_description(dataset_id)
-    _ = display_description()
+    _ = display_description(description)
     metadata_url = description.get("metadata_url")
     if metadata_url is None:
         raise Exception(f"Dataset {dataset_id} not found.")
