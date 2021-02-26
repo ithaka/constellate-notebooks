@@ -1,0 +1,1514 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Basics III &#8212; Lesson Repository</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Lesson Repository</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   Demonstrating Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workshop
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/chapters/why-text-analysis.html">
+   Day 1 - Why Text Analysis?
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 2 - Python Basics I
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 3 - Python Basics II
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/word-frequencies.html">
+   Day 4 - Exploring Word Frequencies
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html">
+     Import your dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#apply-pre-processing-filters-if-available">
+     Apply Pre-Processing Filters (if available)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#extract-the-unigram-counts-from-the-dataset-json-file">
+     Extract the Unigram Counts from the dataset JSON file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#find-most-common-unigrams">
+     Find Most Common Unigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#clean-up-tokens">
+     Clean Up Tokens
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/python-basics-3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fpython-basics-3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/python-basics-3.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.tdm-pilot.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/python-basics-3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python Basics III
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-in-and-not-in-operators">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       in
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       not
+      </span>
+      <span class="pre">
+       in
+      </span>
+     </code>
+     Operators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-methods">
+   List Methods
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-index-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       index()
+      </span>
+     </code>
+     Method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-append-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       append()
+      </span>
+     </code>
+     Method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-insert-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       insert()
+      </span>
+     </code>
+     Method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-remove-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       remove()
+      </span>
+     </code>
+     Method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sort-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sort()
+      </span>
+     </code>
+     Method
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionary-methods">
+   Dictionary Methods
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-update-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       update()
+      </span>
+     </code>
+     Method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-keys-and-values-methods">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       keys()
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       values()
+      </span>
+     </code>
+     Methods
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-get-method">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get()
+      </span>
+     </code>
+     Method
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combining-keys-values-and-items-with-flow-control-statements">
+     Combining
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       keys()
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       values()
+      </span>
+     </code>
+     , and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       items()
+      </span>
+     </code>
+     with Flow Control Statements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lesson-complete">
+   Lesson Complete
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-another-python-skills-lesson">
+     Start Another Python Skills Lesson:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-a-text-analysis-lesson">
+     Start a Text Analysis Lesson:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coding-challenge-solutions">
+     Coding Challenge! Solutions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#challenge-level-1">
+       Challenge Level 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#challenge-level-2">
+       Challenge Level 2
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<div class="section" id="python-basics-iii">
+<h1>Python Basics III<a class="headerlink" href="#python-basics-iii" title="Permalink to this headline">¶</a></h1>
+<p><strong>Description:</strong> This lesson describes the basics of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">lists</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionaries</a> including:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#operator">operators</a></p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">Lists</a></p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">List</a> methods (<code class="docutils literal notranslate"><span class="pre">index()</span></code>, <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">insert()</span></code>, <code class="docutils literal notranslate"><span class="pre">sort()</span></code>)</p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">Dictionaries</a></p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">Dictionary</a> methods (<code class="docutils literal notranslate"><span class="pre">update()</span></code>, <code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code>, <code class="docutils literal notranslate"><span class="pre">items()</span></code>, <code class="docutils literal notranslate"><span class="pre">get()</span></code>)</p></li>
+</ul>
+<p>This is part 3 of 3 in the series <em>Python Basics</em> that will prepare you to do text analysis using the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> programming language.</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Beginner</p>
+<p><strong>Completion Time:</strong> 90 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="getting-started-with-jupyter.html"><span class="doc std std-doc">Getting Started with Jupyter Notebooks</span></a></p></li>
+<li><p><a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Python Basics I</span></a></p></li>
+<li><p><a class="reference internal" href="python-basics-2.html"><span class="doc std std-doc">Python Basics II</span></a></p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong> None</p>
+<p><strong>Data Format:</strong> None</p>
+<p><strong>Libraries Used:</strong> None</p>
+<p><strong>Research Pipeline:</strong> None</p>
+<hr class="docutils" />
+<p>In <em>Python Basics</em> I, we learned about three data types: <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integers</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#float">floats</a>, and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">strings</a>. In this lesson, we will learn about two additional data types: <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">lists</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionaries</a>. <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">Lists</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionaries</a> help us store many values inside a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a>. This is helpful for a few reasons.</p>
+<ul class="simple">
+<li><p>We can store many items in a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> or <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a>, making it easier to keep the data together</p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">Lists</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionaries</a> only require a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#assignment-statement">assignment state</a></p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">Lists</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionaries</a> have additional capabilities that will make organizing our data easier</p></li>
+</ul>
+<p>The fundamental difference between a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> and a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> is that a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> stores items in sequential order (starting from 0) while a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> stores items in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key/value pairs</a>. When we want to retrieve an item in a list, we use an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> or a set of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index numbers</a> called a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> as a reference. When we want to retrieve an item from a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a>, we supply a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a> that returns the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">value</a> (or set of values) associated with that <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a>. Each of these approaches can be beneficial depending on what kind of data we are working with (and what we intend to do with the data).</p>
+</div>
+<div class="section" id="lists">
+<h1>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
+<p>A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> can store anywhere from zero to millions of items. The items that can be stored in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> include the data types we have already learned: <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integers</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#float">floats</a>, and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">strings</a>. A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#assignment-statement">assignment state</a> takes the form.
+<code class="docutils literal notranslate"><span class="pre">my_list</span> <span class="pre">=</span> <span class="pre">[item1,</span> <span class="pre">item2,</span> <span class="pre">item3,</span> <span class="pre">item4...]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list containing integers</span>
+<span class="n">my_favorite_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_favorite_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list containing strings</span>
+<span class="n">my_inspirations</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Harriet Tubman&#39;</span><span class="p">,</span> <span class="s1">&#39;Rosa Parks&#39;</span><span class="p">,</span> <span class="s1">&#39;Pauli Murray&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_inspirations</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both <code class="docutils literal notranslate"><span class="pre">my_favorite_numbers</span></code> and <code class="docutils literal notranslate"><span class="pre">my_inspirations</span></code> have three items, but we could have also initialized them with no items <code class="docutils literal notranslate"><span class="pre">my_favorite_numbers</span> <span class="pre">=</span> <span class="pre">[]</span></code> or many more items. Each item has an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> that depends on their order. The first item is 0, the second item is 1, the third item is 2, etc. In the <code class="docutils literal notranslate"><span class="pre">my_inspirations</span></code> list, <code class="docutils literal notranslate"><span class="pre">'Pauli</span> <span class="pre">Murray'</span></code> is item 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieving an item in a list</span>
+<span class="n">my_inspirations</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>What happens if you change the index number to 1? What about 3? 2.0?</strong></p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">Lists</a> can also contain other <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">lists</a>. To retrieve a value from a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> within a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>, we use two <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">indexes</a> (or indices).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieving an item from a list within a list</span>
+<span class="n">my_inspirations</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Harriet Tubman&#39;</span><span class="p">,</span> <span class="s1">&#39;Rosa Parks&#39;</span><span class="p">,</span> <span class="s1">&#39;Pauli Murray&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Martin Luther King Jr.&#39;</span><span class="p">,</span> <span class="s1">&#39;Frederick Douglass&#39;</span><span class="p">,</span> <span class="s1">&#39;Malcolm X&#39;</span><span class="p">]]</span>
+<span class="n">my_inspirations</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>Can you change the index for <code class="docutils literal notranslate"><span class="pre">my_inspirations</span></code> to retrieve <code class="docutils literal notranslate"><span class="pre">'Malcolm</span> <span class="pre">X'</span></code>?</strong></p>
+<hr class="docutils" />
+<p>We can also select items from a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> beginning from the end/right side of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> by using negative <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index numbers</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieving an item from the end of a list by using negative indices</span>
+<span class="n">my_inspirations</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Harriet Tubman&#39;</span><span class="p">,</span> <span class="s1">&#39;Rosa Parks&#39;</span><span class="p">,</span> <span class="s1">&#39;Pauli Murray&#39;</span><span class="p">]</span>
+<span class="n">my_inspirations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also retrieve a group of consecutive items from a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> using <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slices</a> instead of a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a>. We create a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> by indicating a starting and ending <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a>. The <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> is a smaller <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> containing all the items between our starting and stopping <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking a slice of a list</span>
+<span class="n">historical_periods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Classical Antiquity&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;High Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Contemporary History&#39;</span><span class="p">]</span>
+<span class="n">historical_periods</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice in our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> that the second <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index</a> in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> is the stopping point. That is our return <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> contains <code class="docutils literal notranslate"><span class="pre">historical_periods[3]</span></code> (<code class="docutils literal notranslate"><span class="pre">'Late</span> <span class="pre">Middle</span> <span class="pre">Ages'</span></code>) and <code class="docutils literal notranslate"><span class="pre">historical_periods[4]</span></code> (<code class="docutils literal notranslate"><span class="pre">'Early</span> <span class="pre">Modern</span> <span class="pre">Period'</span></code>), but it does not include <code class="docutils literal notranslate"><span class="pre">historical_periods[5]</span></code> (<code class="docutils literal notranslate"><span class="pre">'Late</span> <span class="pre">Modern</span> <span class="pre">Period'</span></code>). This can be confusing if you were expecting three items instead of two. One way to remember this is by subtracting the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">indexes</a> in your head (5 - 3 = 2 items).</p>
+<p>It is not uncommon for <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">lists</a> to be hundreds or thousands of items long. It would be a chore to count all those items to create a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a>. If you want to know the length of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>, you can use the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the len() function to discover the number of items in the list</span>
+<span class="n">historical_periods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Classical Antiquity&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;High Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Contemporary History&#39;</span><span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">historical_periods</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">historical_periods</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> is 7 items long, meaning the whole <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> is within the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> <code class="docutils literal notranslate"><span class="pre">historical_periods[0:6]</span></code>. When we take a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> we can also leave out the first <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> (0 is assumed) or the stopping <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> (the last item is assumed).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking a slice of a list without a beginning index</span>
+<span class="n">historical_periods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Classical Antiquity&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;High Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Contemporary History&#39;</span><span class="p">]</span>
+<span class="n">historical_periods</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking a slice of a list without a stopping index</span>
+<span class="n">historical_periods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Classical Antiquity&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;High Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Contemporary History&#39;</span><span class="p">]</span>
+<span class="n">historical_periods</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-in-and-not-in-operators">
+<h2>The <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> Operators<a class="headerlink" href="#the-in-and-not-in-operators" title="Permalink to this headline">¶</a></h2>
+<p>If we have a long <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>, it may be helpful to check whether a value is in the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>. We can do this with the <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators, which return a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-value">boolean value</a>: <strong>True</strong> or <strong>False</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking whether an item is in a list using the `in` operator</span>
+
+<span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tara Richards&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tammy French&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Douglas&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lauren Marquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Aaron Wilson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dennis Howell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Brandon Reed&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Kelly Baker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Howard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sarah Myers&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Vanessa Burgess&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Timothy Davidson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jessica Lee&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Miller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lisa Grant&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Ryan Chan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Gary Carson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anthony Mitchell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jacob Turner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jennifer Bonilla&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Gonzalez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Andrew Clark&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jacqueline Gallagher&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Carlos Mcdowell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jeffrey Harris&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Danielle Griffith&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sarah Craig&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Vernon Vasquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anthony Burton&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Erica Bryant&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Patricia Walker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Karen Brown&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Terri Walker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Michelle Knight&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Kathleen Douglas&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Debbie Estrada&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jennifer Brewer&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Taylor Rodriguez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lisa Turner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Julie Hudson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christina Cox&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Nancy Patrick&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rita Mosley&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Nicholas Gordon&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Wanda Vasquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jason Lopez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anna Powers&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tyler Perez&#39;</span><span class="p">]</span>
+
+<span class="s1">&#39;Patricia Walker&#39;</span> <span class="ow">in</span> <span class="n">staff</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>Is Rita McDowell in <code class="docutils literal notranslate"><span class="pre">staff</span></code>? What about Erica Bryant?</strong></p>
+<hr class="docutils" />
+<p>We can change the value of any item in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> using an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#assignment-statement">assignment statement</a> that contains the item’s <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Changing the value of an item in a list</span>
+<span class="n">historical_periods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Classical Antiquity&#39;</span><span class="p">,</span> <span class="s1">&#39;Dark Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Modern Period&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">historical_periods</span><span class="p">)</span>
+<span class="n">historical_periods</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Middle Ages&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">historical_periods</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we know how to change an item in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>. And can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operator to determine if an item is in the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>. But if we don’t know the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> of the item, we won’t know which <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> to change. We need a way to pass both the name of the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> and the name of the item simultaneously to a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>. To do that, we’ll use a special kind of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> called a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a>.</p>
+</div>
+</div>
+<div class="section" id="list-methods">
+<h1>List Methods<a class="headerlink" href="#list-methods" title="Permalink to this headline">¶</a></h1>
+<p>A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> is a kind of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>. (Remember, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> end in parentheses.) <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">Methods</a>, however, act on objects (like <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">lists</a>) so they have a slightly different written form. We will take a look at five useful <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">methods</a> for working with <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">lists</a>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method Name</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Form</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>index()</p></td>
+<td><p>search for an item in a list and return the index number</p></td>
+<td><p>list_name.index(item_name)</p></td>
+</tr>
+<tr class="row-odd"><td><p>append()</p></td>
+<td><p>add an item to the end of a list</p></td>
+<td><p>list_name.append(item_name)</p></td>
+</tr>
+<tr class="row-even"><td><p>insert()</p></td>
+<td><p>insert an item in the middle of a list</p></td>
+<td><p>list_name.insert(index_number, item_name)</p></td>
+</tr>
+<tr class="row-odd"><td><p>remove()</p></td>
+<td><p>remove an item from a list based on value</p></td>
+<td><p>list_name.remove(‘item_value’)</p></td>
+</tr>
+<tr class="row-even"><td><p>sort()</p></td>
+<td><p>sort the order of a list</p></td>
+<td><p>list_name.sort()</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="the-index-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">index()</span></code> Method<a class="headerlink" href="#the-index-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">index()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> checks to see if a value is in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>. If the value is found, it returns the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> for the first item with that value. (Keep in mind, there could be multiple items with a single value in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>). If the value is not found, the <code class="docutils literal notranslate"><span class="pre">index()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> returns a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the index() method to return the index number of an item by passing a value</span>
+<span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tara Richards&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tammy French&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Douglas&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lauren Marquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Aaron Wilson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dennis Howell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Brandon Reed&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Kelly Baker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Howard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sarah Myers&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Vanessa Burgess&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Timothy Davidson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jessica Lee&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Miller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lisa Grant&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Ryan Chan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Gary Carson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anthony Mitchell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jacob Turner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jennifer Bonilla&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Gonzalez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Andrew Clark&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
+
+<span class="n">staff</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>What is the index number of Lisa Grant in <code class="docutils literal notranslate"><span class="pre">staff</span></code>?</strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-append-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> Method<a class="headerlink" href="#the-append-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> adds a value to the end of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>.</p>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>Can you add your name to <code class="docutils literal notranslate"><span class="pre">staff</span></code>?</strong></p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the append() method to add an item to the end of a list</span>
+<span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tara Richards&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tammy French&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Douglas&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lauren Marquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Aaron Wilson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dennis Howell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Brandon Reed&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Kelly Baker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Howard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sarah Myers&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Vanessa Burgess&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Timothy Davidson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jessica Lee&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Miller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lisa Grant&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Ryan Chan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Gary Carson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anthony Mitchell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jacob Turner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jennifer Bonilla&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Gonzalez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Andrew Clark&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
+<span class="c1"># Write your append statement under this comment</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span> <span class="c1"># Prints `staff` in a vertical list format to check that the name was added. The list() function will print our list in an easier to read format than the print() function.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also add an item to the end of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> by using an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#assignment-statement">assignment statement</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding an item to a list using an assignment statement</span>
+<span class="n">staff</span> <span class="o">=</span> <span class="n">staff</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Einhorn Finkle&#39;</span><span class="p">]</span> <span class="c1"># Concatenate name_list with the list [&#39;Einhorn Finkle&#39;]</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-insert-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">insert()</span></code> Method<a class="headerlink" href="#the-insert-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">insert()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> is similar to <code class="docutils literal notranslate"><span class="pre">append()</span></code> but it takes an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">argument</a> that lets us choose an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> to insert the new item.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the insert() method to add an item at a specific index number</span>
+<span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tara Richards&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tammy French&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Douglas&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lauren Marquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Aaron Wilson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dennis Howell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Brandon Reed&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Kelly Baker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Howard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sarah Myers&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Vanessa Burgess&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Timothy Davidson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jessica Lee&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Miller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lisa Grant&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Ryan Chan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Gary Carson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anthony Mitchell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jacob Turner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jennifer Bonilla&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Gonzalez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Andrew Clark&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
+
+<span class="n">staff</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Arya Stark&#39;</span><span class="p">)</span> <span class="c1"># Insert the name &#39;Arya Stark&#39; at index 5 (The sixth name on the list)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span> <span class="c1"># Prints `staff` to check that the name was added at the right spot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>Can you make your name the third item on <code class="docutils literal notranslate"><span class="pre">staff</span></code>?</strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-remove-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">remove()</span></code> Method<a class="headerlink" href="#the-remove-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">remove()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> removes the first item from the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> that has a matching value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the remove() method to remove the first item with a matching value</span>
+<span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tara Richards&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tammy French&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Douglas&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lauren Marquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Aaron Wilson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dennis Howell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Brandon Reed&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Kelly Baker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Howard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sarah Myers&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Vanessa Burgess&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Timothy Davidson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jessica Lee&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Miller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lisa Grant&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Ryan Chan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Gary Carson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anthony Mitchell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jacob Turner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jennifer Bonilla&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Gonzalez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Andrew Clark&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
+<span class="c1"># Write your remove statement under this comment</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span> <span class="c1"># Prints `staff` to check that the name was removed</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>Can you remove Glenn Allen from <code class="docutils literal notranslate"><span class="pre">staff</span></code>?</strong></p>
+<hr class="docutils" />
+<p>If you know the value you wish to remove then the <code class="docutils literal notranslate"><span class="pre">remove()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> is the best option. If you know the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> of the item, you can use a <code class="docutils literal notranslate"><span class="pre">del</span></code> statement to delete <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> items.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using a `del` statement to delete a list item</span>
+<span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tara Richards&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tammy French&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Douglas&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lauren Marquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Aaron Wilson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dennis Howell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Brandon Reed&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Kelly Baker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Howard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sarah Myers&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Vanessa Burgess&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Timothy Davidson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jessica Lee&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Miller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lisa Grant&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Ryan Chan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Gary Carson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anthony Mitchell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jacob Turner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jennifer Bonilla&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Gonzalez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Andrew Clark&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">staff</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Delete the final item in the list. In this case, &#39;Glenn Allen&#39;.</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-sort-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">sort()</span></code> Method<a class="headerlink" href="#the-sort-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> sorts a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> in alphabetical order, where strings with capital letters are sorted A-Z, then strings with lowercase letters are sorted A-Z.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the `sort()` method to sort a list in alpha-numeric order</span>
+<span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tara Richards&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Tammy French&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Douglas&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lauren Marquez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Aaron Wilson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Dennis Howell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Brandon Reed&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Kelly Baker&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Justin Howard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Sarah Myers&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Vanessa Burgess&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Timothy Davidson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jessica Lee&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Miller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Lisa Grant&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Ryan Chan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Gary Carson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Anthony Mitchell&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jacob Turner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jennifer Bonilla&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Gonzalez&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Andrew Clark&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
+<span class="n">staff</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>The <code class="docutils literal notranslate"><span class="pre">sort()</span></code> method can take the argument <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code>. Try applying it to the <code class="docutils literal notranslate"><span class="pre">sort()</span></code> method above. What does it do?</strong></p>
+<hr class="docutils" />
+<hr class="docutils" />
+<h2 style="color:red; display:inline">Coding Challenge! &lt; / &gt; </h2>
+<p><strong>Using your knowledge of flow control statements and lists, can you write a program that transforms a list of strings into a single string of comma-separated values?</strong></p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level 1 Challenge</span>
+<span class="c1"># A challenge to transform a list of books into a single string of comma-separated values</span>
+<span class="c1"># The result should be the string: &#39;Piers Plowman, The Canterbury Tales, Revelations of Divine Love, The Decameron, Le Morte d&#39;Arthur&#39;</span>
+<span class="n">book_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Piers Plowman&#39;</span><span class="p">,</span> <span class="s1">&#39;The Canterbury Tales&#39;</span><span class="p">,</span> <span class="s1">&#39;Revelations of Divine Love&#39;</span> <span class="s1">&#39;The Decameron&#39;</span><span class="p">,</span> <span class="s2">&quot;Le Morte d&#39;Arthur&quot;</span><span class="p">]</span>
+
+<span class="c1"># Level 2 Challenge</span>
+<span class="c1"># For even more challenge, transform a list of lists containing books and authors into a single string of comma-separated values with an &#39;and&#39; before the final value. Oxford comma please.</span>
+<span class="c1"># The result should be the string: &#39;Piers Plowman by William Langland, The Canterbury Tales by Geoffrey Chaucer, Revelations of Divine Love by Julian of Norwich, The Decameron by Giovanni Boccaccio, and Le Morte d&#39;Arthur by Sir Thomas Malory&#39;</span>
+
+<span class="n">books_with_authors</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Piers Plowman&#39;</span><span class="p">,</span> <span class="s1">&#39;William Langland&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;The Canterbury Tales&#39;</span><span class="p">,</span> <span class="s1">&#39;Geoffrey Chaucer&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Revelations of Divine Love&#39;</span><span class="p">,</span> <span class="s1">&#39;Julian of Norwich&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;The Decameron&#39;</span><span class="p">,</span> <span class="s1">&#39;Giovanni Boccaccio&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Le Morte d&#39;Arthur&quot;</span><span class="p">,</span> <span class="s1">&#39;Sir Thomas Malory&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionaries">
+<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>Like a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>, a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> can hold many values within a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a>. We have seen that the items of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> are stored in a strictly-ordered fashion, starting from item 0. In a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a>, each <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">value</a> is stored in relation to a descriptive <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a> forming a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key/value pair</a>. Technically, as of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> 3.7 (June 2018), <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionaries</a> are also ordered by insertion. In practice, however, the most useful aspect of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> is the ability to supply a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a> and receive a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">value</a> without reference to <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">indices</a>. Whereas a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> is typed with brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> is typed with braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>. The <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a> and/or <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">value</a> can be an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integer</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#float">float</a>, or <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">example_dictionary</span> <span class="pre">=</span> <span class="pre">{key1</span> <span class="pre">:</span> <span class="pre">value1,</span> <span class="pre">key2</span> <span class="pre">:</span> <span class="pre">value2,</span> <span class="pre">key3</span> <span class="pre">:</span> <span class="pre">value3}</span></code></p>
+<p>We could imagine, for example, a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> with our professional contacts’ names as <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">keys</a> and their occupations as <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">values</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An example of a dictionary storing names and occupations</span>
+<span class="n">contacts</span> <span class="o">=</span><span class="p">{</span>
+ <span class="s1">&#39;Amanda Bennett&#39;</span><span class="p">:</span> <span class="s1">&#39;Engineer, electrical&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Bryan Miller&#39;</span><span class="p">:</span> <span class="s1">&#39;Radiation protection practitioner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Garrison&#39;</span><span class="p">:</span> <span class="s1">&#39;Planning and development surveyor&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Debra Allen&#39;</span><span class="p">:</span> <span class="s1">&#39;Intelligence analyst&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Donna Decker&#39;</span><span class="p">:</span> <span class="s1">&#39;Architect&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Heather Bullock&#39;</span><span class="p">:</span> <span class="s1">&#39;Media planner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jason Brown&#39;</span><span class="p">:</span> <span class="s1">&#39;Energy manager&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jason Soto&#39;</span><span class="p">:</span> <span class="s1">&#39;Lighting technician, broadcasting/film/video&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Marissa Munoz&#39;</span><span class="p">:</span> <span class="s1">&#39;Further education lecturer&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Matthew Mccall&#39;</span><span class="p">:</span> <span class="s1">&#39;Chief Technology Officer&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Michael Norman&#39;</span><span class="p">:</span> <span class="s1">&#39;Translator&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Nicole Leblanc&#39;</span><span class="p">:</span> <span class="s1">&#39;Financial controller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Noah Delgado&#39;</span><span class="p">:</span> <span class="s1">&#39;Engineer, land&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Charles&#39;</span><span class="p">:</span> <span class="s1">&#39;Physicist, medical&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Stephanie Petty&#39;</span><span class="p">:</span> <span class="s1">&#39;Architect&#39;</span><span class="p">}</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span> <span class="c1"># We import the pretty print function which prints out dictionaries in a neater fashion than the built-in print() function</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">contacts</span><span class="p">)</span> <span class="c1"># Use the pretty print function to print `contacts`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can add a new <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key/value pair</a> to our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> using an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#assignment-statement">assignment statement</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding the key &#39;Nathan Kelber&#39; with the value &#39;Digital Humanities Fellow&#39; to the dictionary contact</span>
+<span class="n">contacts</span><span class="p">[</span><span class="s1">&#39;Nathan Kelber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Digital Humanities Fellow&#39;</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">contacts</span><span class="p">)</span> <span class="c1"># Use the pretty print function to print `contacts`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>Can you add your name to the contacts dictionary?</strong></p>
+<hr class="docutils" />
+<p>Similar to deleting an item from a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>, we can use a <code class="docutils literal notranslate"><span class="pre">del</span></code> statement to delete a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key/value pair</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deleting a key/value pair from the dictionary contacts</span>
+<span class="k">del</span> <span class="n">contacts</span><span class="p">[</span><span class="s1">&#39;Bryan Miller&#39;</span><span class="p">]</span> 
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">contacts</span><span class="p">)</span> <span class="c1"># Use the pretty print function to print `contacts`</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionary-methods">
+<h1>Dictionary Methods<a class="headerlink" href="#dictionary-methods" title="Permalink to this headline">¶</a></h1>
+<p>We’ll take a look at five useful <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">methods</a> for working with <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionaries</a>: <code class="docutils literal notranslate"><span class="pre">update()</span></code>, <code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code>, <code class="docutils literal notranslate"><span class="pre">items()</span></code>, and <code class="docutils literal notranslate"><span class="pre">get()</span></code>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method Name</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Form</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>update()</p></td>
+<td><p>add new key/value pairs to a dictionary</p></td>
+<td><p>dict_name.update([(key1, value1), (key2, value2)])</p></td>
+</tr>
+<tr class="row-odd"><td><p> </p></td>
+<td><p>combine two dictionaries</p></td>
+<td><p>dict_name.update(dict_name2)</p></td>
+</tr>
+<tr class="row-even"><td><p>keys()</p></td>
+<td><p>check if a key is in a dictionary (True/False)</p></td>
+<td><p>key_name in dict_name.keys()</p></td>
+</tr>
+<tr class="row-odd"><td><p> </p></td>
+<td><p>Loop through the keys in a dictionary</p></td>
+<td><p>for k in dict.keys():</p></td>
+</tr>
+<tr class="row-even"><td><p>values()</p></td>
+<td><p>check if a value is in a dictionary (True/False)</p></td>
+<td><p>value_name in dict_name.values()</p></td>
+</tr>
+<tr class="row-odd"><td><p> </p></td>
+<td><p>Loop through the values in a dictionary</p></td>
+<td><p>for v in dict.values():</p></td>
+</tr>
+<tr class="row-even"><td><p>items()</p></td>
+<td><p>Loop through the keys and values in a dictionary</p></td>
+<td><p>for k, v in dict.items():</p></td>
+</tr>
+<tr class="row-odd"><td><p>get()</p></td>
+<td><p>retrieve the value for a specific key</p></td>
+<td><p>dict_name.get(key_name)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="the-update-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">update()</span></code> Method<a class="headerlink" href="#the-update-method" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">update()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> is useful for adding many <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key/value pairs</a> to a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> at once. The <code class="docutils literal notranslate"><span class="pre">update()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a> accepts a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key/value pair</a>, multiple pairs, or even other <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionaries</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding several key/value pairs to the dictionary contacts using the update() method</span>
+<span class="c1">#contacts.update([(&#39;Matthew Kirschenbaum&#39;, &#39;Professor&#39;), (&#39;Sarah Morris&#39;, &#39;Librarian&#39;)])</span>
+<span class="n">contacts</span><span class="o">.</span><span class="n">update</span><span class="p">([(</span><span class="s1">&#39;Jason Hanover&#39;</span><span class="p">,</span> <span class="s1">&#39;Animal Trainer&#39;</span><span class="p">)])</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">contacts</span><span class="p">)</span> <span class="c1"># Use the pretty print function to print `contacts`</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-keys-and-values-methods">
+<h2>The <code class="docutils literal notranslate"><span class="pre">keys()</span></code> and <code class="docutils literal notranslate"><span class="pre">values()</span></code> Methods<a class="headerlink" href="#the-keys-and-values-methods" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code>, and <code class="docutils literal notranslate"><span class="pre">items()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">methods</a> are useful for when checking whether a particular <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a> or <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">value</a> exists in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a>. We can pair them with <code class="docutils literal notranslate"><span class="pre">in</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators to check whether a value is in our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> (just like we did with <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">lists</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking whether a string exists within a key, value, or both.</span>
+<span class="n">contacts</span> <span class="o">=</span><span class="p">{</span>
+ <span class="s1">&#39;Amanda Bennett&#39;</span><span class="p">:</span> <span class="s1">&#39;Engineer, electrical&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Bryan Miller&#39;</span><span class="p">:</span> <span class="s1">&#39;Radiation protection practitioner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Christopher Garrison&#39;</span><span class="p">:</span> <span class="s1">&#39;Planning and development surveyor&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Debra Allen&#39;</span><span class="p">:</span> <span class="s1">&#39;Intelligence analyst&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Donna Decker&#39;</span><span class="p">:</span> <span class="s1">&#39;Architect&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Heather Bullock&#39;</span><span class="p">:</span> <span class="s1">&#39;Media planner&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jason Brown&#39;</span><span class="p">:</span> <span class="s1">&#39;Energy manager&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Jason Soto&#39;</span><span class="p">:</span> <span class="s1">&#39;Lighting technician, broadcasting/film/video&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Marissa Munoz&#39;</span><span class="p">:</span> <span class="s1">&#39;Further education lecturer&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Matthew Mccall&#39;</span><span class="p">:</span> <span class="s1">&#39;Chief Technology Officer&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Michael Norman&#39;</span><span class="p">:</span> <span class="s1">&#39;Translator&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Nicole Leblanc&#39;</span><span class="p">:</span> <span class="s1">&#39;Financial controller&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Noah Delgado&#39;</span><span class="p">:</span> <span class="s1">&#39;Engineer, land&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Rachel Charles&#39;</span><span class="p">:</span> <span class="s1">&#39;Physicist, medical&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Stephanie Petty&#39;</span><span class="p">:</span> <span class="s1">&#39;Architect&#39;</span><span class="p">}</span>
+
+<span class="n">contacts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking if the value Architect is in the contacts dictionary</span>
+<span class="c1"># Do I know an architect?</span>
+<span class="s1">&#39;Architect&#39;</span> <span class="ow">in</span> <span class="n">contacts</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-get-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">get()</span></code> Method<a class="headerlink" href="#the-get-method" title="Permalink to this headline">¶</a></h2>
+<p>If we are sure a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a> exists, we can use</p>
+<p><code class="docutils literal notranslate"><span class="pre">dict_name[key_name]</span></code></p>
+<p>to return a value. However, if the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a> is not found, the result will be a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>. The more robust approach is usually to use the <code class="docutils literal notranslate"><span class="pre">get()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">method</a>. If the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key</a> is not found, the <code class="docutils literal notranslate"><span class="pre">None</span></code> value will be returned. (Optionally, we can also specify a default message to return.)</p>
+<p><code class="docutils literal notranslate"><span class="pre">dict_name.get('key_name',</span> <span class="pre">'key_not_found_message')</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the get() method to retrieve the value for the key &#39;Marissa Munoz&#39;</span>
+<span class="n">contacts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Marissa Munoz&#39;</span><span class="p">,</span> <span class="s1">&#39;No contact with that name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>Try searching for a name not in contacts with <code class="docutils literal notranslate"><span class="pre">contacts[name]</span></code> and then with <code class="docutils literal notranslate"><span class="pre">contacts.get('name',</span> <span class="pre">'No</span> <span class="pre">contact</span> <span class="pre">with</span> <span class="pre">that</span> <span class="pre">name')</span></code></strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="combining-keys-values-and-items-with-flow-control-statements">
+<h2>Combining <code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code>, and <code class="docutils literal notranslate"><span class="pre">items()</span></code> with Flow Control Statements<a class="headerlink" href="#combining-keys-values-and-items-with-flow-control-statements" title="Permalink to this headline">¶</a></h2>
+<p>It is often usful to combine <code class="docutils literal notranslate"><span class="pre">for</span></code> loops with the keys(), values(), or items() <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#method">methods</a> to repeat a task for each entry in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print every key in our contacts dictionary</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">contacts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># The variable `k` here is just a convenient shorthand. It could easily be named `key` or something else.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print every value in our contacts dictionary</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">contacts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span> <span class="c1"># The variable `v` here is just a convenient shorthand. It could easily be named `value` or something else.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print every key and value in our contacts dictionary</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">contacts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Key: &#39;</span> <span class="o">+</span> <span class="n">k</span> <span class="o">+</span> <span class="s1">&#39; Value: &#39;</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lesson-complete">
+<h1>Lesson Complete<a class="headerlink" href="#lesson-complete" title="Permalink to this headline">¶</a></h1>
+<p>Congratulations! You’ve completed the <em>Python Basics</em> series.</p>
+<p>Considering the amount of material in <em>Python Basics</em> I, II, and III, there’s a good chance you won’t retain it all. That’s okay. Programmers often need to look up things to accomplish a task they haven’t done in a while, particularly if it is in a language they don’t often use. When you’re working on a project, you can always come back to these lessons as reference materials. In other words, you’ve learned an incredible amount, so don’t be surprised if it doesn’t all stick at first.</p>
+<p>If you want to help yourself retain what you’ve learned, the best way is to start putting it into practice. Try your hand at creating some small Python projects and recognize that the things you’ve learned here will cement with time and practice. When you do forget a particular thing—as we all do—a quick web search often turns up some useful examples.</p>
+<div class="section" id="start-another-python-skills-lesson">
+<h2>Start Another Python Skills Lesson:<a class="headerlink" href="#start-another-python-skills-lesson" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="working-with-dataset-files.html"><span class="doc std std-doc">Working with Dataset Files</span></a></p></li>
+<li><p><a class="reference internal" href="pandas-1.html"><span class="doc std std-doc">Pandas I</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="start-a-text-analysis-lesson">
+<h2>Start a Text Analysis Lesson:<a class="headerlink" href="#start-a-text-analysis-lesson" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="exploring-metadata.html"><span class="doc std std-doc">Exploring Metadata</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="coding-challenge-solutions">
+<h2>Coding Challenge! Solutions<a class="headerlink" href="#coding-challenge-solutions" title="Permalink to this headline">¶</a></h2>
+<p>There are often many ways to solve programming problems. Here are a few possible ways to solve the challenges, but there are certainly more!</p>
+<div class="section" id="challenge-level-1">
+<h3>Challenge Level 1<a class="headerlink" href="#challenge-level-1" title="Permalink to this headline">¶</a></h3>
+<p>Transform a list of books into a single string of comma-separated values. Using the list:</p>
+<p><code class="docutils literal notranslate"><span class="pre">book_list</span> <span class="pre">=</span> <span class="pre">['Piers</span> <span class="pre">Plowman',</span> <span class="pre">'The</span> <span class="pre">Canterbury</span> <span class="pre">Tales',</span> <span class="pre">'Revelations</span> <span class="pre">of</span> <span class="pre">Divine</span> <span class="pre">Love',</span> <span class="pre">'The</span> <span class="pre">Decameron',</span> <span class="pre">&quot;Le</span> <span class="pre">Morte</span> <span class="pre">d'Arthur&quot;]</span></code></p>
+<p>Print the string:
+<code class="docutils literal notranslate"><span class="pre">'Piers</span> <span class="pre">Plowman,</span> <span class="pre">The</span> <span class="pre">Canterbury</span> <span class="pre">Tales,</span> <span class="pre">Revelations</span> <span class="pre">of</span> <span class="pre">Divine</span> <span class="pre">Love,</span> <span class="pre">The</span> <span class="pre">Decameron,</span> <span class="pre">Le</span> <span class="pre">Morte</span> <span class="pre">d'Arthur'</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assign list to book_list</span>
+<span class="n">book_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Piers Plowman&#39;</span><span class="p">,</span> <span class="s1">&#39;The Canterbury Tales&#39;</span><span class="p">,</span> <span class="s1">&#39;Revelations of Divine Love&#39;</span><span class="p">,</span> <span class="s1">&#39;The Decameron&#39;</span><span class="p">,</span> <span class="s2">&quot;Le Morte d&#39;Arthur&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution 1</span>
+<span class="c1"># For loop</span>
+
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">book_list</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution 2 </span>
+<span class="c1"># For i in range()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">book_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution 3</span>
+<span class="c1"># While loop</span>
+
+<span class="c1"># While loop</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">book_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution 4</span>
+<span class="c1"># String join method</span>
+<span class="c1"># (We did not learn this join method, but it does exactly what we want)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">book_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="challenge-level-2">
+<h3>Challenge Level 2<a class="headerlink" href="#challenge-level-2" title="Permalink to this headline">¶</a></h3>
+<p>Transform a list of lists containing books and authors into a single string of comma-separated values with an ‘and’ before the final value. Oxford comma please.</p>
+<p>Using the list:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[['Piers</span> <span class="pre">Plowman',</span> <span class="pre">'William</span> <span class="pre">Langland'],</span> <span class="pre">['The</span> <span class="pre">Canterbury</span> <span class="pre">Tales',</span> <span class="pre">'Geoffrey</span> <span class="pre">Chaucer'],</span> <span class="pre">['Revelations</span> <span class="pre">of</span> <span class="pre">Divine</span> <span class="pre">Love',</span> <span class="pre">'Julian</span> <span class="pre">of</span> <span class="pre">Norwich'],</span> <span class="pre">['The</span> <span class="pre">Decameron',</span> <span class="pre">'Giovanni</span> <span class="pre">Boccaccio'],</span> <span class="pre">[&quot;Le</span> <span class="pre">Morte</span> <span class="pre">d'Arthur&quot;,</span> <span class="pre">'Sir</span> <span class="pre">Thomas</span> <span class="pre">Malory']]</span></code></p>
+<p>Print the string:</p>
+<p><code class="docutils literal notranslate"><span class="pre">'Piers</span> <span class="pre">Plowman</span> <span class="pre">by</span> <span class="pre">William</span> <span class="pre">Langland,</span> <span class="pre">The</span> <span class="pre">Canterbury</span> <span class="pre">Tales</span> <span class="pre">by</span> <span class="pre">Geoffrey</span> <span class="pre">Chaucer,</span> <span class="pre">Revelations</span> <span class="pre">of</span> <span class="pre">Divine</span> <span class="pre">Love</span> <span class="pre">by</span> <span class="pre">Julian</span> <span class="pre">of</span> <span class="pre">Norwich,</span> <span class="pre">The</span> <span class="pre">Decameron</span> <span class="pre">by</span> <span class="pre">Giovanni</span> <span class="pre">Boccaccio,</span> <span class="pre">and</span> <span class="pre">Le</span> <span class="pre">Morte</span> <span class="pre">d'Arthur</span> <span class="pre">by</span> <span class="pre">Sir</span> <span class="pre">Thomas</span> <span class="pre">Malory'</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assign list to books_with_authors</span>
+<span class="n">books_with_authors</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Piers Plowman&#39;</span><span class="p">,</span> <span class="s1">&#39;William Langland&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;The Canterbury Tales&#39;</span><span class="p">,</span> <span class="s1">&#39;Geoffrey Chaucer&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Revelations of Divine Love&#39;</span><span class="p">,</span> <span class="s1">&#39;Julian of Norwich&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;The Decameron&#39;</span><span class="p">,</span> <span class="s1">&#39;Giovanni Boccaccio&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Le Morte d&#39;Arthur&quot;</span><span class="p">,</span> <span class="s1">&#39;Sir Thomas Malory&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution 1</span>
+<span class="c1"># For loop</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">books_with_authors</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; by &#39;</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;and &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; by &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution 2</span>
+<span class="c1"># For i in range()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">books_with_authors</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">books_with_authors</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; by &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;and &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; by &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution 3</span>
+<span class="c1"># While loop</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">books_with_authors</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">books_with_authors</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; by &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;and &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; by &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution 4</span>
+<span class="c1"># String join method </span>
+<span class="c1"># (We did not learn this method, but it does exactly what we want.)</span>
+
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">books_with_authors</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; by &#39;</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_list</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;, and &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; by &#39;</span> <span class="o">+</span> <span class="n">books_with_authors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>. The code is licensed under a <a href="https://choosealicense.com/licenses/gpl-3.0/#">GNU General Public License v3.0</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1025 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Files in Python &#8212; Lesson Repository</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Lesson Repository</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   Demonstrating Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workshop
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/chapters/why-text-analysis.html">
+   Day 1 - Why Text Analysis?
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 2 - Python Basics I
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 3 - Python Basics II
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/word-frequencies.html">
+   Day 4 - Exploring Word Frequencies
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html">
+     Import your dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#apply-pre-processing-filters-if-available">
+     Apply Pre-Processing Filters (if available)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#extract-the-unigram-counts-from-the-dataset-json-file">
+     Extract the Unigram Counts from the dataset JSON file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#find-most-common-unigrams">
+     Find Most Common Unigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#clean-up-tokens">
+     Clean Up Tokens
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/working-with-dataset-files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fworking-with-dataset-files.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/working-with-dataset-files.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.tdm-pilot.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/working-with-dataset-files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Files in Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#three-common-data-file-types">
+   Three Common Data File Types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plain-text-files-txt">
+     Plain Text Files (.txt)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comma-separated-value-files-csv">
+     Comma-Separated Value Files (.csv)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-text-contents-of-a-sample-csv-file">
+       The text contents of a sample CSV file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-same-csv-file-represented-in-google-sheets">
+       The same CSV file represented in Google Sheets:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#javascript-object-notation-json">
+     JavaScript Object Notation (.json)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-text-contents-of-a-sample-json-file">
+       The text contents of a sample JSON file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-same-json-file-represented-in-json-editor-online">
+       The same JSON file represented in JSON Editor Online
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-reading-and-writing-text-files-txt">
+   Opening, Reading, and Writing Text Files (.txt)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-the-file">
+     Open the File
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-the-file">
+     Read the File
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#read-method">
+       .read() method
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#readlines-method">
+       .readlines() method
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write-to-the-file">
+     Write to the File
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#append-mode">
+       Append mode
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#write-mode">
+       Write mode
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-close-files-with-open">
+     Open/Close Files
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       with
+      </span>
+      <span class="pre">
+       open
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-reading-and-writing-csv-files-csv">
+   Opening, Reading, and Writing CSV Files (.csv)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-reading-and-writing-json-files-json">
+   Opening, Reading, and Writing JSON Files (.json)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-datasets-with-tdm-client">
+   Opening datasets with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tdm_client
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metadata-csv-vs-json-lines-data-file">
+     Metadata CSV vs. JSON Lines Data File
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retrieving-data-tdm-client-methods">
+     Retrieving data (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       tdm_client
+      </span>
+     </code>
+     methods)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-in-data-from-a-dataset-object">
+     Reading in data from a dataset object
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<p><strong>Working with Dataset Files</strong></p>
+<p><strong>Description:</strong> This notebook describes how to:</p>
+<ul class="simple">
+<li><p>Read and write files (.txt, .csv, .json)</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to read in metadata</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to read in data</p></li>
+</ul>
+<p>This notebook describes how to read and write text, CSV, and JSON files using Python. Additionally, it explains how the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> can help users easily load and analyze their datasets.</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Intermediate</p>
+<p><strong>Completion Time:</strong> 60 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p>Python Basics (<a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Start Python Basics I</span></a>)</p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong> None</p>
+<p><strong>Data Format:</strong> Text (.txt), CSV (.csv), JSON (.json)</p>
+<p><strong>Libraries Used:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> to read and write CSV files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">json</span></code> to read and write JSON files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to retrieve and read data</p></li>
+</ul>
+<p><strong>Research Pipeline:</strong> None</p>
+<hr class="docutils" />
+<div class="section" id="files-in-python">
+<h1>Files in Python<a class="headerlink" href="#files-in-python" title="Permalink to this headline">¶</a></h1>
+<p>Working with files is an essential part of Python programming. When we execute code in Python, we manipulate data through the use of variables. When the program is closed, however, any data stored in those variables is erased. To save the information stored in variables, we must learn how to write it to a file.</p>
+<p>At the same time, we may have notebooks for applying specific analyses, but we need to have a way to bring data into the notebook for analysis. Otherwise, we would have to type all the data into the program ourselves! Both reading-in from files and writing-out data out to files are important skills for data science and the digital humanities.</p>
+<p>This section describes how to work with three kinds of common data files in Python:</p>
+<ul class="simple">
+<li><p>Plain Text Files (.txt)</p></li>
+<li><p>Comma-Separated Value files (.csv)</p></li>
+<li><p>Javascript Object Notation files (.json)</p></li>
+</ul>
+<p>Each of these filetypes are in wide use in data science, digital humanities, and general programming.</p>
+</div>
+<div class="section" id="three-common-data-file-types">
+<h1>Three Common Data File Types<a class="headerlink" href="#three-common-data-file-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plain-text-files-txt">
+<h2>Plain Text Files (.txt)<a class="headerlink" href="#plain-text-files-txt" title="Permalink to this headline">¶</a></h2>
+<p>A plain text file is one of the simplest kinds of computer files. Plain text files can be opened with a text editor like Notepad (Windows 10) or TextEdit (OS X). The file can contain only basic textual characters such as: letters, numbers, spaces, and line breaks. Plain text files do not contain styling such as: heading sizes, italic, bold, or specialized fonts. (To including styling in a text file, writers may use other file formats such as rich text format (.rtf) or markdown (.md).)</p>
+<p>Plain text files (.txt) can be easily viewed and modified by humans by changing the text within. This is an important distinction from binary files such as images (.jpg), archives (.gzip), audio (.wav), or video (.mp4). If a binary file is opened with a text editor, the content will be largely unreadable.</p>
+</div>
+<div class="section" id="comma-separated-value-files-csv">
+<h2>Comma-Separated Value Files (.csv)<a class="headerlink" href="#comma-separated-value-files-csv" title="Permalink to this headline">¶</a></h2>
+<p>A comma-separated value file is also a text file that can easily be modifed with a text editor. A CSV file is generally used to store data that fits in a series or table (like a list or spreadsheet). A spreadsheet application (like Microsoft Excel or Google Sheets) will allow you to view and edit a CSV data in the form of a table.</p>
+<p>Each row of a CSV file represents a single row of a table. The values in a CSV are separated by commas (with no space between), but other delimiters can be chosen such as a tab or pipe (|). A tab-separated value file is called a TSV file (.tsv). Using tabs or pipes may be preferable if the data being stored contains commas (since this could make it confusing whether a comma is part of a single entry or a delimiter between entries).</p>
+<div class="section" id="the-text-contents-of-a-sample-csv-file">
+<h3>The text contents of a sample CSV file<a class="headerlink" href="#the-text-contents-of-a-sample-csv-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Username</span><span class="p">,</span><span class="n">Login</span> <span class="n">email</span><span class="p">,</span><span class="n">Identifier</span><span class="p">,</span><span class="n">First</span> <span class="n">name</span><span class="p">,</span><span class="n">Last</span> <span class="n">name</span>
+<span class="n">booker12</span><span class="p">,</span><span class="n">rachel</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="mi">9012</span><span class="p">,</span><span class="n">Rachel</span><span class="p">,</span><span class="n">Booker</span>
+<span class="n">grey07</span><span class="p">,,</span><span class="mi">2070</span><span class="p">,</span><span class="n">Laura</span><span class="p">,</span><span class="n">Grey</span>
+<span class="n">johnson81</span><span class="p">,,</span><span class="mi">4081</span><span class="p">,</span><span class="n">Craig</span><span class="p">,</span><span class="n">Johnson</span>
+<span class="n">jenkins46</span><span class="p">,</span><span class="n">mary</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="mi">9346</span><span class="p">,</span><span class="n">Mary</span><span class="p">,</span><span class="n">Jenkins</span>
+<span class="n">smith79</span><span class="p">,</span><span class="n">jamie</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="mi">5079</span><span class="p">,</span><span class="n">Jamie</span><span class="p">,</span><span class="n">Smith</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-same-csv-file-represented-in-google-sheets">
+<h3>The same CSV file represented in Google Sheets:<a class="headerlink" href="#the-same-csv-file-represented-in-google-sheets" title="Permalink to this headline">¶</a></h3>
+<p><img alt="CSV table view in Google Sheets" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/csv_in_sheets.png" /></p>
+</div>
+</div>
+<div class="section" id="javascript-object-notation-json">
+<h2>JavaScript Object Notation (.json)<a class="headerlink" href="#javascript-object-notation-json" title="Permalink to this headline">¶</a></h2>
+<p>A Javascript Object Notation file is also a text file that can be modified with a text editor. A JSON file stores data in key/value pairs, very similar to a Python dictionary. One of the key benefits of JSON is its compactness which makes it ideal for exchanging data between web browsers and servers.</p>
+<p>While smaller JSON files can be opened in a text editor, larger files can be difficult to read. Viewing and editing JSON is easier in specialized editors, available online at sites like:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://jsonformatter.org">JSON Formatter</a></p></li>
+<li><p><a class="reference external" href="https://jsoneditoronline.org/">JSON Editor Online</a></p></li>
+</ul>
+<p>A JSON file has a nested structure, where smaller concepts are grouped under larger ones. Like extensible markup language (.xml), a JSON file can be checked to determine that it is valid (follows the proper format for JSON) and/or well-formed (follows the proper format defined in a specialized example, called a schema).</p>
+<div class="section" id="the-text-contents-of-a-sample-json-file">
+<h3>The text contents of a sample JSON file<a class="headerlink" href="#the-text-contents-of-a-sample-json-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Julia&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Smith&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="s2">&quot;woman&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">57</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;streetAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;11434&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Detroit&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;Mi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postalCode&quot;</span><span class="p">:</span> <span class="s2">&quot;48202&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;phoneNumbers&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="s2">&quot;7383627627&quot;</span> <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-same-json-file-represented-in-json-editor-online">
+<h3>The same JSON file represented in JSON Editor Online<a class="headerlink" href="#the-same-json-file-represented-in-json-editor-online" title="Permalink to this headline">¶</a></h3>
+<p><img alt="An image of the JSON file showing the structure" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/json_editor.png" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="opening-reading-and-writing-text-files-txt">
+<h1>Opening, Reading, and Writing Text Files (.txt)<a class="headerlink" href="#opening-reading-and-writing-text-files-txt" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="open-the-file">
+<h2>Open the File<a class="headerlink" href="#open-the-file" title="Permalink to this headline">¶</a></h2>
+<p>Before we can read or write to text file, we must open the file. Normally, when we open a file, a new window appears where we can see the contents. In Python, opening a file simply means create a <em>file object</em> that refers to the particular file. When the file has been opened, we can read or write to the file. Finally, we must close the file. Here are the three steps:</p>
+<ol class="simple">
+<li><p>Use the open() function to create a file object</p></li>
+<li><p>Use the .read(), .readlines(), or .write() method on the file object</p></li>
+<li><p>Use the close() function to close the file object</p></li>
+</ol>
+<p>Let’s practice on <code class="docutils literal notranslate"><span class="pre">sample.txt</span></code>, a sample text file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the text file `sample.txt` creating</span>
+<span class="c1"># a file object called `f`</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/sample.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have created a file object called <code class="docutils literal notranslate"><span class="pre">f</span></code>. The first argument (<code class="docutils literal notranslate"><span class="pre">'sample.txt'</span></code>) is a string containing the file name. You can see the sample.txt in the same directory as this lesson. If your file was called reports.txt, you would replace that argument with <code class="docutils literal notranslate"><span class="pre">'reports.txt'</span></code>. The second argument (<code class="docutils literal notranslate"><span class="pre">'r'</span></code>) determines that we are opening the file in “read” mode, where the file can be read but not modified. There are three main modes that can be specified:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument</p></th>
+<th class="head"><p>Mode Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘r’</p></td>
+<td><p>read</p></td>
+<td><p>Reads file but no writing allowed (protects file from modification)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘w’</p></td>
+<td><p>write</p></td>
+<td><p>Writes to file, overwriting any information in the file (saves over the current version of the file</p></td>
+</tr>
+<tr class="row-even"><td><p>‘a’</p></td>
+<td><p>append</p></td>
+<td><p>Appends (or adds) information to the end of the file (new information is added below old information)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="read-the-file">
+<h2>Read the File<a class="headerlink" href="#read-the-file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="read-method">
+<h3>.read() method<a class="headerlink" href="#read-method" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have a file object <code class="docutils literal notranslate"><span class="pre">f</span></code> opened in “read mode,” let’s read the contents with the <code class="docutils literal notranslate"><span class="pre">.read()</span></code> method. We will create a variable called <code class="docutils literal notranslate"><span class="pre">file_contents</span></code> to hold the data that we are reading in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a variable called `file_contents`</span>
+<span class="c1"># that will hold the result of using the</span>
+<span class="c1"># .read() method on our file object</span>
+<span class="n">file_contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_contents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we are finished with the file object, we must close it using the .close() method on it. It is very important to always close a file, otherwise your program may crash or create memory problems.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Close the file by using the .close() method</span>
+<span class="c1"># on the file object</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="readlines-method">
+<h3>.readlines() method<a class="headerlink" href="#readlines-method" title="Permalink to this headline">¶</a></h3>
+<p>If a file is very large, we may want to read a single line at a time so as not to fill all of the available computer memory. To read a single line at a time, we can use the <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code> method instead of the <code class="docutils literal notranslate"><span class="pre">.read()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the file sample.txt in read mode</span>
+<span class="c1"># creating the file object `f`</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/sample.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">file_contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_contents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the <code class="docutils literal notranslate"><span class="pre">.read()</span></code> method, we read in the whole text file as a single string. The <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code> gives us a Python list, where each item is a single string representing a single line of the text document. You may also notice that each line ends with <code class="docutils literal notranslate"><span class="pre">\n</span></code> which represents a line break in a string. If we print the string, the line break is visible in our output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the first item in the file_contents list</span>
+<span class="c1"># Note the \n turns into a line break</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_contents</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="write-to-the-file">
+<h2>Write to the File<a class="headerlink" href="#write-to-the-file" title="Permalink to this headline">¶</a></h2>
+<p>To write to a file, we need to open it and create our file object in either write (‘w’) or append (‘a’) mode.</p>
+<div class="section" id="append-mode">
+<h3>Append mode<a class="headerlink" href="#append-mode" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start with append mode which adds new data to the bottom of the file while leaving any previous information intact.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opening a file in append mode</span>
+<span class="c1"># and creating a new file object </span>
+<span class="c1"># called `f`</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/sample.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can use the <code class="docutils literal notranslate"><span class="pre">.write()</span></code> method to append a string to the file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Appending an eleventh line to the file</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">This is the eleventh line&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you read the file back in to see whether the <code class="docutils literal notranslate"><span class="pre">.write()</span></code> was successful?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the the file in read mode</span>
+<span class="c1"># create a file object called `sample_file`</span>
+<span class="n">f</span> <span class="o">=</span> 
+
+<span class="c1"># Use the .read() method on the file object</span>
+<span class="c1"># Store the result in a variable `file_contents`</span>
+<span class="n">file_contents</span> <span class="o">=</span> 
+
+<span class="c1"># Print the contents</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_contents</span><span class="p">)</span>
+
+<span class="c1"># Close the file</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="write-mode">
+<h3>Write mode<a class="headerlink" href="#write-mode" title="Permalink to this headline">¶</a></h3>
+<p>Opening a file in write mode is useful in two scenarios:</p>
+<ul class="simple">
+<li><p>Creating a new text file and writing data to it</p></li>
+<li><p>Overwriting all data in the file with new data</p></li>
+</ul>
+<p>Here is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a new file in write mode</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/new_sample.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define a string variable to add to the new file</span>
+<span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;Here is some data</span><span class="se">\n</span><span class="s1">With a second line&#39;</span>
+
+<span class="c1"># Using write method on the file object</span>
+<span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+
+<span class="c1"># Close file object</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="open-close-files-with-open">
+<h2>Open/Close Files <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open</span></code><a class="headerlink" href="#open-close-files-with-open" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open</span></code> technique is commonly used in Python because it has two significant advantages:</p>
+<ul class="simple">
+<li><p>It is more compact</p></li>
+<li><p>It automatically closes the file afterward</p></li>
+</ul>
+<p>The basic form resembles a flow control statement, ending in a colon and then executing an indented block of code. After the block executes, the file is closed automatically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/sample.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="opening-reading-and-writing-csv-files-csv">
+<h1>Opening, Reading, and Writing CSV Files (.csv)<a class="headerlink" href="#opening-reading-and-writing-csv-files-csv" title="Permalink to this headline">¶</a></h1>
+<p>CSV file data can be easily opened, read, and written using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library. (For large CSV files (&gt;500 mb), you may wish to use the <code class="docutils literal notranslate"><span class="pre">csv</span></code> library to read in a single row at a time to reduce the memory footprint.) Pandas is flexible for working with tabular data, and the process for importing and exporting to CSV is simple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import pandas </span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Create our dataframe</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sample.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the dataframe</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After you’ve made any necessary changes in Pandas, write the dataframe back to the CSV file. (Remember to always back up your data before writing over the file.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write data to new file</span>
+<span class="c1"># Keeping the Header but removing the index</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/new_sample.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="opening-reading-and-writing-json-files-json">
+<h1>Opening, Reading, and Writing JSON Files (.json)<a class="headerlink" href="#opening-reading-and-writing-json-files-json" title="Permalink to this headline">¶</a></h1>
+<p>JSON files use a key/value structure very similar to a Python dictionary. We will start with a Python dictionary called <code class="docutils literal notranslate"><span class="pre">py_dict</span></code> and then write the data to a JSON file using the <code class="docutils literal notranslate"><span class="pre">json</span></code> library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defining sample data in a Python dictionary</span>
+<span class="n">py_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Julia&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Smith&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gender&quot;</span><span class="p">:</span> <span class="s2">&quot;woman&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">57</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;streetAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;11434&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Detroit&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;Mi&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;postalCode&quot;</span><span class="p">:</span> <span class="s2">&quot;48202&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;phoneNumbers&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="s2">&quot;7383627627&quot;</span> <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To write our dictionary to a JSON file, we will use the <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open</span></code> technique we learned that automatically closes file objects. We also need the <code class="docutils literal notranslate"><span class="pre">json</span></code> library to help dump our dictionary data into the file object. The <code class="docutils literal notranslate"><span class="pre">json.dump</span></code> function works a little differently than the write method we saw with text files.</p>
+<p>We need to specify two arguments:</p>
+<ul class="simple">
+<li><p>The data to be dumped</p></li>
+<li><p>The file object where we are dumping</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open/create sample.json in write mode</span>
+<span class="c1"># as the file object `f`. The data in py_dict</span>
+<span class="c1"># is dumped into `f` and then `f` is closed</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/sample.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">py_dict</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To read data in from a JSON file, we can use the <code class="docutils literal notranslate"><span class="pre">json.load</span></code> function on our file object. Here we load all the content into a variable called <code class="docutils literal notranslate"><span class="pre">content</span></code>. We can then print values based on particular keys.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/sample.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First Name: &#39;</span> <span class="o">+</span> <span class="n">contents</span><span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Last Name: &#39;</span><span class="o">+</span> <span class="n">contents</span><span class="p">[</span><span class="s1">&#39;lastName&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Age: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">contents</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Phone Number: &#39;</span><span class="p">,</span> <span class="n">contents</span><span class="p">[</span><span class="s1">&#39;phoneNumbers&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;number&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="opening-datasets-with-tdm-client">
+<h1>Opening datasets with <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code><a class="headerlink" href="#opening-datasets-with-tdm-client" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> helps retrieve a given dataset and/or its associated metadata. The metadata is supplied in a CSV file and the full dataset is supplied in a compressed JSON Lines file (.jsonl.gz). For any analysis focused on metadata pre-processing, we recommend users start with the CSV file since it is both easier and faster to view, parse, and manipulate.</p>
+<div class="section" id="metadata-csv-vs-json-lines-data-file">
+<h2>Metadata CSV vs. JSON Lines Data File<a class="headerlink" href="#metadata-csv-vs-json-lines-data-file" title="Permalink to this headline">¶</a></h2>
+<p>All of the textual data and metadata is available inside of the JSON Lines files, but we have chosen to offer the metadata CSV for two primary reasons:</p>
+<ol class="simple">
+<li><p>The JSON Lines data is a little more complex to parse since it is nested. It cannot be easily represented in a table form in something like Pandas. It is nice to be able to easily view all the metadata in a Pandas dataframe.</p></li>
+<li><p>The JSON Lines data can be very large. Each file contains all of the metadata <em>plus</em> unigram counts, bigram counts, trigram counts, and full-text (when available). Manipulating all that data takes significant computer time and costs. Even a modest dataset (~5000 files) can be over 1 GB in size uncompressed.</p></li>
+</ol>
+<p>More information is available, including the metadata categories, in the FAQ <a class="reference external" href="https://docs.tdm-pilot.org/what-format-are-jstor-portico-datasets/">“What is the data file format?”</a>.</p>
+</div>
+<div class="section" id="retrieving-data-tdm-client-methods">
+<h2>Retrieving data (<code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> methods)<a class="headerlink" href="#retrieving-data-tdm-client-methods" title="Permalink to this headline">¶</a></h2>
+<p>By passing the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> a dataset ID (here called <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>), we can automatically download the metadata CSV file or the full JSON Lines dataset created by the <a class="reference external" href="https://tdm-pilot.org/builder/">dataset builder</a>.</p>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">.get_metadata()</span></code> method to retrieve the metadata CSV file</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">get_dataset()</span></code> method to retrieve the full JSON data file</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>f = tdm_client.get_metadata(dataset_id)</p></td>
+<td><p>Automatically retrieves a metadata CSV file and creates a file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>f = tdm_client.get_dataset(dataset_id)</p></td>
+<td><p>Automatically retrieves a compressed JSON Lines dataset file (jsonl.gz) and creates a file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The JSON Lines file will be downloaded in a compressed gzip format (jsonl.gz). We can iterate over each document in the corpus by using the <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> method.</p>
+</div>
+<div class="section" id="reading-in-data-from-a-dataset-object">
+<h2>Reading in data from a dataset object<a class="headerlink" href="#reading-in-data-from-a-dataset-object" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> method will read in data from the compressed JSON dataset file object. By keeping the data in a compressed format and reading in a single line at a time, we reduce the processing time and memory use. These can be substantial for large datasets. Even a modest dataset (~5000 files) can be over 1 GB in size uncompressed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> essentially unzips each row of the dataset at a time. Each row constitutes all the metadata and data available for a single document. Here is what that looks like the actual tdm_client:</p>
+<div class="highlight-with notranslate"><div class="highlight"><pre><span></span>        for row in input_file:
+            yield json.loads(row)
+</pre></div>
+</div>
+<p>In most cases, users will want to iterate over every document/row in the JSON Lines file. In practice, that looks like:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>for document in tdm_client.dataset_reader(f):</p></td>
+<td><p>Iterates over each document in file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>. The code is licensed under a <a href="https://choosealicense.com/licenses/gpl-3.0/#">GNU General Public License v3.0</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

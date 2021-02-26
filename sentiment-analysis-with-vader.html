@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Methods for Sentiment Analysis &#8212; Lesson Repository</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Lesson Repository</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   Demonstrating Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workshop
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/chapters/why-text-analysis.html">
+   Day 1 - Why Text Analysis?
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 2 - Python Basics I
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 3 - Python Basics II
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/word-frequencies.html">
+   Day 4 - Exploring Word Frequencies
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html">
+     Import your dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#apply-pre-processing-filters-if-available">
+     Apply Pre-Processing Filters (if available)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#extract-the-unigram-counts-from-the-dataset-json-file">
+     Extract the Unigram Counts from the dataset JSON file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#find-most-common-unigrams">
+     Find Most Common Unigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#clean-up-tokens">
+     Clean Up Tokens
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/sentiment-analysis-with-vader.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fsentiment-analysis-with-vader.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/sentiment-analysis-with-vader.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.tdm-pilot.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/sentiment-analysis-with-vader.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Methods for Sentiment Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rule-based-algorithms">
+     Rule-Based Algorithms
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-models">
+     Machine Learning Models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vader">
+   VADER
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applying-the-vader-algorithm">
+   Applying the VADER Algorithm
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-tokens-to-the-vader-lexicon">
+   Adding Tokens to the VADER Lexicon
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<p><strong>Sentiment Analysis with VADER</strong></p>
+<p><strong>Description:</strong> This notebook describes Sentiment Analysis and demonstrates a basic application using the algorithm VADER (Valence Aware Dictionary for sEntiment Reasoning).</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Beginner</p>
+<p><strong>Completion Time:</strong> 30 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p>Python Basics Series (<a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Start Python Basics I</span></a>)</p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong> None</p>
+<p><strong>Data Format:</strong> None</p>
+<p><strong>Libraries Used:</strong> vaderSentiment</p>
+<p><strong>Research Pipeline:</strong> None</p>
+<hr class="docutils" />
+<div class="section" id="methods-for-sentiment-analysis">
+<h1>Methods for Sentiment Analysis<a class="headerlink" href="#methods-for-sentiment-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Sentiment analysis can help an analyst discover whether feedback is positive, negative, or mixed. For example, a large company like Amazon or Walmart could use sentiment analysis on user reviews to determine whether a featured product should be promoted or discontinued. Sentiment analysis generally falls into two categories:</p>
+<ul class="simple">
+<li><p>Rule-based algorithms</p></li>
+<li><p>Machine Learning models</p></li>
+</ul>
+<div class="section" id="rule-based-algorithms">
+<h2>Rule-Based Algorithms<a class="headerlink" href="#rule-based-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>Rule-based algorithms assign sentiment scores to particular words or multi-word constructions. Simple algorithms may simply assess each word individually in a feedback document and add up an overall score. More complex algorithms may assess multi-word (or n-gram) constructions and have special rules for addressing issues such as negation, emojis, and emoticons. They can detect the difference between “bad”, “not bad”, and “bad ass” as well as “=)” and “:^(”.</p>
+</div>
+<div class="section" id="machine-learning-models">
+<h2>Machine Learning Models<a class="headerlink" href="#machine-learning-models" title="Permalink to this headline">¶</a></h2>
+<p>Machine learning models rely on feedback data that has already been assessed by humans to have a particular sentiment. Each piece of feedback is <strong>labeled</strong> by a human reader who may place the feedback into a particular category. The categories could be as simple as positive, negative, or neutral. As long as there exists <strong>labeled</strong> data, a machine learning model can often identify complex concepts. For example, a car manufacturer may desire to classify the sentiment of feedback from past buyers as: “budget-conscious”, “eco-conscious”, “tech-enthusiastic”, “luxury-driven”, “performance-driven”, etc. Assuming there is an adequately labeled <strong>training data</strong> for each of these categories, a machine learning model could assign a score for each category. This could help analysts understand the brand better, answering questions about what consumers do or do not like about a particular vehicle.</p>
+<p>In the humanities, sentiment analysis could be used to track emerging trends on social media. For example, we might ask: “How are Twitter or Reddit users responding to a particular government policy or public event?”</p>
+</div>
+</div>
+<div class="section" id="vader">
+<h1>VADER<a class="headerlink" href="#vader" title="Permalink to this headline">¶</a></h1>
+<p>This notebook uses a rule-based algorithm named VADER (Valence Aware Dictionary and sEntiment Reasoner). VADER is a rule-based algorithm that is “specifically attuned to sentiments expressed in social media.” It relies on a specialized <strong>lexicon</strong> of words, phrases, and emojis. Each token in the lexicon is assigned a “mean-sentiment rating” between -4 (extremely negative) to 4 (extremely positive). Here are a few examples:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Token</p></th>
+<th class="head"><p>Mean-Sentiment Rating</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(:</p></td>
+<td><p>2.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>/:</p></td>
+<td><p>-1.3</p></td>
+</tr>
+<tr class="row-even"><td><p>):&lt;</p></td>
+<td><p>-1.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>rotflmao</p></td>
+<td><p>2.8</p></td>
+</tr>
+<tr class="row-even"><td><p>aghast</p></td>
+<td><p>-1.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>awesome</p></td>
+<td><p>3.1</p></td>
+</tr>
+<tr class="row-even"><td><p>awful</p></td>
+<td><p>-2.0</p></td>
+</tr>
+</tbody>
+</table>
+<p>There are over 7500 tokens listed in VADER lexicon. (You can also add your own if you like.) VADER also considers grammatical and syntactical rules to measure intensity based on word order and sensitive relationships between terms. For example, it increases or decreases a sentiment based on degree modifers such as: “The product is good” versus “the product is very good” versus “the product is marginally good.” To read more about VADER, including how it works and to see its code, <a class="reference external" href="https://github.com/cjhutto/vaderSentiment">visit the github page</a>.</p>
+</div>
+<div class="section" id="applying-the-vader-algorithm">
+<h1>Applying the VADER Algorithm<a class="headerlink" href="#applying-the-vader-algorithm" title="Permalink to this headline">¶</a></h1>
+<p>First, we need to import the SentimentIntensityAnalyzer. Here we assign the VADER lexicon object to a variable <code class="docutils literal notranslate"><span class="pre">sa</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the SentimentIntensityAnalyzer</span>
+<span class="kn">from</span> <span class="nn">vaderSentiment.vaderSentiment</span> <span class="kn">import</span> <span class="n">SentimentIntensityAnalyzer</span>
+
+<span class="c1"># Creat the variable sa to hold the VADER lexicon object </span>
+<span class="n">sa</span> <span class="o">=</span> <span class="n">SentimentIntensityAnalyzer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can preview the contents of the lexicon by using <code class="docutils literal notranslate"><span class="pre">sa.lexicon</span></code>. This will return a dictionary, where each key is a token and each value is a sentiment rating.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview the lexicon contents</span>
+<span class="c1"># There are over 7500 tokens in the lexicon</span>
+<span class="n">sa</span><span class="o">.</span><span class="n">lexicon</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to do our analysis, we will use a very small sample of 8 user reviews. Each review is a simple text string inside a list variable called <code class="docutils literal notranslate"><span class="pre">product_reviews</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a list of product reviews</span>
+
+<span class="n">product_reviews</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;I love this product. It helps me get so much work done. I tell everyone about what a great thing it is.&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;This product is defective. I feel like it is broken because it does not do what it promises. Do not buy this.&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Do yourself a favor and buy this product as soon as possible. I recommend it to everyone I know. It has saved me so much time!&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;This product is overpriced and useless. It was a waste of money and it made all my hair fall out.&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Works like a dream and it is a bargain! It solves my problems with ease. I bought two!&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Do not buy! This product is a ripoff. I wish it was better, but it fails constantly. What a mistake!&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;This thing is garbage. Do yourself a favor and save the money. Mine is a dumpster fire and fell apart.&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;I adore this product. =) It makes my life so much easier. And it is a deal!&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will analyze each product and assign it a “normalized, weighted composite score” based on summing the valence scores of each word in the lexicon (with some adjustments based on word order and other rules). VADER measures the proportion of text that falls into positive, negative, and neutral sentiment. The result is a sentiment score that falls between -1 (the most negative) and +1 (the most positive). (This is different from the lexicon scores that fall between -4 to +4!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each review in our `product_reviews` list</span>
+<span class="c1"># Store a polarity score in `scores`</span>
+<span class="c1"># Then print the score followed by the review</span>
+<span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">product_reviews</span><span class="p">:</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">polarity_scores</span><span class="p">(</span><span class="n">review</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;compound&#39;</span><span class="p">],</span> <span class="n">review</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our simple analysis does a fairly good job of assessing positive and negative sentiment. Notice that our second to last review was not very accurate:</p>
+<blockquote>
+<div><p>0.5423 This thing is garbage. Do yourself a favor and save the money. Mine started on fire and fell apart.</p>
+</div></blockquote>
+<p>The VADER lexicon contains the following entries:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Token</p></th>
+<th class="head"><p>Mean-Sentiment Rating</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>favor</p></td>
+<td><p>1.7</p></td>
+</tr>
+<tr class="row-odd"><td><p>fire</p></td>
+<td><p>-1.4</p></td>
+</tr>
+</tbody>
+</table>
+<p>but it does not have entries for “fell apart”, “money”, or “garbage”. If a specific token is not found in the VADER lexicon, it is considered to be neutral. Like any other statistical approach, the process benefits from having more data. In this case, the sentences are very short and several significant words do not happen to exist in our lexicon.</p>
+</div>
+<div class="section" id="adding-tokens-to-the-vader-lexicon">
+<h1>Adding Tokens to the VADER Lexicon<a class="headerlink" href="#adding-tokens-to-the-vader-lexicon" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">sa.lexicon</span></code> is a simple dictionary, so we can add words that we want included. There are some guidelines for best scoring practices included in the academic paper linked on <a class="reference external" href="https://github.com/cjhutto/vaderSentiment">VADER’s github repository</a>. (Remember that lexicon tokens are scored from -4 to +4.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding the dictionary of `new_words`</span>
+<span class="c1"># to sa.lexicon</span>
+
+<span class="n">new_words</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;garbage&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span>
+    <span class="s1">&#39;dumpster&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">3.1</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">sa</span><span class="o">.</span><span class="n">lexicon</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_words</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try our analysis again with the new lexicon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each review in our `product_reviews` list</span>
+<span class="c1"># Store a polarity score in `scores`</span>
+<span class="c1"># Then print the score followed by the review</span>
+
+<span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">product_reviews</span><span class="p">:</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">polarity_scores</span><span class="p">(</span><span class="n">review</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;compound&#39;</span><span class="p">],</span> <span class="n">review</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>. The code is licensed under a <a href="https://choosealicense.com/licenses/gpl-3.0/#">GNU General Public License v3.0</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1606 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flow Control Statements &#8212; Lesson Repository</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Lesson Repository</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   Demonstrating Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workshop
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/chapters/why-text-analysis.html">
+   Day 1 - Why Text Analysis?
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 2 - Python Basics I
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 3 - Python Basics II
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/word-frequencies.html">
+   Day 4 - Exploring Word Frequencies
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html">
+     Import your dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#apply-pre-processing-filters-if-available">
+     Apply Pre-Processing Filters (if available)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#extract-the-unigram-counts-from-the-dataset-json-file">
+     Extract the Unigram Counts from the dataset JSON file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#find-most-common-unigrams">
+     Find Most Common Unigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#clean-up-tokens">
+     Clean Up Tokens
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/python-basics-2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fpython-basics-2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/python-basics-2.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.tdm-pilot.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/python-basics-2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Flow Control Statements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-values">
+     Boolean Values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison-operators">
+     Comparison Operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-operators-and-or-not">
+     Boolean Operators (and/or/not)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-boolean-operator-and">
+       Using the Boolean Operator
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         and
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-boolean-operator-or">
+       Using the Boolean Operator
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         or
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-the-boolean-operator-not">
+       Using the Boolean Operator
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         not
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combining-boolean-and-comparison-operators">
+       Combining Boolean and Comparison Operators
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-a-flow-control-statement">
+   Writing a Flow Control Statement
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-blocks">
+     Code Blocks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-flow-control-statements">
+   Types of Flow Control Statements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-statements">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     Statements
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#else-statements">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     Statements
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elif-statements">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     Statements
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-difference-betweenelif-and-if">
+       The difference between
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         elif
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         if
+        </span>
+       </code>
+       ?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loop-statements">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     Loop Statements
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stopping-accidental-infinite-loops">
+       Stopping Accidental Infinite Loops
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-repeating-while-loop">
+       A Repeating
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         while
+        </span>
+       </code>
+       Loop
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loop-statements-with-a-range-function">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     Loop Statements with a
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       range()
+      </span>
+     </code>
+     Function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continue-and-break-statements">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Continue
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Break
+      </span>
+     </code>
+     Statements
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exception-handling-with-try-and-except">
+     Exception Handling with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       try
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       except
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#libraries-and-modules">
+     Libraries and Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-a-function">
+   Writing a Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters-vs-arguments">
+     Parameters vs. Arguments
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-return-values">
+     Function Return Values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-and-global-scope">
+     Local and Global Scope
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-global-statement">
+     The Global Statement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lesson-complete">
+   Lesson Complete
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-next-lesson-python-basics-iii">
+     Start Next Lesson:
+     <span class="xref myst">
+      Python Basics III
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://www.youtube.com/watch?v=yzApQqZkJ2c"><img alt="Python Basics 2 image" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/video/python-basics-2.png" /></a></p>
+<p><strong>Python Basics II</strong></p>
+<p><strong>Description:</strong> This lesson describes the basics of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a> including:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-value">Boolean values</a></p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-operator">Boolean operators</a></p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#comparison-operator">Comparison operators</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code> statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code> statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> loop statements</p></li>
+<li><p>Handling errors with <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code></p></li>
+</ul>
+<p>and the basics of writing functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> statements</p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">Local scope</a></p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-scope">Global scope</a></p></li>
+</ul>
+<p>This is part 2 of 3 in the series <em>Python Basics</em> that will prepare you to do text analysis using the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> programming language.</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Beginner</p>
+<p><strong>Completion Time:</strong> 90 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="getting-started-with-jupyter.html"><span class="doc std std-doc">Getting Started with Jupyter Notebooks</span></a></p></li>
+<li><p><a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Python Basics I</span></a></p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong> None</p>
+<p><strong>Data Format:</strong> None</p>
+<p><strong>Libraries Used:</strong> <code class="docutils literal notranslate"><span class="pre">random</span></code> to generate random numbers</p>
+<p><strong>Research Pipeline:</strong> None</p>
+<hr class="docutils" />
+<div class="section" id="flow-control-statements">
+<h1>Flow Control Statements<a class="headerlink" href="#flow-control-statements" title="Permalink to this headline">¶</a></h1>
+<p>In <em>Python Basics</em> I, you learned about <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#expression">expressions</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#operator">operators</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variables</a>, and a few native <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/">functions</a>. We wrote programs that executed line-by-line, starting at the top and running to the bottom. This approach works great for simple programs that may execute a few tasks, but as you begin writing programs that can do multiple tasks you’ll need a way for your programs to decide which action comes next. We can control when (or if) code gets executed with <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a>. If a program is a set of steps for accomplishing a task, then <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a> help the program decide the next action.</p>
+<p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">Flow control statements</a> work like a flowchart. For example, let’s say your goal is to hang out and relax with friends. There are a number of steps you might take, depending on whether your friends are available or you feel like making some new friends.</p>
+<p><img alt="Flowchart to hangout with friends" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/friends_flowchart.png" /></p>
+<p>Each diamond in our flowchart represents a decision that has to be made about the best step to take next. This is the essence of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a>. They help a program decide what the next step should be given the current circumstances.</p>
+<div class="section" id="boolean-values">
+<h2>Boolean Values<a class="headerlink" href="#boolean-values" title="Permalink to this headline">¶</a></h2>
+<p>One way we to create <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a> is with <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-value">boolean values</a> that have two possible values: <strong>True</strong> or <strong>False</strong>. In our example above, we could consider a “Yes” to be “True” and a “No” to be “False.” When we have the data we need to answer each question, we could store that answer in a variable, like:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">are_friends_available</span> <span class="pre">=</span> <span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make_new_friends</span> <span class="pre">=</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new_friend_available</span> <span class="pre">=</span> <span class="pre">True</span></code></p></li>
+</ul>
+<p>This would allow us to determine which action to take next. When we assign <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-value">boolean values</a> to a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a>, the first letter must be capitalized:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note, the first letter of a boolean value must always be capitalized in Python</span>
+<span class="n">are_friends_available</span> <span class="o">=</span> <span class="n">false</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">are_friends_available</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The boolean values **True** and **False** cannot be used for variable names. </span>
+<span class="c1"># Treating the boolean value True as a variable will create an error</span>
+<span class="kc">True</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comparison-operators">
+<h2>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have a way to store <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integers</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#float">floats</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">strings</a>, and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-value">boolean values</a> in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variables</a>, we can use a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#comparison-operator">comparison operator</a> to help make decisions based on those values. We used the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#comparison-operator">comparison operator</a> <code class="docutils literal notranslate"><span class="pre">==</span></code> in <em>Python Basics</em> I. This operator asks whether two <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#expression">expressions</a> are equal to each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparing two values with the comparison operator ==</span>
+<span class="mi">67</span> <span class="o">==</span> <span class="mi">67</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note, a comparison operator uses ==</span>
+<span class="c1"># Do not confuse with variable assignment statement which uses =</span>
+<span class="mi">67</span> <span class="o">=</span> <span class="mi">67</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are additional <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#comparison-operator">comparison operators</a> that can help us with <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>==</p></td>
+<td><p>Equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>!=</p></td>
+<td><p>Not equal to</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;</p></td>
+<td><p>Less than</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>Greater than</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;=</p></td>
+<td><p>Less than or equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;=</p></td>
+<td><p>Greater than or equal to</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the &quot;Not equal to&quot; operator</span>
+<span class="mi">67</span> <span class="o">!=</span> <span class="mi">32</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the &quot;Not equal to&quot; operator</span>
+<span class="mi">67</span> <span class="o">!=</span> <span class="mi">67</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the &quot;equal to&quot; operator with strings</span>
+<span class="s1">&#39;hello world&#39;</span> <span class="o">==</span> <span class="s1">&#39;hello world&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the &quot;equal to&quot; operator to compare a string with an integer</span>
+<span class="s1">&#39;55&#39;</span> <span class="o">==</span> <span class="mi">55</span> <span class="c1"># A string cannot be equal to a float or an integer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the &quot;equal to&quot; operator to compare an integer with a float</span>
+<span class="mi">55</span> <span class="o">==</span> <span class="mf">55.0</span> <span class="c1"># An integer can be equal to a float</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using a comparison operator on a variable</span>
+<span class="n">number_of_dogs</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Creating a variable number_of_dogs</span>
+<span class="n">number_of_dogs</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="c1"># Checking whether number_of_dogs is greater than or equal to 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boolean-operators-and-or-not">
+<h2>Boolean Operators (and/or/not)<a class="headerlink" href="#boolean-operators-and-or-not" title="Permalink to this headline">¶</a></h2>
+<p>We can also use <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-operator">Boolean operators</a> (<strong>and</strong>/<strong>or</strong>/<strong>not</strong>) to create <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#expression">expressions</a> that evaluate to a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-value">Boolean value</a> (<strong>True</strong>/<strong>False</strong>).</p>
+<div class="section" id="using-the-boolean-operator-and">
+<h3>Using the Boolean Operator <code class="docutils literal notranslate"><span class="pre">and</span></code><a class="headerlink" href="#using-the-boolean-operator-and" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator determines whether <em>both</em> conditions are <strong>True</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If condition one is True AND condition two is True</span>
+<span class="c1"># What will the evaluation be?</span>
+<span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If condition one is True AND condition two is False</span>
+<span class="c1"># What will the evaluation be?</span>
+<span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order for an <code class="docutils literal notranslate"><span class="pre">and</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#expression">expression</a> to evaluate to <strong>True</strong>, every condition must be <strong>True</strong>. Here is the “Truth Table” for every pair:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Expression</p></th>
+<th class="head"><p>Evaluation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True and True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>True and False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>False and True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>False and False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+<p>Since <code class="docutils literal notranslate"><span class="pre">and</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#expression">expressions</a> require all conditions to be <strong>True</strong>, they can easily result in <strong>False</strong> evaluations.</p>
+</div>
+<div class="section" id="using-the-boolean-operator-or">
+<h3>Using the Boolean Operator <code class="docutils literal notranslate"><span class="pre">or</span></code><a class="headerlink" href="#using-the-boolean-operator-or" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">or</span></code> operator determines whether <em>any</em> condition is <strong>True</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is expression one True OR is expression two True?</span>
+<span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Is condition one True OR is condition two True?</span>
+<span class="kc">False</span> <span class="ow">or</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An <code class="docutils literal notranslate"><span class="pre">or</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#expression">expression</a> evaluates to <strong>True</strong> if <em>any</em> condition is <strong>True</strong>. Here is the “Truth Table” for every pair:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Expression</p></th>
+<th class="head"><p>Evaluation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True or True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>True or False</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>False or True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>False or False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+<p>Since <code class="docutils literal notranslate"><span class="pre">or</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#expression">expressions</a> only require a single condition to be <strong>True</strong>, they can easily result in <strong>True</strong> evaluations.</p>
+</div>
+<div class="section" id="using-the-boolean-operator-not">
+<h3>Using the Boolean Operator <code class="docutils literal notranslate"><span class="pre">not</span></code><a class="headerlink" href="#using-the-boolean-operator-not" title="Permalink to this headline">¶</a></h3>
+<p>The<code class="docutils literal notranslate"><span class="pre">not</span></code> operator only operates on a single expression, essentially flipping <strong>True</strong> to <strong>False</strong> or <strong>False</strong> to <strong>True</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The not operator flips a True to False</span>
+<span class="ow">not</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="combining-boolean-and-comparison-operators">
+<h3>Combining Boolean and Comparison Operators<a class="headerlink" href="#combining-boolean-and-comparison-operators" title="Permalink to this headline">¶</a></h3>
+<p>We can combine <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-operator">Boolean operators</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#comparison-operator">comparison operators</a> to create even more nuanced <strong>Truth</strong> tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluating two conditions with integers at once</span>
+<span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">22</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">60</span> <span class="o">==</span> <span class="mi">34</span><span class="p">)</span> <span class="c1"># What does each condition evaluate to?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluating two conditions with integers at once</span>
+<span class="p">(</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">45</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">3</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">)</span> <span class="c1"># What does each condition evaluate to?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So far, we have evaluated one or two conditions at once, but we could compare even more at once. (In practice, this is  rare since it creates code that can be difficult to read.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluating four conditions at once</span>
+<span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;Hello&#39;</span> <span class="o">!=</span> <span class="s1">&#39;Goodbye&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">17</span> <span class="o">==</span> <span class="mf">17.000</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># What does each condition evaluate to?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-operator">Boolean operators</a> also have an order of operations like mathematical <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#operator">operators</a>. They resolve in the order of <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, then <code class="docutils literal notranslate"><span class="pre">or</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="writing-a-flow-control-statement">
+<h1>Writing a Flow Control Statement<a class="headerlink" href="#writing-a-flow-control-statement" title="Permalink to this headline">¶</a></h1>
+<p>The general form of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statement</a> in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> is a condition followed by an action clause:</p>
+<p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">this</span> <span class="pre">condition:</span></code><br />
+       <code class="docutils literal notranslate"><span class="pre">perform</span> <span class="pre">this</span> <span class="pre">action</span></code></p>
+<p>Let’s return to part of our flowchart for hanging out with friends.</p>
+<p><img alt="Flowchart showing if homework is yes then do assignment" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/do_homework_chart.png" /></p>
+<p>We can imagine a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statement</a> that would look something like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">have_homework</span> <span class="pre">==</span> <span class="pre">True:</span></code><br />
+        <code class="docutils literal notranslate"><span class="pre">complete</span> <span class="pre">assignment</span></code></p>
+<p>The condition is given followed by a colon (:). The action clause then follows on the next line, indented into a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-block">code block</a>.</p>
+<ul class="simple">
+<li><p>If the condition is fulfilled (evaluates to <strong>True</strong>), the action clause in the block of code is executed.</p></li>
+<li><p>If the condition is not fulfilled (evaluates to <strong>False</strong>), the action clause in the block of code is skipped over.</p></li>
+</ul>
+<div class="section" id="code-blocks">
+<h2>Code Blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-block">code block</a> is a snippet of code that begins with an indentation. A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-block">code block</a> can be a single line or many lines long. Blocks can contain other blocks forming a hierarchal structure. In such a case, the second block is indented an additional degree. Any given block ends when the number of indentations in the current line is less than the number that started the block.</p>
+<p><img alt="Visualization of code block indentations" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/code_block_indentation.png" /></p>
+</div>
+</div>
+<div class="section" id="types-of-flow-control-statements">
+<h1>Types of Flow Control Statements<a class="headerlink" href="#types-of-flow-control-statements" title="Permalink to this headline">¶</a></h1>
+<p>The code example above uses an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, but there are other kinds of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a> available in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Statement</p></th>
+<th class="head"><p>Means</p></th>
+<th class="head"><p>Condition for execution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">if</span></code></p></td>
+<td><p>if</p></td>
+<td><p>if the condition is fulfilled</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">elif</span></code></p></td>
+<td><p>else if</p></td>
+<td><p>if no previous conditions were met <em>and</em> this condition is met</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">else</span></code></p></td>
+<td><p>else</p></td>
+<td><p>if no condition is met (no condition is supplied for an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">while</span></code></p></td>
+<td><p>while</p></td>
+<td><p>while condition is true</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">for</span></code></p></td>
+<td><p>for</p></td>
+<td><p>execute in a loop for this many times</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">try</span></code></p></td>
+<td><p>try</p></td>
+<td><p>try this and run the <code class="docutils literal notranslate"><span class="pre">except</span></code> code if an error occurs</p></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s take a look at each of these <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statement</a> types.</p>
+<div class="section" id="if-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h2>
+<p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> statement begins with an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#expression">expression</a> that evaluates to <strong>True</strong> or <strong>False</strong>.</p>
+<ul class="simple">
+<li><p>if <strong>True</strong>, then perform this action</p></li>
+<li><p>if <strong>False</strong>, skip over this action</p></li>
+</ul>
+<p>In practice, the form looks like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">this</span> <span class="pre">is</span> <span class="pre">True:</span></code> <br />
+        <code class="docutils literal notranslate"><span class="pre">perform</span> <span class="pre">this</span> <span class="pre">action</span></code></p>
+<p>Let’s put an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement into practice with a very simple program that asks the user how their day is going and then responds. We can visualize the flow of the program in a flowchart.</p>
+<p><img alt="Flowchart of a good day program" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/good_day_flowchart.png" /></p>
+<p>Our program will use a single <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. If the user types “Yes” or “yes”, then our program will send a response.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program that responds to a user having a good day</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Are you having a good day? (Yes or No)&#39;</span><span class="p">)</span> <span class="c1"># Ask user if they are having a good day</span>
+<span class="n">having_good_day</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># Define a variable having_good_day to hold the user&#39;s input in a string</span>
+
+<span class="k">if</span> <span class="n">having_good_day</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span> <span class="ow">or</span> <span class="n">having_good_day</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>  <span class="c1"># If the user has input the string &#39;Yes&#39; or &#39;yes&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Glad to hear your day is going well!&#39;</span><span class="p">)</span> <span class="c1"># Print: Glad to hear your day is going well!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our program works fairly well so long as the user inputs ‘Yes’ or ‘yes’. If they type ‘no’ or something else, it simply ends. If we want to have our program still respond, we can use an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement.</p>
+</div>
+<div class="section" id="else-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">else</span></code> Statements<a class="headerlink" href="#else-statements" title="Permalink to this headline">¶</a></h2>
+<p>An <code class="docutils literal notranslate"><span class="pre">else</span></code> statement <em>does not require a condition</em> to evaluate to <strong>True</strong> or <strong>False</strong>. It simply executes when none of the previous conditions are met. The form looks like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">else:</span></code> <br />
+        <code class="docutils literal notranslate"><span class="pre">perform</span> <span class="pre">this</span> <span class="pre">action</span></code></p>
+<p>Our updated flowchart now contains a second branch for our program.</p>
+<p><img alt="The program flowchart with two branches" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/good_day_flowchart2.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program that responds to whether the user is having a good or bad day</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Are you having a good day? (Yes or No)&#39;</span><span class="p">)</span> <span class="c1"># Ask user if they are having a good day</span>
+<span class="n">having_good_day</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># Define a variable having_good_day to hold the user&#39;s input</span>
+
+<span class="k">if</span> <span class="n">having_good_day</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span> <span class="ow">or</span> <span class="n">having_good_day</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span> <span class="c1"># If the user has input the string &#39;Yes&#39; or &#39;yes&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Glad to hear your day is going well!&#39;</span><span class="p">)</span> <span class="c1"># Print: Glad to hear your day is going well!</span>
+    
+<span class="k">else</span><span class="p">:</span> <span class="c1"># Execute this if none of the other branches executes</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I wish your day was going better.&#39;</span><span class="p">)</span> <span class="c1"># Note that we can use double quotations in our string because it begins and ends with single quotes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our new program is more robust. The new <code class="docutils literal notranslate"><span class="pre">else</span></code> statement still gives the user a response if they do not respond “Yes” or “yes”. But what if we wanted to add an option for when a user says “No”? Or when a user inputs something besides “Yes” or “No”? We could use a series of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements.</p>
+</div>
+<div class="section" id="elif-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">elif</span></code> Statements<a class="headerlink" href="#elif-statements" title="Permalink to this headline">¶</a></h2>
+<p>An <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement, short for “else if,” allows us to create a list of possible conditions where one (and only one) action will be executed. <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements come after an initial <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and before an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement:</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condition</span> <span class="pre">A</span> <span class="pre">is</span> <span class="pre">True:</span></code> <br />
+        <code class="docutils literal notranslate"><span class="pre">perform</span> <span class="pre">action</span> <span class="pre">A</span></code> <br />
+<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">condition</span> <span class="pre">B</span> <span class="pre">is</span> <span class="pre">True:</span></code> <br />
+        <code class="docutils literal notranslate"><span class="pre">perform</span> <span class="pre">action</span> <span class="pre">B</span></code> <br />
+<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">condition</span> <span class="pre">C</span> <span class="pre">is</span> <span class="pre">True:</span></code> <br />
+        <code class="docutils literal notranslate"><span class="pre">perform</span> <span class="pre">action</span> <span class="pre">C</span></code> <br />
+<code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">condition</span> <span class="pre">D</span> <span class="pre">is</span> <span class="pre">True:</span></code> <br />
+        <code class="docutils literal notranslate"><span class="pre">perform</span> <span class="pre">action</span> <span class="pre">D</span></code> <br />
+<code class="docutils literal notranslate"><span class="pre">else:</span></code> <br />
+       <code class="docutils literal notranslate"><span class="pre">perform</span> <span class="pre">action</span> <span class="pre">E</span></code></p>
+<p>For example, we could add an <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement to our program so it responds to both “Yes” and “No” with unique answers. We could then add an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement that responds to any user input that is not “Yes” or “No”.</p>
+<p><img alt="Flowchart showing three branches" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/good_day_flowchart3.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program that responds to whether the user is having a good or bad day</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Are you having a good day? (Yes or No)&#39;</span><span class="p">)</span> <span class="c1"># Ask user if they are having a good day</span>
+<span class="n">having_good_day</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># Define a variable having_good_day to hold the user&#39;s input</span>
+
+<span class="k">if</span> <span class="n">having_good_day</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span> <span class="ow">or</span> <span class="n">having_good_day</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span> <span class="c1"># If the user has input the string &#39;Yes&#39; or &#39;yes&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Glad to hear your day is going well!&#39;</span><span class="p">)</span> <span class="c1"># Print: Glad to hear your day is going well!</span>
+    
+<span class="k">elif</span> <span class="n">having_good_day</span> <span class="o">==</span> <span class="s1">&#39;No&#39;</span> <span class="ow">or</span> <span class="n">having_good_day</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span><span class="p">:</span> <span class="c1"># else if the user has input the string &#39;No&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sorry to hear that. I hope it gets better.&#39;</span><span class="p">)</span> <span class="c1"># Print: Sorry to hear that. I hope it gets better.</span>
+    
+<span class="k">else</span><span class="p">:</span> <span class="c1"># Execute this if none of the other branches executes</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sorry, I only understand &quot;Yes&quot; or &quot;No&quot;&#39;</span><span class="p">)</span> <span class="c1"># Note that we can use double quotations in our string because it begins and ends with single quotes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-difference-betweenelif-and-if">
+<h3>The difference between<code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">if</span></code>?<a class="headerlink" href="#the-difference-betweenelif-and-if" title="Permalink to this headline">¶</a></h3>
+<p>When an <code class="docutils literal notranslate"><span class="pre">elif</span></code> condition is met, all other <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements are skipped over. This means that one (and only one) <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statement</a> is executed when using <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. The fact that only one <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement is executed is important because it may be possible for multiple <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a> to evaluate to <strong>True</strong>. A series of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements evaluates from top-to-bottom, only executing the first <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement whose condition evaluates to <strong>True</strong>. The rest of the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements are skipped over (whether they are <strong>True</strong> or <strong>False</strong>).</p>
+<p>In practice, a set of mutually exclusive <code class="docutils literal notranslate"><span class="pre">if</span></code> statements will result in the same actions as an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement followed by <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. There are a few good reasons, however, to use <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements:</p>
+<ol class="simple">
+<li><p>A series of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements helps someone reading your code understand that a single flow control choice is being made.</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements will make your program run faster since other conditional statements are skipped after the first evaluates to <strong>True</strong>. Otherwise, every <code class="docutils literal notranslate"><span class="pre">if</span></code> statement will be evaluated.</p></li>
+<li><p>Writing a mutually exclusive set of <code class="docutils literal notranslate"><span class="pre">if</span></code> statements can be very complex.</p></li>
+</ol>
+<p>Expanding on the concept of our “How is your day going?” program, let’s take a look at an example that asks the user “How is your week going?” It will take two inputs: the day of the week (<code class="docutils literal notranslate"><span class="pre">day_of_week</span></code>) and how the user feels the week is going (<code class="docutils literal notranslate"><span class="pre">having_good_week</span></code>).</p>
+<p><img alt="How is your week going flowchart" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/good_week_elif.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program that responds to the user&#39;s input for the day of the week and how their week is going.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;What day of the week is it?&#39;</span><span class="p">)</span>
+<span class="n">day_of_week</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Are you having a good week?&#39;</span><span class="p">)</span>
+<span class="n">having_good_week</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">day_of_week</span> <span class="o">==</span> <span class="s1">&#39;Friday&#39;</span> <span class="ow">or</span> <span class="n">day_of_week</span> <span class="o">==</span> <span class="s1">&#39;friday&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Enjoy the weekend!&#39;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="n">having_good_week</span> <span class="o">==</span> <span class="s1">&#39;Yes&#39;</span> <span class="ow">or</span> <span class="n">having_good_week</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I hope the rest of the week is good too!&#39;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="n">having_good_week</span> <span class="o">==</span> <span class="s1">&#39;No&#39;</span> <span class="ow">or</span> <span class="n">having_good_week</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sorry to hear that. I hope the rest of the week is better.&#39;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sorry, I only understand &quot;Yes&quot; or &quot;No&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the program above, try changing the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements to <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. What happens if the user inputs ‘Friday’ and ‘Yes’?</p>
+</div>
+</div>
+<div class="section" id="while-loop-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">while</span></code> Loop Statements<a class="headerlink" href="#while-loop-statements" title="Permalink to this headline">¶</a></h2>
+<p>So far, we have used <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statements</a> like decision-making branches to decide what action should be taken next. Sometimes, however, we want a particular action to loop (or repeat) until some condition is met. We can accomplish this with a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop statement that takes the form:</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">condition:</span></code> <br />
+       <code class="docutils literal notranslate"><span class="pre">take</span> <span class="pre">this</span> <span class="pre">action</span></code></p>
+<p>After the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-block">code block</a> is executed, the program loops back to check and see if the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop condition has changed from <strong>True</strong> to <strong>False</strong>. The code block stops looping when the condition becomes <strong>False</strong>.</p>
+<p>In the following program, the user will guess a number until they get it correct.</p>
+<p><img alt="flowchart for number-guessing program" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/guess_number_flowchart.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program that asks the user to guess a number</span>
+<span class="n">secret_number</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># The secret number is set here by the programmer.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am thinking of a number between 1-10. Can you guess it?&#39;</span><span class="p">)</span> <span class="c1"># Ask the user to make a guess</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># Take the user&#39;s first guess</span>
+<span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">(</span><span class="n">secret_number</span><span class="p">):</span> <span class="c1"># While the users guess does not equal secret_number</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nope. Guess again!&#39;</span><span class="p">)</span> <span class="c1"># Print &quot;Nope. Guess Again!&quot;</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># Allow the user to change the value of guess</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You guessed the secret number, &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">secret_number</span><span class="p">))</span> <span class="c1"># Print a congratulations message with the secret number</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="stopping-accidental-infinite-loops">
+<h3>Stopping Accidental Infinite Loops<a class="headerlink" href="#stopping-accidental-infinite-loops" title="Permalink to this headline">¶</a></h3>
+<p>When using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, it is possible to accidentally create an infinite loop that never ends. This happens because the <code class="docutils literal notranslate"><span class="pre">while</span></code> condition <em>never</em> becomes <strong>False</strong>.</p>
+<p>If you accidentally write code that infinitely repeats, you can stop the execution by selecting <strong>Interrupt</strong> from the <strong>Kernel</strong> menu. (Alternatively, you can press the letter <strong>i</strong> twice on your keyboard.) You may also want to remove the output of the rogue cell. You can do this from the <strong>Cell</strong> menu.</p>
+<ul class="simple">
+<li><p>Clearing output from a single cell: <strong>Cell</strong> ▶ <strong>Current Outputs</strong> ▶ <strong>Clear</strong></p></li>
+<li><p>Clearing output from all cells: <strong>Cell</strong> ▶ <strong>All Output</strong> ▶ <strong>Clear</strong></p></li>
+</ul>
+<p><img alt="Clearing current outputs" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/clear_output.gif" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An infinite loop</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Oh noes!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-repeating-while-loop">
+<h3>A Repeating <code class="docutils literal notranslate"><span class="pre">while</span></code> Loop<a class="headerlink" href="#a-repeating-while-loop" title="Permalink to this headline">¶</a></h3>
+<p>In the program above, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop checked to see if the user guessed a particular number. We could also use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to repeat a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-block">code block</a> a particular number of times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A simple program that prints out 1, 2, 3</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># We can also write an equivalent shortcut: number += 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+     
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="for-loop-statements-with-a-range-function">
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> Loop Statements with a <code class="docutils literal notranslate"><span class="pre">range()</span></code> Function<a class="headerlink" href="#for-loop-statements-with-a-range-function" title="Permalink to this headline">¶</a></h2>
+<p>An abbreviated way to write a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop that repeats a specified number of times is using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop with a <code class="docutils literal notranslate"><span class="pre">range()</span></code> function. This loop takes the form:</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(j):</span></code> <br />
+       <code class="docutils literal notranslate"><span class="pre">take</span> <span class="pre">this</span> <span class="pre">action</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">i</span></code> is a generic <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> for counting the number of iterations and <code class="docutils literal notranslate"><span class="pre">j</span></code> is the number of times you want the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-block">code block</a> to repeat.</p>
+<p>The starting value of <code class="docutils literal notranslate"><span class="pre">i</span></code> is 0. After each loop, <code class="docutils literal notranslate"><span class="pre">i</span></code> increases by one until it reaches <code class="docutils literal notranslate"><span class="pre">j</span></code>. The loop then stops. The <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> names <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> are merely conventions. Using a different name may make the purpose of your code clearer to readers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A `for` loop that repeats &#39;What?&#39; five times. Changing the `range()` number will change the number of repetitions.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;What?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happens when you change the name of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> <code class="docutils literal notranslate"><span class="pre">i</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A `for` loop that prints the value of the current iteration, here called `i`. </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the examples above, the <code class="docutils literal notranslate"><span class="pre">range()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> takes a single argument that specifies the number of loops. The assumption is our <code class="docutils literal notranslate"><span class="pre">range()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> will start at 0, but we can specify any starting <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integer</a> by adding an additional <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">argument</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A `for` loop that starts looping at 27 and stops looping at 32</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span><span class="mi">32</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A `for` loop that starts looping at -13 and stops looping at 7</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also specify the size of each step for the <code class="docutils literal notranslate"><span class="pre">range()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>. In the above examples, the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> adds one for each increment step, but we can add larger numbers or even specify negative numbers to have the <code class="docutils literal notranslate"><span class="pre">range()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> count down. The general form is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">increment):</span></code> <br />
+       <code class="docutils literal notranslate"><span class="pre">loop</span> <span class="pre">this</span> <span class="pre">action</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A `for` loop that counts down from ten to one, followed by printing `Go!`</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Go!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="continue-and-break-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">Continue</span></code> and <code class="docutils literal notranslate"><span class="pre">Break</span></code> Statements<a class="headerlink" href="#continue-and-break-statements" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops can also use <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code> statements to affect flow control.</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement immediately restarts the loop.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">break</span></code> statement immediately exits the loop.</p></li>
+</ul>
+<p>Let’s return to our secret number guessing program. We will write the same program workflow using <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code> statements.</p>
+<p><img alt="Flowchart for secret number guessing program" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/guess_number_flowchart.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program that asks the user to guess a number</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">secret_number</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># The secret number is set here by the programmer. Notice it is turned into a string so it can be easily compared with user inputs.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am thinking of a number between 1-10.&#39;</span><span class="p">)</span> <span class="c1"># Ask the user to make a guess</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;What is your guess?&#39;</span><span class="p">)</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">secret_number</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">continue</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You guessed the secret number, &#39;</span> <span class="o">+</span> <span class="n">secret_number</span><span class="p">)</span> <span class="c1"># Print a congratulations message with the secret number</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exception-handling-with-try-and-except">
+<h2>Exception Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code><a class="headerlink" href="#exception-handling-with-try-and-except" title="Permalink to this headline">¶</a></h2>
+<p>When running code that may create an error, we can use <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code> statements to stop a program from crashing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try running the first code block, if there&#39;s an error then run the `except` code</span>
+<span class="c1"># Divide 100 by a number the user chooses</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;100 divided by...&#39;</span><span class="p">)</span>
+<span class="n">user_number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">100</span> <span class="o">/</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_number</span><span class="p">))</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can&#39;t divide by zero.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dividing by zero causes an error</span>
+<span class="mi">100</span> <span class="o">/</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>We have used several <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> already, including <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">input()</span></code>, and <code class="docutils literal notranslate"><span class="pre">range()</span></code>. You can identify a function by the fact that it ends with a set of parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> where <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">arguments</a> can be <strong>passed</strong> into the function. Depending on the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> (and your goals for using it), a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> may accept no <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">arguments</a>, a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">argument</a>, or many <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">arguments</a>. For example, when we use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>, a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a> (or a variable containing a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a>) is passed as an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">argument</a>.</p>
+<p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">Functions</a> are a convenient shorthand, like a mini-program, that makes our code more <strong>modular</strong>. We don’t need to know all the details of how the <code class="docutils literal notranslate"><span class="pre">print()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> works in order to use it. <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">Functions</a> are sometimes called “black boxes”, in that we can put an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">argument</a> into the box and a <strong>return value</strong> comes out. We don’t need to know the inner details of the “black box” to use it. (Of course, as you advance your programming skills, you may become curious about how certain <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> work. And if you work with sensitive data, you may <em>need</em> to peer in the black box to ensure the security and accuracy of the output.)</p>
+<div class="section" id="libraries-and-modules">
+<h2>Libraries and Modules<a class="headerlink" href="#libraries-and-modules" title="Permalink to this headline">¶</a></h2>
+<p>While <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> comes with many <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a>, there are thousands more that others have written. Adding them all to <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> would create mass confusion, since many people could use the same name for <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> that do different things. The solution then is that <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> are stored in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#module">modules</a> that can be <strong>imported</strong> for use. A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#module">module</a> is a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> file (extension “.py”) that contains the definitions for the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> written in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a>. These <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#module">modules</a> (individual <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> files) can then be collected into even larger groups called <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#package">packages</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#library">libraries</a>. Depending on how many <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> you need for the program you are writing, you may import a single <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#module">module</a>, a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#package">package</a> of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#module">modules</a>, or a whole <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#library">library</a>.</p>
+<p>The general form of importing a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#module">module</a> is:
+<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code></p>
+<p>You may recall from the “Getting Started with Jupyter Notebooks” lesson, we imported the <code class="docutils literal notranslate"><span class="pre">time</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#module">module</a> and used the <code class="docutils literal notranslate"><span class="pre">sleep()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> to wait 5 seconds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Waiting 5 seconds...&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span> <span class="c1"># We import the `time` module</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># We run the sleep() function from the time module using `time.sleep()`</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also just import the <code class="docutils literal notranslate"><span class="pre">sleep()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> without importing the whole <code class="docutils literal notranslate"><span class="pre">time</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#module">module</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Waiting 5 seconds...&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span> <span class="c1"># We import just the sleep() function from the time module</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Notice that we just call the sleep() function, not time.sleep</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="writing-a-function">
+<h1>Writing a Function<a class="headerlink" href="#writing-a-function" title="Permalink to this headline">¶</a></h1>
+<p>In the above examples, we <strong>called</strong> a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> that was already written. To call our own <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a>, we need to define our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> first with a <strong>function definition statement</strong> followed by a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-block">code block</a>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">my_function():</span></code> <br />
+       <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">this</span> <span class="pre">task</span></code></p>
+<p>After the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> is defined, we can <strong>call</strong> on it to do us a favor whenever we need by simply executing the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> like so:</p>
+<p><code class="docutils literal notranslate"><span class="pre">my_function()</span></code></p>
+<p>After the function is defined, we can call it as many times as we want without having to rewrite its code. In the example below, we call <code class="docutils literal notranslate"><span class="pre">my_function</span></code> twice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a simple function to double a number</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I will double any number. Give me a number.&#39;</span><span class="p">)</span>
+<span class="n">inputnumber</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="n">outputnumber</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputnumber</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">outputnumber</span><span class="p">)</span>
+
+<span class="n">my_function</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Give me a new number.&#39;</span><span class="p">)</span>
+<span class="n">inputnumber</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="n">my_function</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Give me one last number.&#39;</span><span class="p">)</span>
+<span class="n">inputnumber</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="n">my_function</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> also makes it easier for us to update our code. Let’s say we wanted to change our program to square our <code class="docutils literal notranslate"><span class="pre">inputnumber</span></code> instead of doubling it. We can simply change the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> definition one time to make the change everywhere. See if you can make the change. (Remember to also change your program description in the first line!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a simple function to raise a number to the second power.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I will raise any number to the second power. Give me a number.&#39;</span><span class="p">)</span>
+<span class="n">inputnumber</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="n">outputnumber</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputnumber</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">outputnumber</span><span class="p">)</span>
+
+<span class="n">my_function</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Give me a new number.&#39;</span><span class="p">)</span>
+<span class="n">inputnumber</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="n">my_function</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Give me one last number.&#39;</span><span class="p">)</span>
+<span class="n">inputnumber</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+<span class="n">my_function</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By changing our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> one time, we were able to make our program behave differently in three different places. Generally, it is good practice to avoid duplicating program code to avoid having to change it in multiple places. When programmers edit their code, they may spend time <strong>deduplicating</strong> to make the code easier to read and maintain.</p>
+<div class="section" id="parameters-vs-arguments">
+<h2>Parameters vs. Arguments<a class="headerlink" href="#parameters-vs-arguments" title="Permalink to this headline">¶</a></h2>
+<p>When we write a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> definition, we can define a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#parameter">parameter</a> to work with the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>. We use the word <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#parameter">parameter</a> to describe the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> in parentheses within a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> definition:</p>
+<p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">my_function(input_variable):</span></code> <br />
+       <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">this</span> <span class="pre">task</span></code></p>
+<p>In the pseudo-code above, <code class="docutils literal notranslate"><span class="pre">input_variable</span></code> is a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#parameter">parameter</a> because it is being used within the context of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> <em>definition</em>. When we actually call and run our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>, the actual <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> or value we pass to the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> is called an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">argument</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program to greet the user by name</span>
+
+<span class="k">def</span> <span class="nf">greeting_function</span><span class="p">(</span><span class="n">user_name</span><span class="p">):</span> <span class="c1">#`user_name` here is a parameter since it is in the definition of the `greeting_function`</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="n">user_name</span><span class="p">)</span>
+
+<span class="n">greeting_function</span><span class="p">(</span><span class="s1">&#39;Sam&#39;</span><span class="p">)</span> <span class="c1"># &#39;Sam&#39; is an argument that is being passed into the `greeting_function`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, we passed a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a> into our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>, but we could also pass a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program to greet the user by name</span>
+
+<span class="k">def</span> <span class="nf">greeting_function</span><span class="p">(</span><span class="n">user_name</span><span class="p">):</span> <span class="c1">#`user_name` here is a parameter since it is in the definition of the `greeting_function`</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="n">user_name</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;What is your name?&#39;</span><span class="p">)</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">greeting_function</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="c1"># `answer` is an argument that is being passed into the `greeting_function`</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="function-return-values">
+<h2>Function Return Values<a class="headerlink" href="#function-return-values" title="Permalink to this headline">¶</a></h2>
+<p>Whether or not a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> takes an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">argument</a>, it will return a value. If we do not specify that return value in our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> definition, it is automatically set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, a special value like the Boolean <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> that simply means null or nothing. (<code class="docutils literal notranslate"><span class="pre">None</span></code> is not the same thing as, say, the integer <code class="docutils literal notranslate"><span class="pre">0</span></code>.) We can also specify return values for our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> using a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#flow-control-statement">flow control statement</a> followed by <code class="docutils literal notranslate"><span class="pre">return</span></code> in the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-block">code block</a>.</p>
+<p>Let’s write a function for telling fortunes. We can call it <code class="docutils literal notranslate"><span class="pre">fortune_picker</span></code> and it will accept a number (1-6) then return a string for the fortune.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A fortune-teller program that contains a function `fortune_picker`</span>
+<span class="c1"># `fortune_picker` accepts an integer (1-6) and returns a fortune string</span>
+
+<span class="k">def</span> <span class="nf">fortune_picker</span><span class="p">(</span><span class="n">fortune_number</span><span class="p">):</span> <span class="c1"># A function definition statement that has a parameter `fortune_number`</span>
+    <span class="k">if</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;You will have six children&#39;</span>
+    <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;You will become very wise&#39;</span>
+    <span class="k">elif</span>  <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;A new friend will help you find yourself&#39;</span>
+    <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Do not eat the sushi&#39;</span>
+    <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;That promising venture... it is a trap.&#39;</span>
+    <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="s1">&#39;Sort yourself out then find love.&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fortune_picker</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In our example, we passed the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">argument</a> <code class="docutils literal notranslate"><span class="pre">3</span></code> that returned the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a> <code class="docutils literal notranslate"><span class="pre">'A</span> <span class="pre">new</span> <span class="pre">friend</span> <span class="pre">will</span> <span class="pre">help</span> <span class="pre">you</span> <span class="pre">find</span> <span class="pre">yourself'</span></code>. To change the fortune, we would have to pass a different <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integer</a> into the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>. To make our fortune-teller random, we could import the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> <code class="docutils literal notranslate"><span class="pre">randint()</span></code> that chooses a random number between two <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integers</a>. We pass the two <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integers</a> as <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#argument">arguments</a> separated by a comma.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A fortune-teller program that uses a random integer</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span> <span class="c1"># import the randint() function from the random module</span>
+
+<span class="k">def</span> <span class="nf">fortune_picker</span><span class="p">(</span><span class="n">fortune_number</span><span class="p">):</span> <span class="c1"># A function definition statement that has a parameter `fortune_number`</span>
+    <span class="k">if</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;You will have six children&#39;</span>
+    <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;You will become very wise&#39;</span>
+    <span class="k">elif</span>  <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;A new friend will help you find yourself&#39;</span>
+    <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Do not eat the sushi&#39;</span>
+    <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;That promising venture... it is a trap.&#39;</span>
+    <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="s1">&#39;Sort yourself out then find love.&#39;</span>
+
+<span class="n">random_number</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1"># Choose a random number between 1 and 6 and assign it to a new variable `random_number`</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fortune_picker</span><span class="p">(</span><span class="n">random_number</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="local-and-global-scope">
+<h2>Local and Global Scope<a class="headerlink" href="#local-and-global-scope" title="Permalink to this headline">¶</a></h2>
+<p>We have seen that <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a> make maintaining code easier by avoiding duplication. One of the most dangerous areas for duplication is <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> names. As programming projects become larger, the possibility that a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> will be re-used goes up. This can cause weird errors in our programs that are hard to track down. We can alleviate the problem of duplicate <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> names through the concepts of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">local scope</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-scope">global scope</a>.</p>
+<p>We use the phrase <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">local scope</a> to describe what happens within a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>. The <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">local scope</a> of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> may contain <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-variable">local variable</a>, but once that <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> has completed the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-variable">local variable</a> and their contents are erased.</p>
+<p>On the other hand, we can also create <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variables</a> that persist at the top-level of the program <em>and</em> within the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">local scope</a> of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>.</p>
+<ul class="simple">
+<li><p>In the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-scope">global scope</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> does not recognize any <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-variable">local variable</a> from within <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">functions</a></p></li>
+<li><p>In the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">local scope</a> of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> can recognize and modify any <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variables</a></p></li>
+<li><p>It is possible for there to be a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variable</a> and a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-variable">local variable</a> with the same name</p></li>
+</ul>
+<p>Ideally, <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> programs should limit the number of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variables</a> and create most <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variables</a> in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">local scope</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstration of global variable being use in a local scope</span>
+<span class="c1"># The program crashes when a local variable is used in a global scope</span>
+<span class="n">global_secret_number</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="k">def</span> <span class="nf">share_number</span><span class="p">():</span>
+    <span class="n">local_secret_number</span> <span class="o">=</span> <span class="mi">13</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The global secret number is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">global_secret_number</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The local secret number is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">local_secret_number</span><span class="p">))</span>
+    
+
+<span class="n">share_number</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The global secret number is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">global_secret_number</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The local secret number is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">local_secret_number</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above defines a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variable</a> <code class="docutils literal notranslate"><span class="pre">global_secret_number</span></code> with the value of 7. A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>, called <code class="docutils literal notranslate"><span class="pre">share_number</span></code>, then defines a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-variable">local variable</a> <code class="docutils literal notranslate"><span class="pre">local_secret_number</span></code> with a value of 13. When we call the <code class="docutils literal notranslate"><span class="pre">share_number</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a>, it prints the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-variable">local variable</a> and the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variable</a>. After the <code class="docutils literal notranslate"><span class="pre">share_number()</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> completes we try to print both variables in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-scope">global scope</a>. The program prints <code class="docutils literal notranslate"><span class="pre">global_secret_number</span></code> but crashes when trying to print <code class="docutils literal notranslate"><span class="pre">local_secret_number</span></code> in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-scope">global scope</a>.</p>
+<p>It’s a good practice not to name a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-variable">local variable</a> the same thing as a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variable</a>. If we define a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> with the same name in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">local scope</a>, it becomes a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-variable">local variable</a> within that scope. Once the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function">function</a> is closed, the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variable</a> retains its original value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A demonstration of global and local scope using the same variable name</span>
+<span class="n">secret_number</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="k">def</span> <span class="nf">share_number</span><span class="p">():</span>
+    <span class="n">secret_number</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">secret_number</span><span class="p">)</span>
+
+<span class="n">share_number</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">secret_number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-global-statement">
+<h2>The Global Statement<a class="headerlink" href="#the-global-statement" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-statement">global statement</a> allows us to modify a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#global-variable">global variable</a> in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#local-scope">local scope</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using a global statement in a local scope to change a global variable locally</span>
+
+<span class="n">secret_number</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="k">def</span> <span class="nf">share_number</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">secret_number</span> <span class="c1"># The global statement indicates this the global variable, not a local variable</span>
+    <span class="n">secret_number</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">secret_number</span><span class="p">)</span>
+
+<span class="n">share_number</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">secret_number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lesson-complete">
+<h1>Lesson Complete<a class="headerlink" href="#lesson-complete" title="Permalink to this headline">¶</a></h1>
+<p>Congratulations! You have completed <em>Python Basics</em> II. There is only one more lesson in <em>Python Basics</em>:</p>
+<ul class="simple">
+<li><p><em>Python Basics</em> III</p></li>
+</ul>
+<div class="section" id="start-next-lesson-python-basics-iii">
+<h2>Start Next Lesson: <a class="reference internal" href="python-basics-3.html"><span class="doc std std-doc">Python Basics III</span></a><a class="headerlink" href="#start-next-lesson-python-basics-iii" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>. The code is licensed under a <a href="https://choosealicense.com/licenses/gpl-3.0/#">GNU General Public License v3.0</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

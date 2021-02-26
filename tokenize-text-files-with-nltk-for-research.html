@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Import Libraries &#8212; Lesson Repository</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Lesson Repository</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   Demonstrating Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workshop
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/chapters/why-text-analysis.html">
+   Day 1 - Why Text Analysis?
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 2 - Python Basics I
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 3 - Python Basics II
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/word-frequencies.html">
+   Day 4 - Exploring Word Frequencies
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html">
+     Import your dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#apply-pre-processing-filters-if-available">
+     Apply Pre-Processing Filters (if available)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#extract-the-unigram-counts-from-the-dataset-json-file">
+     Extract the Unigram Counts from the dataset JSON file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#find-most-common-unigrams">
+     Find Most Common Unigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#clean-up-tokens">
+     Clean Up Tokens
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/tokenize-text-files-with-nltk-for-research.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Ftokenize-text-files-with-nltk-for-research.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/tokenize-text-files-with-nltk-for-research.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.tdm-pilot.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/tokenize-text-files-with-nltk-for-research.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Import Libraries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-special-functions-for-this-process">
+   Define Special Functions for this Process
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unzip-texts-folder-optional">
+   Unzip Texts Folder (optional)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-for-metadata-csv-optional">
+   Check for Metadata CSV (optional)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-the-text-files-into-nltk">
+   Import the Text Files into NLTK
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-and-output-data-to-json-l-file">
+   Generate and Output Data to JSON-L File
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gzip-the-json-l-file">
+   Gzip the JSON-L file
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<p><strong>Tokenize Text Files with NLTK</strong></p>
+<p><strong>Description:</strong>
+This notebook takes as input:</p>
+<ul class="simple">
+<li><p>Plain text files (.txt) in a zipped folder called ‘texts’ in the data folder</p></li>
+<li><p>Metadata CSV file called ‘metadata.csv’ in the data folder (optional)</p></li>
+</ul>
+<p>and outputs a single JSON-L file containing the unigrams, bigrams, trigrams, full-text, and metadata.</p>
+<p><strong>Use Case:</strong> For Researchers (Mostly code without explanation, not ideal for learners)</p>
+<p><strong>Difficulty:</strong> Advanced</p>
+<p><strong>Completion time:</strong> 10-15 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p>Python Basics (<a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Start Python Basics I</span></a>)</p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="working-with-dataset-files.html"><span class="doc std std-doc">Working with Dataset Files</span></a></p></li>
+</ul>
+<p><strong>Data Format:</strong> .txt, .csv, .jsonl</p>
+<p><strong>Libraries Used:</strong></p>
+<ul class="simple">
+<li><p>os</p></li>
+<li><p>json</p></li>
+<li><p>NLTK</p></li>
+<li><p>gzip</p></li>
+<li><p>nltk.corpus</p></li>
+<li><p>collections</p></li>
+<li><p>pandas</p></li>
+</ul>
+<p><strong>Research Pipeline:</strong></p>
+<ol class="simple">
+<li><p>Scan documents</p></li>
+<li><p>OCR files</p></li>
+<li><p>Clean up texts</p></li>
+<li><p><strong>Tokenize text files</strong> (this notebook)</p></li>
+</ol>
+<hr class="docutils" />
+<div class="section" id="import-libraries">
+<h1>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">nltk</span><span class="o">,</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">gzip</span><span class="o">,</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">PlaintextCorpusReader</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="define-special-functions-for-this-process">
+<h1>Define Special Functions for this Process<a class="headerlink" href="#define-special-functions-for-this-process" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Various functions written for this notebook ###</span>
+
+<span class="k">def</span> <span class="nf">convert_tuple_bigrams</span><span class="p">(</span><span class="n">tuples_to_convert</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts NLTK tuples into bigram strings&quot;&quot;&quot;</span>
+    <span class="n">string_grams</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tuple_grams</span> <span class="ow">in</span> <span class="n">tuples_to_convert</span><span class="p">:</span>
+        <span class="n">first_word</span> <span class="o">=</span> <span class="n">tuple_grams</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">second_word</span> <span class="o">=</span> <span class="n">tuple_grams</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">gram_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">first_word</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">second_word</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">string_grams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gram_string</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">string_grams</span>
+
+<span class="k">def</span> <span class="nf">convert_tuple_trigrams</span><span class="p">(</span><span class="n">tuples_to_convert</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts NLTK tuples into trigram strings&quot;&quot;&quot;</span>
+    <span class="n">string_grams</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tuple_grams</span> <span class="ow">in</span> <span class="n">tuples_to_convert</span><span class="p">:</span>
+        <span class="n">first_word</span> <span class="o">=</span> <span class="n">tuple_grams</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">second_word</span> <span class="o">=</span> <span class="n">tuple_grams</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">third_word</span> <span class="o">=</span> <span class="n">tuple_grams</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">gram_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">first_word</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">second_word</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">third_word</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">string_grams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gram_string</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">string_grams</span>
+
+<span class="k">def</span> <span class="nf">convert_strings_to_counts</span><span class="p">(</span><span class="n">string_grams</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts a Counter of n-grams into a dictionary&quot;&quot;&quot;</span>
+    <span class="n">counter_of_grams</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">string_grams</span><span class="p">)</span>
+    <span class="n">dict_of_grams</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">counter_of_grams</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dict_of_grams</span>
+
+<span class="k">def</span> <span class="nf">update_metadata_from_csv</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Uses pandas to grab additional metadata fields from a CSV file then adds them to the JSON-L file.</span>
+<span class="sd">    Unused fields can be commented out.&quot;&quot;&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">isPartOf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;isPartOf&#39;</span><span class="p">]</span>
+    <span class="n">publicationYear</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;publicationYear&#39;</span><span class="p">])</span>
+    <span class="n">doi</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;doi&#39;</span><span class="p">]</span>
+    <span class="n">docType</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;docType&#39;</span><span class="p">]</span>
+    <span class="n">provider</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;provider&#39;</span><span class="p">]</span>
+    <span class="n">datePublished</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;datePublished&#39;</span><span class="p">]</span>
+    <span class="n">issueNumber</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;issueNumber&#39;</span><span class="p">])</span>
+    <span class="n">volumeNumber</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;volumeNumber&#39;</span><span class="p">])</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">]</span>
+    <span class="n">creator</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;creator&#39;</span><span class="p">]</span>
+    <span class="n">publisher</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;publisher&#39;</span><span class="p">]</span>
+    <span class="n">language</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">]</span>
+    <span class="n">pageStart</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;pageStart&#39;</span><span class="p">]</span>
+    <span class="n">pageEnd</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;pageEnd&#39;</span><span class="p">]</span>
+    <span class="n">placeOfPublication</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;placeOfPublication&#39;</span><span class="p">]</span>
+    <span class="n">pageCount</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">identifier</span><span class="p">,</span> <span class="s1">&#39;pageCount&#39;</span><span class="p">])</span>
+
+    <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">([</span>   
+        <span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="n">title</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;isPartOf&#39;</span><span class="p">,</span> <span class="n">isPartOf</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;publicationYear&#39;</span><span class="p">,</span> <span class="n">publicationYear</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;doi&#39;</span><span class="p">,</span> <span class="n">doi</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;docType&#39;</span><span class="p">,</span> <span class="n">docType</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;provider&#39;</span><span class="p">,</span> <span class="n">provider</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;datePublished&#39;</span><span class="p">,</span> <span class="n">datePublished</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;issueNumber&#39;</span><span class="p">,</span> <span class="n">issueNumber</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;volumeNumber&#39;</span><span class="p">,</span> <span class="n">volumeNumber</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;creator&#39;</span><span class="p">,</span> <span class="n">creator</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;publisher&#39;</span><span class="p">,</span> <span class="n">publisher</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">,</span> <span class="n">language</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;pageStart&#39;</span><span class="p">,</span> <span class="n">pageStart</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;pageEnd&#39;</span><span class="p">,</span> <span class="n">pageEnd</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;placeOfPublication&#39;</span><span class="p">,</span> <span class="n">placeOfPublication</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;pageCount&#39;</span><span class="p">,</span> <span class="n">pageCount</span><span class="p">),</span>
+    <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="unzip-texts-folder-optional">
+<h1>Unzip Texts Folder (optional)<a class="headerlink" href="#unzip-texts-folder-optional" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Extract Zip File of Texts ###</span>
+<span class="c1"># The text file should extract into a folder</span>
+<span class="c1"># called &#39;texts&#39;</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;./data/texts.zip&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">corpus_zip</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">corpus_zip</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;./data/&#39;</span><span class="p">)</span>
+    <span class="n">corpus_zip</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zip file extracted successfully.&#39;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No zip file detected. Upload your zip file to the data folder.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-for-metadata-csv-optional">
+<h1>Check for Metadata CSV (optional)<a class="headerlink" href="#check-for-metadata-csv-optional" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Check for a metadata CSV file ###</span>
+
+<span class="n">csv_filename</span> <span class="o">=</span> <span class="s1">&#39;metadata.csv&#39;</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">csv_filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">):</span>
+    <span class="n">csv_exists</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Metadata CSV found.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="n">csv_exists</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No metadata CSV found.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="import-the-text-files-into-nltk">
+<h1>Import the Text Files into NLTK<a class="headerlink" href="#import-the-text-files-into-nltk" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Establish root folder holding all text files ###</span>
+<span class="c1"># Create corpus using all text files in corpus_root</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">PlaintextCorpusReader</span>
+<span class="n">corpus_root</span> <span class="o">=</span> <span class="s1">&#39;./data/texts&#39;</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">PlaintextCorpusReader</span><span class="p">(</span><span class="n">corpus_root</span><span class="p">,</span> <span class="s1">&#39;.*txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Print all File IDs in corpus based on text file names ###</span>
+<span class="n">text_list</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">fileids</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Corpus created from: </span><span class="si">{</span><span class="n">text_list</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-and-output-data-to-json-l-file">
+<h1>Generate and Output Data to JSON-L File<a class="headerlink" href="#generate-and-output-data-to-json-l-file" title="Permalink to this headline">¶</a></h1>
+<p><strong>If an old json-l file already exists, this process will overwrite it</strong></p>
+<p>For each text, this code will:</p>
+<ol class="simple">
+<li><p>Gather unigrams, bigrams, trigrams, and full text</p></li>
+<li><p>Compute word counts</p></li>
+<li><p>Check for additional metadata in a CSV file</p></li>
+<li><p>Write any data to JSON-L file</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Create the JSON-L file and gzip it ###</span>
+
+<span class="c1"># For every text: </span>
+<span class="c1"># 1. Compute unigrams, bigrams, trigrams, and wordCount</span>
+<span class="c1"># 2. Append the data to a JSON-L file</span>
+<span class="c1"># After all data is written, compress the dataset using gzip</span>
+<span class="c1">## **If the JSONL file exists, it will be overwritten**</span>
+
+<span class="c1"># Define the file output name</span>
+<span class="n">output_filename</span> <span class="o">=</span> <span class="s1">&#39;my_data.jsonl&#39;</span>
+
+<span class="c1"># Delete output files if they already exist</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Overwriting old version of </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">.gz&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">.gz&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Overwriting old version of </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">.gz</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                  
+
+<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">text_list</span><span class="p">:</span>
+    
+    <span class="c1"># Create identifier from filename</span>
+    <span class="n">identifier</span> <span class="o">=</span> <span class="n">text</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+    
+    <span class="c1"># Compute unigrams</span>
+    <span class="n">unigrams</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">unigramCount</span> <span class="o">=</span> <span class="n">convert_strings_to_counts</span><span class="p">(</span><span class="n">unigrams</span><span class="p">)</span>
+    
+    <span class="c1"># Compute bigrams</span>
+    <span class="n">tuple_bigrams</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">bigrams</span><span class="p">(</span><span class="n">unigrams</span><span class="p">))</span>
+    <span class="n">string_bigrams</span> <span class="o">=</span> <span class="n">convert_tuple_bigrams</span><span class="p">(</span><span class="n">tuple_bigrams</span><span class="p">)</span>
+    <span class="n">bigramCount</span> <span class="o">=</span> <span class="n">convert_strings_to_counts</span><span class="p">(</span><span class="n">string_bigrams</span><span class="p">)</span>
+    
+    <span class="c1"># Compute trigrams</span>
+    <span class="n">tuple_trigrams</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">trigrams</span><span class="p">(</span><span class="n">unigrams</span><span class="p">))</span>
+    <span class="n">string_trigrams</span> <span class="o">=</span> <span class="n">convert_tuple_trigrams</span><span class="p">(</span><span class="n">tuple_trigrams</span><span class="p">)</span>
+    <span class="n">trigramCount</span> <span class="o">=</span> <span class="n">convert_strings_to_counts</span><span class="p">(</span><span class="n">string_trigrams</span><span class="p">)</span>
+    
+    <span class="c1"># Compute fulltext</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/texts/</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">fullText</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    
+    <span class="c1"># Calculate wordCount</span>
+    <span class="n">wordCount</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">counts</span> <span class="ow">in</span> <span class="n">unigramCount</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">wordCount</span> <span class="o">=</span> <span class="n">wordCount</span> <span class="o">+</span> <span class="n">counts</span>
+  
+    <span class="c1"># Create a dictionary `data` to hold each document&#39;s data</span>
+    <span class="c1"># Including id, wordCount, outputFormat, unigramCount,</span>
+    <span class="c1"># bigramCount, trigramCount, fullText, etc.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="n">data</span><span class="o">.</span><span class="n">update</span><span class="p">([</span>
+        <span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">identifier</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;outputFormat&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;unigram&#39;</span><span class="p">,</span> <span class="s1">&#39;bigram&#39;</span><span class="p">,</span> <span class="s1">&#39;trigram&#39;</span><span class="p">,</span> <span class="s1">&#39;fullText&#39;</span><span class="p">]),</span>
+        <span class="p">(</span><span class="s1">&#39;wordCount&#39;</span><span class="p">,</span> <span class="n">wordCount</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;fullText&#39;</span><span class="p">,</span> <span class="n">fullText</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;unigramCount&#39;</span><span class="p">,</span> <span class="n">unigramCount</span><span class="p">),</span> 
+        <span class="p">(</span><span class="s1">&#39;bigramCount&#39;</span><span class="p">,</span> <span class="n">bigramCount</span><span class="p">),</span> 
+        <span class="p">(</span><span class="s1">&#39;trigramCount&#39;</span><span class="p">,</span> <span class="n">trigramCount</span><span class="p">)</span>
+    <span class="p">])</span>
+    
+    <span class="c1"># Add additional metadata if there is a metadata.csv available</span>
+    <span class="k">if</span> <span class="n">csv_exists</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># Read in the CSV file and set the index</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">csv_filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Update Metadata</span>
+        <span class="n">update_metadata_from_csv</span><span class="p">()</span>
+        
+    
+    <span class="c1"># Write the document to the json file  </span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+        <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Text </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1"> written to json-l file.&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text_list</span><span class="p">))</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39; texts written to </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gzip-the-json-l-file">
+<h1>Gzip the JSON-L file<a class="headerlink" href="#gzip-the-json-l-file" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># GZip dataset</span>
+
+<span class="n">f_in</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="n">f_out</span> <span class="o">=</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">.gz&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+<span class="n">f_out</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">f_in</span><span class="p">)</span>
+<span class="n">f_out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">f_in</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Compression complete. </span><span class="se">\n</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">.gz has been created.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>. The code is licensed under a <a href="https://choosealicense.com/licenses/gpl-3.0/#">GNU General Public License v3.0</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

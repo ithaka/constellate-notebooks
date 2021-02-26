@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; Lesson Repository</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="python-basics-1.html" />
+    <link rel="prev" title="Intro to Python Basics Curriculum" href="book/chapters/pybasics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Lesson Repository</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   Demonstrating Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workshop
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/chapters/why-text-analysis.html">
+   Day 1 - Why Text Analysis?
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 2 - Python Basics I
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 3 - Python Basics II
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/word-frequencies.html">
+   Day 4 - Exploring Word Frequencies
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html">
+     Import your dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#apply-pre-processing-filters-if-available">
+     Apply Pre-Processing Filters (if available)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#extract-the-unigram-counts-from-the-dataset-json-file">
+     Extract the Unigram Counts from the dataset JSON file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#find-most-common-unigrams">
+     Find Most Common Unigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#clean-up-tokens">
+     Clean Up Tokens
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/getting-started-with-jupyter.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fgetting-started-with-jupyter.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/getting-started-with-jupyter.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.tdm-pilot.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/getting-started-with-jupyter.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cells">
+     Cells
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hello-world-your-first-code">
+     Hello World: Your First Code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-one">
+       Option One
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#option-two">
+       Option Two
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#try-this">
+       Try this!
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-cell">
+     Creating a Cell
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deleting-a-cell">
+     Deleting a Cell
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifying-a-cell">
+     Modifying a Cell
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-markdown">
+   What is Markdown?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-i-write-my-own-markdown">
+     How do I write my own Markdown?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#headers">
+     Headers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#header-size-1">
+   Header Size 1
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-size-2">
+     Header Size 2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#header-size-3">
+       Header Size 3
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#header-size-4">
+         Header Size 4
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#emphasis">
+     Emphasis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lists">
+     Lists
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#links">
+     Links
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#images">
+     Images
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#horizontal-rule">
+     Horizontal Rule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lesson-complete">
+   Lesson Complete
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-next-lesson-python-basics-i">
+     Start Next Lesson:
+     <span class="xref myst">
+      Python Basics I
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<p><strong>Getting Started with Jupyter Notebooks</strong></p>
+<p><strong>Description:</strong> This lesson introduces <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">Jupyter notebooks</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> for absolute beginners. If you are completely new to text analysis, this is the place to start.</p>
+<p><strong>Use Case:</strong> For Learners (Additional explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Beginner</p>
+<p><strong>Completion time:</strong> 15 minutes</p>
+<p><strong>Knowledge Required:</strong> None</p>
+<p><strong>Knowledge Recommended:</strong> None</p>
+<p><strong>Data Format:</strong> None</p>
+<p><strong>Libraries Used:</strong> <code class="docutils literal notranslate"><span class="pre">time</span></code> to demonstrate code cell execution</p>
+<p><strong>Research Pipeline:</strong> None</p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://youtu.be/3jZYC9rGrNg"><img alt="Getting Started with Jupyter Notebooks" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/video/getting-started.png" /></a></p>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to your first <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">Jupyter notebook</a>. <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">Jupyter notebooks</a> are documents that contain both computer code (like <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a>) alongside explanatory images, figures, videos, and links. Most importantly, the code in a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">Jupyter notebook</a> can be executed, modified, and deleted. As you explore this notebook, please feel free to modify the text, the code, and to generally play around with the environment. You can always <a class="reference external" href="https://docs.tdm-pilot.org/intro-to-jupyter-notebooks/">launch another instance of this notebook</a> that will restore its original configuration. Later, you may learn how to create, modify, and save your own notebooks to share with others.</p>
+<div class="section" id="cells">
+<h2>Cells<a class="headerlink" href="#cells" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the way an essay is composed of paragraphs, Jupyter notebooks are composed of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#cell">cells</a>. A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#cell">cell</a> is like a container for a particular kind of content. There are essentially two kinds of content in Jupyter notebooks:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#markdown-cell">Markdown Cells</a>- These can contain text, images, video, and other kinds of explanatory content you might find on a regular website. This cell is a markdown cell.</p></li>
+<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">Code Cells</a>- These can contain code written in a variety of languages.</p></li>
+</ol>
+<p>A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> can be distinguished from a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#markdown-cell">markdown cell</a> by the fact that it contains a pair of brackets with a colon to its left, like so <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a code cell </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#markdown-cell">markdown cell</a> provides information, but a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> can be executed to perform an action. The <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> above does not contain any executable content, only a text comment. We can tell the text in the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> is a comment because it is prefixed by a <code class="docutils literal notranslate"><span class="pre">#</span></code>. In Python, any time a line is prefaced by a <code class="docutils literal notranslate"><span class="pre">#</span></code> that line is a comment and will not be executed if the code is run. In a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a>, comments are also blueish-green in color.</p>
+</div>
+<div class="section" id="hello-world-your-first-code">
+<h2>Hello World: Your First Code<a class="headerlink" href="#hello-world-your-first-code" title="Permalink to this headline">¶</a></h2>
+<p>It is traditional in programming education to begin with a program that prints <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code>. In Python, this is a simple task. We will use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. This function simply prints out whatever is inside the parentheses (). We will pass the quotation “Hello World” to the print function like so:</p>
+<p><code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World&quot;)</span></code></p>
+<p>Write this code into the following <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> below. To execute our code, we have a couple options:</p>
+<div class="section" id="option-one">
+<h3>Option One<a class="headerlink" href="#option-one" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Image of play button" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/play_button.png" /> Click the code cell you wish to run and then push the “Run” button above.</p>
+</div>
+<div class="section" id="option-two">
+<h3>Option Two<a class="headerlink" href="#option-two" title="Permalink to this headline">¶</a></h3>
+<p>Click the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> you wish to run and press Ctrl + Enter (Windows) or shift + return (OS X) on your keyboard.</p>
+<p>Type <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">World&quot;)</span></code> into the box below and then run the cell.</p>
+</div>
+<div class="section" id="try-this">
+<h3>Try this!<a class="headerlink" href="#try-this" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Does it matter if you use single or double quotes?</p></li>
+<li><p>Can you also insert a comment into the code cell?</p></li>
+<li><p>Can you write code and a comment on a single line? Which must come first?</p></li>
+</ul>
+<p>After your code runs, you’ll receive any output and a number will appear in the pair of brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code> to the left of the code cell to show the order the cell was run. If your code is complicated or takes some time to execute, an asterisk * will be displayed in the pair of brackets <code class="docutils literal notranslate"><span class="pre">[*]:</span></code> while the code executes.</p>
+<p>Execute the code cell below which:</p>
+<ol class="simple">
+<li><p>Prints “Waiting 5 seconds…”</p></li>
+<li><p>Waits 5 seconds</p></li>
+<li><p>Prints “Done”</p></li>
+</ol>
+<p>As the program is running, watch the pair of brackets and you will see the code is running <code class="docutils literal notranslate"><span class="pre">[*]:</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Waiting 5 seconds...&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you missed the asterisk, you can run the code cell as many times as you like. Notice that each time you run a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> the number increases in the pair of brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code>. This keeps track of the order cells were run. While we will always run code in order from top to bottom, keep in mind that <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cells</a> can be run in any order. If you run a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> at the bottom of a notebook that depends on the output of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> at the top, you will probably get an error. When you get an error, it’s a good idea to check if you missed a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> earlier that needed to be run first.</p>
+</div>
+</div>
+<div class="section" id="creating-a-cell">
+<h2>Creating a Cell<a class="headerlink" href="#creating-a-cell" title="Permalink to this headline">¶</a></h2>
+<p><img alt="The + symbol to create a new cell" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/new_cell.png" />To create a new <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#cell">cell</a>, click the + at the top of the menu. A new <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#cell">cell</a> will be created immediately underneath the currently selected <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#cell">cell</a>.</p>
+<p>By default, a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cell</a> is created. To change the cell type, click on the dropdown menu.
+<img alt="Change cell type menu" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/change_code_cell.gif" /></p>
+</div>
+<div class="section" id="deleting-a-cell">
+<h2>Deleting a Cell<a class="headerlink" href="#deleting-a-cell" title="Permalink to this headline">¶</a></h2>
+<p><img alt="right clicking to delete cell" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/delete_cell.gif" /></p>
+<p>To delete a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#cell">cell</a>, select the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#cell">cell</a> (or set of cells) and select “Delete Cells” from the “Edit” menu. (Alternatively, press the key “d” twice.)</p>
+</div>
+<div class="section" id="modifying-a-cell">
+<h2>Modifying a Cell<a class="headerlink" href="#modifying-a-cell" title="Permalink to this headline">¶</a></h2>
+<p>The text in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#code-cell">code cells</a> can be quickly changed like a regular textbox. In order to change the content of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#markdown-cell">markdown cell</a>, you need to expose the markdown content underneath by double-clicking the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#cell">cell</a>. This will reveal the plain text of the markdown that creates various elements like headings, links, images, etc. When you want the cell to render again, you can simply run it again by pushing the play button or pressing Ctrl + Enter (Windows) or shift + return (OS X) on your keyboard.</p>
+</div>
+</div>
+<div class="section" id="what-is-markdown">
+<h1>What is Markdown?<a class="headerlink" href="#what-is-markdown" title="Permalink to this headline">¶</a></h1>
+<p>If you are familiar with HTML, markdown is a simplified way to write HTML elements. Basically it allows you to mark out where headings, italics, bold, and other kinds of basic formatting go. In terms of styling, markdown is very minimalist. If you would like to include an element that is not included in markdown in your notebook, you can also use HTML and CSS in your <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#markdown-cell">markdown cells</a>.</p>
+<div class="section" id="how-do-i-write-my-own-markdown">
+<h2>How do I write my own Markdown?<a class="headerlink" href="#how-do-i-write-my-own-markdown" title="Permalink to this headline">¶</a></h2>
+<p>Here are some basic examples to get you started. Double-click on this cell to see how each was made. There are many markdown cheatsheets available on the web. It can be useful to <a class="reference external" href="https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf">print one out</a> and keep it handy.</p>
+</div>
+<div class="section" id="headers">
+<h2>Headers<a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="header-size-1">
+<h1>Header Size 1<a class="headerlink" href="#header-size-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="header-size-2">
+<h2>Header Size 2<a class="headerlink" href="#header-size-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="header-size-3">
+<h3>Header Size 3<a class="headerlink" href="#header-size-3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="header-size-4">
+<h4>Header Size 4<a class="headerlink" href="#header-size-4" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="emphasis">
+<h2>Emphasis<a class="headerlink" href="#emphasis" title="Permalink to this headline">¶</a></h2>
+<p><em>Use asterisks around texts to add emphasis, also known as italics</em>
+<em>You can also use underscores</em>
+~~A strike-thru effect is created with two tildes~~ ~~</p>
+</div>
+<div class="section" id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>A list of ordered items:</p>
+<ol class="simple">
+<li><p>List item 1</p></li>
+<li><p>List item 2</p></li>
+</ol>
+<p>Unordered items:</p>
+<ul class="simple">
+<li><p>List item</p></li>
+<li><p>Also a list item</p></li>
+</ul>
+<ul class="simple">
+<li><p>A list item</p></li>
+<li><p>Another list item</p></li>
+</ul>
+<ul class="simple">
+<li><p>Also an item</p></li>
+<li><p>The last item</p></li>
+</ul>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p>This is a link to <a class="reference external" href="http://jstor.org">JSTOR</a>.</p>
+</div>
+<div class="section" id="images">
+<h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Description of the image for accessibility(a jstor logo)" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/logoJSTOR.png" /></p>
+</div>
+<div class="section" id="horizontal-rule">
+<h2>Horizontal Rule<a class="headerlink" href="#horizontal-rule" title="Permalink to this headline">¶</a></h2>
+<p>Create a horizontal rule with three hyphens, asterisks, or underscores.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lesson-complete">
+<h1>Lesson Complete<a class="headerlink" href="#lesson-complete" title="Permalink to this headline">¶</a></h1>
+<p>Congratulations! You have completed “Getting Started with Jupyter Notebooks.” If you have never programmed in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python">Python</a> before, we recommend you complete:</p>
+<ul class="simple">
+<li><p><em>Python Basics</em> I</p></li>
+<li><p><em>Python Basics</em> II</p></li>
+<li><p><em>Python Basics</em> III</p></li>
+</ul>
+<div class="section" id="start-next-lesson-python-basics-i">
+<h2>Start Next Lesson: <a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Python Basics I</span></a><a class="headerlink" href="#start-next-lesson-python-basics-i" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="book/chapters/pybasics.html" title="previous page">Intro to Python Basics Curriculum</a>
+    <a class='right-next' id="next-link" href="python-basics-1.html" title="next page">Introduction</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>. The code is licensed under a <a href="https://choosealicense.com/licenses/gpl-3.0/#">GNU General Public License v3.0</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

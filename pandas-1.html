@@ -1,0 +1,1269 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>When to use Pandas &#8212; Lesson Repository</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Lesson Repository</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   Demonstrating Jupyter Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Workshop
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/chapters/why-text-analysis.html">
+   Day 1 - Why Text Analysis?
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 2 - Python Basics I
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/pybasics.html">
+   Day 3 - Python Basics II
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#what-is-markdown">
+     What is Markdown?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#header-size-1">
+     Header Size 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting-started-with-jupyter.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#expressions-and-operators">
+     Expressions and Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#data-types-integers-floats-and-strings">
+     Data Types (Integers, Floats, and Strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python-basics-1.html#lesson-complete">
+     Lesson Complete
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="book/chapters/word-frequencies.html">
+   Day 4 - Exploring Word Frequencies
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html">
+     Import your dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#apply-pre-processing-filters-if-available">
+     Apply Pre-Processing Filters (if available)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#extract-the-unigram-counts-from-the-dataset-json-file">
+     Extract the Unigram Counts from the dataset JSON file
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#find-most-common-unigrams">
+     Find Most Common Unigrams
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exploring-word-frequencies.html#clean-up-tokens">
+     Clean Up Tokens
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/pandas-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fpandas-1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/pandas-1.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.tdm-pilot.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/pandas-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   When to use Pandas
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-series">
+   Pandas Series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iloc-integer-location-selection">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .iloc[]
+      </span>
+     </code>
+     Integer Location Selection
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loc-location-selection">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .loc[]
+      </span>
+     </code>
+     Location Selection
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-expressions">
+     Boolean Expressions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifying-a-series">
+     Modifying a Series
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-of-pandas-series">
+     Summary of Pandas Series
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-dataframe">
+   Pandas DataFrame
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-dataframe-contents">
+     Exploring DataFrame Contents
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preview-with-head-and-tail">
+     Preview with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .head()
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .tail()
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#display-more-rows-or-columns">
+       Display More Rows or Columns
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-column-names">
+     Change Column Names
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reset-the-index">
+     Reset the Index
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-the-index">
+     Sorting the Index
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loc-and-iloc-selection">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .loc[]
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .iloc[]
+      </span>
+     </code>
+     Selection
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Boolean Expressions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifying-a-dataframe">
+     Modifying a DataFrame
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropping-rows-without-data">
+     Dropping Rows Without Data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-of-pandas-dataframes">
+     Summary of Pandas DataFrames
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<p><strong>Pandas I</strong></p>
+<p><strong>Description:</strong> This notebook describes how to:</p>
+<ul class="simple">
+<li><p>Create a Pandas Series or DataFrame</p></li>
+<li><p>Accessing data rows, columns, elements using <code class="docutils literal notranslate"><span class="pre">.loc</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc</span></code></p></li>
+<li><p>Creating filters using boolean operators</p></li>
+<li><p>Changing data in rows, columns, and elements</p></li>
+</ul>
+<p>This is the first notebook in a series on learning to use Pandas.</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Intermediate</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p>Python Basics (<a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Start Python Basics I</span></a>)</p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="working-with-dataset-files.html"><span class="doc std std-doc">Working with Dataset Files</span></a></p></li>
+</ul>
+<p><strong>Completion Time:</strong> 75 minutes</p>
+<p><strong>Data Format:</strong> CSV (.csv)</p>
+<p><strong>Libraries Used:</strong> Pandas</p>
+<p><strong>Research Pipeline:</strong> None</p>
+<hr class="docutils" />
+<div class="section" id="when-to-use-pandas">
+<h1>When to use Pandas<a class="headerlink" href="#when-to-use-pandas" title="Permalink to this headline">¶</a></h1>
+<p>Pandas is a Python data analysis and manipulation library. When it comes to viewing and manipulating data, most people are familiar with commercial spreadsheet software, such as Microsoft Excel or Google Sheets. While spreadsheet software and Pandas can accomplish similar tasks, each has significant advantages depending on the use-case.</p>
+<p><strong>Advantages of Spreadsheet Software</strong></p>
+<ul class="simple">
+<li><p>Point and click</p></li>
+<li><p>Easier to learn</p></li>
+<li><p>Great for small datasets (&lt;10,000 rows)</p></li>
+<li><p>Better for browsing data</p></li>
+</ul>
+<p><strong>Advantages of Pandas</strong></p>
+<ul class="simple">
+<li><p>More powerful data manipulation with Python</p></li>
+<li><p>Can work with large datasets (millions of rows)</p></li>
+<li><p>Faster for complicated manipulations</p></li>
+<li><p>Better for cleaning and/or pre-processing data</p></li>
+<li><p>Can automate workflows in a larger data pipeline</p></li>
+</ul>
+<p>In short, spreadsheet software is better for browsing small datasets and making moderate adjustments. Pandas is better for automating data cleaning processes that require large or complex data manipulation.</p>
+<p>Pandas can interpret a wide variety of data sources, including Excel files, CSV files, and Python objects like lists and dictionaries. Pandas converts these into two fundamental objects:</p>
+<ul class="simple">
+<li><p>Data Series- a single column of data</p></li>
+<li><p>DataFrame- a table of data containing multiple columns and rows</p></li>
+</ul>
+</div>
+<div class="section" id="pandas-series">
+<h1>Pandas Series<a class="headerlink" href="#pandas-series" title="Permalink to this headline">¶</a></h1>
+<p>We can think of a Series as a single column of data. A DataFrame then is made by combining Series objects side-by-side into a table that has both height and width. Let’s create a Series based on this data about the world’s ten most-populated countries <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population">according to Wikipedia</a>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Population (in millions)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1,404</p></td>
+</tr>
+<tr class="row-odd"><td><p>1,366</p></td>
+</tr>
+<tr class="row-even"><td><p>330</p></td>
+</tr>
+<tr class="row-odd"><td><p>269</p></td>
+</tr>
+<tr class="row-even"><td><p>220</p></td>
+</tr>
+<tr class="row-odd"><td><p>211</p></td>
+</tr>
+<tr class="row-even"><td><p>206</p></td>
+</tr>
+<tr class="row-odd"><td><p>169</p></td>
+</tr>
+<tr class="row-even"><td><p>146</p></td>
+</tr>
+<tr class="row-odd"><td><p>127</p></td>
+</tr>
+</tbody>
+</table>
+<p>We can put the population data into a Series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pandas, `as pd` allows us to shorten typing `pandas` to `pd` for each </span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a data series in Pandas</span>
+<span class="n">worldpop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1404</span><span class="p">,</span> <span class="mi">1366</span><span class="p">,</span> <span class="mi">330</span><span class="p">,</span> <span class="mi">269</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">211</span><span class="p">,</span> <span class="mi">206</span><span class="p">,</span> <span class="mi">169</span><span class="p">,</span> <span class="mi">146</span><span class="p">,</span> <span class="mi">127</span><span class="p">])</span>
+
+<span class="c1"># Give our series a name</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;World Population (In Millions)&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">worldpop</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Underneath the Series is a <code class="docutils literal notranslate"><span class="pre">dtype</span></code> which describes the way the data is stored in the Series. Here we see <code class="docutils literal notranslate"><span class="pre">int64</span></code>, denoting the data is a 64-bit integer.</p>
+<div class="section" id="iloc-integer-location-selection">
+<h2><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> Integer Location Selection<a class="headerlink" href="#iloc-integer-location-selection" title="Permalink to this headline">¶</a></h2>
+<p>To the left of each Series is an index number. This index number is very similar to a Python list index; it can help us reference a particular row for data retrieval. Also, like a Python list, the index to a Series begins with 0. We can retrieve individual elements in a Series using the <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> attribute, which stands for “integer location.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the 4th element in our series</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return a slice of elements in our series</span>
+<span class="c1"># This slice will not include element 4</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, our Series has a numerical index like a Python list, but it would be much easier to use if our Series had names like a Python dictionary. We can</p>
+<p>It is cumbersome to remember the index number for each country, so we can instead give each row an index with names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the index to use names instead of numerical indexes</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;China&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;India&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;United States&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Indonesia&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Pakistan&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Brazil&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Nigeria&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Bangladesh&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Russia&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Mexico&#39;</span>
+<span class="p">]</span>
+
+<span class="n">worldpop</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loc-location-selection">
+<h2><code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> Location Selection<a class="headerlink" href="#loc-location-selection" title="Permalink to this headline">¶</a></h2>
+<p>Now we can also reference each element by its index name, very similar to how we can supply a key to a dictionary to get a value. We use the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> attribute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the series value for Nigeria</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Nigeria&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return a series value for Indonesia and Mexico</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Indonesia&#39;</span><span class="p">,</span> <span class="s1">&#39;Mexico&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return a slice from Nigeria to Russia</span>
+<span class="c1"># This slice will include the final element!</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Nigeria&#39;</span><span class="p">:</span><span class="s1">&#39;Russia&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A Series is like an ordered dictionary. In fact, we can create a Series out of a list (where the index will automatically be numerical starting at 0) or a dictionary (where the keys are the index).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a Series from a dictionary</span>
+<span class="c1"># Based on most populous cities in the world according to Wikipedia</span>
+
+<span class="n">worldcitiespop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>
+    <span class="s1">&#39;Tokyo&#39;</span><span class="p">:</span> <span class="mi">37</span><span class="p">,</span>
+    <span class="s1">&#39;Delhi&#39;</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span>
+    <span class="s1">&#39;Shanghai&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s1">&#39;São Paulo&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+    <span class="s1">&#39;Mexico City&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+    <span class="s1">&#39;Cairo&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s1">&#39;Mumbai&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="s1">&#39;Beijing&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="s1">&#39;Dhaka&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="s1">&#39;Osaka&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+<span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;World City Populations (In Millions)&#39;</span><span class="p">)</span>
+
+<span class="c1">#Return the series</span>
+<span class="n">worldcitiespop</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boolean-expressions">
+<h2>Boolean Expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this headline">¶</a></h2>
+<p>We have seen already how we can select a particular value in a series by using an index name or number. We can also select particular values using Boolean expressions. An expression will evaluate to a Truth Table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which countries have populations greater than 200 million?</span>
+<span class="n">worldpop</span> <span class="o">&gt;</span> <span class="mi">200</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of evaluating to a Truth Table, we can also evaluate to a smaller series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluate worldpop for `worldpop &gt; 200`</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">worldpop</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">]</span>
+
+<span class="c1"># If we wanted to save this to a new series variable</span>
+<span class="c1">#new_series = worldpop[worldpop &gt; 200]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas uses <code class="docutils literal notranslate"><span class="pre">|</span></code> to represent <code class="docutils literal notranslate"><span class="pre">or</span></code> operations. It uses <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> to represent <code class="docutils literal notranslate"><span class="pre">and</span></code> operations. We can also use <code class="docutils literal notranslate"><span class="pre">~</span></code> for negation.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pandas Operator</p></th>
+<th class="head"><p>Boolean</p></th>
+<th class="head"><p>Requires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&amp;</p></td>
+<td><p>and</p></td>
+<td><p>All required to <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>|</p></td>
+<td><p>or</p></td>
+<td><p>If any are <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>~</p></td>
+<td><p>not</p></td>
+<td><p>The opposite</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">worldpop</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">worldpop</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">worldpop</span> <span class="o">&lt;</span> <span class="mi">250</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="modifying-a-series">
+<h2>Modifying a Series<a class="headerlink" href="#modifying-a-series" title="Permalink to this headline">¶</a></h2>
+<p>We can use an initialization statement to change a value in our Series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the population of China to 1500</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;China&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1500</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">worldpop</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the population of several countries based on an expression</span>
+<span class="n">worldpop</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">worldpop</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">worldpop</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary-of-pandas-series">
+<h2>Summary of Pandas Series<a class="headerlink" href="#summary-of-pandas-series" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A Series is a single column of data that may contain a Name and Index</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> to select a row by index number</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.loc</span></code> to select a row by index name</p></li>
+<li><p>Use an initialization statement to change values</p></li>
+<li><p>Boolean operators include &amp; (and), | (or), ~ (negation)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="pandas-dataframe">
+<h1>Pandas DataFrame<a class="headerlink" href="#pandas-dataframe" title="Permalink to this headline">¶</a></h1>
+<p>If a Series is like a column of data, a DataFrame is like a table connecting multiple columns together. DataFrames can contain thousands or millions of rows and columns. When working with DataFrames, we are usually using a dataset that has been compiled by someone else. Often the data will be in the form of a CSV or Excel file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Create a DataFrame `df` from the CSV file &#39;sample2.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sample2.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;Username&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exploring-dataframe-contents">
+<h2>Exploring DataFrame Contents<a class="headerlink" href="#exploring-dataframe-contents" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have a DataFrame called <code class="docutils literal notranslate"><span class="pre">df</span></code>, we need to learn a little more about its contents. The first step is usually to explore the DataFrame’s attributes. Attributes are properties of the dataset (not functions), so they do not have parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> after them.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Reveals</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>.shape</p></td>
+<td><p>The number of rows and columns</p></td>
+</tr>
+<tr class="row-odd"><td><p>.info</p></td>
+<td><p>The shape plus the first and last 5 rows</p></td>
+</tr>
+<tr class="row-even"><td><p>.columns</p></td>
+<td><p>The name of each column</p></td>
+</tr>
+<tr class="row-odd"><td><p>.rows</p></td>
+<td><p>The name of each row</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use `.shape` to find rows and columns in the DataFrame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use `.info` to find the shape plus the first and last five rows of the DataFrame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use `.columns` to find the name of each column (if they are named)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">.index</span></code> attribute to discover the name for each row in our DataFrame. We set the index column to <code class="docutils literal notranslate"><span class="pre">Username</span></code>, but <code class="docutils literal notranslate"><span class="pre">Identifier</span></code> would also make sense. If no column is chosen, a numeric index is created starting at 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use `.index` to list the rows of our DataFrame</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preview-with-head-and-tail">
+<h2>Preview with <code class="docutils literal notranslate"><span class="pre">.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail()</span></code><a class="headerlink" href="#preview-with-head-and-tail" title="Permalink to this headline">¶</a></h2>
+<p>We can also use the <code class="docutils literal notranslate"><span class="pre">.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail</span></code> methods to get a preview of our DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use `.head()` to see the first five lines</span>
+<span class="c1"># Pass an integer into .head() to see a different number of lines</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use `.tail()` to see the last five lines</span>
+<span class="c1"># Pass an integer into .tail() to see a different number lines</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="display-more-rows-or-columns">
+<h3>Display More Rows or Columns<a class="headerlink" href="#display-more-rows-or-columns" title="Permalink to this headline">¶</a></h3>
+<p>By default, Pandas limits the number of rows and columns to display. If desired, we can increase or decrease the number to display. If your DataFrame has limited number of rows or columns, you may wish to show all of them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show all columns</span>
+<span class="c1"># Set `None` to an integer to show a set number</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Show all rows</span>
+<span class="c1"># Set `None` to an integer to show a set number</span>
+<span class="c1"># Be careful if your dataset is thousands of lines long!</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="change-column-names">
+<h2>Change Column Names<a class="headerlink" href="#change-column-names" title="Permalink to this headline">¶</a></h2>
+<p>If we wanted to change the column names, one option is to modify the original data file. We can also change the column names in the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Updating all column names at once</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Identifier&#39;</span><span class="p">,</span> <span class="s1">&#39;First name&#39;</span><span class="p">,</span> <span class="s1">&#39;Last name&#39;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Updating a single column name</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;Login email&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reset-the-index">
+<h2>Reset the Index<a class="headerlink" href="#reset-the-index" title="Permalink to this headline">¶</a></h2>
+<p>When we created the dataframe, we used the <code class="docutils literal notranslate"><span class="pre">index_col</span></code> attribute to set the index column to the <code class="docutils literal notranslate"><span class="pre">Username</span></code> column.</p>
+<p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv('data/sample2.csv',</span> <span class="pre">index_col='Username')</span></code></p>
+<p>We could reset the index to a numerical index starting at 0 using the <code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reset the Index for the DataFrame to integers</span>
+<span class="c1"># creating a new column</span>
+<span class="c1"># Passing a `inplace=True` makes the change immediately</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For many operations that will alter a DataFrame, such as <code class="docutils literal notranslate"><span class="pre">.reset_index</span></code>, the changes will be previewed unless a <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code> parameter is passed. This allows users to preview changes to the data before implementing them in a permanent fashion. Of course, you should always work on a copy of your data in case a manipulation goes awry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Confirm index has not been changed</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make the change to reset the index</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Print the index, now changed</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the index back to `Username`</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sorting-the-index">
+<h2>Sorting the Index<a class="headerlink" href="#sorting-the-index" title="Permalink to this headline">¶</a></h2>
+<p>We can sort the index by using <code class="docutils literal notranslate"><span class="pre">sort_index()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort the DataFrame by ascending order</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort by descending order</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loc-and-iloc-selection">
+<h2><code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> Selection<a class="headerlink" href="#loc-and-iloc-selection" title="Permalink to this headline">¶</a></h2>
+<p>Like Series, DataFrames can use the <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> methods for selection. To select a particular element, we need to supply a row <em>and</em> a column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># View our DataFrame for reference</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the value for the specified row and column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the value for the specified row and column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;booker12&#39;</span><span class="p">,</span> <span class="s1">&#39;First name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select an entire row</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;redtree333&#39;</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Technically, we could also use: <code class="docutils literal notranslate"><span class="pre">df.loc['redtree333']</span></code> for the same result, but including the <code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">:</span></code> makes our row and column selections explicit, where the <code class="docutils literal notranslate"><span class="pre">:</span></code> is basically a slice that includes the whole column. Using a <code class="docutils literal notranslate"><span class="pre">:</span></code> is required if we want to select an entire column using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> since the row selection comes before the column selection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select an entire column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Login email&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, we can use the <code class="docutils literal notranslate"><span class="pre">:</span></code> to make a slice using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> or <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Slicing rows and columns using `.iloc`</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note that <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> slicing is not inclusive of the final value, similar to a Python list</strong>. On the other hand, <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> slicing <em>is</em> inclusive. The reason for this difference is that it would make the code confusing since we would need to include whatever name is <em>after</em> the name we want to include.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Slicing rows and columns using `.loc`</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;booker12&#39;</span><span class="p">:</span><span class="s1">&#39;french999&#39;</span><span class="p">,</span> <span class="s1">&#39;Login email&#39;</span><span class="p">:</span><span class="s1">&#39;First name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Boolean Expressions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>We can also use Boolean expressions to select based on the contents of the elements. We can use these expressions to create filters for selecting particular rows or columns.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pandas Operator</p></th>
+<th class="head"><p>Boolean</p></th>
+<th class="head"><p>Requires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&amp;</p></td>
+<td><p>and</p></td>
+<td><p>All required to <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>|</p></td>
+<td><p>or</p></td>
+<td><p>If any are <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>~</p></td>
+<td><p>not</p></td>
+<td><p>The opposite</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return a Truth Table for the `Identifier` column</span>
+<span class="c1"># Where the Identifier is more than 4000</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Identifier&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview every row where the Identifier is more than 4000</span>
+<span class="n">id_filter</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Identifier&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4000</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">id_filter</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># Alternatively, the whole expression can be written out</span>
+<span class="c1"># But this can be a little more difficult to read</span>
+<span class="c1"># In this case, it is a good idea to include parentheses</span>
+<span class="c1"># To make clear the row filter is one expression</span>
+<span class="c1">#df.loc[(df.loc[:, &#39;Identifier&#39;] &gt; 4000), :]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview every row with Last name not &quot;Smith&quot;</span>
+<span class="n">name_filter</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Last name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Smith&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">name_filter</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select the row with `First Name` of Jamie</span>
+<span class="c1"># And last name of `Smith`</span>
+<span class="n">name_filter</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Last name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Smith&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;First name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Jamie&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">name_filter</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find every row with Last Name not `Smith`</span>
+<span class="n">name_filter</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Last name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Smith&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">name_filter</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># Or alternatively</span>
+<span class="c1">#name_filter = (df.loc[:, &#39;Last name&#39;] != &#39;Smith&#39;)</span>
+<span class="c1">#df.loc[name_filter, :]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="modifying-a-dataframe">
+<h2>Modifying a DataFrame<a class="headerlink" href="#modifying-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>A single element can be changed with an initialization statement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change a value using `.loc[]`</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;jenkins46&#39;</span><span class="p">,</span> <span class="s1">&#39;First name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Mark&#39;</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use filters for more powerful manipulation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a string filter that checks for email addresses containing</span>
+<span class="c1"># &#39;example.com&#39;. For missing (na) elements, output `False` instead of NaN.</span>
+<span class="n">email_filt</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Login email&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;example.com&#39;</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">email_filt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Re-Initialize `df` without the users with no email address</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">email_filt</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dropping-rows-without-data">
+<h2>Dropping Rows Without Data<a class="headerlink" href="#dropping-rows-without-data" title="Permalink to this headline">¶</a></h2>
+<p>There is also a <code class="docutils literal notranslate"><span class="pre">.dropna()</span></code> method specifically for dropping rows without data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recreate the DataFrame `df` from the CSV file &#39;sample2.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/sample2.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;Username&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="c1"># Confirm the NaN fields have returned</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all rows without a `Login email` using `.dropna()`</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Login email&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="c1"># Confirm the fields were dropped</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary-of-pandas-dataframes">
+<h2>Summary of Pandas DataFrames<a class="headerlink" href="#summary-of-pandas-dataframes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A DataFrame has multiple rows and columns</p></li>
+<li><p>Use attributes along with <code class="docutils literal notranslate"><span class="pre">.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail()</span></code> to explore the DataFrame</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> and <code class="docutils literal notranslate"><span class="pre">.loc</span></code> to select an column, row, or element</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code> to confirm certain manipulations</p></li>
+<li><p>Filters and Boolean Operators can be powerful selectors</p></li>
+<li><p>Use an initialization statement to change one or many elements</p></li>
+<li><p>Drop rows without data using the <code class="docutils literal notranslate"><span class="pre">.dropna()</span></code> method</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>. The code is licensed under a <a href="https://choosealicense.com/licenses/gpl-3.0/#">GNU General Public License v3.0</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
