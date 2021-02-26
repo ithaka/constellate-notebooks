@@ -1,8 +1,9 @@
 #!/bin/sh
 set -e
 
-pip install watchdog[watchmedo]
-jupyter-book build --all .
+# To use this install
+# pip install watchdog[watchmedo]
+
 
 watchmedo shell-command \
     --patterns="*.ipynb;*.md" \

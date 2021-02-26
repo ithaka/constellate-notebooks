@@ -2,12 +2,25 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: book/intro
-- part: Beginner Lessons
+- part: Workshop
   chapters:
+  - file: book/chapters/why-text-analysis
+    title: Day 1 - Why Text Analysis?
+
   - file: book/chapters/pybasics
-    title: Python Basics
+    title: Day 2 - Python Basics I
     sections:
     - file: getting-started-with-jupyter
     - file: python-basics-1.ipynb
+
+  - file: book/chapters/pybasics
+    title: Day 3 - Python Basics II
+    sections:
+    - file: getting-started-with-jupyter
     - file: python-basics-2.ipynb
     - file: python-basics-3.ipynb
+
+  - file: book/chapters/word-frequencies.md
+    title: Day 4 - Exploring Word Frequencies
+    sections:
+    - file: exploring-word-frequencies.ipynb
