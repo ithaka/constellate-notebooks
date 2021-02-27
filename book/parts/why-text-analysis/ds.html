@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why should data scientists and business professionals learn text analysis? &#8212; Constellate Polaris</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Why should librarians and information professionals learn text analysis?" href="lib.html" />
+    <link rel="prev" title="Why should digital humanists learn text analysis?" href="dh.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Constellate Polaris</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Polaris: A Guide to Teaching and Learning Text Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Why learn text analysis?
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dh.html">
+   Digital humanists
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data scientists and business professionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lib.html">
+   Librarians and information professionals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Beginner Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../getting-started-with-jupyter.html">
+   Getting started with Jupyter Notebooks title
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-1.html">
+   Python Basics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-2.html">
+   Python Basics 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-3.html">
+   Python Basics 3
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/book/parts/why-text-analysis/ds.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/parts/why-text-analysis/ds.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/parts/why-text-analysis/ds.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-literacy-is-at-the-heart-of-business-research">
+   Data literacy is at the heart of business research
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-skills-are-in-demand">
+   Data skills are in demand
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leveraging-business-data-to-help-your-customers">
+   Leveraging business data to help your customers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-difficult-is-text-analysis-to-learn">
+   How difficult is text analysis to learn?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-long-will-it-take-me-to-learn-text-analysis">
+   How long will it take me to learn text analysis?
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="why-should-data-scientists-and-business-professionals-learn-text-analysis">
+<h1>Why should data scientists and business professionals learn text analysis?<a class="headerlink" href="#why-should-data-scientists-and-business-professionals-learn-text-analysis" title="Permalink to this headline">¶</a></h1>
+<p>You may have heard buzz in the business world about text analysis, artificial intelligence, or big data. But if you’re skilling up to advance your career or to solve an existing company problem, it is not obvious why text analysis matters. Many businesses operate without data science insights from text analysis (and we all know a few businesses likely to continue for decades more), but there is no doubt that interest in text analysis for business insights is growing. How can learning text analysis give you an edge?</p>
+<div class="section" id="data-literacy-is-at-the-heart-of-business-research">
+<h2>Data literacy is at the heart of business research<a class="headerlink" href="#data-literacy-is-at-the-heart-of-business-research" title="Permalink to this headline">¶</a></h2>
+<p>Twenty years ago, the data available for business insights could be handled by a few specialized individuals. Today, it is clear that digital data is <em>the main record</em>, not just for businesses, but for all of human society. Even small businesses often have more data than they have the expertise to understand and put to use. The ability to search, manipulate, clean, and connect digital records has become essential for informing decisions from the C-suite to middle management. While we often think of business insights coming from numerical data, the vast majority of data in any business is actually unstructured, text data including internal email, user feedback, social media, and transaction data. The opportunity for business insights from textual data are enormous, but only for people who can find and connect the most relevant information from an ocean of data.</p>
+</div>
+<div class="section" id="data-skills-are-in-demand">
+<h2>Data skills are in demand<a class="headerlink" href="#data-skills-are-in-demand" title="Permalink to this headline">¶</a></h2>
+<p>One job has consistently topped Glassdoor’s list of best jobs in recent years (2016-2019): data scientist. Data skills are in-demand because all businesses have data, but not all have the skills to find the insights in their data. Key insights increasingly come from textual data. Companies need experts who can extract the sentiment from customer service calls, gather customer demographic or location data from social media, build bots that assist user support, or redact sensitive information from internal research. The business applications of text analysis surround us every day. Text analysis is behind the auto-suggest on your phone, it filters the spam out of your email, it helps suggest movies for you on Netflix. In this information age, with the onset of “big data,” text analysis helps us read, interpret, and act on data at enterprise scales.</p>
+<p>For businesses that have significant data, the primary advantage that text mining offers is an ability to drive (and in some cases, automate) key business decisions based on insights from large-scale, unstructured textual data. While numerical data remains the most compelling and tractable form of business data, almost all businesses have significant bodies of textual data that sit dormant, in part, because no one on staff possesses the skills to unlock their potential.</p>
+</div>
+<div class="section" id="leveraging-business-data-to-help-your-customers">
+<h2>Leveraging business data to help your customers<a class="headerlink" href="#leveraging-business-data-to-help-your-customers" title="Permalink to this headline">¶</a></h2>
+<p>If your business is of a certain size, you’re certainly gathering data on your customers and users. Maybe you have some text data that is structured (or data you <em>wish</em> was structured) in the form of customer names, addresses, email addresses, or past purchases. Text analysis can help turn unstructured data into structured data, but it can also help make unstructured textual data tractable and actionable. Consider the data your company has.</p>
+<ul class="simple">
+<li><p>Do you collect written feedback from customers?</p></li>
+<li><p>Do you offer customer service or call-center help?</p></li>
+<li><p>Do your products have written documentation?</p></li>
+<li><p>Does your marketing team interact with social media?</p></li>
+<li><p>Does your business use email? (In 2019, 188 million emails were sent every minute!)</p></li>
+</ul>
+</div>
+<div class="section" id="how-difficult-is-text-analysis-to-learn">
+<h2>How difficult is text analysis to learn?<a class="headerlink" href="#how-difficult-is-text-analysis-to-learn" title="Permalink to this headline">¶</a></h2>
+<p>For many, text analysis sounds <em>potentially</em> powerful and useful, but the reality remains that learning text analysis is not a trivial task. To become proficient, you’ll have to learn a programming language like Python or R. If you’re not doing formal coursework in linguistics or computer science, it may feel like getting started is impossible. That’s as true for students as it is for professors and librarians. The good news is that programming and text analysis, like any skills, can be learned to a greater or lesser degree. Mastering a language can take many years, but you don’t need to master programming to get started.</p>
+<p>If you want to do international business, it is very helpful to speak a second language. Still, there are plenty of successful business people that never learn a second language (or learn just enough to navigate local resources significant to their business interests). You don’t need to know everything about Python or everything about text analysis. You just need to learn enough to leverage the data your company has available.</p>
+</div>
+<div class="section" id="how-long-will-it-take-me-to-learn-text-analysis">
+<h2>How long will it take me to learn text analysis?<a class="headerlink" href="#how-long-will-it-take-me-to-learn-text-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The answer to, “How long will it take me to learn text analysis?” depends on the skills you want to learn.</p>
+<p>Instead of trying to learn everything, you should focus on the things likely to be beneficial given the data you have access to. To get started, you need to understand the possible applications for text analysis, so you are in a good position to decide what to learn (and how much). Even if you have no programming experience, it is reasonable to expect you could be doing beginner-level text analysis methods in a few weeks and intermediate-level text analysis methods in a month.</p>
+<p>Let’s consider a few methods that could help any business.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/parts/why-text-analysis"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="dh.html" title="previous page">Why should digital humanists learn text analysis?</a>
+    <a class='right-next' id="next-link" href="lib.html" title="next page">Why should librarians and information professionals learn text analysis?</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

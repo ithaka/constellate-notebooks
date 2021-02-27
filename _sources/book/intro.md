@@ -1,4 +1,3 @@
-Demonstrating Jupyter Book
+Polaris: A Guide to Teaching and Learning Text Analysis
 ============================
-
-This is a short demonstration Jupyter Book, intended to explore the features of Jupyter Book for an Open Educational Repository for text analysis.
+Welcome to *Polaris: A Guide to Teaching and Learning Text Analysis*. This website is a [Jupyter Book](https://jupyterbook.org) intended to help teachers (and aspiring teachers) of text analysis. 

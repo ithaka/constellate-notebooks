@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why should digital humanists learn text analysis? &#8212; Constellate Polaris</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Why should data scientists and business professionals learn text analysis?" href="ds.html" />
+    <link rel="prev" title="Polaris: A Guide to Teaching and Learning Text Analysis" href="../../intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Constellate Polaris</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Polaris: A Guide to Teaching and Learning Text Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Why learn text analysis?
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Digital humanists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ds.html">
+   Data scientists and business professionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lib.html">
+   Librarians and information professionals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Beginner Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../getting-started-with-jupyter.html">
+   Getting started with Jupyter Notebooks title
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-1.html">
+   Python Basics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-2.html">
+   Python Basics 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-3.html">
+   Python Basics 3
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/book/parts/why-text-analysis/dh.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/parts/why-text-analysis/dh.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/parts/why-text-analysis/dh.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-evidence-for-research">
+   More Evidence for Research
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="why-should-digital-humanists-learn-text-analysis">
+<h1>Why should digital humanists learn text analysis?<a class="headerlink" href="#why-should-digital-humanists-learn-text-analysis" title="Permalink to this headline">¶</a></h1>
+<p>You may have heard buzz on campus about text analysis, artificial intelligence, or big data. But if you’re a scholar, librarian, student, or staff member who has never used data in their research, it is not obvious why text analysis matters. Many disciplines have eschewed text analysis for decades (and we all know a few faculty members likely to continue for decades more), but there is no doubt that interest in the field is growing. Why should you learn text analysis when you could be doing traditional research right now?</p>
+<ol class="simple">
+<li><p><strong>The Future of Humanities Research Depends on Data Literacy</strong></p></li>
+</ol>
+<p>Twenty years ago, working with data was mostly reserved for the sciences and social sciences, but today it is clear that digital data has become the primary publishing and archival format for humankind. The ability to search and manipulate that record is what will allow future researchers to find important information. Historians of the future looking at our present moment will need to be able to analyze emails, text messages, websites, social media, and other digital files. How well can we really understand history and society if we are not prepared to search, read, and interpret digital records in the form of primary sources?</p>
+<ol class="simple">
+<li><p><strong>Data Skills are in Demand</strong></p></li>
+</ol>
+<p>In a world where tenure-track positions in the humanities are the exception rather than the norm, humanities scholars need a flexible skillset that prepares them for working inside and outside the academy. Text analysis is a valuable skill. (There is a reason that Data Scientist has been chosen as the best job according to Glassdoor in 2016, 2017, 2018, and 2019.)</p>
+<p>Text analysis is behind the auto-suggest on your phone; it filters the spam out of your email; and it helps suggest movies for you on Netflix. In this information age, with the onset of “big data,” text analysis helps us “read” and “interpret” more than is humanly possible. Text analysis skills are valuable in the academic world and the commercial sector.</p>
+<ol class="simple">
+<li><p><strong>Assessing the Social Effects of Data-Driven Decision-Making is a Humanities Problem</strong></p></li>
+</ol>
+<p>Even if you don’t use text analysis for your own research, it is important to understand a little about how it works because text analysis already drives the way decisions are made in research, in business, and in government. Text analysis and machine algorithms are deciding what webpages you see, who gets a loan from the bank, and how politicians make policy decisions. The issues surrounding text analysis are humanist issues, not merely technical, but social, ethical, and legal.</p>
+<ol class="simple">
+<li><p><strong>Text analysis enables new research insights</strong></p></li>
+</ol>
+<p>For researchers, the primary advantage that text and data mining offer is an ability to consider knowledge at non-human scales (both very big and very small). Text analysis can enable us to consider a million books across a hundred-dimensional space, revealing aspects of our records that are not obvious to human readers whether those aspects are imperceptibly small, diffused across centuries, or simply within records never read. What does that mean in practice though?</p>
+<div class="section" id="more-evidence-for-research">
+<h2>More Evidence for Research<a class="headerlink" href="#more-evidence-for-research" title="Permalink to this headline">¶</a></h2>
+<p>The short answer is more evidence (and more kinds of evidence) for interrogating humanities problems. Dan Cohen, Professor of History at Northeastern University, asks, ‘how much evidence is enough?’:</p>
+<blockquote>
+<div><p>Many humanities scholars have been satisfied, perhaps unconsciously, with the use of a limited number of cases or examples to prove a thesis. Shouldn’t we ask, like the Victorians, what can we do to be most certain about a theory or interpretation? If we use intuition based on close reading, for instance, is that enough?</p>
+<p>Should we be worrying that our scholarship might be anecdotally correct but comprehensively wrong? Is 1 or 10 or 100 or 1000 books an adequate sample to know the Victorians? What might we do with all of Victorian literature—not a sample, or a few canonical texts, as in Houghton’s work, but all of it.</p>
+<p><a class="reference external" href="http://dancohen.org/2010/10/04/searching-for-the-victorians/">“Searching for the Victorians” (2010)</a></p>
+</div></blockquote>
+<p>To operate as a researcher in the 21st century is to be confronted with the challenges and opportunities of data—at once both being overwhelmed by too much and yet not nearly enough of <em>the right kind</em>.</p>
+<p>As Miriam Posner, Assistant Professor in Information Studies at UCLA, has pointed out,</p>
+<blockquote>
+<div><p>…even if they don’t call their sources data, traditional humanists do have pretty pressing data-management needs.</p>
+<p><a class="reference external" href="https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/">“Humanities Data: A Necessary Contradiction” (2015)</a></p>
+</div></blockquote>
+<p>Tom Scheinfeldt, Associate Professor of Digital Humanities at University of Connecticut, has suggested that data concerns are becoming the primary concern of the humanities:</p>
+<blockquote>
+<div><p>The new technology of the Internet has shifted the work of a rapidly growing number of scholars away from thinking big thoughts to forging new tools, methods, materials, techniques, and modes or work that will enable us to harness the still unwieldy, but obviously game-changing, information technologies now sitting on our desktops and in our pockets. These concerns touch all scholars.</p>
+<p><a class="reference external" href="http://dancohen.org/2010/10/04/searching-for-the-victorians/">“Sunset for Ideology, Sunrise for Methodology” (2008)</a></p>
+</div></blockquote>
+<p>Indeed, humanists cannot afford to ignore computational methods since they are, for better or worse, at the heart of modern culture and industry. Future humanists will not be able to study our digital present without becoming adept at reading and manipulating the burgeoning data of our historical record. Ted Underwood, Associate Professor in Information Science at The University of Illinois, describes this new horizon:</p>
+<blockquote>
+<div><p>It is becoming clear that we have narrated literary history as a sequence of discrete movements and periods because chunks of that size are about as much of the past as a single person could remember and discuss at one time. Apparently, longer arcs of change have been hidden from us by their sheer scale—just as you can drive across a continent noticing mountains and political boundaries but never the curvature of the earth. A single pair of eyes at ground level can’t grasp the curve of the horizon, and arguments limited by a single reader’s memory can’t reveal the largest patterns organizing literary history.</p>
+<p><a class="reference external" href="https://www.press.uchicago.edu/ucp/books/book/chicago/D/bo35853783.html"><em>Distant Horizons: Digital Evidence and Literary Change</em> (2019)</a></p>
+</div></blockquote>
+<p>For many scholars, text analysis sounds <em>potentially</em> powerful and useful, but the reality remains that learning text analysis is not a trivial task. Most learners are forced to learn on their own since there are few college courses in this work outside of data science courses. That means most learners lack access to the proper learning resources and struggle to find community support when things get difficult.</p>
+<p>The good news is that text analysis, like any skill, can be learned to a greater or lesser degree. For historians to study the early modern period, it is very helpful to have a command of Latin. Still, there are plenty of successful early modern scholars that never learn the language (or learn enough to navigate the resources significant to their research).</p>
+<p>Depending on your research question, <em>you may not need to learn much coding</em> to do text analysis. The problem for many scholars is the possible applications for text analysis are not clear, so they are not in a good position to decide what to learn (and how much). At the same time, the sophistication needed for doing text analysis is a moving target. Topic modeling was once a very complicated task, requiring an understanding of the command line. Today, it can be accomplished in minutes using just a mouse.</p>
+<p>The answer to “should I learn text analysis?” is ultimately an individual choice that each scholar must make for themself. Finding out your answer is not hard <em>if you know what tools and methods exist and how they may (or may not) enrich your research</em>. Only when you understand the opportunities (and associated time-cost of learning each method) can you decide if learning text analysis is likely to benefit your research and advance your career. Let’s do that now.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/parts/why-text-analysis"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">Polaris: A Guide to Teaching and Learning Text Analysis</a>
+    <a class='right-next' id="next-link" href="ds.html" title="next page">Why should data scientists and business professionals learn text analysis?</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
