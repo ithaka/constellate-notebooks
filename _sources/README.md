@@ -14,7 +14,7 @@ To install the client run the following.
 * `python -m pip install -r requirements.txt`
 * `python tdm_client.py install`
 
-Some of the examples use also use [nltk](https://www.nltk.org/) model files. Download these with:
+Some of the examples use [nltk](https://www.nltk.org/) model files. Download these with:
 
 * `python -m nltk.downloader stopwords wordnet`
 
