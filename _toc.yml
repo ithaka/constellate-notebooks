@@ -2,25 +2,23 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: book/intro
-- part: Workshop
+
+- part: Why learn text analysis?
   chapters:
-  - file: book/chapters/why-text-analysis
-    title: Day 1 - Why Text Analysis?
+  - file: book/parts/why-text-analysis/dh
+    title: Digital humanists
+  - file: book/parts/why-text-analysis/ds
+    title: Data scientists and business professionals
+  - file: book/parts/why-text-analysis/lib
+    title: Librarians and information professionals
 
-  - file: book/chapters/pybasics
-    title: Day 2 - Python Basics I
-    sections:
-    - file: getting-started-with-jupyter
-    - file: python-basics-1.ipynb
-
-  - file: book/chapters/pybasics
-    title: Day 3 - Python Basics II
-    sections:
-    - file: getting-started-with-jupyter
-    - file: python-basics-2.ipynb
-    - file: python-basics-3.ipynb
-
-  - file: book/chapters/word-frequencies.md
-    title: Day 4 - Exploring Word Frequencies
-    sections:
-    - file: exploring-word-frequencies.ipynb
+- part: Beginner Lessons
+  chapters:
+  - file: getting-started-with-jupyter
+    title: Getting started with Jupyter Notebooks title
+  - file: python-basics-1
+    title: Python Basics 1
+  - file: python-basics-2
+    title: Python Basics 2
+  - file: python-basics-3
+    title: Python Basics 3
