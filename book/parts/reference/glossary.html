@@ -1,0 +1,1840 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glossary &#8212; Intro to Text Analysis</title>
+    
+  <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Python Basics 3" href="../../../python-basics-3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Intro to Text Analysis</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Intro to Text Analysis
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Why learn text analysis?
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../why-text-analysis/dh.html">
+   Digital humanists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../why-text-analysis/ds.html">
+   Data scientists and business professionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../why-text-analysis/lib.html">
+   Librarians and information professionals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Beginner Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../getting-started-with-jupyter.html">
+   Getting started with Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-1.html">
+   Python Basics 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-2.html">
+   Python Basics 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python-basics-3.html">
+   Python Basics 3
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Glossary
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/book/parts/reference/glossary.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/parts/reference/glossary.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/parts/reference/glossary.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-programming-interface-api-a-id-api-a">
+   Application Programming Interface (API)
+   <a id="api">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#argument-in-python-a-id-argument-a">
+   Argument (in Python)
+   <a id="argument">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#artificial-intelligence-a-id-artificial-intelligence-a">
+   Artificial Intelligence
+   <a id="artificial-intelligence">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-statement-in-python-a-id-assignment-statement-a">
+   Assignment Statement (in Python)
+   <a id="assignment-statement">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bag-of-words-model-a-id-bag-of-words-a">
+   Bag of Words (Model)
+   <a id="bag-of-words">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliographic-metadata-a-id-bibliographic-metadata-a">
+   Bibliographic Metadata
+   <a id="bibliographic-metadata">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bigram-a-id-bigram-a">
+   Bigram
+   <a id="bigram">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-classification-a-id-bayes-a">
+   Bayesian Classification
+   <a id="bayes">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boolean-operator-a-id-boolean-operator-a">
+   Boolean Operator
+   <a id="boolean-operator">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boolean-value-in-python-a-id-boolean-value-a">
+   Boolean Value (in Python)
+   <a id="boolean-value">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cell-in-a-jupyter-notebook-a-id-cell-a">
+   Cell (in a Jupyter Notebook)
+   <a id="cell">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clean-data-a-id-clean-data-a">
+   Clean Data
+   <a id="clean-data">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering-a-id-clustering-a">
+   Clustering
+   <a id="clustering">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-block-in-python-a-id-code-block-a">
+   Code Block (in Python)
+   <a id="code-block">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-cell-in-a-jupyter-notebook-a-id-code-cell-a">
+   Code Cell (in a Jupyter Notebook)
+   <a id="code-cell">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-operator-in-python-a-id-comparison-operator-a">
+   Comparison Operator (in Python)
+   <a id="comparison-operator">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concordance-a-id-concordance-a">
+   Concordance
+   <a id="concordance">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concatenation-of-strings-in-python-a-id-concatenation-a">
+   Concatenation (of strings in Python)
+   <a id="concatenation">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#content-words-a-id-content-words-a">
+   Content Words
+   <a id="content-words">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#corpus-a-id-corpus-a">
+   Corpus
+   <a id="corpus">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#counter-in-python-a-id-python-counter-a">
+   Counter (in Python)
+   <a id="python-counter">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#csv-file-a-id-csv-file-a">
+   CSV (file)
+   <a id="csv-file">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe-in-pandas-a-id-pandas-dataframe-a">
+   Dataframe (in Pandas)
+   <a id="pandas-dataframe">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-a-id-dataset-a">
+   Dataset
+   <a id="dataset">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataset-id-a-id-dataset-id-a">
+   Dataset ID
+   <a id="dataset-id">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descriptive-metadata-a-id-descriptive-metadata-a">
+   Descriptive Metadata
+   <a id="descriptive-metadata">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionary-in-python-a-id-dictionary-a">
+   Dictionary (in Python)
+   <a id="dictionary">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionary-gensim-a-id-gensim-dictionary-a">
+   Dictionary (gensim)
+   <a id="gensim-dictionary">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discipline">
+   Discipline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expression-in-python-a-id-expression-a">
+   Expression (in Python)
+   <a id="expression">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracted-features-a-id-extracted-features-a">
+   Extracted Features
+   <a id="extracted-features">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#floating-point-number-float-a-id-float-a">
+   Floating-point number (float)
+   <a id="float">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flow-control-statement-in-python-a-id-flow-control-statement-a">
+   Flow Control Statement (in Python)
+   <a id="flow-control-statement">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-in-python-a-id-function-a">
+   Function (in Python)
+   <a id="function">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-words-a-id-function-words-a">
+   Function Words
+   <a id="function-words">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gensim-a-id-gensim-a">
+   Gensim
+   <a id="gensim">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-a-id-git-a">
+   git
+   <a id="git">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-a-id-github-a">
+   GitHub
+   <a id="github">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gitlab-a-id-gitlab-a">
+   GitLab
+   <a id="gitlab">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#global-scope-in-python-a-id-global-scope-a">
+   Global Scope (in Python)
+   <a id="global-scope">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#global-statement-in-python-a-id-global-statement-a">
+   Global Statement (in Python)
+   <a id="global-statement">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#global-variable-in-python-a-id-global-variable-a">
+   Global Variable (in Python)
+   <a id="global-variable">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hathitrust-a-id-hathitrust-a">
+   HathiTrust
+   <a id="hathitrust">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hathitrust-digital-library-a-id-hathitrust-digital-library-a">
+   HathiTrust Digital Library
+   <a id="hathitrust-digital-library">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hathitrust-research-center-htrc-a-id-htrc-a">
+   HathiTrust Research Center (HTRC)
+   <a id="htrc">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#index-number-in-python-a-id-index-number-a">
+   Index Number (in Python)
+   <a id="index-number">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integer-a-id-integer-a">
+   Integer
+   <a id="integer">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#javascript-programming-language-a-id-javascript-a">
+   JavaScript (Programming Language)
+   <a id="javascript">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-javascript-object-notation-a-id-json-a">
+   JSON (JavaScript Object Notation)
+   <a id="json">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-lines-a-id-jsonl-a">
+   JSON Lines
+   <a id="jsonl">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-python-library-a-id-json-python-library-a">
+   json (Python library)
+   <a id="json-python-library">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jstor-a-id-jstor-a">
+   JSTOR
+   <a id="jstor">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jstor-digital-library-a-id-jstor-digital-library-a">
+   JSTOR Digital Library
+   <a id="jstor-digital-library">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyterhub-a-id-jupyterhub-a">
+   JupyterHub
+   <a id="jupyterhub">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyterlab-a-id-jupyterlab-a">
+   JupyterLab
+   <a id="jupyterlab">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-the-software-a-id-the-jupyter-notebook-a">
+   Jupyter Notebook, The (software)
+   <a id="the-jupyter-notebook">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebook-file-a-id-jupyter-notebook-a">
+   Jupyter notebook (file)
+   <a id="jupyter-notebook">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-server-a-id-jupyter-serve-a">
+   Jupyter Server
+   <a id="jupyter-serve">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-value-pair-a-id-key-value-pair-a">
+   Key/Value Pair
+   <a id="key-value-pair">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latent-dirichlet-allocation-lda-a-id-lda-a">
+   Latent Dirichlet Allocation (LDA)
+   <a id="lda">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lemmatization-a-id-lemmatization-a">
+   Lemmatization
+   <a id="lemmatization">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#library-in-python-a-id-library-a">
+   Library (in Python)
+   <a id="library">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-in-python-a-id-list-a">
+   List (in Python)
+   <a id="list">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehensions-in-python-a-id-list-comprehensions-a">
+   List Comprehensions (in Python)
+   <a id="list-comprehensions">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#local-scope-in-python-a-id-local-scope-a">
+   Local Scope (in Python)
+   <a id="local-scope">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#local-variable-in-python-a-id-local-variable-a">
+   Local Variable (in Python)
+   <a id="local-variable">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-a-id-machine-learning-a">
+   Machine Learning
+   <a id="machine-learning">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markdown-cell-in-a-jupyter-notebook-a-id-markdown-cell-a">
+   Markdown Cell (in a Jupyter Notebook)
+   <a id="markdown-cell">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metadata-a-id-metadata-a">
+   Metadata
+   <a id="metadata">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-in-python-a-id-method-a">
+   Method (in Python)
+   <a id="method">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-in-python-a-id-module-a">
+   Module (in Python)
+   <a id="module">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modulo-in-python-a-id-modulo-a">
+   Modulo (in Python)
+   <a id="modulo">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#n-gram-a-id-n-gram-a">
+   N-gram
+   <a id="n-gram">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#named-entity-recognition-ner">
+   Named Entity Recognition (NER)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#natural-language-processing-nlp-a-id-nlp-a">
+   Natural Language Processing (NLP)
+   <a id="nlp">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#natural-language-toolkit-nltk-a-id-nltk-a">
+   Natural Language Toolkit (NLTK)
+   <a id="nltk">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neural-network-in-artificial-intelligence-a-id-neural-network-a">
+   Neural Network (in Artificial Intelligence)
+   <a id="neural-network">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-consumptive-research-a-id-non-consumptive-a">
+   Non-consumptive Research
+   <a id="non-consumptive">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operator-in-python-a-id-operator-a">
+   Operator (in Python)
+   <a id="operator">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optical-character-recognition-ocr-a-id-ocr-a">
+   Optical Character Recognition (OCR)
+   <a id="ocr">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package-in-python-a-id-package-a">
+   Package (in Python)
+   <a id="package">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-in-python-a-id-pandas-a">
+   Pandas (in Python)
+   <a id="pandas">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-in-python-a-id-parameter-a">
+   Parameter (in Python)
+   <a id="parameter">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-of-speech-pos-tagging-a-id-pos-tagging-a">
+   Part of Speech (POS) Tagging
+   <a id="pos-tagging">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plain-text-a-id-plain-text-a">
+   Plain text
+   <a id="plain-text">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#portico">
+   Portico
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-jupyter-a-id-project-jupyter-a">
+   Project Jupyter
+   <a id="project-jupyter">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-programming-language-a-id-python-a">
+   Python (Programming Language)
+   <a id="python">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r-programming-language-a-id-r-a">
+   R (Programming Language)
+   <a id="r">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repository-for-git-github-gitlab-etc-a-id-repository-a">
+   Repository (for git, GitHub, GitLab, etc)
+   <a id="repository">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentiment-analysis-a-id-sentiment-analysis-a">
+   Sentiment Analysis &lt;a id=“sentiment-analysis”)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slice-in-python-a-id-slice-a">
+   Slice (in Python)
+   <a id="slice">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stop-words-list-a-id-stop-words-a">
+   Stop Words (List)
+   <a id="stop-words">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-in-python-a-id-string-a">
+   String (in Python)
+   <a id="string">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tag-cloud-or-word-cloud-a-id-tag-cloud-a">
+   Tag Cloud (or Word Cloud)
+   <a id="tag-cloud">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tdm-client-a-id-tdm-client-a">
+   tdm_client
+   <a id="tdm-client">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tei-xml-a-id-tei-xml-a">
+   TEI XML
+   <a id="tei-xml">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#term-frequency-inverse-document-frequency-tfidf-a-id-tf-idf-a">
+   Term Frequency-Inverse Document Frequency (TFIDF)
+   <a id="tf-idf">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#token-a-id-token-a">
+   Token
+   <a id="token">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topic-modeling-or-topic-analysis-a-id-topic-modeling-a">
+   Topic Modeling (or Topic Analysis)
+   <a id="topic-modeling">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trigram-a-id-trigram-a">
+   Trigram
+   <a id="trigram">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsv-file-a-id-tsv-file-a">
+   TSV (file)
+   <a id="tsv-file">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuple-in-python-a-id-tuple-a">
+   Tuple (in Python)
+   <a id="tuple">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unigram-a-id-unigram-a">
+   Unigram
+   <a id="unigram">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-in-python-a-id-variable-a">
+   Variable (in Python)
+   <a id="variable">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#voyant-a-id-voyant-a">
+   Voyant
+   <a id="voyant">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#word-cloud-a-id-word-cloud-a">
+   Word Cloud
+   <a id="word-cloud">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#word-embedding">
+   Word Embedding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#word-frequency-a-id-word-frequency-a">
+   Word Frequency
+   <a id="#word-frequency">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xml-a-id-xml-a">
+   XML
+   <a id="xml">
+   </a>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="application-programming-interface-api-a-id-api-a">
+<h2>Application Programming Interface (API) <a id="api"></a><a class="headerlink" href="#application-programming-interface-api-a-id-api-a" title="Permalink to this headline">¶</a></h2>
+<p>A protocol that defines communication between a client and server, often used to request data. APIs can help retrieve data from remote repositories, anything from weather to Twitter and Facebook.</p>
+</div>
+<div class="section" id="argument-in-python-a-id-argument-a">
+<h2>Argument (in Python) <a id="argument"></a><a class="headerlink" href="#argument-in-python-a-id-argument-a" title="Permalink to this headline">¶</a></h2>
+<p>An input that is passed into a <a class="reference external" href="#function">function</a>. For example,</p>
+<p><code class="docutils literal notranslate"><span class="pre">print('Hello</span> <span class="pre">World')</span></code></p>
+<p>passes the argument <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">World'</span></code> (a <a class="reference external" href="#string">string</a> <a class="reference external" href="#variable">variable</a>) into a <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. In a <a class="reference external" href="#function">function</a> definition, the variable inside parentheses is called a <a class="reference external" href="#parameter">parameter</a></p>
+</div>
+<div class="section" id="artificial-intelligence-a-id-artificial-intelligence-a">
+<h2>Artificial Intelligence <a id="artificial-intelligence"></a><a class="headerlink" href="#artificial-intelligence-a-id-artificial-intelligence-a" title="Permalink to this headline">¶</a></h2>
+<p>The science of making intelligent machines, especially machines that react to input data in a way similar to a human being. Historically, artificial intelligence has tended to rely on simple if-then statements (e.g. if the user mentions their mother, ask how she is doing), but recent advancements in artificial intelligence have focused on <a class="reference external" href="#machine-learning">machine learning</a>: the ability of machines to rewrite their own algorithms to improve their accuracy.</p>
+</div>
+<div class="section" id="assignment-statement-in-python-a-id-assignment-statement-a">
+<h2>Assignment Statement (in Python) <a id="assignment-statement"></a><a class="headerlink" href="#assignment-statement-in-python-a-id-assignment-statement-a" title="Permalink to this headline">¶</a></h2>
+<p>A statement that creates and/or changes a <a class="reference external" href="#variable">variable</a>. For example,</p>
+<p><code class="docutils literal notranslate"><span class="pre">new_variable</span> <span class="pre">=</span> <span class="pre">7</span></code></p>
+<p>Note that assignment statements use a single <code class="docutils literal notranslate"><span class="pre">=</span></code> sign. They should not be confused with the equality <a class="reference external" href="#comparison-operator">comparison operator</a> <code class="docutils literal notranslate"><span class="pre">==</span></code>, which compares whether two values are equal and returns a <a class="reference external" href="#boolean-value">boolean value</a>, either <strong>True</strong> or <strong>False</strong>.</p>
+</div>
+<div class="section" id="bag-of-words-model-a-id-bag-of-words-a">
+<h2>Bag of Words (Model) <a id ="bag-of-words"></a><a class="headerlink" href="#bag-of-words-model-a-id-bag-of-words-a" title="Permalink to this headline">¶</a></h2>
+<p>A model of texts that counts individual words without regard to grammatical location or phrases. Just as the letters of a Scrabble game are tossed into a bag without order, a “bag of words” model gathers all the words of a text into a “bag” with no regard to where a particular word occurs within the document. In this model, the reader knows every word and its frequency within the text but does not have the context of the word’s use.</p>
+</div>
+<div class="section" id="bibliographic-metadata-a-id-bibliographic-metadata-a">
+<h2>Bibliographic Metadata <a id="bibliographic-metadata"></a><a class="headerlink" href="#bibliographic-metadata-a-id-bibliographic-metadata-a" title="Permalink to this headline">¶</a></h2>
+<p>Also known as “descriptive metadata,” informational <a class="reference external" href="#metadata">metadata</a> that describes a published item such as a book or journal article.  Bibliographic metadata contains data elements to help users identify and retrieve the published items.   It often has a formalized bibliographic format.</p>
+</div>
+<div class="section" id="bigram-a-id-bigram-a">
+<h2>Bigram <a id="bigram"></a><a class="headerlink" href="#bigram-a-id-bigram-a" title="Permalink to this headline">¶</a></h2>
+<p>An <a class="reference external" href="#n-gram">n-gram</a> with a length of two. For example, “chicken stock” is a word bigram.</p>
+</div>
+<div class="section" id="bayesian-classification-a-id-bayes-a">
+<h2>Bayesian Classification <a id="bayes"></a><a class="headerlink" href="#bayesian-classification-a-id-bayes-a" title="Permalink to this headline">¶</a></h2>
+<p>A classification method based on <a class="reference external" href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes’ Theorem</a> that describes the probability of an event based on available prior knowledge. For example, given a dataset of the historical weather conditions (temperature, humidity, windspeed) from December 25th for every year over the last century, will it snow on December 25th, 2027?</p>
+</div>
+<div class="section" id="boolean-operator-a-id-boolean-operator-a">
+<h2>Boolean Operator <a id="boolean-operator"></a><a class="headerlink" href="#boolean-operator-a-id-boolean-operator-a" title="Permalink to this headline">¶</a></h2>
+<p>The operators:</p>
+<ul class="simple">
+<li><p>and</p></li>
+<li><p>or</p></li>
+<li><p>not
+which are used in <a class="reference external" href="#flow-control-statement">flow control statements</a> to connect or separate <a class="reference external" href="#expression">expressions</a> that evaluate to <a class="reference external" href="#boolean-value">Boolean values</a>.</p></li>
+</ul>
+<p>Assuming two expressions are connected by <strong>and</strong>, the combination will evaluate to <strong>True</strong> only if both individual expressions are <strong>True</strong>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Expression</p></th>
+<th class="head"><p>Evaluation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True and True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>True and False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>False and True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>False and False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+<p>Assuming two expressions are connected by <strong>or</strong>, the combination will evaluate to <strong>False</strong> only if both individual expressions are <strong>False</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Expression</p></th>
+<th class="head"><p>Evaluation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True or True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>True or False</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>False or True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>False or False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="boolean-value-in-python-a-id-boolean-value-a">
+<h2>Boolean Value (in Python) <a id="boolean-value"></a><a class="headerlink" href="#boolean-value-in-python-a-id-boolean-value-a" title="Permalink to this headline">¶</a></h2>
+<p>A value of <strong>True</strong> or <strong>False</strong> (first letter must be capitalized) that is assigned to a variable, usually for the purpose of guiding a <a class="reference external" href="#flow-control-statement">flow control statement</a>.</p>
+</div>
+<div class="section" id="cell-in-a-jupyter-notebook-a-id-cell-a">
+<h2>Cell (in a Jupyter Notebook)<a id="cell"></a><a class="headerlink" href="#cell-in-a-jupyter-notebook-a-id-cell-a" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="#code-cell">Code Cell (in a Jupyter Notebook)</a> and <a class="reference external" href="#markdown-cell">Markdown Cell (in a Jupyter Notebook)</a>.</p>
+</div>
+<div class="section" id="clean-data-a-id-clean-data-a">
+<h2>Clean Data <a id="clean-data"></a><a class="headerlink" href="#clean-data-a-id-clean-data-a" title="Permalink to this headline">¶</a></h2>
+<p>Data that has been standardized and corrected for accurate results. This phrase can also be used as a verb such as “to clean data” or “cleaning data.” (Data cleaning is sometimes called “munging.”) In practice, data cleaning makes up the bulk of text analysis work.</p>
+</div>
+<div class="section" id="clustering-a-id-clustering-a">
+<h2>Clustering <a id="clustering"></a><a class="headerlink" href="#clustering-a-id-clustering-a" title="Permalink to this headline">¶</a></h2>
+<p>The statistical process of grouping together similar items. For example, topic analysis may cluster together sets of words that commonly co-occur, genre analysis may attempt to cluster similar genres, or authorship attribution may attempt to cluster novels by the same author. The clusters can be:</p>
+<ul class="simple">
+<li><p>Hard Clusters (mutually exclusive groups)</p></li>
+<li><p>Soft/Fuzzy Clusters (items may be in multiple groups)</p></li>
+<li><p>Hierarchal Clusters (part of hierarchy)</p></li>
+</ul>
+<p><img alt="visualization of cluster types" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/clustering_types.png" /></p>
+</div>
+<div class="section" id="code-block-in-python-a-id-code-block-a">
+<h2>Code Block (in Python)<a id="code-block"></a><a class="headerlink" href="#code-block-in-python-a-id-code-block-a" title="Permalink to this headline">¶</a></h2>
+<p>A snippet of code that begins with an indentation. A code block can be a single line or many lines long. Blocks can contain other blocks forming a hierarchal structure. In such a case, the second block is indented an additional degree. Any given block ends when the number of indentations in the current line is less than the number that started the block.</p>
+<p><img alt="Visualization of code block indentations" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/code_block_indentation.png" /></p>
+</div>
+<div class="section" id="code-cell-in-a-jupyter-notebook-a-id-code-cell-a">
+<h2>Code Cell (in a Jupyter Notebook)<a id="code-cell"></a><a class="headerlink" href="#code-cell-in-a-jupyter-notebook-a-id-code-cell-a" title="Permalink to this headline">¶</a></h2>
+<p>A cell in a <a class="reference external" href="#jupyter-notebook">Jupyter notebook</a> that is executable. They can be distinguished by the presence of a set of brackets and a colon to the left of the cell. [ ]:</p>
+<p>See also, <a class="reference external" href="#markdown-cell">Markdown Cell (in a Jupyter Notebook)</a>.</p>
+</div>
+<div class="section" id="comparison-operator-in-python-a-id-comparison-operator-a">
+<h2>Comparison Operator (in Python)<a id="comparison-operator"></a><a class="headerlink" href="#comparison-operator-in-python-a-id-comparison-operator-a" title="Permalink to this headline">¶</a></h2>
+<p>A way to compare two values in Python to see if they are equal, greater than, or less than.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>==</p></td>
+<td><p>Equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>!=</p></td>
+<td><p>Not equal to</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;</p></td>
+<td><p>Less than</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>Greater than</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;=</p></td>
+<td><p>Less than or equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;=</p></td>
+<td><p>Greater than or equal to</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that the equality comparison operator is <code class="docutils literal notranslate"><span class="pre">==</span></code>, whereas a <a class="reference external" href="#variable">variable</a> <a class="reference external" href="#assignment-statement">assignment statement</a> is <code class="docutils literal notranslate"><span class="pre">=</span></code>. An <a class="reference external" href="#expression">expression</a> using a comparison operator will evaluate to a <a class="reference external" href="#boolean-value">boolean value</a>, either <strong>True</strong> or <strong>False</strong>. Comparison operators are used within <a class="reference external" href="#flow-control-statement">flow control statements</a> to determine which code should be executed next.</p>
+</div>
+<div class="section" id="concordance-a-id-concordance-a">
+<h2>Concordance <a id="concordance"></a><a class="headerlink" href="#concordance-a-id-concordance-a" title="Permalink to this headline">¶</a></h2>
+<p>A text analysis method for creating a list of all the occurences of a particular word or phrase. The <a class="reference external" href="https://www.jstor.org/understand/">JSTOR Understanding Series</a>, for example, creates a concordance of every journal article in JSTOR that contains a particular phrase from a work of literature.</p>
+</div>
+<div class="section" id="concatenation-of-strings-in-python-a-id-concatenation-a">
+<h2>Concatenation (of strings in Python)<a id="concatenation"></a><a class="headerlink" href="#concatenation-of-strings-in-python-a-id-concatenation-a" title="Permalink to this headline">¶</a></h2>
+<p>The joining of two or more strings such as with the addition <a class="reference external" href="#operator">operator</a>.</p>
+<blockquote>
+<div><p>‘Hello ’ + ‘World’ + ‘!’</p>
+</div></blockquote>
+<p>evaluates to</p>
+<blockquote>
+<div><p>‘Hello World!’</p>
+</div></blockquote>
+</div>
+<div class="section" id="content-words-a-id-content-words-a">
+<h2>Content Words <a id="content-words"></a><a class="headerlink" href="#content-words-a-id-content-words-a" title="Permalink to this headline">¶</a></h2>
+<p>As opposed to <a class="reference external" href="#function-words">function words</a> (e.g. articles, pronouns, conjuctions), content words (e.g. nouns, verbs, and adjectives) carry greater lexical meaning. Word frequency analysis typically attempts to filter out function words, in order to make content words more prominent. This filtering is accomplished with a <a class="reference external" href="#stop-words">stop words</a> list.</p>
+</div>
+<div class="section" id="corpus-a-id-corpus-a">
+<h2>Corpus <a id="corpus"></a><a class="headerlink" href="#corpus-a-id-corpus-a" title="Permalink to this headline">¶</a></h2>
+<p>A large (and often structured) collection of texts used for analysis. For example, all of the plays written by Shakespeare. A simple example might be a set of plain text files in a folder on your computer. A more complicated example may use <a class="reference external" href="#json">JSON</a>, <a class="reference external" href="#xml">XML</a>, or another form of markup, to allow for deeper analysis. The plural form is corpora.</p>
+<p>See also <a class="reference external" href="#tei-xml">TEI XML</a>.</p>
+</div>
+<div class="section" id="counter-in-python-a-id-python-counter-a">
+<h2>Counter (in Python) <a id="python-counter"></a><a class="headerlink" href="#counter-in-python-a-id-python-counter-a" title="Permalink to this headline">¶</a></h2>
+<p>A data type similar to a <a class="reference external" href="#python-dictionary">Python dictionary</a> with a few key differences:</p>
+<ul class="simple">
+<li><p>A counter object with a value of zero or less, always returns 0</p></li>
+<li><p>When a key is called that doesn’t exist in the counter, it returns 0 instead of an error like in a dictionary</p></li>
+<li><p>A counter object has additional methods for counting including <code class="docutils literal notranslate"><span class="pre">.most_common(x)</span></code> that returns the x most common values.</p></li>
+<li><p>Counter objects can be added, subtracted, as well as being modified through unions (&amp;) and intersections (|)</p></li>
+</ul>
+</div>
+<div class="section" id="csv-file-a-id-csv-file-a">
+<h2>CSV (file) <a id="csv-file"></a><a class="headerlink" href="#csv-file-a-id-csv-file-a" title="Permalink to this headline">¶</a></h2>
+<p>A .csv file, or Comma-Separated Value file, is a simple format for storing structured data where each entry in the file is separated by a comma. Similarly, a <a class="reference external" href="#tsv-file">TSV file</a> uses tabs to separate individual data entries.</p>
+</div>
+<div class="section" id="dataframe-in-pandas-a-id-pandas-dataframe-a">
+<h2>Dataframe (in <a class="reference external" href="#pandas">Pandas</a>) <a id="pandas-dataframe"></a><a class="headerlink" href="#dataframe-in-pandas-a-id-pandas-dataframe-a" title="Permalink to this headline">¶</a></h2>
+<p>The primary data structure for analysis, manipulation, and presentation of data with the <a class="reference external" href="#pandas">Pandas library</a>.</p>
+</div>
+<div class="section" id="dataset-a-id-dataset-a">
+<h2>Dataset <a id="dataset"></a><a class="headerlink" href="#dataset-a-id-dataset-a" title="Permalink to this headline">¶</a></h2>
+<p>A collection of information, usually computer files, used for statistical analysis. Most datasets are digital text (either numbers, words, or both), but they can also be other formats such as image, audio, and/or video content. Datasets are usually referred to as structured, semi-structured, or unstructured.
+Structured data fits into a predetermined format and can usually be represented by a table, spreadsheet, or relational database.
+Unstructured data is more freeform. For example, longform texts, audio, or video content are unstructured.
+Semi-structured data uses tags or elements to mark out structures within an unstructured data set. Email files, for example, have both structured aspects (Sender, Subject, etc.), but the body of an email is usually unstructured.</p>
+</div>
+<div class="section" id="dataset-id-a-id-dataset-id-a">
+<h2>Dataset ID <a id="dataset-id"></a><a class="headerlink" href="#dataset-id-a-id-dataset-id-a" title="Permalink to this headline">¶</a></h2>
+<p>A unique identifier for a <a class="reference external" href="#dataset">dataset</a> created using the <a class="reference external" href="#corpus">corpus</a> builder. A copy of your dataset ID will be sent to you in an email.</p>
+</div>
+<div class="section" id="descriptive-metadata-a-id-descriptive-metadata-a">
+<h2>Descriptive Metadata <a id="descriptive-metadata"></a><a class="headerlink" href="#descriptive-metadata-a-id-descriptive-metadata-a" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="#bibliographic-metadata">bibliographic metadata</a>.</p>
+</div>
+<div class="section" id="dictionary-in-python-a-id-dictionary-a">
+<h2>Dictionary (in Python) <a id="dictionary"></a><a class="headerlink" href="#dictionary-in-python-a-id-dictionary-a" title="Permalink to this headline">¶</a></h2>
+<p>A variable in <a class="reference external" href="#python">Python</a> that stores data in <a class="reference external" href="#key-value-pair">key/value pairs</a>. This differs from a <a class="reference external" href="#python">Python</a> <a class="reference external" href="#list">list</a> which stores data in numberical order beginning with item 0.</p>
+</div>
+<div class="section" id="dictionary-gensim-a-id-gensim-dictionary-a">
+<h2>Dictionary (gensim) <a id="gensim-dictionary"></a><a class="headerlink" href="#dictionary-gensim-a-id-gensim-dictionary-a" title="Permalink to this headline">¶</a></h2>
+<p>A list created by <a class="reference external" href="#gensim">gensim</a> of all the words in a corpus. The command for creating a gensim dictionary:</p>
+<blockquote>
+<div><p>gensim.corpora.Dictionary(documents)</p>
+</div></blockquote>
+<p>Each word in the corpus is assigned a unique gensim dictionary ID starting from 0.</p>
+</div>
+<div class="section" id="discipline">
+<h2>Discipline<a class="headerlink" href="#discipline" title="Permalink to this headline">¶</a></h2>
+<p>An academic field or body of knowledge taught and studied within colleges or universities. Generally academic disciplines are divided into three large groups:</p>
+<ul class="simple">
+<li><p>The Humanities include disciplines like English, History, Law</p></li>
+<li><p>The Sciences include disciplines like Physics, Biology, Mathematics</p></li>
+<li><p>The Social Sciences include include disciplines like Anthropology, Economics, and Sociology</p></li>
+</ul>
+<p>Academic disciplines as divisions are matters of convenience for organizing departments, but many, if not most, professors research in two or more disciplines at a time.</p>
+</div>
+<div class="section" id="expression-in-python-a-id-expression-a">
+<h2>Expression (in Python)<a id="expression"></a><a class="headerlink" href="#expression-in-python-a-id-expression-a" title="Permalink to this headline">¶</a></h2>
+<p>A combination of values and <a class="reference external" href="#operator">operators</a> in Python that evaluate to a single value.</p>
+<blockquote>
+<div><p>2 + 3</p>
+</div></blockquote>
+<p>is an expression using the addition <a class="reference external" href="#operator">operator</a> (+) that evaluates to 5.</p>
+</div>
+<div class="section" id="extracted-features-a-id-extracted-features-a">
+<h2>Extracted Features <a id="extracted-features"></a><a class="headerlink" href="#extracted-features-a-id-extracted-features-a" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="#json">JSON</a> data format for <a class="reference external" href="#non-consumptive">non-consumptive research</a> used by <a class="reference external" href="#htrc">HathiTrust Research Center</a> tools. The format is similar to that used by <a class="reference external" href="#jstor">JSTOR</a> and <a class="reference external" href="#portico">Portico</a>. <a class="reference external" href="https://wiki.htrc.illinois.edu/display/COM/Extracted+Features+Dataset">Read more</a> on the HathiTrust Research Center website.</p>
+</div>
+<div class="section" id="floating-point-number-float-a-id-float-a">
+<h2>Floating-point number (float) <a id="float"></a><a class="headerlink" href="#floating-point-number-float-a-id-float-a" title="Permalink to this headline">¶</a></h2>
+<p>A float is a data type that contains a decimal number that can assigned to a variable as a value. (Other kinds of data types in Python include <a class="reference external" href="#string">strings</a> and <a class="reference external" href="#integer">integers</a>.)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data type</p></th>
+<th class="text-align:center head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Integers</p></td>
+<td class="text-align:center"><p>-5, -3, 0, 5, 201</p></td>
+</tr>
+<tr class="row-odd"><td><p>Floating-point numbers</p></td>
+<td class="text-align:center"><p>-3.74, -3.14, 0.0, 503.4, 506</p></td>
+</tr>
+<tr class="row-even"><td><p>Strings</p></td>
+<td class="text-align:center"><p>‘potatoes’, ‘Hello world!, ‘no’, ‘24 pizzas’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="flow-control-statement-in-python-a-id-flow-control-statement-a">
+<h2>Flow Control Statement (in Python)<a id="flow-control-statement"></a><a class="headerlink" href="#flow-control-statement-in-python-a-id-flow-control-statement-a" title="Permalink to this headline">¶</a></h2>
+<p>A flow control statement guides the actions of a program, helping decide what code should be executed next depending on a series of tests such as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code> statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code> statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+</ul>
+</div>
+<div class="section" id="function-in-python-a-id-function-a">
+<h2>Function (in Python) <a id="function"></a><a class="headerlink" href="#function-in-python-a-id-function-a" title="Permalink to this headline">¶</a></h2>
+<p>A small snippet of code that can be referenced and run easily without having to be rewritten over again. There are three kinds of functions in Python:</p>
+<ul class="simple">
+<li><p>Native functions built into Python</p></li>
+<li><p>Functions others have written that can be imported</p></li>
+<li><p>Functions a programmer defines themself</p></li>
+</ul>
+<p>Functions often take an input, in the form of an <a class="reference external" href="#argument">argument</a>, and return an output.</p>
+</div>
+<div class="section" id="function-words-a-id-function-words-a">
+<h2>Function Words <a id="function-words"></a><a class="headerlink" href="#function-words-a-id-function-words-a" title="Permalink to this headline">¶</a></h2>
+<p>The words in a sentence that have little lexical meaning and express grammatical relationships. Function words include articles, pronouns, and conjunctions. When using a <a class="reference external" href="#word-frequency">word frequency</a> approach, function words are often filtered out in favor of <a class="reference external" href="#content-words">content words</a> using a <a class="reference external" href="#stop-words">stopwords</a> list.</p>
+</div>
+<div class="section" id="gensim-a-id-gensim-a">
+<h2>Gensim <a id="gensim"></a><a class="headerlink" href="#gensim-a-id-gensim-a" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#library">python library</a> for implementing various natural language processing methods, such as <a class="reference external" href="#tf-idf">TF-IDF</a>, <a class="reference external" href="#word2vec">Word2Vec</a>, and <a class="reference external" href="#topic-modeling">Topic Modeling</a>.</p>
+</div>
+<div class="section" id="git-a-id-git-a">
+<h2>git <a id="git"></a><a class="headerlink" href="#git-a-id-git-a" title="Permalink to this headline">¶</a></h2>
+<p>A method for saving versions of your computer code that enables many people to work on a single project. Users can upload and download the most current version of a project’s code in a repository (or “repo”).</p>
+<p>Popular implementations of git include <a class="reference external" href="http://github.com">GitHub</a> and <a class="reference external" href="http://gitlab.com">GitLab</a>.</p>
+</div>
+<div class="section" id="github-a-id-github-a">
+<h2>GitHub <a id="github"></a><a class="headerlink" href="#github-a-id-github-a" title="Permalink to this headline">¶</a></h2>
+<p>A popular implementation of <a class="reference external" href="#git">git</a> code revision management found at <a class="reference external" href="https://github.com">https://github.com</a>.</p>
+</div>
+<div class="section" id="gitlab-a-id-gitlab-a">
+<h2>GitLab <a id="gitlab"></a><a class="headerlink" href="#gitlab-a-id-gitlab-a" title="Permalink to this headline">¶</a></h2>
+<p>A popular implementation of <a class="reference external" href="#git">git</a> code revision management found at <a class="reference external" href="https://gitlab.com">https://gitlab.com</a>.</p>
+</div>
+<div class="section" id="global-scope-in-python-a-id-global-scope-a">
+<h2>Global Scope (in Python) <a id="global-scope"></a><a class="headerlink" href="#global-scope-in-python-a-id-global-scope-a" title="Permalink to this headline">¶</a></h2>
+<p>The entire scope of a program, not just the <a class="reference external" href="#local-scope">local scope</a> of a particular <a class="reference external" href="#function">function</a>. A <a class="reference external" href="#variable">variable</a> created in the global scope is a <a class="reference external" href="#global-variable">global variable</a> that can be read from anywhere in the program. A <a class="reference external" href="#global-variable">global variable</a> can be read within a <a class="reference external" href="#local-scope">local scope</a>, but a <a class="reference external" href="#local-variable">local variable</a> cannot be read at <a class="reference external" href="#global-scope">global scope</a>.</p>
+</div>
+<div class="section" id="global-statement-in-python-a-id-global-statement-a">
+<h2>Global Statement (in Python) <a id="global-statement"></a><a class="headerlink" href="#global-statement-in-python-a-id-global-statement-a" title="Permalink to this headline">¶</a></h2>
+<p>A statement in the <a class="reference external" href="#local-scope">local scope</a> of a <a class="reference external" href="#function">function</a> that declares a <a class="reference external" href="#variable">variable</a> is a <a class="reference external" href="#global-variable">global variable</a>. Without a global statement, the <a class="reference external" href="#variable">variable</a> will be assumed to be a <a class="reference external" href="#local-variable">local variable</a> during an <a class="reference external" href="#assignment-statement">assignment statement</a> (even if there is a <a class="reference external" href="#global-variable">global variable</a> with the same name).</p>
+</div>
+<div class="section" id="global-variable-in-python-a-id-global-variable-a">
+<h2>Global Variable (in Python) <a id="global-variable"></a><a class="headerlink" href="#global-variable-in-python-a-id-global-variable-a" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#variable">variable</a> created in the <a class="reference external" href="#global-scope">global scope</a> of a program. A <a class="reference external" href="#global-variable">global variable</a> can be read within a <a class="reference external" href="#local-scope">local scope</a>, but a <a class="reference external" href="#local-variable">local variable</a> cannot be read at <a class="reference external" href="#global-scope">global scope</a>.</p>
+</div>
+<div class="section" id="hathitrust-a-id-hathitrust-a">
+<h2>HathiTrust <a id="hathitrust"></a><a class="headerlink" href="#hathitrust-a-id-hathitrust-a" title="Permalink to this headline">¶</a></h2>
+<p>A partnership of academic and research institutions, offering access to millions of digitized volumes through the <a class="reference external" href="#hathitrust-digital-library">HathiTrust Digital Library</a>.</p>
+</div>
+<div class="section" id="hathitrust-digital-library-a-id-hathitrust-digital-library-a">
+<h2>HathiTrust Digital Library <a id="hathitrust-digital-library"></a><a class="headerlink" href="#hathitrust-digital-library-a-id-hathitrust-digital-library-a" title="Permalink to this headline">¶</a></h2>
+<p>An online library of ~14 million volumes created by <a class="reference external" href="#hathitrust">HathiTrust</a>. Most of the materials are from research libraries, including content digitized via <a class="reference external" href="https://books.google.com/">Google Books</a> and <a class="reference external" href="https://archive.org/">Internet Archive</a>.</p>
+</div>
+<div class="section" id="hathitrust-research-center-htrc-a-id-htrc-a">
+<h2>HathiTrust Research Center (HTRC)<a id="htrc"></a><a class="headerlink" href="#hathitrust-research-center-htrc-a-id-htrc-a" title="Permalink to this headline">¶</a></h2>
+<p>A partnership between Indiana University and the University of Illinois at Urbana-Champaign that develops a suite of tools and services for text data mining the <a class="reference external" href="#hathitrust-digital-library">HathiTrust Digital Library</a>.</p>
+</div>
+<div class="section" id="index-number-in-python-a-id-index-number-a">
+<h2>Index Number (in Python) <a id="index-number"></a><a class="headerlink" href="#index-number-in-python-a-id-index-number-a" title="Permalink to this headline">¶</a></h2>
+<p>The items contained in a <a class="reference external" href="#python">Python</a> <a class="reference external" href="#list">List</a> are kept in a strict numerical order by index number, starting from 0.</p>
+</div>
+<div class="section" id="integer-a-id-integer-a">
+<h2>Integer <a id="integer"></a><a class="headerlink" href="#integer-a-id-integer-a" title="Permalink to this headline">¶</a></h2>
+<p>An integer is a data type that contains a whole number that can assigned to a variable as a value. (Other kinds of data types in Python include <a class="reference external" href="#string">strings</a> and <a class="reference external" href="#float">floating point numbers</a>.)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data type</p></th>
+<th class="text-align:center head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Integers</p></td>
+<td class="text-align:center"><p>-5, -3, 0, 5, 201</p></td>
+</tr>
+<tr class="row-odd"><td><p>Floating-point numbers</p></td>
+<td class="text-align:center"><p>-3.74, -3.14, 0.0, 503.4, 506</p></td>
+</tr>
+<tr class="row-even"><td><p>Strings</p></td>
+<td class="text-align:center"><p>‘potatoes’, ‘Hello world!, ‘no’, ‘24 pizzas’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="javascript-programming-language-a-id-javascript-a">
+<h2>JavaScript (Programming Language) <a id="javascript"></a><a class="headerlink" href="#javascript-programming-language-a-id-javascript-a" title="Permalink to this headline">¶</a></h2>
+<p>An object-oriented computer programming language often used to create interactive effects within webbrowsers.  Learn more at <a class="reference external" href="https://www.w3schools.com/js/default.asp">w3schools</a>.</p>
+</div>
+<div class="section" id="json-javascript-object-notation-a-id-json-a">
+<h2>JSON (JavaScript Object Notation)<a id="json"></a><a class="headerlink" href="#json-javascript-object-notation-a-id-json-a" title="Permalink to this headline">¶</a></h2>
+<p>An open-standard file format for storing and exchanging data that is intended to be easy to read and write humans and machines. Like <a class="reference external" href="#xml">XML</a>, JSON is often used by <a class="reference external" href="#api">APIs</a> to transmit data from a remote repository (say weather data or Twitter data) to a local machine.</p>
+</div>
+<div class="section" id="json-lines-a-id-jsonl-a">
+<h2>JSON Lines<a id="jsonl"></a><a class="headerlink" href="#json-lines-a-id-jsonl-a" title="Permalink to this headline">¶</a></h2>
+<p>Also called newline-delimited <a class="reference external" href="#json">JSON</a>, JSON Lines (file extension .jsonl) is structured so it may be processed one record at a time. Each line is a valid value. The file extension for JSON Lines is “.jsonl”.</p>
+</div>
+<div class="section" id="json-python-library-a-id-json-python-library-a">
+<h2>json (Python library)<a id="json-python-library"></a><a class="headerlink" href="#json-python-library-a-id-json-python-library-a" title="Permalink to this headline">¶</a></h2>
+<p>A library for interpreting and converting <a class="reference external" href="#json">JSON</a> into <a class="reference external" href="#python">Python</a> code.</p>
+</div>
+<div class="section" id="jstor-a-id-jstor-a">
+<h2>JSTOR <a id="jstor"></a><a class="headerlink" href="#jstor-a-id-jstor-a" title="Permalink to this headline">¶</a></h2>
+<p>A not-for-profit that collaborates with the academic community and manages the <a class="reference external" href="#jstor-digital-library">JSTOR Digital Library</a>, a digital library for scholars, researchers, and students featuring more than 12 million academic journal articles, books, and primary sources in 75 disciplines. JSTOR is part of <a class="reference external" href="http://ithaka.org">ITHAKA</a>, a not-for-profit organization that also includes <a class="reference external" href="http://artstor.org">Artstor</a>, <a class="reference external" href="http://www.sr.ithaka.org/">Ithaka S+R</a>, and <a class="reference external" href="http://portico.org">Portico</a>.</p>
+</div>
+<div class="section" id="jstor-digital-library-a-id-jstor-digital-library-a">
+<h2>JSTOR Digital Library <a id="jstor-digital-library"></a><a class="headerlink" href="#jstor-digital-library-a-id-jstor-digital-library-a" title="Permalink to this headline">¶</a></h2>
+<p>A digital library for scholars, researchers, and students featuring more than 12 million academic journal articles, books, and primary sources in 75 disciplines.</p>
+</div>
+<div class="section" id="jupyterhub-a-id-jupyterhub-a">
+<h2>JupyterHub <a id="jupyterhub"></a><a class="headerlink" href="#jupyterhub-a-id-jupyterhub-a" title="Permalink to this headline">¶</a></h2>
+<p>A multi-user version of <a class="reference external" href="#the-jupyter-notebook">The Jupyter Notebook</a>, ideal for teaching environments.</p>
+</div>
+<div class="section" id="jupyterlab-a-id-jupyterlab-a">
+<h2>JupyterLab <a id="jupyterlab"></a><a class="headerlink" href="#jupyterlab-a-id-jupyterlab-a" title="Permalink to this headline">¶</a></h2>
+<p>The newest software from <a class="reference external" href="#project-jupyter">Project Jupyter</a>, intended to replace <a class="reference external" href="#the-jupyter-notebook">The Jupyter Notebook</a>, for executing and editing <a class="reference external" href="#jupyter-notebook">Jupyter notebook</a> files.</p>
+</div>
+<div class="section" id="jupyter-notebook-the-software-a-id-the-jupyter-notebook-a">
+<h2>Jupyter Notebook, The (software) <a id="the-jupyter-notebook"></a><a class="headerlink" href="#jupyter-notebook-the-software-a-id-the-jupyter-notebook-a" title="Permalink to this headline">¶</a></h2>
+<p>A single-user web application for executing and editing <a class="reference external" href="#jupyter-notebook">Jupyter notebook files</a>. Will be replaced by <a class="reference external" href="#jupyterlab">JupyterLab</a>.</p>
+</div>
+<div class="section" id="jupyter-notebook-file-a-id-jupyter-notebook-a">
+<h2>Jupyter notebook (file) <a id="jupyter-notebook"></a><a class="headerlink" href="#jupyter-notebook-file-a-id-jupyter-notebook-a" title="Permalink to this headline">¶</a></h2>
+<p>A file with extension .ipynb that contains computer code (e.g. <a class="reference external" href="#python">Python</a> or <a class="reference external" href="#r">R</a>) alongside other explanatory media (text, images, video).</p>
+</div>
+<div class="section" id="jupyter-server-a-id-jupyter-serve-a">
+<h2>Jupyter Server <a id="jupyter-serve"></a><a class="headerlink" href="#jupyter-server-a-id-jupyter-serve-a" title="Permalink to this headline">¶</a></h2>
+<p>A server with the appropriate software environment (e.g. <a class="reference external" href="#jupyterhub">JupyterHub</a>, <a class="reference external" href="#jupyterlab">JupyterLab</a>, <a class="reference external" href="#google-colab">Google Colab</a>) for running and editing <a class="reference external" href="#jupyter-notebook">Jupyter notebooks</a>.</p>
+</div>
+<div class="section" id="key-value-pair-a-id-key-value-pair-a">
+<h2>Key/Value Pair<a id="key-value-pair"></a><a class="headerlink" href="#key-value-pair-a-id-key-value-pair-a" title="Permalink to this headline">¶</a></h2>
+<p>A key/value pair is a data organizational structure where a key is associated with a unique value or set of values. For example, the user could supply the key <strong>Age</strong> and receive a value <strong>58 years</strong>.</p>
+<p>In Python](#python), Key/Value pairs are a key organizational structure for <a class="reference external" href="#python-dictionary">dictionaries</a> and <a class="reference external" href="#python-counter">Counters</a>.</p>
+<p><a class="reference external" href="#json">JSON</a> also encodes key/value pairs, such as:</p>
+<blockquote>
+<div><p>“title”: “The Souls of Black Folk”</p>
+</div></blockquote>
+<p>where the key is “title” and the value is “The Souls of Black Folk”.</p>
+</div>
+<div class="section" id="latent-dirichlet-allocation-lda-a-id-lda-a">
+<h2>Latent Dirichlet Allocation (LDA) <a id="lda"></a><a class="headerlink" href="#latent-dirichlet-allocation-lda-a-id-lda-a" title="Permalink to this headline">¶</a></h2>
+<p>An algorithm commonly used for <a class="reference external" href="#topic-modeling">topic modeling</a>. Pronounced (lay-tent deer-ish-lay al-lo-cay-shun).</p>
+</div>
+<div class="section" id="lemmatization-a-id-lemmatization-a">
+<h2>Lemmatization <a id="lemmatization"></a><a class="headerlink" href="#lemmatization-a-id-lemmatization-a" title="Permalink to this headline">¶</a></h2>
+<p>The process of grouping together the conjugated forms of a word into a base form. For example, “jumping,” “jumped,” and “jumps” could be combined into “jump,” the base form or <em>lemma</em>.</p>
+</div>
+<div class="section" id="library-in-python-a-id-library-a">
+<h2>Library (in Python) <a id="library"></a><a class="headerlink" href="#library-in-python-a-id-library-a" title="Permalink to this headline">¶</a></h2>
+<p>A large collection of methods and <a class="reference external" href="#function">functions</a> for achieving certain tasks (e.g. image manipulation, web scraping). This saves time since the code can be added quickly and all at once around a specific group of tasks. The <a class="reference external" href="#nltk">Natural Language Toolkit (NLTK)</a> is a common library used in <a class="reference external" href="#nlp">natural language processing</a>.</p>
+</div>
+<div class="section" id="list-in-python-a-id-list-a">
+<h2>List (in Python) <a id="list"></a><a class="headerlink" href="#list-in-python-a-id-list-a" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#variable">variable</a> data type that stores items in numbered order beginning with item 0. The number for each item is called its <a class="reference external" href="#index-number">index number</a>. A list is different than a <a class="reference external" href="#python">Python</a> <a class="reference external" href="#dictionary">dictionary</a> <a class="reference external" href="#variable">variable</a> which stores data in <a class="reference external" href="#key-value-pair">key/value pairs</a>.</p>
+</div>
+<div class="section" id="list-comprehensions-in-python-a-id-list-comprehensions-a">
+<h2>List Comprehensions (in Python)<a id="list-comprehensions"></a><a class="headerlink" href="#list-comprehensions-in-python-a-id-list-comprehensions-a" title="Permalink to this headline">¶</a></h2>
+<p>A way to create a <a class="reference external" href="#python-list">Python list</a> from another list. For example, when using a JSTOR/Portico <a class="reference external" href="#dataset">dataset</a> converted to a <a class="reference external" href="#python-list">Python list</a> called <code class="docutils literal notranslate"><span class="pre">all_documents</span></code>, the code:</p>
+<blockquote>
+<div><p>reduced_list = [all_documents[x] for x in range(len(all_documents)) if all_documents[x].get(‘language’) == [‘eng’]]</p>
+</div></blockquote>
+<p>creates a <code class="docutils literal notranslate"><span class="pre">reduced_list</span></code> from <code class="docutils literal notranslate"><span class="pre">all_documents</span></code> by only including documents whose language is English. See also <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">documention on list comprehensions from python.org</a>.</p>
+</div>
+<div class="section" id="local-scope-in-python-a-id-local-scope-a">
+<h2>Local Scope (in Python) <a id="local-scope"></a><a class="headerlink" href="#local-scope-in-python-a-id-local-scope-a" title="Permalink to this headline">¶</a></h2>
+<p>The scope of a <a class="reference external" href="#function">function</a> where a <a class="reference external" href="#local-variable">local variable</a> can be created and used without conflicting with higher-order, <a class="reference external" href="#global-variable">global variables</a>. A <a class="reference external" href="#global-variable">global variable</a> can be read within a <a class="reference external" href="#local-scope">local scope</a>, but a <a class="reference external" href="#local-variable">local variable</a> cannot be read at <a class="reference external" href="#global-scope">global scope</a>.</p>
+</div>
+<div class="section" id="local-variable-in-python-a-id-local-variable-a">
+<h2>Local Variable (in Python) <a id="local-variable"></a><a class="headerlink" href="#local-variable-in-python-a-id-local-variable-a" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#variable">variable</a> created in the <a class="reference external" href="#local-scope">local scope</a> of a <a class="reference external" href="#function">function</a>. The <a class="reference external" href="#variable">variable</a> name is erased after the <a class="reference external" href="#function">function</a> executes and is not accessible in the larger <a class="reference external" href="#global-scope">global scope</a> of the program. A <a class="reference external" href="#global-variable">global variable</a> can be read within a <a class="reference external" href="#local-scope">local scope</a>, but a <a class="reference external" href="#local-variable">local variable</a> cannot be read at <a class="reference external" href="#global-scope">global scope</a>.</p>
+</div>
+<div class="section" id="machine-learning-a-id-machine-learning-a">
+<h2>Machine Learning <a id="machine-learning"></a><a class="headerlink" href="#machine-learning-a-id-machine-learning-a" title="Permalink to this headline">¶</a></h2>
+<p>A subset of <a class="reference external" href="#artificial-intelligence">artificial intelligence</a> that focuses on a machine algorithms that improve accuracy when exposed to additional data without being explicitly reprogrammed by a human.</p>
+</div>
+<div class="section" id="markdown-cell-in-a-jupyter-notebook-a-id-markdown-cell-a">
+<h2>Markdown Cell (in a Jupyter Notebook)<a id="markdown-cell"></a><a class="headerlink" href="#markdown-cell-in-a-jupyter-notebook-a-id-markdown-cell-a" title="Permalink to this headline">¶</a></h2>
+<p>A cell in a <a class="reference external" href="#jupyter-notebook">Jupyter notebook</a> that contains explanatory information such as text, images, and links.</p>
+<p>See also <a class="reference external" href="#code-cell">Code Cell (in a Jupyter Notebook)</a>, which can contain executable code.</p>
+</div>
+<div class="section" id="metadata-a-id-metadata-a">
+<h2>Metadata <a id="metadata"></a><a class="headerlink" href="#metadata-a-id-metadata-a" title="Permalink to this headline">¶</a></h2>
+<p>Data that describes data. In the humanities and library contexts, this often refers to <a class="reference external" href="#bibliographic-metadata">bibliographic metadata</a> that describes information such as author, publication date, medium, etc. It may also describe other kinds of data like files, for example “date created” or “file size.”</p>
+</div>
+<div class="section" id="method-in-python-a-id-method-a">
+<h2>Method (in Python) <a id="method"></a><a class="headerlink" href="#method-in-python-a-id-method-a" title="Permalink to this headline">¶</a></h2>
+<p>Like a <a class="reference external" href="#function">function</a>, a method executes a set of pre-written code but on a particular object like a <a class="reference external" href="#list">list</a>.</p>
+</div>
+<div class="section" id="module-in-python-a-id-module-a">
+<h2>Module (in Python) <a id="module"></a><a class="headerlink" href="#module-in-python-a-id-module-a" title="Permalink to this headline">¶</a></h2>
+<p>A set of <a class="reference external" href="#function">functions</a> that can be imported for use in a <a class="reference external" href="#python">Python</a> program. Modules can be gathered into even larger groups, such as a <a class="reference external" href="#package">package</a> or <a class="reference external" href="#library">library</a>.</p>
+</div>
+<div class="section" id="modulo-in-python-a-id-modulo-a">
+<h2>Modulo (in Python)<a id="modulo"></a><a class="headerlink" href="#modulo-in-python-a-id-modulo-a" title="Permalink to this headline">¶</a></h2>
+<p>Notated as “%”, an arithmetic operation that gives the remainder of a division. 34 % 6 = 4</p>
+</div>
+<div class="section" id="n-gram-a-id-n-gram-a">
+<h2>N-gram <a id ="n-gram"></a><a class="headerlink" href="#n-gram-a-id-n-gram-a" title="Permalink to this headline">¶</a></h2>
+<p>A sequence of n items from a given sample of text or speech. Most often, this refers to a sequence of words, but it can also be used to analyze text at the level of syllables, letters, or phonemes. N-grams are often described by their length. For example, word n-grams might include:</p>
+<ul class="simple">
+<li><p>stock (a 1-gram, or unigram)</p></li>
+<li><p>chicken stock (a 2-gram, or <a class="reference external" href="#bigram">bigram</a>)</p></li>
+<li><p>homemade chicken stock (a 3-gram, or <a class="reference external" href="#trigram">trigram</a>)
+A text analysis approach that looks only at unigrams at the word level will not be able to differentiate between the “stock” in “stock market” and “chicken stock.”</p></li>
+</ul>
+<p>One of the most popular examples of text analysis with n-grams is the <a class="reference external" href="https://books.google.com/ngrams">Google N-Gram Viewer</a>.</p>
+<p>See also <a class="reference external" href="#nlp">Natural Language Processing</a>.</p>
+</div>
+<div class="section" id="named-entity-recognition-ner">
+<h2>Named Entity Recognition (NER)<a class="headerlink" href="#named-entity-recognition-ner" title="Permalink to this headline">¶</a></h2>
+<p>A text analysis technique that seeks to identify and extract entities from a document. Entities could include things like:</p>
+<ul class="simple">
+<li><p>Person</p></li>
+<li><p>Organization</p></li>
+<li><p>Date</p></li>
+<li><p>Time</p></li>
+<li><p>Location</p></li>
+</ul>
+<p>The <a class="reference external" href="#nltk">Natural Language Toolkit</a>, a suite of libraries in <a class="reference external" href="#python">Python</a>, can be used for Named Entity Recognition.</p>
+</div>
+<div class="section" id="natural-language-processing-nlp-a-id-nlp-a">
+<h2>Natural Language Processing (NLP) <a id="nlp"></a><a class="headerlink" href="#natural-language-processing-nlp-a-id-nlp-a" title="Permalink to this headline">¶</a></h2>
+<p>The study of how computers can understand and manipulate natural human language whether in spoken or written forms. This includes areas such as:</p>
+<ul class="simple">
+<li><p>Text Analysis</p></li>
+<li><p>Natural Language Generation</p></li>
+<li><p>Speech recognition</p></li>
+<li><p>Transcription</p></li>
+<li><p>Translation</p></li>
+</ul>
+<p>Natural Language Processing is a subfield that connects linguistics, computer science, information engineering, digital humanities, and data science.</p>
+</div>
+<div class="section" id="natural-language-toolkit-nltk-a-id-nltk-a">
+<h2>Natural Language Toolkit (NLTK) <a id="nltk"></a><a class="headerlink" href="#natural-language-toolkit-nltk-a-id-nltk-a" title="Permalink to this headline">¶</a></h2>
+<p>A suite of libraries and programs for <a class="reference external" href="#nlp">Natural Language Processing</a> written in <a class="reference external" href="#python">python</a>. NLTK includes libraries for tokening, collocation, n-grams, Part of Speech (POS) Tagging, and Named Entity Recognition (NER).</p>
+<p>See the <a class="reference external" href="https://www.nltk.org/">project documentation</a> and book <a class="reference external" href="http://www.nltk.org/book/">Natural Language Processing with Python</a>.</p>
+</div>
+<div class="section" id="neural-network-in-artificial-intelligence-a-id-neural-network-a">
+<h2>Neural Network (in Artificial Intelligence) <a id="neural-network"></a><a class="headerlink" href="#neural-network-in-artificial-intelligence-a-id-neural-network-a" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference external" href="#artificial-intelligence">artificial intelligence</a> (as opposed to biology), a neural network refers to a simplified model of brain neurons that enables machines to complete tasks through methods such as <a class="reference external" href="#machine-learning">machine learning</a>. Neural networks are commonly used on problems that involve data classification (Who is in this image?) and prediction (What price should this house sell for?).</p>
+</div>
+<div class="section" id="non-consumptive-research-a-id-non-consumptive-a">
+<h2>Non-consumptive Research<a id="non-consumptive"></a><a class="headerlink" href="#non-consumptive-research-a-id-non-consumptive-a" title="Permalink to this headline">¶</a></h2>
+<p>Non-consumptive research allows analysts to do text analysis without displaying or reading substantial portions of copyrighted materials. In practice, this usually means giving analysts a <a class="reference external" href="#bag-of-words">bag of words</a> that describes the frequency of every word in a text but not the order in which they occur.</p>
+</div>
+<div class="section" id="operator-in-python-a-id-operator-a">
+<h2>Operator (in Python)<a id="operator"></a><a class="headerlink" href="#operator-in-python-a-id-operator-a" title="Permalink to this headline">¶</a></h2>
+<p>Changes a value through operations such as addition, multiplication, and <a class="reference external" href="#concatenation">concatenation</a>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Operation</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Evaluation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>**</p></td>
+<td><p>Exponent/Power</p></td>
+<td><p>3 ** 3</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>%</p></td>
+<td><p>Modulus/Remainder</p></td>
+<td><p>34 % 6</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>/</p></td>
+<td><p>Division</p></td>
+<td><p>30 / 6</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>*</p></td>
+<td><p>Multiplication</p></td>
+<td><p>7 * 8</p></td>
+<td><p>56</p></td>
+</tr>
+<tr class="row-even"><td><p>-</p></td>
+<td><p>Subtraction</p></td>
+<td><p>18 - 4</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>+</p></td>
+<td><p>Addition</p></td>
+<td><p>4 + 3</p></td>
+<td><p>7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="optical-character-recognition-ocr-a-id-ocr-a">
+<h2>Optical Character Recognition (OCR)<a id="ocr"></a><a class="headerlink" href="#optical-character-recognition-ocr-a-id-ocr-a" title="Permalink to this headline">¶</a></h2>
+<p>The process of turning printed text into machine-readable digital text. Physical materials are scanned into digital images then specialized software attempts to turn the image into text. Two popular examples of OCR software are <a class="reference external" href="https://github.com/tesseract-ocr/tesseract">Tesseract (Open Source)</a> and <a class="reference external" href="https://www.abbyy.com/en-us/finereader/">ABBYY Finereader (Proprietary)</a>.</p>
+</div>
+<div class="section" id="package-in-python-a-id-package-a">
+<h2>Package (in Python) <a id="package"></a><a class="headerlink" href="#package-in-python-a-id-package-a" title="Permalink to this headline">¶</a></h2>
+<p>A group of <a class="reference external" href="#module">modules</a> that contain <a class="reference external" href="#function">functions</a> that can be imported and used within a <a class="reference external" href="#python">Python</a> program. Packages can be gathered into a larger group called a <a class="reference external" href="#library">library</a>.</p>
+</div>
+<div class="section" id="pandas-in-python-a-id-pandas-a">
+<h2>Pandas (in Python)<a id="pandas"></a><a class="headerlink" href="#pandas-in-python-a-id-pandas-a" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#library">library</a> for visualizing, analyzing, and manipulating data in Python. Learn more about <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.15/tutorials.html">Pandas at pydata.org</a>.</p>
+</div>
+<div class="section" id="parameter-in-python-a-id-parameter-a">
+<h2>Parameter (in Python) <a id="parameter"></a><a class="headerlink" href="#parameter-in-python-a-id-parameter-a" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#variable">variable</a> in a <a class="reference external" href="#function">function</a> definition statement. The actual value or <a class="reference external" href="#variable">variable</a> passed during execution is called an <a class="reference external" href="#argument">argument</a>.</p>
+</div>
+<div class="section" id="part-of-speech-pos-tagging-a-id-pos-tagging-a">
+<h2>Part of Speech (POS) Tagging <a id="pos-tagging"></a><a class="headerlink" href="#part-of-speech-pos-tagging-a-id-pos-tagging-a" title="Permalink to this headline">¶</a></h2>
+<p>The act of marking the grammatical part of speech (such as nouns, verbs, and adjectives) for each word in a document. The linguistic models for POS tagging can be very complex, often using over 100 separate parts of speech.</p>
+<p>POS Tagging can be accomplished using the <a class="reference external" href="#nltk">Natural Language Toolkit</a> in <a class="reference external" href="#python">Python</a>.</p>
+</div>
+<div class="section" id="plain-text-a-id-plain-text-a">
+<h2>Plain text <a id="plain-text"></a><a class="headerlink" href="#plain-text-a-id-plain-text-a" title="Permalink to this headline">¶</a></h2>
+<p>A file that only contains text and can be easily read in a text editor (as opposed to a binary or executable file)</p>
+</div>
+<div class="section" id="portico">
+<h2>Portico<a class="headerlink" href="#portico" title="Permalink to this headline">¶</a></h2>
+<p>A community-supported preservation archive that safeguards access to e-journals, e-books, and digital collections. One of the <a class="reference external" href="https://docs.tdm-pilot.org/data-sources/">data sources</a> for the <a class="reference external" href="https://tdm-pilot.org/builder/">dataset builder</a>.</p>
+</div>
+<div class="section" id="project-jupyter-a-id-project-jupyter-a">
+<h2>Project Jupyter <a id="project-jupyter"></a><a class="headerlink" href="#project-jupyter-a-id-project-jupyter-a" title="Permalink to this headline">¶</a></h2>
+<p>A non-profit that develops open-source software, open standards, and services across many programming languages. They are most well-known for software such as <a class="reference external" href="#the-jupyter-notebook">The Jupyter Notebook</a>, <a class="reference external" href="#jupyterlab">JupyterLab</a>, and <a class="reference external" href="#jupyterhub">JupyterHub</a>. All three of these programs are used to create, edit, and share programming notebooks, known as <a class="reference external" href="#jupyter-notebook">Jupyter notebooks</a>.</p>
+</div>
+<div class="section" id="python-programming-language-a-id-python-a">
+<h2>Python (Programming Language) <a id="python"></a><a class="headerlink" href="#python-programming-language-a-id-python-a" title="Permalink to this headline">¶</a></h2>
+<p>A highly-flexible, easy-to-learn programming language that is widely-used in the digital humanities and data science.</p>
+</div>
+<div class="section" id="r-programming-language-a-id-r-a">
+<h2>R (Programming Language) <a id="r"></a><a class="headerlink" href="#r-programming-language-a-id-r-a" title="Permalink to this headline">¶</a></h2>
+<p>A programming language that is widely-used for statistical analysis and data mining, commonly in the areas of digital humanities and data science.</p>
+</div>
+<div class="section" id="repository-for-git-github-gitlab-etc-a-id-repository-a">
+<h2>Repository (for git, GitHub, GitLab, etc) <a id="repository"></a><a class="headerlink" href="#repository-for-git-github-gitlab-etc-a-id-repository-a" title="Permalink to this headline">¶</a></h2>
+<p>Also known as a “repo”. A repository is a place to store all the versions of the code for a computer programming project.</p>
+<p>See also <a class="reference external" href="#git">git</a>.</p>
+</div>
+<div class="section" id="sentiment-analysis-a-id-sentiment-analysis-a">
+<h2>Sentiment Analysis &lt;a id=“sentiment-analysis”)</a><a class="headerlink" href="#sentiment-analysis-a-id-sentiment-analysis-a" title="Permalink to this headline">¶</a></h2>
+<p>A text analysis method that attempts to discover the emotions expressed in a sample of writing. Depending on the complexity of the method, it may discover simple distinctions (positive vs. negative) or more nuanced concepts (gratitude, anger, sadness, frustation, etc.).</p>
+</div>
+<div class="section" id="slice-in-python-a-id-slice-a">
+<h2>Slice (in Python) <a id="slice"></a><a class="headerlink" href="#slice-in-python-a-id-slice-a" title="Permalink to this headline">¶</a></h2>
+<p>A subset of items created from a <a class="reference external" href="#list">list</a> using <a class="reference external" href="#index-number">index numbers</a>.</p>
+<blockquote>
+<div><p>example_list[2:4]
+The slice above creates a new <a class="reference external" href="#list">list</a> from <code class="docutils literal notranslate"><span class="pre">example_list</span></code> that contains the items at index 2 and 3 (but not 4).</p>
+</div></blockquote>
+</div>
+<div class="section" id="stop-words-list-a-id-stop-words-a">
+<h2>Stop Words (List) <a id="stop-words"></a><a class="headerlink" href="#stop-words-list-a-id-stop-words-a" title="Permalink to this headline">¶</a></h2>
+<p>A stop words list is a set of words or phrases that are ignored in <a class="reference external" href="#word-frequency">word frequency</a> analysis. It is common for a researcher who is interested in prominent nouns and verbs to remove <a class="reference external" href="#function-words">function words</a> (e.g. the, and, I, to, of, a). A stop word list may also include other common words, such as character ids which are usually the most common words in a play text.</p>
+</div>
+<div class="section" id="string-in-python-a-id-string-a">
+<h2>String (in Python) <a id="string"></a><a class="headerlink" href="#string-in-python-a-id-string-a" title="Permalink to this headline">¶</a></h2>
+<p>A string is a data type that contains a set of characters that can assigned to a variable as a value. (Other kinds of data types in Python include <a class="reference external" href="#integer">integers</a> and <a class="reference external" href="#float">floating point numbers</a>.)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data type</p></th>
+<th class="text-align:center head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Integers</p></td>
+<td class="text-align:center"><p>-5, -3, 0, 5, 201</p></td>
+</tr>
+<tr class="row-odd"><td><p>Floating-point numbers</p></td>
+<td class="text-align:center"><p>-3.74, -3.14, 0.0, 503.4, 506</p></td>
+</tr>
+<tr class="row-even"><td><p>Strings</p></td>
+<td class="text-align:center"><p>‘potatoes’, ‘Hello world!, ‘no’, ‘24 pizzas’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tag-cloud-or-word-cloud-a-id-tag-cloud-a">
+<h2>Tag Cloud (or Word Cloud)<a id ="tag-cloud"></a><a class="headerlink" href="#tag-cloud-or-word-cloud-a-id-tag-cloud-a" title="Permalink to this headline">¶</a></h2>
+<p>A tag cloud is a visualization of the relative word frequencies in a <a class="reference external" href="#corpus">corpus</a>. The relative size of each word in a tag cloud depends on its frequency within a text. Larger words occur more frequently.</p>
+<p><img alt="Word Cloud of the content of journal African American Review" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/wordcloud.jpeg" /></p>
+<p><strong>A Tag Cloud of the journal <em>African American Review</em> (and its precursors <em>Black American Literature Forum</em> and <em>Negro American Literature Forum</em>).</strong></p>
+</div>
+<div class="section" id="tdm-client-a-id-tdm-client-a">
+<h2>tdm_client<a id="tdm-client"></a><a class="headerlink" href="#tdm-client-a-id-tdm-client-a" title="Permalink to this headline">¶</a></h2>
+<p>A module that automatically pulls in a <a class="reference external" href="#dataset">dataset</a> to the <a class="reference external" href="#jupyterlab">JupyterLab</a> environment based on a <a class="reference external" href="#dataset-id">dataset ID</a>.</p>
+</div>
+<div class="section" id="tei-xml-a-id-tei-xml-a">
+<h2>TEI XML <a id ="tei-xml"></a><a class="headerlink" href="#tei-xml-a-id-tei-xml-a" title="Permalink to this headline">¶</a></h2>
+<p>A form of <a class="reference external" href="#xml">XML Markup</a>, or tagging, created by the <a class="reference external" href="https://tei-c.org/">Text Encoding Initiative</a> to describe digital documents. This markup can help computers recognize particular aspects of the text. Text analysis often requires explicit marking, even for textual aspects that a human reader can easily pick out:</p>
+<ul class="simple">
+<li><p>Title</p></li>
+<li><p>Author Name</p></li>
+<li><p>Name of the speaker in a play</p></li>
+<li><p>A paragraph</p></li>
+<li><p>The speaker in a play</p></li>
+<li><p>Stage directions</p></li>
+<li><p>A stanza</p></li>
+</ul>
+<p>See also <a class="reference external" href="#pos-tagging">Parts of Speech Tagging</a>, <a class="reference external" href="#lemmatization">Lemmatization</a>, <a class="reference external" href="#tokenization">Tokenization</a>.</p>
+</div>
+<div class="section" id="term-frequency-inverse-document-frequency-tfidf-a-id-tf-idf-a">
+<h2>Term Frequency-Inverse Document Frequency (TFIDF)<a id="tf-idf"></a><a class="headerlink" href="#term-frequency-inverse-document-frequency-tfidf-a-id-tf-idf-a" title="Permalink to this headline">¶</a></h2>
+<p>A statistical method that intends to reflect how important a particular word is within a <a class="reference external" href="#corpus">corpus</a>. A simple measurement of “term frequency” is divided by inverse document frequency, limiting the weight of common words like “the”, “of”, and “to”.</p>
+</div>
+<div class="section" id="token-a-id-token-a">
+<h2>Token <a id="token"></a><a class="headerlink" href="#token-a-id-token-a" title="Permalink to this headline">¶</a></h2>
+<p>A chunk or <a class="reference external" href="#string">string</a> of text, most often a single word.</p>
+</div>
+<div class="section" id="topic-modeling-or-topic-analysis-a-id-topic-modeling-a">
+<h2>Topic Modeling (or Topic Analysis)<a id="topic-modeling"></a><a class="headerlink" href="#topic-modeling-or-topic-analysis-a-id-topic-modeling-a" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="#machine-learning">machine learning</a> text analysis method that attempts to discover a group of words that <a class="reference external" href="#clustering">cluster</a> together in a set of documents. One of the most common algorithms for topic modeling is <a class="reference external" href="#lda">Latent Dirichlet Allocation (LDA)</a>.</p>
+</div>
+<div class="section" id="trigram-a-id-trigram-a">
+<h2>Trigram <a id="trigram"></a><a class="headerlink" href="#trigram-a-id-trigram-a" title="Permalink to this headline">¶</a></h2>
+<p>An <a class="reference external" href="#n-gram">n-gram</a> with a length of three. For example, “homemade chicken stock” is a word trigram.</p>
+</div>
+<div class="section" id="tsv-file-a-id-tsv-file-a">
+<h2>TSV (file) <a id="tsv-file"></a><a class="headerlink" href="#tsv-file-a-id-tsv-file-a" title="Permalink to this headline">¶</a></h2>
+<p>A .tsv file, or Tab-Separated Value file, is a simple format for storing structured data where each entry in the file is separated by a tab. Similarly, a <a class="reference external" href="#csv-file">CSV file</a> uses commas to separate individual data entries.</p>
+</div>
+<div class="section" id="tuple-in-python-a-id-tuple-a">
+<h2>Tuple (in Python) <a id="tuple"></a><a class="headerlink" href="#tuple-in-python-a-id-tuple-a" title="Permalink to this headline">¶</a></h2>
+<p>A data type similar to a <a class="reference external" href="#python-list">Python list</a>, except that tuples are:</p>
+<ol class="simple">
+<li><p>Notated with parentheses</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;monkey&#39;</span><span class="p">,</span> <span class="mf">33.3234</span><span class="p">]</span>
+<span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;monkey&#39;</span><span class="p">,</span> <span class="mf">33.3234</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Immutable. Like a string, the elements of a tuple cannot be changed.</p></li>
+</ol>
+</div>
+<div class="section" id="unigram-a-id-unigram-a">
+<h2>Unigram <a id="unigram"></a><a class="headerlink" href="#unigram-a-id-unigram-a" title="Permalink to this headline">¶</a></h2>
+<p>An <a class="reference external" href="#n-gram">n-gram</a> with a length of one. For example, “chicken” is a unigram.</p>
+</div>
+<div class="section" id="variable-in-python-a-id-variable-a">
+<h2>Variable (in Python) <a id="variable"></a><a class="headerlink" href="#variable-in-python-a-id-variable-a" title="Permalink to this headline">¶</a></h2>
+<p>A named object that stores a value in Python, such as an <a class="reference external" href="#integer">integer</a>, <a class="reference external" href="#float">float</a>, or <a class="reference external" href="#string">string</a>.</p>
+<p>Variables are created with an <a class="reference external" href="#assignment-statement">assignment statement</a>.</p>
+</div>
+<div class="section" id="voyant-a-id-voyant-a">
+<h2>Voyant <a id="voyant"></a><a class="headerlink" href="#voyant-a-id-voyant-a" title="Permalink to this headline">¶</a></h2>
+<p>A flexible, web-based platform for text analysis that can also be run locally. <a class="reference external" href="https://voyant-tools.org/">Voyant</a> has many kinds of visualizations, supports saving, and creates embeddable html objects. To learn more, see <a class="reference external" href="https://voyant-tools.org/docs/#%21/guide/start">the documentation</a>.</p>
+</div>
+<div class="section" id="word-cloud-a-id-word-cloud-a">
+<h2>Word Cloud<a id="word-cloud"></a><a class="headerlink" href="#word-cloud-a-id-word-cloud-a" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="#tag-cloud">Tag Cloud</a>.</p>
+</div>
+<div class="section" id="word-embedding">
+<h2>Word Embedding<a class="headerlink" href="#word-embedding" title="Permalink to this headline">¶</a></h2>
+<p>A collective name for <a class="reference external" href="#nlp">Natural Language Processing</a> techniques that map words to vectors of real numbers using <a class="reference external" href="#neural-network">neural networks</a> and dimensionality reduction on a word co-occurence matrix. Word2vec is a common model for producing word embeddings.</p>
+</div>
+<div class="section" id="word-frequency-a-id-word-frequency-a">
+<h2>Word Frequency <a id="#word-frequency"></a><a class="headerlink" href="#word-frequency-a-id-word-frequency-a" title="Permalink to this headline">¶</a></h2>
+<p>A text analysis method that counts the number of occurences of individual words within a particular text. Word frequency uses a <a class="reference external" href="#bag-of-words">bag of words</a> model where the order of words is not significant. Just as the letters of a Scrabble game are tossed into a bag without order, word frequency merely records the number of occurences with no regard to where a particular word occurs within a document.</p>
+<p>An alternative to this approach is using <a class="reference external" href="#n-gram">n-grams</a> which can capture phrases in addition to individual words.</p>
+</div>
+<div class="section" id="xml-a-id-xml-a">
+<h2>XML <a id="xml"></a><a class="headerlink" href="#xml-a-id-xml-a" title="Permalink to this headline">¶</a></h2>
+<p>Short for (eXtensible markup language), XML uses tags to identify parts of a document for a machine to understand. Like HTML, these tags have an opening tag (e.g. <l>) and a closing tag marked by a forward slash (e.g. </l>). Unlike HTML, these tags can be freely created according to whatever standard the creator needs. One prominent example is the <a class="reference external" href="https://tei-c.org/">Text Encoding Initiative</a>. The example below uses <a class="reference external" href="#tei-xml">TEI-XML</a> to describe Shakespeare’s Sonnet 130 by labeling lines, quatrains, and the final couplet. This kind of markup enables computers to do complex analysis quickly such as comparing every couplet, quatrain, or line in Shakespeare’s sonnets.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">lg</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">lg</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;quatrain&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">My</span> <span class="n">Mistres</span> <span class="n">eyes</span> <span class="n">are</span> <span class="n">nothing</span> <span class="n">like</span> <span class="n">the</span> <span class="n">Sunne</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">Currall</span> <span class="ow">is</span> <span class="n">farre</span> <span class="n">more</span> <span class="n">red</span><span class="p">,</span> <span class="n">then</span> <span class="n">her</span> <span class="n">lips</span> <span class="n">red</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">If</span> <span class="n">snow</span> <span class="n">be</span> <span class="n">white</span><span class="p">,</span> <span class="n">why</span> <span class="n">then</span> <span class="n">her</span> <span class="n">brests</span> <span class="n">are</span> <span class="n">dun</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">If</span> <span class="n">haires</span> <span class="n">be</span> <span class="n">wiers</span><span class="p">,</span> <span class="n">black</span> <span class="n">wiers</span> <span class="n">grown</span> <span class="n">on</span> <span class="n">her</span> <span class="n">head</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">lg</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">lg</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;quatrain&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">I</span> <span class="n">have</span> <span class="n">seene</span> <span class="n">Roses</span> <span class="n">damaskt</span><span class="p">,</span> <span class="n">red</span> <span class="ow">and</span> <span class="n">white</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">But</span> <span class="n">no</span> <span class="n">such</span> <span class="n">Roses</span> <span class="n">see</span> <span class="n">I</span> <span class="ow">in</span> <span class="n">her</span> <span class="n">cheekes</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">And</span> <span class="ow">in</span> <span class="n">some</span> <span class="n">perfumes</span> <span class="ow">is</span> <span class="n">there</span> <span class="n">more</span> <span class="n">delight</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">Then</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">breath</span> <span class="n">that</span> <span class="kn">from</span> <span class="nn">my</span> <span class="n">Mistres</span> <span class="n">reekes</span><span class="o">.&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">lg</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">lg</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;quatrain&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">I</span> <span class="n">love</span> <span class="n">to</span> <span class="n">heare</span> <span class="n">her</span> <span class="n">speake</span><span class="p">,</span> <span class="n">yet</span> <span class="n">well</span> <span class="n">I</span> <span class="n">know</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">That</span> <span class="n">Musicke</span> <span class="n">hath</span> <span class="n">a</span> <span class="n">farre</span> <span class="n">more</span> <span class="n">pleasing</span> <span class="n">sound</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">I</span> <span class="n">graunt</span> <span class="n">I</span> <span class="n">never</span> <span class="n">saw</span> <span class="n">a</span> <span class="n">goddesse</span> <span class="n">goe</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">My</span> <span class="n">Mistres</span> <span class="n">when</span> <span class="n">shee</span> <span class="n">walkes</span> <span class="n">treads</span> <span class="n">on</span> <span class="n">the</span> <span class="n">ground</span><span class="o">.&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+   <span class="o">&lt;/</span><span class="n">lg</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">lg</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">lg</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;couplet&quot;</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">And</span> <span class="n">yet</span> <span class="n">by</span> <span class="n">heaven</span> <span class="n">I</span> <span class="n">think</span> <span class="n">my</span> <span class="n">love</span> <span class="k">as</span> <span class="n">rare</span><span class="p">,</span><span class="o">&lt;/</span><span class="n">l</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">l</span><span class="o">&gt;</span><span class="n">As</span> <span class="nb">any</span> <span class="n">she</span> <span class="n">beli</span><span class="s1">&#39;d with false compare.&lt;/l&gt;</span>
+  <span class="o">&lt;/</span><span class="n">lg</span><span class="o">&gt;</span>
+ <span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">text</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/parts/reference"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../../../python-basics-3.html" title="previous page">Python Basics 3</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
