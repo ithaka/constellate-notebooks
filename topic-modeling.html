@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What is Topic Modeling? &#8212; Intro to Text Analysis</title>
+    <title>Latent Dirichlet Allocation (LDA) Topic Modeling &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,6 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Glossary" href="book/parts/reference/glossary.html" />
+    <link rel="prev" title="Finding Significant Words Using TF/IDF" href="finding-significant-terms.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -104,11 +106,6 @@
    Data scientists and business professionals
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/parts/why-text-analysis/lib.html">
-   Librarians and information professionals
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -134,6 +131,33 @@
  <li class="toctree-l1">
   <a class="reference internal" href="python-basics-3.html">
    Python Basics 3
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intermediate Lessons
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exploring-metadata.html">
+   Exploring metadata and pre-processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exploring-word-frequencies.html">
+   Exploring Word Frequencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="finding-significant-terms.html">
+   Finding Significant Words Using TF/IDF
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Latent Dirichlet Allocation (LDA) Topic Modeling
   </a>
  </li>
 </ul>
@@ -253,27 +277,40 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-topic-modeling">
    What is Topic Modeling?
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-your-dataset">
    Import your dataset
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#apply-pre-processing-filters-if-available">
    Apply Pre-Processing Filters (if available)
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-stopwords-list">
-     Load Stopwords List
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-stopwords-list">
+   Load Stopwords List
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-a-function-to-process-tokens">
+   Define a Function to Process Tokens
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#display-a-list-of-topics">
+   Display a List of Topics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-the-topic-distances-on-a-flat-plane">
+   Visualize the Topic Distances on a Flat Plane
+  </a>
  </li>
 </ul>
 
@@ -291,7 +328,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Latent Dirichlet Allocation (LDA) Topic Modeling</strong></p>
+<div class="section" id="latent-dirichlet-allocation-lda-topic-modeling">
+<h1>Latent Dirichlet Allocation (LDA) Topic Modeling<a class="headerlink" href="#latent-dirichlet-allocation-lda-topic-modeling" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
 This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">notebook</a> demonstrates how to do topic modeling. The following processes are described:</p>
 <ul class="simple">
@@ -337,13 +375,13 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </ol>
 <hr class="docutils" />
 <div class="section" id="what-is-topic-modeling">
-<h1>What is Topic Modeling?<a class="headerlink" href="#what-is-topic-modeling" title="Permalink to this headline">¶</a></h1>
+<h2>What is Topic Modeling?<a class="headerlink" href="#what-is-topic-modeling" title="Permalink to this headline">¶</a></h2>
 <p><strong>Topic modeling</strong> is a <strong>machine learning</strong> technique that attempts to discover groupings of words (called topics) that commonly occur together in a body of texts. The body of texts could be anything from journal articles to newspaper articles to tweets.</p>
 <p><strong>Topic modeling</strong> is an unsupervised, clustering technique for text. We give the machine a series of texts that it then attempts to cluster the texts into a given number of topics. There is also a <em>supervised</em>, clustering technique called <strong>Topic Classification</strong>, where we supply the machine with examples of pre-labeled topics and then see if the machine can identify them given the examples.</p>
 <p><strong>Topic modeling</strong> is usually considered an exploratory technique; it helps us discover new patterns within a set of texts. <strong>Topic Classification</strong>, using labeled data, is intended to be a predictive technique; we want it to find more things like the examples we give it.</p>
 </div>
 <div class="section" id="import-your-dataset">
-<h1>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h1>
+<h2>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h2>
 <p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
 <p>Enter a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
 <p>If you don’t have a dataset ID, you can:</p>
@@ -375,7 +413,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 <div class="section" id="apply-pre-processing-filters-if-available">
-<h1>Apply Pre-Processing Filters (if available)<a class="headerlink" href="#apply-pre-processing-filters-if-available" title="Permalink to this headline">¶</a></h1>
+<h2>Apply Pre-Processing Filters (if available)<a class="headerlink" href="#apply-pre-processing-filters-if-available" title="Permalink to this headline">¶</a></h2>
 <p>If you completed pre-processing with the “Exploring Metadata and Pre-processing” notebook, you can use your CSV file of dataset IDs to automatically filter the dataset. Your pre-processed CSV file  must be in the root folder.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -396,6 +434,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
     <span class="n">use_filtered_list</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No pre-processed CSV file found. Full dataset will be used.&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -424,6 +463,10 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="define-a-function-to-process-tokens">
+<h2>Define a Function to Process Tokens<a class="headerlink" href="#define-a-function-to-process-tokens" title="Permalink to this headline">¶</a></h2>
+<p>Next, we create a short function to clean up our tokens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_token</span><span class="p">(</span><span class="n">token</span><span class="p">):</span>
@@ -508,6 +551,9 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="display-a-list-of-topics">
+<h2>Display a List of Topics<a class="headerlink" href="#display-a-list-of-topics" title="Permalink to this headline">¶</a></h2>
 <p>Print the most significant terms, as determined by the model, for each topic.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,6 +568,9 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="visualize-the-topic-distances-on-a-flat-plane">
+<h2>Visualize the Topic Distances on a Flat Plane<a class="headerlink" href="#visualize-the-topic-distances-on-a-flat-plane" title="Permalink to this headline">¶</a></h2>
 <p>Visualize the model using <a class="reference external" href="https://pyldavis.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">pyLDAvis</span></code></a>. This visualization can take a while to generate depending on the size of your dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -560,6 +609,8 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="finding-significant-terms.html" title="previous page">Finding Significant Words Using TF/IDF</a>
+    <a class='right-next' id="next-link" href="book/parts/reference/glossary.html" title="next page">Glossary</a>
 
         </div>
         

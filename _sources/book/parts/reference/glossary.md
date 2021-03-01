@@ -277,10 +277,10 @@ The newest software from [Project Jupyter](#project-jupyter), intended to replac
 ## Jupyter Notebook, The (software) <a id="the-jupyter-notebook"></a>
 A single-user web application for executing and editing [Jupyter notebook files](#jupyter-notebook). Will be replaced by [JupyterLab](#jupyterlab).
 
-## Jupyter notebook (file)
+## Jupyter notebook (file) <a id="jupyter-notebook"></a>
 A file with extension .ipynb that contains computer code (e.g. [Python](#python) or [R](#r)) alongside other explanatory media (text, images, video).
 
-## Jupyter Server <a id="jupyter-serve"></a>
+## Jupyter Server <a id="jupyter-server"></a>
 A server with the appropriate software environment (e.g. [JupyterHub](#jupyterhub), [JupyterLab](#jupyterlab), [Google Colab](#google-colab)) for running and editing [Jupyter notebooks](#jupyter-notebook).
 
 ## Key/Value Pair<a id="key-value-pair"></a>
@@ -417,7 +417,7 @@ POS Tagging can be accomplished using the [Natural Language Toolkit](#nltk) in [
 ## Plain text <a id="plain-text"></a>
 A file that only contains text and can be easily read in a text editor (as opposed to a binary or executable file)
 
-## Portico
+## Portico <a id="portico"></a>
 A community-supported preservation archive that safeguards access to e-journals, e-books, and digital collections. One of the [data sources](https://docs.tdm-pilot.org/data-sources/) for the [dataset builder](https://tdm-pilot.org/builder/).
 
 ## Project Jupyter <a id="project-jupyter"></a>
@@ -434,7 +434,7 @@ Also known as a "repo". A repository is a place to store all the versions of the
 
 See also [git](#git).
 
-## Sentiment Analysis <a id="sentiment-analysis")</a>
+## Sentiment Analysis <a id="sentiment-analysis"></a>
 A text analysis method that attempts to discover the emotions expressed in a sample of writing. Depending on the complexity of the method, it may discover simple distinctions (positive vs. negative) or more nuanced concepts (gratitude, anger, sadness, frustation, etc.).
 
 ## Slice (in Python) <a id="slice"></a>
@@ -517,7 +517,7 @@ A flexible, web-based platform for text analysis that can also be run locally. [
 ## Word Cloud<a id="word-cloud"></a>
 See [Tag Cloud](#tag-cloud).
 
-## Word Embedding
+## Word Embedding <a id="word-embedding"></a>
 A collective name for [Natural Language Processing](#nlp) techniques that map words to vectors of real numbers using [neural networks](#neural-network) and dimensionality reduction on a word co-occurence matrix. Word2vec is a common model for producing word embeddings. 
 
 ## Word Frequency <a id="#word-frequency"></a>

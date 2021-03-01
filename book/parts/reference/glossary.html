@@ -54,7 +54,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="Python Basics 3" href="../../../python-basics-3.html" />
+    <link rel="prev" title="Latent Dirichlet Allocation (LDA) Topic Modeling" href="../../../topic-modeling.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -105,11 +105,6 @@
    Data scientists and business professionals
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../why-text-analysis/lib.html">
-   Librarians and information professionals
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -135,6 +130,33 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../../python-basics-3.html">
    Python Basics 3
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intermediate Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../exploring-metadata.html">
+   Exploring metadata and pre-processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../exploring-word-frequencies.html">
+   Exploring Word Frequencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../finding-significant-terms.html">
+   Finding Significant Words Using TF/IDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../topic-modeling.html">
+   Latent Dirichlet Allocation (LDA) Topic Modeling
   </a>
  </li>
 </ul>
@@ -628,14 +650,16 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-notebook-file">
+  <a class="reference internal nav-link" href="#jupyter-notebook-file-a-id-jupyter-notebook-a">
    Jupyter notebook (file)
+   <a id="jupyter-notebook">
+   </a>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-server-a-id-jupyter-serve-a">
+  <a class="reference internal nav-link" href="#jupyter-server-a-id-jupyter-server-a">
    Jupyter Server
-   <a id="jupyter-serve">
+   <a id="jupyter-server">
    </a>
   </a>
  </li>
@@ -827,8 +851,10 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#portico">
+  <a class="reference internal nav-link" href="#portico-a-id-portico-a">
    Portico
+   <a id="portico">
+   </a>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -861,7 +887,9 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sentiment-analysis-a-id-sentiment-analysis-a">
-   Sentiment Analysis &lt;a id=“sentiment-analysis”)
+   Sentiment Analysis
+   <a id="sentiment-analysis">
+   </a>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -977,8 +1005,10 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#word-embedding">
+  <a class="reference internal nav-link" href="#word-embedding-a-id-word-embedding-a">
    Word Embedding
+   <a id="word-embedding">
+   </a>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1404,12 +1434,12 @@ Semi-structured data uses tags or elements to mark out structures within an unst
 <h2>Jupyter Notebook, The (software) <a id="the-jupyter-notebook"></a><a class="headerlink" href="#jupyter-notebook-the-software-a-id-the-jupyter-notebook-a" title="Permalink to this headline">¶</a></h2>
 <p>A single-user web application for executing and editing <a class="reference external" href="#jupyter-notebook">Jupyter notebook files</a>. Will be replaced by <a class="reference external" href="#jupyterlab">JupyterLab</a>.</p>
 </div>
-<div class="section" id="jupyter-notebook-file">
-<h2>Jupyter notebook (file)<a class="headerlink" href="#jupyter-notebook-file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="jupyter-notebook-file-a-id-jupyter-notebook-a">
+<h2>Jupyter notebook (file) <a id="jupyter-notebook"></a><a class="headerlink" href="#jupyter-notebook-file-a-id-jupyter-notebook-a" title="Permalink to this headline">¶</a></h2>
 <p>A file with extension .ipynb that contains computer code (e.g. <a class="reference external" href="#python">Python</a> or <a class="reference external" href="#r">R</a>) alongside other explanatory media (text, images, video).</p>
 </div>
-<div class="section" id="jupyter-server-a-id-jupyter-serve-a">
-<h2>Jupyter Server <a id="jupyter-serve"></a><a class="headerlink" href="#jupyter-server-a-id-jupyter-serve-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="jupyter-server-a-id-jupyter-server-a">
+<h2>Jupyter Server <a id="jupyter-server"></a><a class="headerlink" href="#jupyter-server-a-id-jupyter-server-a" title="Permalink to this headline">¶</a></h2>
 <p>A server with the appropriate software environment (e.g. <a class="reference external" href="#jupyterhub">JupyterHub</a>, <a class="reference external" href="#jupyterlab">JupyterLab</a>, <a class="reference external" href="#google-colab">Google Colab</a>) for running and editing <a class="reference external" href="#jupyter-notebook">Jupyter notebooks</a>.</p>
 </div>
 <div class="section" id="key-value-pair-a-id-key-value-pair-a">
@@ -1598,8 +1628,8 @@ A text analysis approach that looks only at unigrams at the word level will not 
 <h2>Plain text <a id="plain-text"></a><a class="headerlink" href="#plain-text-a-id-plain-text-a" title="Permalink to this headline">¶</a></h2>
 <p>A file that only contains text and can be easily read in a text editor (as opposed to a binary or executable file)</p>
 </div>
-<div class="section" id="portico">
-<h2>Portico<a class="headerlink" href="#portico" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="portico-a-id-portico-a">
+<h2>Portico <a id="portico"></a><a class="headerlink" href="#portico-a-id-portico-a" title="Permalink to this headline">¶</a></h2>
 <p>A community-supported preservation archive that safeguards access to e-journals, e-books, and digital collections. One of the <a class="reference external" href="https://docs.tdm-pilot.org/data-sources/">data sources</a> for the <a class="reference external" href="https://tdm-pilot.org/builder/">dataset builder</a>.</p>
 </div>
 <div class="section" id="project-jupyter-a-id-project-jupyter-a">
@@ -1620,7 +1650,7 @@ A text analysis approach that looks only at unigrams at the word level will not 
 <p>See also <a class="reference external" href="#git">git</a>.</p>
 </div>
 <div class="section" id="sentiment-analysis-a-id-sentiment-analysis-a">
-<h2>Sentiment Analysis &lt;a id=“sentiment-analysis”)</a><a class="headerlink" href="#sentiment-analysis-a-id-sentiment-analysis-a" title="Permalink to this headline">¶</a></h2>
+<h2>Sentiment Analysis <a id="sentiment-analysis"></a><a class="headerlink" href="#sentiment-analysis-a-id-sentiment-analysis-a" title="Permalink to this headline">¶</a></h2>
 <p>A text analysis method that attempts to discover the emotions expressed in a sample of writing. Depending on the complexity of the method, it may discover simple distinctions (positive vs. negative) or more nuanced concepts (gratitude, anger, sadness, frustation, etc.).</p>
 </div>
 <div class="section" id="slice-in-python-a-id-slice-a">
@@ -1732,8 +1762,8 @@ The slice above creates a new <a class="reference external" href="#list">list</a
 <h2>Word Cloud<a id="word-cloud"></a><a class="headerlink" href="#word-cloud-a-id-word-cloud-a" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="#tag-cloud">Tag Cloud</a>.</p>
 </div>
-<div class="section" id="word-embedding">
-<h2>Word Embedding<a class="headerlink" href="#word-embedding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="word-embedding-a-id-word-embedding-a">
+<h2>Word Embedding <a id="word-embedding"></a><a class="headerlink" href="#word-embedding-a-id-word-embedding-a" title="Permalink to this headline">¶</a></h2>
 <p>A collective name for <a class="reference external" href="#nlp">Natural Language Processing</a> techniques that map words to vectors of real numbers using <a class="reference external" href="#neural-network">neural networks</a> and dimensionality reduction on a word co-occurence matrix. Word2vec is a common model for producing word embeddings.</p>
 </div>
 <div class="section" id="word-frequency-a-id-word-frequency-a">
@@ -1802,7 +1832,7 @@ The slice above creates a new <a class="reference external" href="#list">list</a
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../../../python-basics-3.html" title="previous page">Python Basics 3</a>
+    <a class='left-prev' id="prev-link" href="../../../topic-modeling.html" title="previous page">Latent Dirichlet Allocation (LDA) Topic Modeling</a>
 
         </div>
         

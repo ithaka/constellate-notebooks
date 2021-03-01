@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Import your dataset &#8212; Intro to Text Analysis</title>
+    <title>Exploring Word Frequencies &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,6 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Finding Significant Words Using TF/IDF" href="finding-significant-terms.html" />
+    <link rel="prev" title="Exploring Metadata and Pre-Processing" href="exploring-metadata.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -104,11 +106,6 @@
    Data scientists and business professionals
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/parts/why-text-analysis/lib.html">
-   Librarians and information professionals
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -134,6 +131,33 @@
  <li class="toctree-l1">
   <a class="reference internal" href="python-basics-3.html">
    Python Basics 3
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intermediate Lessons
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exploring-metadata.html">
+   Exploring metadata and pre-processing
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Exploring Word Frequencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="finding-significant-terms.html">
+   Finding Significant Words Using TF/IDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="topic-modeling.html">
+   Latent Dirichlet Allocation (LDA) Topic Modeling
   </a>
  </li>
 </ul>
@@ -253,42 +277,47 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-your-dataset">
    Import your dataset
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#apply-pre-processing-filters-if-available">
    Apply Pre-Processing Filters (if available)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#extract-the-unigram-counts-from-the-dataset-json-file">
    Extract the Unigram Counts from the dataset JSON file
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#find-most-common-unigrams">
    Find Most Common Unigrams
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clean-up-tokens">
    Clean Up Tokens
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-stopwords-list">
      Load Stopwords List
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#apply-processing">
      Apply Processing
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#display-results">
+   Display Results
+  </a>
  </li>
 </ul>
 
@@ -306,7 +335,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Exploring Word Frequencies</strong></p>
+<div class="section" id="exploring-word-frequencies">
+<h1>Exploring Word Frequencies<a class="headerlink" href="#exploring-word-frequencies" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
 This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">notebook</a> shows how to find the most common words in a
 <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dataset">dataset</a>. The following processes are described:</p>
@@ -347,7 +377,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </ol>
 <hr class="docutils" />
 <div class="section" id="import-your-dataset">
-<h1>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h1>
+<h2>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h2>
 <p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
 <p>Enter a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
 <p>If you don’t have a dataset ID, you can:</p>
@@ -379,7 +409,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 <div class="section" id="apply-pre-processing-filters-if-available">
-<h1>Apply Pre-Processing Filters (if available)<a class="headerlink" href="#apply-pre-processing-filters-if-available" title="Permalink to this headline">¶</a></h1>
+<h2>Apply Pre-Processing Filters (if available)<a class="headerlink" href="#apply-pre-processing-filters-if-available" title="Permalink to this headline">¶</a></h2>
 <p>If you completed pre-processing with the “Exploring Metadata and Pre-processing” notebook, you can use your CSV file of dataset IDs to automatically filter the dataset. Your pre-processed CSV file  must be in the same directory as this notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -405,7 +435,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 <div class="section" id="extract-the-unigram-counts-from-the-dataset-json-file">
-<h1>Extract the Unigram Counts from the dataset JSON file<a class="headerlink" href="#extract-the-unigram-counts-from-the-dataset-json-file" title="Permalink to this headline">¶</a></h1>
+<h2>Extract the Unigram Counts from the dataset JSON file<a class="headerlink" href="#extract-the-unigram-counts-from-the-dataset-json-file" title="Permalink to this headline">¶</a></h2>
 <p>We pulled in our dataset using a <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>. The file, which resides in the datasets/ folder, is a compressed JSON Lines file (jsonl.gz) that contains all the metadata information found in the metadata CSV <em>plus</em> the textual data necessary for analysis including:</p>
 <ul class="simple">
 <li><p>Unigram Counts</p></li>
@@ -450,7 +480,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 <div class="section" id="find-most-common-unigrams">
-<h1>Find Most Common Unigrams<a class="headerlink" href="#find-most-common-unigrams" title="Permalink to this headline">¶</a></h1>
+<h2>Find Most Common Unigrams<a class="headerlink" href="#find-most-common-unigrams" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have a list of the frequency of all the unigrams in our corpus, we need to sort them to find which are most common</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -462,7 +492,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 <div class="section" id="clean-up-tokens">
-<h1>Clean Up Tokens<a class="headerlink" href="#clean-up-tokens" title="Permalink to this headline">¶</a></h1>
+<h2>Clean Up Tokens<a class="headerlink" href="#clean-up-tokens" title="Permalink to this headline">¶</a></h2>
 <p>We have successfully created a word frequency list. There are a couple small issues, however, that we still need to address:</p>
 <ol class="simple">
 <li><p>There are many <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function-words">function words</a>, words like “the”, “in”, and “of” that are grammatically important but do not carry as much semantic meaning like <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#content-words">content words</a>, such as nouns and verbs.</p></li>
@@ -474,7 +504,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <li><p>Lowercasing all the characters in each string to combine our counts</p></li>
 </ol>
 <div class="section" id="load-stopwords-list">
-<h2>Load Stopwords List<a class="headerlink" href="#load-stopwords-list" title="Permalink to this headline">¶</a></h2>
+<h3>Load Stopwords List<a class="headerlink" href="#load-stopwords-list" title="Permalink to this headline">¶</a></h3>
 <p>If you have created a stopword list in the stopwords notebook, we will import it here. (You can always modify the CSV file to add or subtract words then reload the list.) Otherwise, we’ll load the NLTK <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#stop-words">stopwords</a> list automatically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -503,7 +533,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 <div class="section" id="apply-processing">
-<h2>Apply Processing<a class="headerlink" href="#apply-processing" title="Permalink to this headline">¶</a></h2>
+<h3>Apply Processing<a class="headerlink" href="#apply-processing" title="Permalink to this headline">¶</a></h3>
 <p>In addition to using a stopwords list, we will clean up the tokens by lowercasing all tokens and combining them. This will combine tokens with different capitalization such as “quarterly” and “Quarterly.” We will also remove any tokens that are not alphanumeric.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -530,6 +560,10 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="display-results">
+<h2>Display Results<a class="headerlink" href="#display-results" title="Permalink to this headline">¶</a></h2>
 <p>Finally, we will display the 20 most common words by using the <code class="docutils literal notranslate"><span class="pre">.most_common()</span></code> method on the <code class="docutils literal notranslate"><span class="pre">Counter()</span></code> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -568,6 +602,8 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="exploring-metadata.html" title="previous page">Exploring Metadata and Pre-Processing</a>
+    <a class='right-next' id="next-link" href="finding-significant-terms.html" title="next page">Finding Significant Words Using TF/IDF</a>
 
         </div>
         

@@ -54,7 +54,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Why should librarians and information professionals learn text analysis?" href="lib.html" />
+    <link rel="next" title="Getting Started with Jupyter Notebooks" href="../../../getting-started-with-jupyter.html" />
     <link rel="prev" title="Why should digital humanists learn text analysis?" href="dh.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -106,11 +106,6 @@
    Data scientists and business professionals
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lib.html">
-   Librarians and information professionals
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -136,6 +131,33 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../../python-basics-3.html">
    Python Basics 3
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intermediate Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../exploring-metadata.html">
+   Exploring metadata and pre-processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../exploring-word-frequencies.html">
+   Exploring Word Frequencies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../finding-significant-terms.html">
+   Finding Significant Words Using TF/IDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../topic-modeling.html">
+   Latent Dirichlet Allocation (LDA) Topic Modeling
   </a>
  </li>
 </ul>
@@ -263,6 +285,36 @@
    How long will it take me to learn text analysis?
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-text-analysis-methods-should-a-data-scientist-or-business-professional-learn">
+   What text analysis methods should a data scientist or business professional learn?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-these-texts-about">
+   1. What are these texts about?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-are-these-texts-connected">
+   2. How are these texts connected?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-emotions-or-affects-are-found-within-these-texts">
+   3. What emotions (or affects) are found within these texts?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-names-are-used-in-these-texts">
+   4. What names are used in these texts?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#which-of-these-texts-are-most-similar">
+   5. Which of these texts are most similar?
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -309,6 +361,59 @@
 <p>Instead of trying to learn everything, you should focus on the things likely to be beneficial given the data you have access to. To get started, you need to understand the possible applications for text analysis, so you are in a good position to decide what to learn (and how much). Even if you have no programming experience, it is reasonable to expect you could be doing beginner-level text analysis methods in a few weeks and intermediate-level text analysis methods in a month.</p>
 <p>Let’s consider a few methods that could help any business.</p>
 </div>
+<div class="section" id="what-text-analysis-methods-should-a-data-scientist-or-business-professional-learn">
+<h2>What text analysis methods should a data scientist or business professional learn?<a class="headerlink" href="#what-text-analysis-methods-should-a-data-scientist-or-business-professional-learn" title="Permalink to this headline">¶</a></h2>
+<p>This section explains various kinds of text analysis methods for a business and data science audience.</p>
+<ul class="simple">
+<li><p>What are they?</p></li>
+<li><p>Why would you use them?</p></li>
+<li><p>How long will it take to apply them?</p></li>
+</ul>
+<p>The methods presented here are among the most well-known but certainly not exhaustive. After reading this section, you’ll be better-prepared to decide how much or how little text analysis may be useful for your work. There are <strong>five main questions</strong> that text analysis can help answer:</p>
+<ol class="simple">
+<li><p>What are these texts about?</p></li>
+<li><p>How are these texts connected?</p></li>
+<li><p>What emotions (or affects) are found within these texts?</p></li>
+<li><p>What names are used in these texts?</p></li>
+<li><p>Which of these texts are most similar?</p></li>
+</ol>
+</div>
+<div class="section" id="what-are-these-texts-about">
+<h2>1. What are these texts about?<a class="headerlink" href="#what-are-these-texts-about" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Word Frequency</strong> (Beginner)<br />Counting the frequency of a word in any given text. This includes Bag of Words and TF-IDF. Example: “What words are most common in customer support tickets?”</p></li>
+<li><p><strong>Collocation</strong> (Beginner)<br />Examining where words occur close to one another. Example: “When people mention our premium product, what do they say about the packaging?”</p></li>
+<li><p><strong>Topic Analysis (or Topic Modeling)</strong> (Intermediate)<br />Discovering the topics within a group of texts. Example: “What are the most frequent topics discussed in five years of email from our advertising department?”</p></li>
+<li><p><strong>TF/IDF</strong> (Intermediate)<br />Finding the significant words within a text. Example: “Given a decade of board reports, are there seasonal issues that crop up in summer vs. winter?”</p></li>
+</ul>
+</div>
+<div class="section" id="how-are-these-texts-connected">
+<h2>2. How are these texts connected?<a class="headerlink" href="#how-are-these-texts-connected" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Concordance</strong> (Beginner)<br />Where is this word or phrase used in these documents? Example: “Show me every email where someone mentions our least visible product.”</p></li>
+<li><p><strong>Network Analysis</strong> (Advanced)<br />How are the authors of these texts connected? Example: “Given email data, how often does marketing connect with engineering?”</p></li>
+</ul>
+</div>
+<div class="section" id="what-emotions-or-affects-are-found-within-these-texts">
+<h2>3. What emotions (or affects) are found within these texts?<a class="headerlink" href="#what-emotions-or-affects-are-found-within-these-texts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Sentiment Analysis</strong> (Intermediate)<br />Does the author use positive or negative language? Example: “How do our customers feel about our new product line?”</p></li>
+</ul>
+</div>
+<div class="section" id="what-names-are-used-in-these-texts">
+<h2>4. What names are used in these texts?<a class="headerlink" href="#what-names-are-used-in-these-texts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Named Entity Recognition</strong> (Intermediate)<br />List every example of a kind of entity from these texts. Example: “What are all of the geographic locations mentioned by our users?”</p></li>
+<li><p><strong>Removing Sensitive Information</strong> (Intermediate)<br />Remove sensitive or personally identifiable information (PII) from data for archiving. Example: “Since our founder is retiring, we want to preserve his business emails.” “We want to save user data without linking it to their identities.”</p></li>
+</ul>
+</div>
+<div class="section" id="which-of-these-texts-are-most-similar">
+<h2>5. Which of these texts are most similar?<a class="headerlink" href="#which-of-these-texts-are-most-similar" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Clustering</strong> (Advanced)<br />Which texts are the most similar? Example: “How does our help documentation compare with that of our competitors?”</p></li>
+<li><p><strong>Supervised Machine Learning</strong> (Advanced)<br />Are there other texts similar to this? Example: “Given these examples of accessible content, can we identify where our content is not accessible?” “Given user search data, can we predict user search terms?”</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -337,7 +442,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="dh.html" title="previous page">Why should digital humanists learn text analysis?</a>
-    <a class='right-next' id="next-link" href="lib.html" title="next page">Why should librarians and information professionals learn text analysis?</a>
+    <a class='right-next' id="next-link" href="../../../getting-started-with-jupyter.html" title="next page">Getting Started with Jupyter Notebooks</a>
 
         </div>
         

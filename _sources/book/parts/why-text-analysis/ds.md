@@ -36,3 +36,38 @@ The answer to, "How long will it take me to learn text analysis?" depends on the
 Instead of trying to learn everything, you should focus on the things likely to be beneficial given the data you have access to. To get started, you need to understand the possible applications for text analysis, so you are in a good position to decide what to learn (and how much). Even if you have no programming experience, it is reasonable to expect you could be doing beginner-level text analysis methods in a few weeks and intermediate-level text analysis methods in a month.
 
 Let's consider a few methods that could help any business.
+
+## What text analysis methods should a data scientist or business professional learn?
+
+This section explains various kinds of text analysis methods for a business and data science audience. 
+* What are they?
+* Why would you use them?
+* How long will it take to apply them?
+  
+The methods presented here are among the most well-known but certainly not exhaustive. After reading this section, you'll be better-prepared to decide how much or how little text analysis may be useful for your work. There are **five main questions** that text analysis can help answer:
+1. What are these texts about?
+2. How are these texts connected?
+3. What emotions (or affects) are found within these texts?
+4. What names are used in these texts?
+5. Which of these texts are most similar?
+
+## 1. What are these texts about?
+* **Word Frequency** (Beginner)<br />Counting the frequency of a word in any given text. This includes Bag of Words and TF-IDF. Example: "What words are most common in customer support tickets?"
+* **Collocation** (Beginner)<br />Examining where words occur close to one another. Example: "When people mention our premium product, what do they say about the packaging?"
+* **Topic Analysis (or Topic Modeling)** (Intermediate)<br />Discovering the topics within a group of texts. Example: "What are the most frequent topics discussed in five years of email from our advertising department?"
+* **TF/IDF** (Intermediate)<br />Finding the significant words within a text. Example: "Given a decade of board reports, are there seasonal issues that crop up in summer vs. winter?"
+
+## 2. How are these texts connected?
+* **Concordance** (Beginner)<br />Where is this word or phrase used in these documents? Example: "Show me every email where someone mentions our least visible product."
+* **Network Analysis** (Advanced)<br />How are the authors of these texts connected? Example: "Given email data, how often does marketing connect with engineering?"
+
+## 3. What emotions (or affects) are found within these texts?
+* **Sentiment Analysis** (Intermediate)<br />Does the author use positive or negative language? Example: "How do our customers feel about our new product line?"
+
+## 4. What names are used in these texts?
+* **Named Entity Recognition** (Intermediate)<br />List every example of a kind of entity from these texts. Example: "What are all of the geographic locations mentioned by our users?"
+* **Removing Sensitive Information** (Intermediate)<br />Remove sensitive or personally identifiable information (PII) from data for archiving. Example: "Since our founder is retiring, we want to preserve his business emails." "We want to save user data without linking it to their identities."
+
+## 5. Which of these texts are most similar?
+* **Clustering** (Advanced)<br />Which texts are the most similar? Example: "How does our help documentation compare with that of our competitors?"
+* **Supervised Machine Learning** (Advanced)<br />Are there other texts similar to this? Example: "Given these examples of accessible content, can we identify where our content is not accessible?" "Given user search data, can we predict user search terms?"

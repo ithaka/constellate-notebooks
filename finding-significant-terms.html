@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What is “Term Frequency- Inverse Document Frequency” (TF-IDF)? &#8212; Intro to Text Analysis</title>
+    <title>Finding Significant Words Using TF/IDF &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,6 +56,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Latent Dirichlet Allocation (LDA) Topic Modeling" href="topic-modeling.html" />
+    <link rel="prev" title="Exploring Word Frequencies" href="exploring-word-frequencies.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -106,11 +108,6 @@
    Data scientists and business professionals
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/parts/why-text-analysis/lib.html">
-   Librarians and information professionals
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -136,6 +133,33 @@
  <li class="toctree-l1">
   <a class="reference internal" href="python-basics-3.html">
    Python Basics 3
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intermediate Lessons
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exploring-metadata.html">
+   Exploring metadata and pre-processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exploring-word-frequencies.html">
+   Exploring Word Frequencies
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Finding Significant Words Using TF/IDF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="topic-modeling.html">
+   Latent Dirichlet Allocation (LDA) Topic Modeling
   </a>
  </li>
 </ul>
@@ -255,111 +279,121 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-term-frequency-inverse-document-frequency-tf-idf">
    What is “Term Frequency- Inverse Document Frequency” (TF-IDF)?
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#term-frequency-function">
      Term Frequency Function
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inverse-document-frequency-function">
      Inverse Document Frequency Function
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tf-idf-calculation-in-plain-english">
      TF-IDF Calculation in Plain English
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#an-example-calculation-of-tf-idf">
      An Example Calculation of TF-IDF
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#computing-tf-idf-example-1">
      Computing TF-IDF (Example 1)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#computing-tf-idf-example-2">
      Computing TF-IDF (Example 2)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#computing-tf-idf-example-3">
      Computing TF-IDF (Example 3)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-full-tf-idf-example-table">
      The Full TF-IDF Example Table
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#computing-tf-idf-with-your-dataset">
    Computing TF-IDF with your Dataset
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#apply-pre-processing-filters-if-available">
    Apply Pre-Processing Filters (if available)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-stopwords-list">
    Load Stopwords List
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#define-a-unigram-processing-function">
    Define a Unigram Processing Function
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-gensim-to-compute-term-frequency-inverse-document-frequency">
    Using Gensim to Compute “Term Frequency- Inverse Document Frequency”
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-a-gensim-dictionary">
      Creating a Gensim Dictionary
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-bag-of-words-corpus">
-     Creating a Bag of Words Corpus
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-bag-of-words-corpus">
+   Creating a Bag of Words Corpus
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-a-single-document">
+     Example: A Single Document
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-a-single-document">
-       Example: A Single Document
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-all-documents">
-       Example: All Documents
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-the-tfidfmodel">
-     Create the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       TfidfModel
-      </span>
-     </code>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-all-documents">
+     Example: All Documents
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-the-tfidfmodel">
+   Create the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     TfidfModel
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#find-top-terms-in-a-single-document">
+   Find Top Terms in a Single Document
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#display-top-result-for-all-documents">
+   Display Top Result for All Documents
+  </a>
  </li>
 </ul>
 
@@ -377,7 +411,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Finding Significant Words Using TF/IDF</strong></p>
+<div class="section" id="finding-significant-words-using-tf-idf">
+<h1>Finding Significant Words Using TF/IDF<a class="headerlink" href="#finding-significant-words-using-tf-idf" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
 This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">notebook</a> shows how to discover significant words. The method for finding significant terms is <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">tf-idf</a>.  The following processes are described:</p>
 <ul class="simple">
@@ -423,7 +458,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </ol>
 <hr class="docutils" />
 <div class="section" id="what-is-term-frequency-inverse-document-frequency-tf-idf">
-<h1>What is “Term Frequency- Inverse Document Frequency” (TF-IDF)?<a class="headerlink" href="#what-is-term-frequency-inverse-document-frequency-tf-idf" title="Permalink to this headline">¶</a></h1>
+<h2>What is “Term Frequency- Inverse Document Frequency” (TF-IDF)?<a class="headerlink" href="#what-is-term-frequency-inverse-document-frequency-tf-idf" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a> is used in <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#machine-learning">machine learning</a> and <a class="reference external" href="https://docs.tdm-pilot.org/key-terms//#nlp">natural language processing</a> for measuring the significance of particular terms for a given document. It consists of two parts that are multiplied together:</p>
 <ol class="simple">
 <li><p>Term Frequency- A measure of how many times a given word appears in a document</p></li>
@@ -440,25 +475,25 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 \[tfidf_{t,d} = tf_{t,d} \cdot idf_{t,D}\]</div>
 <p>In plain English, this means: <strong>The value of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a> is the product (or multiplication) of a given term’s frequency multiplied by its inverse document frequency.</strong> Let’s unpack these terms one at a time.</p>
 <div class="section" id="term-frequency-function">
-<h2>Term Frequency Function<a class="headerlink" href="#term-frequency-function" title="Permalink to this headline">¶</a></h2>
+<h3>Term Frequency Function<a class="headerlink" href="#term-frequency-function" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[tf_{t,d}\]</div>
 <p>The number of times (t) a term occurs in a given document (d)</p>
 </div>
 <div class="section" id="inverse-document-frequency-function">
-<h2>Inverse Document Frequency Function<a class="headerlink" href="#inverse-document-frequency-function" title="Permalink to this headline">¶</a></h2>
+<h3>Inverse Document Frequency Function<a class="headerlink" href="#inverse-document-frequency-function" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[idf_i = \mbox{log} \frac{N}{|{d : t_i \in d}|}\]</div>
 <p>The inverse document frequency can be expanded to the calculation on the right. In plain English, this means: <strong>The log of the total number of documents (N) divided by the number of documents that contain the term</strong></p>
 </div>
 <div class="section" id="tf-idf-calculation-in-plain-english">
-<h2>TF-IDF Calculation in Plain English<a class="headerlink" href="#tf-idf-calculation-in-plain-english" title="Permalink to this headline">¶</a></h2>
+<h3>TF-IDF Calculation in Plain English<a class="headerlink" href="#tf-idf-calculation-in-plain-english" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[(Times-the-word-occurs-in-given-document) \cdot \mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
 <p>There are variations on the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a> formula, but this is the most widely-used version.</p>
 </div>
 <div class="section" id="an-example-calculation-of-tf-idf">
-<h2>An Example Calculation of TF-IDF<a class="headerlink" href="#an-example-calculation-of-tf-idf" title="Permalink to this headline">¶</a></h2>
+<h3>An Example Calculation of TF-IDF<a class="headerlink" href="#an-example-calculation-of-tf-idf" title="Permalink to this headline">¶</a></h3>
 <p>Let’s take a look at an example to illustrate the fundamentals of <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a>. First, we need several texts to compare. Our texts will be very simple.</p>
 <ul class="simple">
 <li><p>text1 = ‘The grass was green and spread out the distance like the sea.’</p></li>
@@ -693,7 +728,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </table>
 </div>
 <div class="section" id="computing-tf-idf-example-1">
-<h2>Computing TF-IDF (Example 1)<a class="headerlink" href="#computing-tf-idf-example-1" title="Permalink to this headline">¶</a></h2>
+<h3>Computing TF-IDF (Example 1)<a class="headerlink" href="#computing-tf-idf-example-1" title="Permalink to this headline">¶</a></h3>
 <p>We have enough information now to compute <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a> for every word in our corpus. Recall the plain English formula.</p>
 <div class="math notranslate nohighlight">
 \[(Times-the-word-occurs-in-given-document) \cdot \mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
@@ -730,7 +765,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 1 \cdot \
 <p>we can see that <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a> will be 0 for any word that occurs in every document. That is, if a word occurs in every document, then it is not a significant term for any individual document.</p>
 </div>
 <div class="section" id="computing-tf-idf-example-2">
-<h2>Computing TF-IDF (Example 2)<a class="headerlink" href="#computing-tf-idf-example-2" title="Permalink to this headline">¶</a></h2>
+<h3>Computing TF-IDF (Example 2)<a class="headerlink" href="#computing-tf-idf-example-2" title="Permalink to this headline">¶</a></h3>
 <p>Let’s try a second example with the word ‘out’. Recall the plain English formula.</p>
 <div class="math notranslate nohighlight">
 \[(Times-the-word-occurs-in-given-document) \cdot \mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
@@ -760,7 +795,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <p>The results of our analysis suggest ‘out’ has some significance in text1 and text2, but no significance for text3 and text4 where the word does not occur.</p>
 </div>
 <div class="section" id="computing-tf-idf-example-3">
-<h2>Computing TF-IDF (Example 3)<a class="headerlink" href="#computing-tf-idf-example-3" title="Permalink to this headline">¶</a></h2>
+<h3>Computing TF-IDF (Example 3)<a class="headerlink" href="#computing-tf-idf-example-3" title="Permalink to this headline">¶</a></h3>
 <p>Let’s try one last example with the word ‘met’. Here’s the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a> formula again:</p>
 <div class="math notranslate nohighlight">
 \[(Times-the-word-occurs-in-given-document) \cdot \mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
@@ -790,7 +825,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <p>As should be expected, we can see that the word ‘met’ is very significant in text3 but not significant in any other text since it does not occur in any other text.</p>
 </div>
 <div class="section" id="the-full-tf-idf-example-table">
-<h2>The Full TF-IDF Example Table<a class="headerlink" href="#the-full-tf-idf-example-table" title="Permalink to this headline">¶</a></h2>
+<h3>The Full TF-IDF Example Table<a class="headerlink" href="#the-full-tf-idf-example-table" title="Permalink to this headline">¶</a></h3>
 <p>Here are the original sentences for each text:</p>
 <ul class="simple">
 <li><p>text1 = ‘The grass was green and spread out the distance like the sea.’</p></li>
@@ -924,7 +959,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 <hr class="docutils" />
 <div class="section" id="computing-tf-idf-with-your-dataset">
-<h1>Computing TF-IDF with your Dataset<a class="headerlink" href="#computing-tf-idf-with-your-dataset" title="Permalink to this headline">¶</a></h1>
+<h2>Computing TF-IDF with your Dataset<a class="headerlink" href="#computing-tf-idf-with-your-dataset" title="Permalink to this headline">¶</a></h2>
 <p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
 <p>Enter a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
 <p>If you don’t have a dataset ID, you can:</p>
@@ -954,7 +989,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 <div class="section" id="apply-pre-processing-filters-if-available">
-<h1>Apply Pre-Processing Filters (if available)<a class="headerlink" href="#apply-pre-processing-filters-if-available" title="Permalink to this headline">¶</a></h1>
+<h2>Apply Pre-Processing Filters (if available)<a class="headerlink" href="#apply-pre-processing-filters-if-available" title="Permalink to this headline">¶</a></h2>
 <p>If you completed pre-processing with the “Exploring Metadata and Pre-processing” notebook, you can use your CSV file of dataset IDs to automatically filter the dataset. Your pre-processed CSV file  must be in the root folder.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -980,7 +1015,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 <div class="section" id="load-stopwords-list">
-<h1>Load Stopwords List<a class="headerlink" href="#load-stopwords-list" title="Permalink to this headline">¶</a></h1>
+<h2>Load Stopwords List<a class="headerlink" href="#load-stopwords-list" title="Permalink to this headline">¶</a></h2>
 <p>If you have created a stopword list in the stopwords notebook, we will import it here. (You can always modify the CSV file to add or subtract words then reload the list.) Otherwise, we’ll load the NLTK <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#stop-words">stopwords</a> list automatically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1009,7 +1044,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 <div class="section" id="define-a-unigram-processing-function">
-<h1>Define a Unigram Processing Function<a class="headerlink" href="#define-a-unigram-processing-function" title="Permalink to this headline">¶</a></h1>
+<h2>Define a Unigram Processing Function<a class="headerlink" href="#define-a-unigram-processing-function" title="Permalink to this headline">¶</a></h2>
 <p>In this step, we gather the unigrams. If there is a Pre-Processing Filter, we will only analyze documents from the filtered ID list. We will also process each unigram, assessing them individually. We will complete the following tasks:</p>
 <ul class="simple">
 <li><p>Lowercase all tokens</p></li>
@@ -1077,7 +1112,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 <hr class="docutils" />
 <div class="section" id="using-gensim-to-compute-term-frequency-inverse-document-frequency">
-<h1>Using Gensim to Compute “Term Frequency- Inverse Document Frequency”<a class="headerlink" href="#using-gensim-to-compute-term-frequency-inverse-document-frequency" title="Permalink to this headline">¶</a></h1>
+<h2>Using Gensim to Compute “Term Frequency- Inverse Document Frequency”<a class="headerlink" href="#using-gensim-to-compute-term-frequency-inverse-document-frequency" title="Permalink to this headline">¶</a></h2>
 <p>It will be helpful to remember the basic steps we did in the explanatory <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a> example:</p>
 <ol class="simple">
 <li><p>Create a list of the frequency of every word in every document</p></li>
@@ -1086,7 +1121,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </ol>
 <p>So far, we have completed the first item by creating a list of the frequency of every word in every document. Now we need to create a list of every word in the corpus. In <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim">gensim</a>, this is called a “dictionary”. A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim-dictionary">gensim dictionary</a> is similar to a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python-dictionary">Python dictionary</a>, but here it is called a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim-dictionary">gensim dictionary</a> to show it is a specialized kind of dictionary.</p>
 <div class="section" id="creating-a-gensim-dictionary">
-<h2>Creating a Gensim Dictionary<a class="headerlink" href="#creating-a-gensim-dictionary" title="Permalink to this headline">¶</a></h2>
+<h3>Creating a Gensim Dictionary<a class="headerlink" href="#creating-a-gensim-dictionary" title="Permalink to this headline">¶</a></h3>
 <p>Let’s create our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim-dictionary">gensim dictionary</a>. A <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim-dictionary">gensim dictionary</a> is a kind of masterlist of all the words across all the documents in our corpus. Each unique word is assigned an ID in the gensim dictionary. The result is a set of key/value pairs of unique tokens and their unique IDs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1117,6 +1152,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span><span class="o">.</span><span class="n">token2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;people&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Get the value for the key &#39;people&#39;. Return 0 if there is no token matching &#39;people&#39;. The number returned is the gensim dictionary ID for the token. </span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1203,6 +1239,9 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="find-top-terms-in-a-single-document">
+<h2>Find Top Terms in a Single Document<a class="headerlink" href="#find-top-terms-in-a-single-document" title="Permalink to this headline">¶</a></h2>
 <p>Finally, let’s sort the terms by their <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">TF-IDF</a> weights to find the most significant terms in the document.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1237,6 +1276,9 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="display-top-result-for-all-documents">
+<h2>Display Top Result for All Documents<a class="headerlink" href="#display-top-result-for-all-documents" title="Permalink to this headline">¶</a></h2>
 <p>And, finally, we can see the most significant term in every document.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1281,6 +1323,8 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="exploring-word-frequencies.html" title="previous page">Exploring Word Frequencies</a>
+    <a class='right-next' id="next-link" href="topic-modeling.html" title="next page">Latent Dirichlet Allocation (LDA) Topic Modeling</a>
 
         </div>
         
