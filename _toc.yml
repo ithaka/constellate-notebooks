@@ -9,8 +9,6 @@
     title: Digital humanists
   - file: book/parts/why-text-analysis/ds
     title: Data scientists and business professionals
-  - file: book/parts/why-text-analysis/lib
-    title: Librarians and information professionals
 
 - part: Beginner Lessons
   chapters:
@@ -22,6 +20,17 @@
     title: Python Basics 2
   - file: python-basics-3
     title: Python Basics 3
+
+- part: Intermediate Lessons
+  chapters:
+  - file: exploring-metadata
+    title: Exploring metadata and pre-processing
+  - file: exploring-word-frequencies
+    title: Exploring Word Frequencies
+  - file: finding-significant-terms
+    title: Finding Significant Words Using TF/IDF
+  - file: topic-modeling
+    title: Latent Dirichlet Allocation (LDA) Topic Modeling
 
 - part: Reference
   chapters:
