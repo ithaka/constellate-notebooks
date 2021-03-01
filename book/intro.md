@@ -1,3 +1,3 @@
-Polaris: A Guide to Teaching and Learning Text Analysis
+Welcome to *Intro to Text Analysis*
 ============================
-Welcome to *Polaris: A Guide to Teaching and Learning Text Analysis*. This website is a [Jupyter Book](https://jupyterbook.org) intended to help teachers (and aspiring teachers) of text analysis. 
+Welcome to the course website for the *Intro to Text Analysis*, a course offered to **Constellate Beta** participants. This website is a [Jupyter Book](https://jupyterbook.org) that contains the materials for the course. 

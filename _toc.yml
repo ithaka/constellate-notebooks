@@ -15,10 +15,15 @@
 - part: Beginner Lessons
   chapters:
   - file: getting-started-with-jupyter
-    title: Getting started with Jupyter Notebooks title
+    title: Getting started with Jupyter Notebooks
   - file: python-basics-1
     title: Python Basics 1
   - file: python-basics-2
     title: Python Basics 2
   - file: python-basics-3
     title: Python Basics 3
+
+- part: Reference
+  chapters:
+    - file: book/parts/reference/glossary
+      title: Glossary
