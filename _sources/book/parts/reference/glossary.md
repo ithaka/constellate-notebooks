@@ -277,7 +277,7 @@ The newest software from [Project Jupyter](#project-jupyter), intended to replac
 ## Jupyter Notebook, The (software) <a id="the-jupyter-notebook"></a>
 A single-user web application for executing and editing [Jupyter notebook files](#jupyter-notebook). Will be replaced by [JupyterLab](#jupyterlab).
 
-## Jupyter notebook (file) <a name="jupyter-notebook"></a>
+## Jupyter notebook (file)
 A file with extension .ipynb that contains computer code (e.g. [Python](#python) or [R](#r)) alongside other explanatory media (text, images, video).
 
 ## Jupyter Server <a id="jupyter-serve"></a>
