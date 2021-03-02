@@ -9,6 +9,9 @@ mv ~/tdm_client.py .
 python tdm_client.py install
 cd -
 
+# Book files not needed for notebooks.
+rm -rf _toc.yml _config.yml .github/ book/ book-requirements.txt
+
 
 python -m nltk.downloader stopwords wordnet
 
