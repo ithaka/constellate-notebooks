@@ -543,7 +543,6 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combine the strings &#39;Hello&#39; and &#39;World&#39;</span>
-<span class="s1">&#39;Hello&#39;</span> <span class="o">+</span> <span class="s1">&#39;World&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -552,7 +551,6 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combine three strings</span>
-<span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="s1">&#39;World&#39;</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -582,7 +580,6 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiply a string by an integer</span>
-<span class="s1">&#39;Hello World!&#39;</span> <span class="o">*</span> <span class="mi">5</span>
 </pre></div>
 </div>
 </div>
@@ -699,15 +696,6 @@ Avariable = 8
 <div><p>lowercase, with words separated by underscores as necessary to improve readability.</p>
 </div></blockquote>
 <p>If you have written code before, you may be familiar with other styles, but these notebooks will attempt to follow the PEP guidelines for style. Ultimately, the most important thing is that your <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> names are consistent so that someone who reads your code can follow what it is doing. As your code becomes more complicated, writing detailed comments with <code class="docutils literal notranslate"><span class="pre">#</span></code> will also become more important.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snake_case_variable</span>
-<span class="n">kebab</span><span class="o">-</span><span class="n">case</span><span class="o">-</span><span class="n">variable</span>
-<span class="n">CamelCaseVariable</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="functions">
@@ -789,24 +777,13 @@ Avariable = 8
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program to tell a user how many months old they are</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;How old are you?&#39;</span><span class="p">)</span> <span class="c1"># Ask the user their age</span>
 <span class="n">user_age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># Take the user input and put it into the variable user_age</span>
-<span class="n">number_of_months</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_age</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span> <span class="c1"># Define a new variable number_of_months that multiplies the user&#39;s age by 12</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;That is more than &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_of_months</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; months old!&#39;</span> <span class="p">)</span> <span class="c1"># Print a response that tells the user they are at least number_of_months old</span>
+<span class="n">number_of_months</span> <span class="o">=</span> <span class="n">user_age</span> <span class="o">*</span> <span class="mi">12</span> <span class="c1"># Define a new variable number_of_months that multiplies the user&#39;s age by 12</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;That is more than &#39;</span> <span class="o">+</span> <span class="n">number_of_months</span> <span class="o">+</span> <span class="s1">&#39; months old!&#39;</span> <span class="p">)</span> <span class="c1"># Print a response that tells the user they are at least number_of_months old</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>In order to compute the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> <code class="docutils literal notranslate"><span class="pre">number_of_months</span></code>, we multiply <code class="docutils literal notranslate"><span class="pre">user_age</span></code> by 12. The problem is that <code class="docutils literal notranslate"><span class="pre">user_age</span></code> is a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a>. Multiplying a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a> by 12 simply makes the string repeat 12 times. After the user gives us their age, we need that input to be converted to an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integer</a>. At the same time, we have to convert the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integer</a> <code class="docutils literal notranslate"><span class="pre">number_of_months</span></code> back to a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a> for our final <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A program to tell a user how many months old they are</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;How old are you?&#39;</span><span class="p">)</span> <span class="c1"># Ask the user their age</span>
-<span class="n">user_age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># Take the user input and put it into the variable user_age</span>
-<span class="n">number_of_months</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_age</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span> <span class="c1"># Define a new variable number_of_months that multiplies the user&#39;s age by 12</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;That is more than &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_of_months</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; months old!&#39;</span> <span class="p">)</span> <span class="c1"># Print a response that tells the user they are at least number_of_months old</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>In order to compute the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#variable">variable</a> <code class="docutils literal notranslate"><span class="pre">number_of_months</span></code>, we multiply <code class="docutils literal notranslate"><span class="pre">user_age</span></code> by 12. The problem is that <code class="docutils literal notranslate"><span class="pre">user_age</span></code> is a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a>. Multiplying a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a> by 12 simply makes the string repeat 12 times. After the user gives us their age, we need that input to be converted to an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integer</a>. At the same time, we have to convert the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#integer">integer</a> <code class="docutils literal notranslate"><span class="pre">number_of_months</span></code> back to a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">string</a> for our final <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. Can you fix the program?</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="lesson-complete">
