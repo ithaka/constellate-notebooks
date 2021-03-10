@@ -7,11 +7,11 @@ import logging
 import glob
 import gzip
 import json
-from pathlib import Path
 import os
-from urllib.request import urlretrieve
 import sys
 import zipfile
+from pathlib import Path
+from urllib.request import urlretrieve
 
 import progressbar
 import requests
