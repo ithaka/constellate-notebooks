@@ -89,7 +89,7 @@ def get_metadata(dataset_id, fname=None, force=False):
     if fname is None:
         output_file = f"{dataset_id}.csv"
     else:
-        output_file = "{fname}.csv"
+        output_file = f"{fname}.csv"
     output_path = os.path.join(datasets_dir, output_file)
     if (force is False) and (os.path.exists(output_path)):
         logging.info(f"Metdata file {output_path} exists. Not re-downloading.")
