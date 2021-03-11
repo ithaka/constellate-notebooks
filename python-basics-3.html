@@ -608,20 +608,15 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking a slice of a list without a beginning index</span>
 <span class="n">historical_periods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Classical Antiquity&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;High Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Contemporary History&#39;</span><span class="p">]</span>
-<span class="n">historical_periods</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">historical_periods</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking a slice of a list without a stopping index</span>
-<span class="n">historical_periods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Classical Antiquity&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;High Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Contemporary History&#39;</span><span class="p">]</span>
-<span class="n">historical_periods</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
-</pre></div>
-</div>
-</div>
-</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p><strong>Can you take a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> from the historical_periods <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> without using a starting or ending <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a>?</strong></p>
+<hr class="docutils" />
 <div class="section" id="the-in-and-not-in-operators">
 <h3>The <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> Operators<a class="headerlink" href="#the-in-and-not-in-operators" title="Permalink to this headline">¶</a></h3>
 <p>If we have a long <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>, it may be helpful to check whether a value is in the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a>. We can do this with the <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators, which return a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#boolean-value">boolean value</a>: <strong>True</strong> or <strong>False</strong>.</p>
@@ -629,6 +624,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checking whether an item is in a list using the `in` operator</span>
 
+<span class="c1"># Create a list called `staff`</span>
 <span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tara Richards&#39;</span><span class="p">,</span>
  <span class="s1">&#39;Tammy French&#39;</span><span class="p">,</span>
  <span class="s1">&#39;Justin Douglas&#39;</span><span class="p">,</span>
@@ -680,6 +676,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
  <span class="s1">&#39;Anna Powers&#39;</span><span class="p">,</span>
  <span class="s1">&#39;Tyler Perez&#39;</span><span class="p">]</span>
 
+<span class="c1"># Check whether a name is in staff</span>
 <span class="s1">&#39;Patricia Walker&#39;</span> <span class="ow">in</span> <span class="n">staff</span>
 </pre></div>
 </div>
@@ -768,7 +765,8 @@ For questions/comments/improvements, email <a class="reference external" href="m
  <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
  <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
 
-<span class="n">staff</span>
+<span class="c1"># Find the index number of a list item</span>
+<span class="n">staff</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Jessica Lee&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -812,9 +810,13 @@ For questions/comments/improvements, email <a class="reference external" href="m
  <span class="s1">&#39;Andrew Clark&#39;</span><span class="p">,</span>
  <span class="s1">&#39;Richard Pearson&#39;</span><span class="p">,</span>
  <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
-<span class="c1"># Write your append statement under this comment</span>
 
-<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span> <span class="c1"># Prints `staff` in a vertical list format to check that the name was added. The list() function will print our list in an easier to read format than the print() function.</span>
+<span class="c1"># Append a staff member to the list</span>
+
+
+<span class="c1"># Prints `staff` in a vertical list format to check that the name was added. </span>
+<span class="c1"># The list() function will print our list in an easier to read format than the print() function.</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -823,7 +825,9 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding an item to a list using an assignment statement</span>
-<span class="n">staff</span> <span class="o">=</span> <span class="n">staff</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Einhorn Finkle&#39;</span><span class="p">]</span> <span class="c1"># Concatenate name_list with the list [&#39;Einhorn Finkle&#39;]</span>
+<span class="c1"># We are concatenating two lists</span>
+
+<span class="n">staff</span> <span class="o">=</span> <span class="n">staff</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Einhorn Finkle&#39;</span><span class="p">]</span> <span class="c1"># Concatenate staff list with the list [&#39;Einhorn Finkle&#39;]</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -904,7 +908,8 @@ For questions/comments/improvements, email <a class="reference external" href="m
  <span class="s1">&#39;Glenn Allen&#39;</span><span class="p">]</span>
 <span class="c1"># Write your remove statement under this comment</span>
 
-<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span> <span class="c1"># Prints `staff` to check that the name was removed</span>
+<span class="c1"># Print `staff` to check that the name was removed</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -1043,8 +1048,8 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p>We can add a new <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#key-value-pair">key/value pair</a> to our <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dictionary">dictionary</a> using an <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#assignment-statement">assignment statement</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding the key &#39;Nathan Kelber&#39; with the value &#39;Digital Humanities Fellow&#39; to the dictionary contact</span>
-<span class="n">contacts</span><span class="p">[</span><span class="s1">&#39;Nathan Kelber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Digital Humanities Fellow&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding the key &#39;Nathan Kelber&#39; with the value &#39;Community Engagement Lead&#39; to the dictionary contact</span>
+<span class="n">contacts</span><span class="p">[</span><span class="s1">&#39;Nathan Kelber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Community Engagement Lead&#39;</span>
 
 <span class="n">pprint</span><span class="p">(</span><span class="n">contacts</span><span class="p">)</span> <span class="c1"># Use the pretty print function to print `contacts`</span>
 </pre></div>
@@ -1149,7 +1154,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
  <span class="s1">&#39;Rachel Charles&#39;</span><span class="p">:</span> <span class="s1">&#39;Physicist, medical&#39;</span><span class="p">,</span>
  <span class="s1">&#39;Stephanie Petty&#39;</span><span class="p">:</span> <span class="s1">&#39;Architect&#39;</span><span class="p">}</span>
 
-<span class="n">contacts</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">contacts</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
