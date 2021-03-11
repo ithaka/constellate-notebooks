@@ -603,12 +603,22 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">historical_periods</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> is 7 items long, meaning the whole <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> is within the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> <code class="docutils literal notranslate"><span class="pre">historical_periods[0:6]</span></code>. When we take a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> we can also leave out the first <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> (0 is assumed) or the stopping <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> (the last item is assumed).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">historical_periods</span></code> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> is 7 items long, meaning the whole <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> is within the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> <code class="docutils literal notranslate"><span class="pre">historical_periods[0:7]</span></code>. When we take a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#slice">slice</a> of a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#list">list</a> we can also leave out the first <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> (0 is assumed) or the stopping <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#index-number">index number</a> (the last item is assumed).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Taking a slice of a list without a beginning index</span>
 <span class="n">historical_periods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Classical Antiquity&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;High Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Middle Ages&#39;</span><span class="p">,</span> <span class="s1">&#39;Early Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Late Modern Period&#39;</span><span class="p">,</span> <span class="s1">&#39;Contemporary History&#39;</span><span class="p">]</span>
-<span class="n">historical_periods</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">historical_periods</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Classical Antiquity&#39;,
+ &#39;Early Middle Ages&#39;,
+ &#39;High Middle Ages&#39;,
+ &#39;Late Middle Ages&#39;,
+ &#39;Early Modern Period&#39;,
+ &#39;Late Modern Period&#39;]
 </pre></div>
 </div>
 </div>
