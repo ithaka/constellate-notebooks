@@ -61,7 +61,7 @@ Librarians increasingly find themselves trying to sort through collections in or
 
 For many scholars, text analysis sounds *potentially* powerful and useful, but the reality remains that learning text analysis is not a trivial task. Most learners are forced to learn on their own since there are few college courses in this work outside of data science courses. That means most learners lack access to the proper learning resources and struggle to find community support when things get difficult.
 
-The good news is that text analysis, like any skill, can be learned to a greater or lesser degree. For historians to study the early modern period, it is very helpful to have a command of Latin. Still, there are plenty of successful early modern scholars that never learn the language (or learn enough to navigate the resources significant to their research).
+The good news is that text analysis, like any skill, can be learned to a greater or lesser degree. For historians to study the early modern period, it is helpful to have a command of Latin. Still, there are plenty of successful early modern scholars that never learn the language (or learn enough to navigate the resources significant to their research).
 
 Depending on your research question, *you may not need to learn much coding* to do text analysis. The problem for many scholars is the possible applications for text analysis are not clear, so they are not in a good position to decide what to learn (and how much). At the same time, the sophistication needed for doing text analysis is a moving target. Topic modeling was once a very complicated task, requiring an understanding of the command line. Today, it can be accomplished in minutes using just a mouse.
 
