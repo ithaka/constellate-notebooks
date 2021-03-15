@@ -34,5 +34,5 @@
 
 - part: Reference
   chapters:
-    - file: book/parts/reference/glossary
-      title: Glossary
+    - url: https://docs.tdm-pilot.org/key-terms/
+      title: Text Analysis Glossary

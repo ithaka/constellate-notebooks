@@ -12,9 +12,21 @@ In a world where tenure-track positions in the humanities are the exception rath
 
 Text analysis is behind the auto-suggest on your phone; it filters the spam out of your email; and it helps suggest movies for you on Netflix. In this information age, with the onset of "big data," text analysis helps us "read" and "interpret" more than is humanly possible. Text analysis skills are valuable in the academic world and the commercial sector.
  
-## Assessing the Social Effects of Data-Driven Decision-Making is a Humanities Problem
+## The Algorithmic Bias of Data-Driven Decision-Making is a Humanities Problem
 
 Even if you don't use text analysis for your own research, it is important to understand a little about how it works because text analysis already drives the way decisions are made in research, in business, and in government. Text analysis and machine algorithms are deciding what webpages you see, who gets a loan from the bank, and how politicians make policy decisions. The issues surrounding text analysis are humanist issues, not merely technical, but social, ethical, and legal.
+
+> Decisions of civic, economic, and individual importance are already and increasingly being made by automated systems sifting through large amounts of data. For example, PredPol, a so-called predictive policing company founded in 2012 by an anthropology professor at the University of California, Los Angeles, has been employed by the City of Los Angeles for nearly a decade to determine which neighborhoods to patrol more heavily, and which neighborhoods to (mostly) ignore. But because PredPol is based on historical crime data and US policing practices have always disproportionately surveilled and patrolled neighborhoods of color, the predictions of where crime will happen in the future look a lot like the racist practices of the past. (13)
+> 
+> *Data Feminism*  (2020) by Catherine D'Ignazio and Lauren F. Klein
+
+Cutting edge public and digital humanities work increasingly engages with algorithmic bias:
+
+> The same sort of algorithmic filtering that uses more ethnically tailored representations into my feed can also redirect real estate ads away from people “like me.” This filtering has been used to show higher-paying job ads to men more often than to women, to charge more for standardized test prep courses to people in areas with a high density of Asian residents, and many other forms of coded inequity.
+>
+>...the difference is that coded inequity makes discrimination easier, faster, and even harder to challenge, because there is not just a racist boss, banker, or shopkeeper to report. Instead, the public must hold accountable the very platforms and programmers that legally and often invisibly facilitate the New Jim Code... (33)
+>
+> *Race After Technology* (2019) by Ruha Benjamin
 
 ## Text analysis enables new research insights
 
@@ -34,22 +46,18 @@ To operate as a researcher in the 21st century is to be confronted with the chal
 
 As Miriam Posner, Assistant Professor in Information Studies at UCLA, has pointed out,
 
-> ...even if they don't call their sources data, traditional humanists do have pretty pressing data-management needs.
-> 
+> ...we’re not generally creating data through experimentation or observation — more often than not, we’re mining data from historical documents. You name it, we’ve tried to mine it, from whaling logs to menus to telephone directories. This means that we tend to want different tools than scientists, and also that we have some interesting data-wrangling problems. More often than not, the categories that our historical sources used to divide up our data are not the same ones we’re interested in analyzing. So we often have to do some very creative transformations and interpretation...
+>
 > ["Humanities Data: A Necessary Contradiction" (2015)](https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/)
 
-Tom Scheinfeldt, Associate Professor of Digital Humanities at University of Connecticut, has suggested that data concerns are becoming the primary concern of the humanities:
+Increasingly, humanities research methods rely on an ability to discover, retrieve, manipulate, and interpret textual data at scale. Humanists cannot afford to ignore computational methods since the human record is now data. Future humanists will not be able to study our digital present without becoming adept at reading and manipulating the burgeoning data of our historical record. The stakes are high for librarians, particularly for cultivating collections as data:
 
-> The new technology of the Internet has shifted the work of a rapidly growing number of scholars away from thinking big thoughts to forging new tools, methods, materials, techniques, and modes or work that will enable us to harness the still unwieldy, but obviously game-changing, information technologies now sitting on our desktops and in our pockets. These concerns touch all scholars.
->
-> ["Sunset for Ideology, Sunrise for Methodology" (2008)](http://dancohen.org/2010/10/04/searching-for-the-victorians/)
-
-Indeed, humanists cannot afford to ignore computational methods since they are, for better or worse, at the heart of modern culture and industry. Future humanists will not be able to study our digital present without becoming adept at reading and manipulating the burgeoning data of our historical record. Ted Underwood, Associate Professor in Information Science at The University of Illinois, describes this new horizon:
-
-> It is becoming clear that we have narrated literary history as a sequence of discrete movements and periods because chunks of that size are about as much of the past as a single person could remember and discuss at one time. Apparently, longer arcs of change have been hidden from us by their sheer scale---just as you can drive across a continent noticing mountains and political boundaries but never the curvature of the earth. A single pair of eyes at ground level can't grasp the curve of the horizon, and arguments limited by a single reader's memory can't reveal the largest patterns organizing literary history.
+> Not all of the data we create or purchase for Library collections comes in neat multi-gigabyte packages of ordered files: We recently discovered that datasets we had purchased as part of a database licensing negotiation were more shelf ready than machine ready: They currently exist as stacks of hard drives, discs, and other bewildering formats sitting on a book cart. How do we provide access to these data collections?
 > 
-> [*Distant Horizons: Digital Evidence and Literary Change* (2019)](https://www.press.uchicago.edu/ucp/books/book/chicago/D/bo35853783.html)
+> Harriett Green
+> "Book carts of Data: Usability and Access of Digital Content from Library Collections" (2017)
 
+Librarians increasingly find themselves trying to sort through collections in order to transform them into useful textual data. At the same time, they increasingly play significant educational support roles for students and researchers who recognize the value of digital records but lack the skills to unlock their potential.
 
 For many scholars, text analysis sounds *potentially* powerful and useful, but the reality remains that learning text analysis is not a trivial task. Most learners are forced to learn on their own since there are few college courses in this work outside of data science courses. That means most learners lack access to the proper learning resources and struggle to find community support when things get difficult.
 
