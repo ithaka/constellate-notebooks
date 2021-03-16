@@ -32,6 +32,15 @@
   - file: topic-modeling
     title: Latent Dirichlet Allocation (LDA) Topic Modeling
 
+- part: Additional Recommended Lessons
+  chapters:
+  - file: counter-objects
+    title: Counter Objects (20 minutes)
+  - file: creating-stopwords-list
+    title: Creating a Stopwords List (20 minutes)
+  - file: working-with-dataset-files
+    title: Working with Dataset Files (60 minutes)
+
 - part: Reference
   chapters:
     - url: https://docs.tdm-pilot.org/key-terms/
