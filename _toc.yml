@@ -40,6 +40,8 @@
     title: Creating a Stopwords List (20 minutes)
   - file: working-with-dataset-files
     title: Working with Dataset Files (60 minutes)
+  - file: pandas-1
+    title: Pandas 1 (75 minutes)
 
 - part: Reference
   chapters:
