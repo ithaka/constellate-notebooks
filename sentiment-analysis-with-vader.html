@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Methods for Sentiment Analysis &#8212; Intro to Text Analysis</title>
+    <title>Sentiment Analysis with VADER &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -161,6 +161,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-objects.html">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creating-stopwords-list.html">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working-with-dataset-files.html">
+   Working with Dataset Files (60 minutes)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -278,34 +300,34 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methods-for-sentiment-analysis">
    Methods for Sentiment Analysis
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#rule-based-algorithms">
      Rule-Based Algorithms
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#machine-learning-models">
      Machine Learning Models
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vader">
    VADER
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applying-the-vader-algorithm">
    Applying the VADER Algorithm
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-tokens-to-the-vader-lexicon">
    Adding Tokens to the VADER Lexicon
   </a>
@@ -326,7 +348,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Sentiment Analysis with VADER</strong></p>
+<div class="section" id="sentiment-analysis-with-vader">
+<h1>Sentiment Analysis with VADER<a class="headerlink" href="#sentiment-analysis-with-vader" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong> This notebook describes Sentiment Analysis and demonstrates a basic application using the algorithm VADER (Valence Aware Dictionary for sEntiment Reasoning).</p>
 <p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
 <p><strong>Difficulty:</strong> Beginner</p>
@@ -341,24 +364,24 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
 <div class="section" id="methods-for-sentiment-analysis">
-<h1>Methods for Sentiment Analysis<a class="headerlink" href="#methods-for-sentiment-analysis" title="Permalink to this headline">¶</a></h1>
+<h2>Methods for Sentiment Analysis<a class="headerlink" href="#methods-for-sentiment-analysis" title="Permalink to this headline">¶</a></h2>
 <p>Sentiment analysis can help an analyst discover whether feedback is positive, negative, or mixed. For example, a large company like Amazon or Walmart could use sentiment analysis on user reviews to determine whether a featured product should be promoted or discontinued. Sentiment analysis generally falls into two categories:</p>
 <ul class="simple">
 <li><p>Rule-based algorithms</p></li>
 <li><p>Machine Learning models</p></li>
 </ul>
 <div class="section" id="rule-based-algorithms">
-<h2>Rule-Based Algorithms<a class="headerlink" href="#rule-based-algorithms" title="Permalink to this headline">¶</a></h2>
+<h3>Rule-Based Algorithms<a class="headerlink" href="#rule-based-algorithms" title="Permalink to this headline">¶</a></h3>
 <p>Rule-based algorithms assign sentiment scores to particular words or multi-word constructions. Simple algorithms may simply assess each word individually in a feedback document and add up an overall score. More complex algorithms may assess multi-word (or n-gram) constructions and have special rules for addressing issues such as negation, emojis, and emoticons. They can detect the difference between “bad”, “not bad”, and “bad ass” as well as “=)” and “:^(”.</p>
 </div>
 <div class="section" id="machine-learning-models">
-<h2>Machine Learning Models<a class="headerlink" href="#machine-learning-models" title="Permalink to this headline">¶</a></h2>
+<h3>Machine Learning Models<a class="headerlink" href="#machine-learning-models" title="Permalink to this headline">¶</a></h3>
 <p>Machine learning models rely on feedback data that has already been assessed by humans to have a particular sentiment. Each piece of feedback is <strong>labeled</strong> by a human reader who may place the feedback into a particular category. The categories could be as simple as positive, negative, or neutral. As long as there exists <strong>labeled</strong> data, a machine learning model can often identify complex concepts. For example, a car manufacturer may desire to classify the sentiment of feedback from past buyers as: “budget-conscious”, “eco-conscious”, “tech-enthusiastic”, “luxury-driven”, “performance-driven”, etc. Assuming there is an adequately labeled <strong>training data</strong> for each of these categories, a machine learning model could assign a score for each category. This could help analysts understand the brand better, answering questions about what consumers do or do not like about a particular vehicle.</p>
 <p>In the humanities, sentiment analysis could be used to track emerging trends on social media. For example, we might ask: “How are Twitter or Reddit users responding to a particular government policy or public event?”</p>
 </div>
 </div>
 <div class="section" id="vader">
-<h1>VADER<a class="headerlink" href="#vader" title="Permalink to this headline">¶</a></h1>
+<h2>VADER<a class="headerlink" href="#vader" title="Permalink to this headline">¶</a></h2>
 <p>This notebook uses a rule-based algorithm named VADER (Valence Aware Dictionary and sEntiment Reasoner). VADER is a rule-based algorithm that is “specifically attuned to sentiments expressed in social media.” It relies on a specialized <strong>lexicon</strong> of words, phrases, and emojis. Each token in the lexicon is assigned a “mean-sentiment rating” between -4 (extremely negative) to 4 (extremely positive). Here are a few examples:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -393,7 +416,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p>There are over 7500 tokens listed in VADER lexicon. (You can also add your own if you like.) VADER also considers grammatical and syntactical rules to measure intensity based on word order and sensitive relationships between terms. For example, it increases or decreases a sentiment based on degree modifers such as: “The product is good” versus “the product is very good” versus “the product is marginally good.” To read more about VADER, including how it works and to see its code, <a class="reference external" href="https://github.com/cjhutto/vaderSentiment">visit the github page</a>.</p>
 </div>
 <div class="section" id="applying-the-vader-algorithm">
-<h1>Applying the VADER Algorithm<a class="headerlink" href="#applying-the-vader-algorithm" title="Permalink to this headline">¶</a></h1>
+<h2>Applying the VADER Algorithm<a class="headerlink" href="#applying-the-vader-algorithm" title="Permalink to this headline">¶</a></h2>
 <p>First, we need to import the SentimentIntensityAnalyzer. Here we assign the VADER lexicon object to a variable <code class="docutils literal notranslate"><span class="pre">sa</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -471,7 +494,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p>but it does not have entries for “fell apart”, “money”, or “garbage”. If a specific token is not found in the VADER lexicon, it is considered to be neutral. Like any other statistical approach, the process benefits from having more data. In this case, the sentences are very short and several significant words do not happen to exist in our lexicon.</p>
 </div>
 <div class="section" id="adding-tokens-to-the-vader-lexicon">
-<h1>Adding Tokens to the VADER Lexicon<a class="headerlink" href="#adding-tokens-to-the-vader-lexicon" title="Permalink to this headline">¶</a></h1>
+<h2>Adding Tokens to the VADER Lexicon<a class="headerlink" href="#adding-tokens-to-the-vader-lexicon" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">sa.lexicon</span></code> is a simple dictionary, so we can add words that we want included. There are some guidelines for best scoring practices included in the academic paper linked on <a class="reference external" href="https://github.com/cjhutto/vaderSentiment">VADER’s github repository</a>. (Remember that lexicon tokens are scored from -4 to +4.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -499,6 +522,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
     <span class="n">scores</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">polarity_scores</span><span class="p">(</span><span class="n">review</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;compound&#39;</span><span class="p">],</span> <span class="n">review</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

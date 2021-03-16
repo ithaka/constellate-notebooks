@@ -34,7 +34,7 @@ For researchers, the primary advantage that text and data mining offer is an abi
 
 ## More Evidence for Research
 
-The short answer is more evidence (and more kinds of evidence) for interrogating humanities problems. Dan Cohen, Professor of History at Northeastern University, asks, 'how much evidence is enough?':
+The short answer is more evidence (and more kinds of evidence) for interrogating humanities problems. Dan Cohen, asks, 'how much evidence is enough?':
 
 > Many humanities scholars have been satisfied, perhaps unconsciously, with the use of a limited number of cases or examples to prove a thesis. Shouldn't we ask, like the Victorians, what can we do to be most certain about a theory or interpretation? If we use intuition based on close reading, for instance, is that enough?
 >
@@ -42,9 +42,9 @@ The short answer is more evidence (and more kinds of evidence) for interrogating
 >
 >["Searching for the Victorians" (2010)](http://dancohen.org/2010/10/04/searching-for-the-victorians/)
 
-To operate as a researcher in the 21st century is to be confronted with the challenges and opportunities of data—at once both being overwhelmed by too much and yet not nearly enough of *the right kind*.
+To operate as a researcher in the 21st century is to be confronted with the challenges and opportunities of data—at once both being overwhelmed by too much and yet not nearly enough of *the right kind*.
 
-As Miriam Posner, Assistant Professor in Information Studies at UCLA, has pointed out,
+As Miriam Posner has pointed out,
 
 > ...we’re not generally creating data through experimentation or observation — more often than not, we’re mining data from historical documents. You name it, we’ve tried to mine it, from whaling logs to menus to telephone directories. This means that we tend to want different tools than scientists, and also that we have some interesting data-wrangling problems. More often than not, the categories that our historical sources used to divide up our data are not the same ones we’re interested in analyzing. So we often have to do some very creative transformations and interpretation...
 >
@@ -53,9 +53,9 @@ As Miriam Posner, Assistant Professor in Information Studies at UCLA, has pointe
 Increasingly, humanities research methods rely on an ability to discover, retrieve, manipulate, and interpret textual data at scale. Humanists cannot afford to ignore computational methods since the human record is now data. Future humanists will not be able to study our digital present without becoming adept at reading and manipulating the burgeoning data of our historical record. The stakes are high for librarians, particularly for cultivating collections as data:
 
 > Not all of the data we create or purchase for Library collections comes in neat multi-gigabyte packages of ordered files: We recently discovered that datasets we had purchased as part of a database licensing negotiation were more shelf ready than machine ready: They currently exist as stacks of hard drives, discs, and other bewildering formats sitting on a book cart. How do we provide access to these data collections?
-> 
-> Harriett Green
+>
 > "Book carts of Data: Usability and Access of Digital Content from Library Collections" (2017)
+> by Harriett Green
 
 Librarians increasingly find themselves trying to sort through collections in order to transform them into useful textual data. At the same time, they increasingly play significant educational support roles for students and researchers who recognize the value of digital records but lack the skills to unlock their potential.
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create a Basic Stopwords List &#8212; Intro to Text Analysis</title>
+    <title>Creating a Stopwords List &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -161,6 +161,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-objects.html">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creating-stopwords-list.html">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working-with-dataset-files.html">
+   Working with Dataset Files (60 minutes)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -278,12 +300,12 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-basic-stopwords-list">
    Create a Basic Stopwords List
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#output-stop-words-to-csv-file">
    Output
    <code class="docutils literal notranslate">
@@ -294,7 +316,7 @@
    to CSV File
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#to-read-in-the-stopwords-csv">
    To Read in the Stopwords CSV
   </a>
@@ -315,7 +337,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Creating a Stopwords List</strong></p>
+<div class="section" id="creating-a-stopwords-list">
+<h1>Creating a Stopwords List<a class="headerlink" href="#creating-a-stopwords-list" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
 This notebook creates a stopwords list and exports it into a CSV file. The following processes are described:</p>
 <ul class="simple">
@@ -342,7 +365,7 @@ This notebook creates a stopwords list and exports it into a CSV file. The follo
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
 <div class="section" id="create-a-basic-stopwords-list">
-<h1>Create a Basic Stopwords List<a class="headerlink" href="#create-a-basic-stopwords-list" title="Permalink to this headline">¶</a></h1>
+<h2>Create a Basic Stopwords List<a class="headerlink" href="#create-a-basic-stopwords-list" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start from NLTK</span>
@@ -377,7 +400,7 @@ This notebook creates a stopwords list and exports it into a CSV file. The follo
 </div>
 </div>
 <div class="section" id="output-stop-words-to-csv-file">
-<h1>Output <code class="docutils literal notranslate"><span class="pre">stop_words</span></code> to CSV File<a class="headerlink" href="#output-stop-words-to-csv-file" title="Permalink to this headline">¶</a></h1>
+<h2>Output <code class="docutils literal notranslate"><span class="pre">stop_words</span></code> to CSV File<a class="headerlink" href="#output-stop-words-to-csv-file" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output stop_words to a CSV file</span>
@@ -392,7 +415,7 @@ This notebook creates a stopwords list and exports it into a CSV file. The follo
 </div>
 </div>
 <div class="section" id="to-read-in-the-stopwords-csv">
-<h1>To Read in the Stopwords CSV<a class="headerlink" href="#to-read-in-the-stopwords-csv" title="Permalink to this headline">¶</a></h1>
+<h2>To Read in the Stopwords CSV<a class="headerlink" href="#to-read-in-the-stopwords-csv" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the CSV file and list the contents</span>
@@ -400,6 +423,7 @@ This notebook creates a stopwords list and exports it into a CSV file. The follo
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/stop_words.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">stop_words</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

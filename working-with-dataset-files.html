@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Files in Python &#8212; Intro to Text Analysis</title>
+    <title>Working with Dataset Files &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,6 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Creating a Stopwords List" href="creating-stopwords-list.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -156,6 +157,28 @@
  <li class="toctree-l1">
   <a class="reference internal" href="topic-modeling.html">
    Latent Dirichlet Allocation (LDA) Topic Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-objects.html">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creating-stopwords-list.html">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Working with Dataset Files (60 minutes)
   </a>
  </li>
 </ul>
@@ -278,49 +301,49 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#files-in-python">
    Files in Python
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#three-common-data-file-types">
    Three Common Data File Types
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plain-text-files-txt">
      Plain Text Files (.txt)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comma-separated-value-files-csv">
      Comma-Separated Value Files (.csv)
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-text-contents-of-a-sample-csv-file">
        The text contents of a sample CSV file
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-same-csv-file-represented-in-google-sheets">
        The same CSV file represented in Google Sheets:
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#javascript-object-notation-json">
      JavaScript Object Notation (.json)
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-text-contents-of-a-sample-json-file">
        The text contents of a sample JSON file
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-same-json-file-represented-in-json-editor-online">
        The same JSON file represented in JSON Editor Online
       </a>
@@ -329,76 +352,76 @@
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#opening-reading-and-writing-text-files-txt">
    Opening, Reading, and Writing Text Files (.txt)
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#open-the-file">
      Open the File
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#read-the-file">
      Read the File
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#read-method">
        .read() method
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#readlines-method">
        .readlines() method
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#write-to-the-file">
      Write to the File
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#append-mode">
        Append mode
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#write-mode">
        Write mode
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-close-files-with-open">
-     Open/Close Files
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       with
-      </span>
-      <span class="pre">
-       open
-      </span>
-     </code>
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-close-files-with-open">
+   Open/Close Files
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     with
+    </span>
+    <span class="pre">
+     open
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#opening-reading-and-writing-csv-files-csv">
    Opening, Reading, and Writing CSV Files (.csv)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#opening-reading-and-writing-json-files-json">
    Opening, Reading, and Writing JSON Files (.json)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#opening-datasets-with-tdm-client">
    Opening datasets with
    <code class="docutils literal notranslate">
@@ -408,12 +431,12 @@
    </code>
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#metadata-csv-vs-json-lines-data-file">
      Metadata CSV vs. JSON Lines Data File
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#retrieving-data-tdm-client-methods">
      Retrieving data (
      <code class="docutils literal notranslate">
@@ -424,7 +447,7 @@
      methods)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reading-in-data-from-a-dataset-object">
      Reading in data from a dataset object
     </a>
@@ -447,7 +470,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Working with Dataset Files</strong></p>
+<div class="section" id="working-with-dataset-files">
+<h1>Working with Dataset Files<a class="headerlink" href="#working-with-dataset-files" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong> This notebook describes how to:</p>
 <ul class="simple">
 <li><p>Read and write files (.txt, .csv, .json)</p></li>
@@ -473,7 +497,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
 <div class="section" id="files-in-python">
-<h1>Files in Python<a class="headerlink" href="#files-in-python" title="Permalink to this headline">¶</a></h1>
+<h2>Files in Python<a class="headerlink" href="#files-in-python" title="Permalink to this headline">¶</a></h2>
 <p>Working with files is an essential part of Python programming. When we execute code in Python, we manipulate data through the use of variables. When the program is closed, however, any data stored in those variables is erased. To save the information stored in variables, we must learn how to write it to a file.</p>
 <p>At the same time, we may have notebooks for applying specific analyses, but we need to have a way to bring data into the notebook for analysis. Otherwise, we would have to type all the data into the program ourselves! Both reading-in from files and writing-out data out to files are important skills for data science and the digital humanities.</p>
 <p>This section describes how to work with three kinds of common data files in Python:</p>
@@ -485,18 +509,18 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p>Each of these filetypes are in wide use in data science, digital humanities, and general programming.</p>
 </div>
 <div class="section" id="three-common-data-file-types">
-<h1>Three Common Data File Types<a class="headerlink" href="#three-common-data-file-types" title="Permalink to this headline">¶</a></h1>
+<h2>Three Common Data File Types<a class="headerlink" href="#three-common-data-file-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="plain-text-files-txt">
-<h2>Plain Text Files (.txt)<a class="headerlink" href="#plain-text-files-txt" title="Permalink to this headline">¶</a></h2>
+<h3>Plain Text Files (.txt)<a class="headerlink" href="#plain-text-files-txt" title="Permalink to this headline">¶</a></h3>
 <p>A plain text file is one of the simplest kinds of computer files. Plain text files can be opened with a text editor like Notepad (Windows 10) or TextEdit (OS X). The file can contain only basic textual characters such as: letters, numbers, spaces, and line breaks. Plain text files do not contain styling such as: heading sizes, italic, bold, or specialized fonts. (To including styling in a text file, writers may use other file formats such as rich text format (.rtf) or markdown (.md).)</p>
 <p>Plain text files (.txt) can be easily viewed and modified by humans by changing the text within. This is an important distinction from binary files such as images (.jpg), archives (.gzip), audio (.wav), or video (.mp4). If a binary file is opened with a text editor, the content will be largely unreadable.</p>
 </div>
 <div class="section" id="comma-separated-value-files-csv">
-<h2>Comma-Separated Value Files (.csv)<a class="headerlink" href="#comma-separated-value-files-csv" title="Permalink to this headline">¶</a></h2>
+<h3>Comma-Separated Value Files (.csv)<a class="headerlink" href="#comma-separated-value-files-csv" title="Permalink to this headline">¶</a></h3>
 <p>A comma-separated value file is also a text file that can easily be modifed with a text editor. A CSV file is generally used to store data that fits in a series or table (like a list or spreadsheet). A spreadsheet application (like Microsoft Excel or Google Sheets) will allow you to view and edit a CSV data in the form of a table.</p>
 <p>Each row of a CSV file represents a single row of a table. The values in a CSV are separated by commas (with no space between), but other delimiters can be chosen such as a tab or pipe (|). A tab-separated value file is called a TSV file (.tsv). Using tabs or pipes may be preferable if the data being stored contains commas (since this could make it confusing whether a comma is part of a single entry or a delimiter between entries).</p>
 <div class="section" id="the-text-contents-of-a-sample-csv-file">
-<h3>The text contents of a sample CSV file<a class="headerlink" href="#the-text-contents-of-a-sample-csv-file" title="Permalink to this headline">¶</a></h3>
+<h4>The text contents of a sample CSV file<a class="headerlink" href="#the-text-contents-of-a-sample-csv-file" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Username</span><span class="p">,</span><span class="n">Login</span> <span class="n">email</span><span class="p">,</span><span class="n">Identifier</span><span class="p">,</span><span class="n">First</span> <span class="n">name</span><span class="p">,</span><span class="n">Last</span> <span class="n">name</span>
 <span class="n">booker12</span><span class="p">,</span><span class="n">rachel</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="mi">9012</span><span class="p">,</span><span class="n">Rachel</span><span class="p">,</span><span class="n">Booker</span>
 <span class="n">grey07</span><span class="p">,,</span><span class="mi">2070</span><span class="p">,</span><span class="n">Laura</span><span class="p">,</span><span class="n">Grey</span>
@@ -507,12 +531,12 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 <div class="section" id="the-same-csv-file-represented-in-google-sheets">
-<h3>The same CSV file represented in Google Sheets:<a class="headerlink" href="#the-same-csv-file-represented-in-google-sheets" title="Permalink to this headline">¶</a></h3>
+<h4>The same CSV file represented in Google Sheets:<a class="headerlink" href="#the-same-csv-file-represented-in-google-sheets" title="Permalink to this headline">¶</a></h4>
 <p><img alt="CSV table view in Google Sheets" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/csv_in_sheets.png" /></p>
 </div>
 </div>
 <div class="section" id="javascript-object-notation-json">
-<h2>JavaScript Object Notation (.json)<a class="headerlink" href="#javascript-object-notation-json" title="Permalink to this headline">¶</a></h2>
+<h3>JavaScript Object Notation (.json)<a class="headerlink" href="#javascript-object-notation-json" title="Permalink to this headline">¶</a></h3>
 <p>A Javascript Object Notation file is also a text file that can be modified with a text editor. A JSON file stores data in key/value pairs, very similar to a Python dictionary. One of the key benefits of JSON is its compactness which makes it ideal for exchanging data between web browsers and servers.</p>
 <p>While smaller JSON files can be opened in a text editor, larger files can be difficult to read. Viewing and editing JSON is easier in specialized editors, available online at sites like:</p>
 <ul class="simple">
@@ -521,7 +545,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </ul>
 <p>A JSON file has a nested structure, where smaller concepts are grouped under larger ones. Like extensible markup language (.xml), a JSON file can be checked to determine that it is valid (follows the proper format for JSON) and/or well-formed (follows the proper format defined in a specialized example, called a schema).</p>
 <div class="section" id="the-text-contents-of-a-sample-json-file">
-<h3>The text contents of a sample JSON file<a class="headerlink" href="#the-text-contents-of-a-sample-json-file" title="Permalink to this headline">¶</a></h3>
+<h4>The text contents of a sample JSON file<a class="headerlink" href="#the-text-contents-of-a-sample-json-file" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Julia&quot;</span><span class="p">,</span>
     <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Smith&quot;</span><span class="p">,</span>
@@ -541,15 +565,15 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 <div class="section" id="the-same-json-file-represented-in-json-editor-online">
-<h3>The same JSON file represented in JSON Editor Online<a class="headerlink" href="#the-same-json-file-represented-in-json-editor-online" title="Permalink to this headline">¶</a></h3>
+<h4>The same JSON file represented in JSON Editor Online<a class="headerlink" href="#the-same-json-file-represented-in-json-editor-online" title="Permalink to this headline">¶</a></h4>
 <p><img alt="An image of the JSON file showing the structure" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/json_editor.png" /></p>
 </div>
 </div>
 </div>
 <div class="section" id="opening-reading-and-writing-text-files-txt">
-<h1>Opening, Reading, and Writing Text Files (.txt)<a class="headerlink" href="#opening-reading-and-writing-text-files-txt" title="Permalink to this headline">¶</a></h1>
+<h2>Opening, Reading, and Writing Text Files (.txt)<a class="headerlink" href="#opening-reading-and-writing-text-files-txt" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="open-the-file">
-<h2>Open the File<a class="headerlink" href="#open-the-file" title="Permalink to this headline">¶</a></h2>
+<h3>Open the File<a class="headerlink" href="#open-the-file" title="Permalink to this headline">¶</a></h3>
 <p>Before we can read or write to text file, we must open the file. Normally, when we open a file, a new window appears where we can see the contents. In Python, opening a file simply means create a <em>file object</em> that refers to the particular file. When the file has been opened, we can read or write to the file. Finally, we must close the file. Here are the three steps:</p>
 <ol class="simple">
 <li><p>Use the open() function to create a file object</p></li>
@@ -592,9 +616,9 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </table>
 </div>
 <div class="section" id="read-the-file">
-<h2>Read the File<a class="headerlink" href="#read-the-file" title="Permalink to this headline">¶</a></h2>
+<h3>Read the File<a class="headerlink" href="#read-the-file" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="read-method">
-<h3>.read() method<a class="headerlink" href="#read-method" title="Permalink to this headline">¶</a></h3>
+<h4>.read() method<a class="headerlink" href="#read-method" title="Permalink to this headline">¶</a></h4>
 <p>Now that we have a file object <code class="docutils literal notranslate"><span class="pre">f</span></code> opened in “read mode,” let’s read the contents with the <code class="docutils literal notranslate"><span class="pre">.read()</span></code> method. We will create a variable called <code class="docutils literal notranslate"><span class="pre">file_contents</span></code> to hold the data that we are reading in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -619,7 +643,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 <div class="section" id="readlines-method">
-<h3>.readlines() method<a class="headerlink" href="#readlines-method" title="Permalink to this headline">¶</a></h3>
+<h4>.readlines() method<a class="headerlink" href="#readlines-method" title="Permalink to this headline">¶</a></h4>
 <p>If a file is very large, we may want to read a single line at a time so as not to fill all of the available computer memory. To read a single line at a time, we can use the <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code> method instead of the <code class="docutils literal notranslate"><span class="pre">.read()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,10 +670,10 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 <div class="section" id="write-to-the-file">
-<h2>Write to the File<a class="headerlink" href="#write-to-the-file" title="Permalink to this headline">¶</a></h2>
+<h3>Write to the File<a class="headerlink" href="#write-to-the-file" title="Permalink to this headline">¶</a></h3>
 <p>To write to a file, we need to open it and create our file object in either write (‘w’) or append (‘a’) mode.</p>
 <div class="section" id="append-mode">
-<h3>Append mode<a class="headerlink" href="#append-mode" title="Permalink to this headline">¶</a></h3>
+<h4>Append mode<a class="headerlink" href="#append-mode" title="Permalink to this headline">¶</a></h4>
 <p>Let’s start with append mode which adds new data to the bottom of the file while leaving any previous information intact.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -693,7 +717,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 <div class="section" id="write-mode">
-<h3>Write mode<a class="headerlink" href="#write-mode" title="Permalink to this headline">¶</a></h3>
+<h4>Write mode<a class="headerlink" href="#write-mode" title="Permalink to this headline">¶</a></h4>
 <p>Opening a file in write mode is useful in two scenarios:</p>
 <ul class="simple">
 <li><p>Creating a new text file and writing data to it</p></li>
@@ -719,6 +743,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="open-close-files-with-open">
 <h2>Open/Close Files <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open</span></code><a class="headerlink" href="#open-close-files-with-open" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open</span></code> technique is commonly used in Python because it has two significant advantages:</p>
@@ -736,9 +761,8 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="opening-reading-and-writing-csv-files-csv">
-<h1>Opening, Reading, and Writing CSV Files (.csv)<a class="headerlink" href="#opening-reading-and-writing-csv-files-csv" title="Permalink to this headline">¶</a></h1>
+<h2>Opening, Reading, and Writing CSV Files (.csv)<a class="headerlink" href="#opening-reading-and-writing-csv-files-csv" title="Permalink to this headline">¶</a></h2>
 <p>CSV file data can be easily opened, read, and written using the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library. (For large CSV files (&gt;500 mb), you may wish to use the <code class="docutils literal notranslate"><span class="pre">csv</span></code> library to read in a single row at a time to reduce the memory footprint.) Pandas is flexible for working with tabular data, and the process for importing and exporting to CSV is simple.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -771,7 +795,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 <div class="section" id="opening-reading-and-writing-json-files-json">
-<h1>Opening, Reading, and Writing JSON Files (.json)<a class="headerlink" href="#opening-reading-and-writing-json-files-json" title="Permalink to this headline">¶</a></h1>
+<h2>Opening, Reading, and Writing JSON Files (.json)<a class="headerlink" href="#opening-reading-and-writing-json-files-json" title="Permalink to this headline">¶</a></h2>
 <p>JSON files use a key/value structure very similar to a Python dictionary. We will start with a Python dictionary called <code class="docutils literal notranslate"><span class="pre">py_dict</span></code> and then write the data to a JSON file using the <code class="docutils literal notranslate"><span class="pre">json</span></code> library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -829,10 +853,10 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 <div class="section" id="opening-datasets-with-tdm-client">
-<h1>Opening datasets with <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code><a class="headerlink" href="#opening-datasets-with-tdm-client" title="Permalink to this headline">¶</a></h1>
+<h2>Opening datasets with <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code><a class="headerlink" href="#opening-datasets-with-tdm-client" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> helps retrieve a given dataset and/or its associated metadata. The metadata is supplied in a CSV file and the full dataset is supplied in a compressed JSON Lines file (.jsonl.gz). For any analysis focused on metadata pre-processing, we recommend users start with the CSV file since it is both easier and faster to view, parse, and manipulate.</p>
 <div class="section" id="metadata-csv-vs-json-lines-data-file">
-<h2>Metadata CSV vs. JSON Lines Data File<a class="headerlink" href="#metadata-csv-vs-json-lines-data-file" title="Permalink to this headline">¶</a></h2>
+<h3>Metadata CSV vs. JSON Lines Data File<a class="headerlink" href="#metadata-csv-vs-json-lines-data-file" title="Permalink to this headline">¶</a></h3>
 <p>All of the textual data and metadata is available inside of the JSON Lines files, but we have chosen to offer the metadata CSV for two primary reasons:</p>
 <ol class="simple">
 <li><p>The JSON Lines data is a little more complex to parse since it is nested. It cannot be easily represented in a table form in something like Pandas. It is nice to be able to easily view all the metadata in a Pandas dataframe.</p></li>
@@ -841,7 +865,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p>More information is available, including the metadata categories, in the FAQ <a class="reference external" href="https://docs.tdm-pilot.org/what-format-are-jstor-portico-datasets/">“What is the data file format?”</a>.</p>
 </div>
 <div class="section" id="retrieving-data-tdm-client-methods">
-<h2>Retrieving data (<code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> methods)<a class="headerlink" href="#retrieving-data-tdm-client-methods" title="Permalink to this headline">¶</a></h2>
+<h3>Retrieving data (<code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> methods)<a class="headerlink" href="#retrieving-data-tdm-client-methods" title="Permalink to this headline">¶</a></h3>
 <p>By passing the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> a dataset ID (here called <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>), we can automatically download the metadata CSV file or the full JSON Lines dataset created by the <a class="reference external" href="https://tdm-pilot.org/builder/">dataset builder</a>.</p>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">.get_metadata()</span></code> method to retrieve the metadata CSV file</p></li>
@@ -865,7 +889,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p>The JSON Lines file will be downloaded in a compressed gzip format (jsonl.gz). We can iterate over each document in the corpus by using the <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> method.</p>
 </div>
 <div class="section" id="reading-in-data-from-a-dataset-object">
-<h2>Reading in data from a dataset object<a class="headerlink" href="#reading-in-data-from-a-dataset-object" title="Permalink to this headline">¶</a></h2>
+<h3>Reading in data from a dataset object<a class="headerlink" href="#reading-in-data-from-a-dataset-object" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> method will read in data from the compressed JSON dataset file object. By keeping the data in a compressed format and reading in a single line at a time, we reduce the processing time and memory use. These can be substantial for large datasets. Even a modest dataset (~5000 files) can be over 1 GB in size uncompressed.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> essentially unzips each row of the dataset at a time. Each row constitutes all the metadata and data available for a single document. Here is what that looks like the actual tdm_client:</p>
 <div class="highlight-with notranslate"><div class="highlight"><pre><span></span>        for row in input_file:
@@ -885,6 +909,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 
@@ -913,6 +938,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="creating-stopwords-list.html" title="previous page">Creating a Stopwords List</a>
 
         </div>
         

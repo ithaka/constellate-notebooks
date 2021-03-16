@@ -161,6 +161,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-objects.html">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creating-stopwords-list.html">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working-with-dataset-files.html">
+   Working with Dataset Files (60 minutes)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -278,44 +300,37 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Tokenizing Text Files
-   <a class="tocSkip">
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-libraries">
    Import Libraries
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-and-inspect-sample-files">
    Download and inspect sample files
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#define-a-tokenizing-function">
    Define a tokenizing function
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tokenize-a-text">
    Tokenize a text
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-constellate-jsonl-file">
    Creating a Constellate JSONL file
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generate-a-constellate-gzip-file">
    Generate a Constellate gzip file
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notes">
    Notes
   </a>
@@ -336,8 +351,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:tdm&#37;&#52;&#48;ithaka&#46;org">tdm<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<div class="section" id="tokenizing-text-files-a-class-tocskip">
-<h1>Tokenizing Text Files <a class="tocSkip"><a class="headerlink" href="#tokenizing-text-files-a-class-tocskip" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tokenizing-text-files">
+<h1>Tokenizing Text Files<a class="headerlink" href="#tokenizing-text-files" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
 You may have text files and metadata that you want to tokenize into ngrams with Python.</p>
 <p>This notebook takes as input:</p>
@@ -371,10 +386,9 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 <li><p>Clean up texts</p></li>
 <li><p><strong>Tokenize text files</strong> (this notebook)</p></li>
 </ol>
-</div>
 <hr class="docutils" />
 <div class="section" id="import-libraries">
-<h1>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">¶</a></h1>
+<h2>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
@@ -389,7 +403,7 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 </div>
 </div>
 <div class="section" id="download-and-inspect-sample-files">
-<h1>Download and inspect sample files<a class="headerlink" href="#download-and-inspect-sample-files" title="Permalink to this headline">¶</a></h1>
+<h2>Download and inspect sample files<a class="headerlink" href="#download-and-inspect-sample-files" title="Permalink to this headline">¶</a></h2>
 <p>For purposes of this tutorial, we will download a set of sample files from Project Gutenberg using a helper function from the tdm_client.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -419,7 +433,7 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 </div>
 </div>
 <div class="section" id="define-a-tokenizing-function">
-<h1>Define a tokenizing function<a class="headerlink" href="#define-a-tokenizing-function" title="Permalink to this headline">¶</a></h1>
+<h2>Define a tokenizing function<a class="headerlink" href="#define-a-tokenizing-function" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">constellate_ngrams</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -440,7 +454,7 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 </div>
 </div>
 <div class="section" id="tokenize-a-text">
-<h1>Tokenize a text<a class="headerlink" href="#tokenize-a-text" title="Permalink to this headline">¶</a></h1>
+<h2>Tokenize a text<a class="headerlink" href="#tokenize-a-text" title="Permalink to this headline">¶</a></h2>
 <p>Let’s tokenize one of the sample files using our function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -465,7 +479,7 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 </div>
 </div>
 <div class="section" id="creating-a-constellate-jsonl-file">
-<h1>Creating a Constellate JSONL file<a class="headerlink" href="#creating-a-constellate-jsonl-file" title="Permalink to this headline">¶</a></h1>
+<h2>Creating a Constellate JSONL file<a class="headerlink" href="#creating-a-constellate-jsonl-file" title="Permalink to this headline">¶</a></h2>
 <p>For your analysis, you may want to create files that conform to the same data specification as the files provided by Constellate. The following steps show you how to load metadata and the raw text, create ngrams and output a JSONL (JSON lines) file that matches, in format, what you download from the Constellate web application.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -569,7 +583,7 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 </div>
 </div>
 <div class="section" id="generate-a-constellate-gzip-file">
-<h1>Generate a Constellate gzip file<a class="headerlink" href="#generate-a-constellate-gzip-file" title="Permalink to this headline">¶</a></h1>
+<h2>Generate a Constellate gzip file<a class="headerlink" href="#generate-a-constellate-gzip-file" title="Permalink to this headline">¶</a></h2>
 <p>You may now want to create a gzip file so that it matches what you have downloaded from Constellate. You could also then use the <code class="docutils literal notranslate"><span class="pre">gzip_reader</span></code> that’s part of the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to read it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -600,12 +614,13 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 </div>
 </div>
 <div class="section" id="notes">
-<h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h1>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>File paths - in Unix based systems (including Linux and MacOS), a file is separated with a <code class="docutils literal notranslate"><span class="pre">/</span></code>. On Windows the separator is a <code class="docutils literal notranslate"><span class="pre">\</span></code>. Python includes the helpful <code class="docutils literal notranslate"><span class="pre">os.sep</span></code> to find the correct file separator for your system. This allows the notebook to run just fine on multiple operating systems.</p></li>
 <li><p>Pagination - the plain text files from Project Gutenberg aren’t paginated. Here we are using a simple rule of thumb: if there are three consecutive line breaks, treat this as a page break. This is unlikely to work well across all Project Gutenberg content but should be sufficient for demonstration purposes. You may be curious about more sophisticated attempts to format Project Gutenberg books, such a <a class="reference external" href="https://github.com/JonathanReeve/chapterize">chapterize</a> by <a class="reference external" href="https://github.com/JonathanReeve">Jonathan Reeve</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">assert</span></code> - Python’s <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement can be a quick and useful way to validate your logic. By using assert, you are guaranteeing that the program won’t run if the statement is false. So in this usage, we are guaranteeing that each of our documents have a <code class="docutils literal notranslate"><span class="pre">fullText</span></code> and a <code class="docutils literal notranslate"><span class="pre">unigramCount</span></code> attribute.</p></li>
 </ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Counter Container Datatype &#8212; Intro to Text Analysis</title>
+    <title>Counter Objects &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,6 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Creating a Stopwords List" href="creating-stopwords-list.html" />
+    <link rel="prev" title="Latent Dirichlet Allocation (LDA) Topic Modeling" href="topic-modeling.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -156,6 +158,28 @@
  <li class="toctree-l1">
   <a class="reference internal" href="topic-modeling.html">
    Latent Dirichlet Allocation (LDA) Topic Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creating-stopwords-list.html">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working-with-dataset-files.html">
+   Working with Dataset Files (60 minutes)
   </a>
  </li>
 </ul>
@@ -272,6 +296,21 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-counter-container-datatype">
+   The Counter Container Datatype
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -284,7 +323,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Counter Objects</strong></p>
+<div class="section" id="counter-objects">
+<h1>Counter Objects<a class="headerlink" href="#counter-objects" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong> This notebook describes:</p>
 <ul class="simple">
 <li><p>What a Counter object is</p></li>
@@ -304,7 +344,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
 <div class="section" id="the-counter-container-datatype">
-<h1>The Counter Container Datatype<a class="headerlink" href="#the-counter-container-datatype" title="Permalink to this headline">¶</a></h1>
+<h2>The Counter Container Datatype<a class="headerlink" href="#the-counter-container-datatype" title="Permalink to this headline">¶</a></h2>
 <p>A Counter is very similar to a dictionary, where the key is some variable and the value keeps count of the number of times it occurs. As the name suggests, Counters are very useful for counting the occurence of objects. We can create a Counter object from a list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -402,6 +442,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 <p>The final advantage of the Counter object is that it is a “high performance” container type, so it is able to process large amounts of data very quickly. Counter objects are the preferred method for working quickly and efficiently with counted elements in Python.</p>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -428,6 +469,8 @@ For questions/comments/improvements, email <a class="reference external" href="m
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="topic-modeling.html" title="previous page">Latent Dirichlet Allocation (LDA) Topic Modeling</a>
+    <a class='right-next' id="next-link" href="creating-stopwords-list.html" title="next page">Creating a Stopwords List</a>
 
         </div>
         

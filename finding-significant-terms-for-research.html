@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Import Raw Dataset &#8212; Intro to Text Analysis</title>
+    <title>Finding Significant Words Using TF/IDF &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -161,6 +161,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-objects.html">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creating-stopwords-list.html">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working-with-dataset-files.html">
+   Working with Dataset Files (60 minutes)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -278,42 +300,42 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-raw-dataset">
    Import Raw Dataset
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-pre-processing-filter-optional">
    Load Pre-Processing Filter (Optional)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-stop-words-list-optional">
    Load Stop Words List (Optional)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#define-a-unigram-cleaning-function">
    Define a Unigram Cleaning Function
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#process-and-collect-unigrams">
    Process and Collect Unigrams
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#compute-term-frequency-inverse-document-frequency-using-gensim">
    Compute “Term Frequency- Inverse Document Frequency” using Gensim
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#display-the-highest-tf-idf-scores-in-the-corpus">
    Display the Highest TF-IDF Scores in the Corpus
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#display-the-highest-tf-idf-score-in-each-document">
    Display the Highest TF-IDF Score in each Document
   </a>
@@ -334,7 +356,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Finding Significant Words Using TF/IDF</strong></p>
+<div class="section" id="finding-significant-words-using-tf-idf">
+<h1>Finding Significant Words Using TF/IDF<a class="headerlink" href="#finding-significant-words-using-tf-idf" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
 Discover the significant words in a corpus using Gensim TF-IDF. The following code is included:</p>
 <ul class="simple">
@@ -376,7 +399,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
 </ol>
 <hr class="docutils" />
 <div class="section" id="import-raw-dataset">
-<h1>Import Raw Dataset<a class="headerlink" href="#import-raw-dataset" title="Permalink to this headline">¶</a></h1>
+<h2>Import Raw Dataset<a class="headerlink" href="#import-raw-dataset" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a variable `dataset_id` to hold our dataset ID</span>
@@ -393,7 +416,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
 </div>
 </div>
 <div class="section" id="load-pre-processing-filter-optional">
-<h1>Load Pre-Processing Filter (Optional)<a class="headerlink" href="#load-pre-processing-filter-optional" title="Permalink to this headline">¶</a></h1>
+<h2>Load Pre-Processing Filter (Optional)<a class="headerlink" href="#load-pre-processing-filter-optional" title="Permalink to this headline">¶</a></h2>
 <p>If you completed pre-processing with the “Exploring Metadata and Pre-processing” notebook, you can use your CSV file of dataset IDs to automatically filter the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -419,7 +442,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
 </div>
 </div>
 <div class="section" id="load-stop-words-list-optional">
-<h1>Load Stop Words List (Optional)<a class="headerlink" href="#load-stop-words-list-optional" title="Permalink to this headline">¶</a></h1>
+<h2>Load Stop Words List (Optional)<a class="headerlink" href="#load-stop-words-list-optional" title="Permalink to this headline">¶</a></h2>
 <p>The default stop words list is NLTK. You can also create a stopwords CSV with the “Creating Stop Words” notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -448,7 +471,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
 </div>
 </div>
 <div class="section" id="define-a-unigram-cleaning-function">
-<h1>Define a Unigram Cleaning Function<a class="headerlink" href="#define-a-unigram-cleaning-function" title="Permalink to this headline">¶</a></h1>
+<h2>Define a Unigram Cleaning Function<a class="headerlink" href="#define-a-unigram-cleaning-function" title="Permalink to this headline">¶</a></h2>
 <p>By default, this function will:</p>
 <ul class="simple">
 <li><p>Lowercase all tokens</p></li>
@@ -475,7 +498,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
 </div>
 </div>
 <div class="section" id="process-and-collect-unigrams">
-<h1>Process and Collect Unigrams<a class="headerlink" href="#process-and-collect-unigrams" title="Permalink to this headline">¶</a></h1>
+<h2>Process and Collect Unigrams<a class="headerlink" href="#process-and-collect-unigrams" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collecting the unigrams and processing them into `documents`</span>
@@ -512,7 +535,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
 </div>
 </div>
 <div class="section" id="compute-term-frequency-inverse-document-frequency-using-gensim">
-<h1>Compute “Term Frequency- Inverse Document Frequency” using Gensim<a class="headerlink" href="#compute-term-frequency-inverse-document-frequency-using-gensim" title="Permalink to this headline">¶</a></h1>
+<h2>Compute “Term Frequency- Inverse Document Frequency” using Gensim<a class="headerlink" href="#compute-term-frequency-inverse-document-frequency-using-gensim" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gensim</span>
@@ -536,7 +559,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
 </div>
 </div>
 <div class="section" id="display-the-highest-tf-idf-scores-in-the-corpus">
-<h1>Display the Highest TF-IDF Scores in the Corpus<a class="headerlink" href="#display-the-highest-tf-idf-scores-in-the-corpus" title="Permalink to this headline">¶</a></h1>
+<h2>Display the Highest TF-IDF Scores in the Corpus<a class="headerlink" href="#display-the-highest-tf-idf-scores-in-the-corpus" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gather scores in a dictionary</span>
@@ -557,7 +580,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
 </div>
 </div>
 <div class="section" id="display-the-highest-tf-idf-score-in-each-document">
-<h1>Display the Highest TF-IDF Score in each Document<a class="headerlink" href="#display-the-highest-tf-idf-score-in-each-document" title="Permalink to this headline">¶</a></h1>
+<h2>Display the Highest TF-IDF Score in each Document<a class="headerlink" href="#display-the-highest-tf-idf-score-in-each-document" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the ID, most significant word, and TF/IDF score</span>
@@ -571,6 +594,7 @@ Discover the significant words in a corpus using Gensim TF-IDF. The following co
     <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
         <span class="k">break</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

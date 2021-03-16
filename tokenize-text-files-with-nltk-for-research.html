@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Import Libraries &#8212; Intro to Text Analysis</title>
+    <title>Tokenize Text Files with NLTK &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -161,6 +161,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-objects.html">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creating-stopwords-list.html">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working-with-dataset-files.html">
+   Working with Dataset Files (60 minutes)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -278,37 +300,37 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-libraries">
    Import Libraries
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#define-special-functions-for-this-process">
    Define Special Functions for this Process
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#unzip-texts-folder-optional">
    Unzip Texts Folder (optional)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#check-for-metadata-csv-optional">
    Check for Metadata CSV (optional)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-the-text-files-into-nltk">
    Import the Text Files into NLTK
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generate-and-output-data-to-json-l-file">
    Generate and Output Data to JSON-L File
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gzip-the-json-l-file">
    Gzip the JSON-L file
   </a>
@@ -329,7 +351,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Tokenize Text Files with NLTK</strong></p>
+<div class="section" id="tokenize-text-files-with-nltk">
+<h1>Tokenize Text Files with NLTK<a class="headerlink" href="#tokenize-text-files-with-nltk" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
 This notebook takes as input:</p>
 <ul class="simple">
@@ -368,7 +391,7 @@ This notebook takes as input:</p>
 </ol>
 <hr class="docutils" />
 <div class="section" id="import-libraries">
-<h1>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">¶</a></h1>
+<h2>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">nltk</span><span class="o">,</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">gzip</span><span class="o">,</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -380,7 +403,7 @@ This notebook takes as input:</p>
 </div>
 </div>
 <div class="section" id="define-special-functions-for-this-process">
-<h1>Define Special Functions for this Process<a class="headerlink" href="#define-special-functions-for-this-process" title="Permalink to this headline">¶</a></h1>
+<h2>Define Special Functions for this Process<a class="headerlink" href="#define-special-functions-for-this-process" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Various functions written for this notebook ###</span>
@@ -458,7 +481,7 @@ This notebook takes as input:</p>
 </div>
 </div>
 <div class="section" id="unzip-texts-folder-optional">
-<h1>Unzip Texts Folder (optional)<a class="headerlink" href="#unzip-texts-folder-optional" title="Permalink to this headline">¶</a></h1>
+<h2>Unzip Texts Folder (optional)<a class="headerlink" href="#unzip-texts-folder-optional" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Extract Zip File of Texts ###</span>
@@ -480,7 +503,7 @@ This notebook takes as input:</p>
 </div>
 </div>
 <div class="section" id="check-for-metadata-csv-optional">
-<h1>Check for Metadata CSV (optional)<a class="headerlink" href="#check-for-metadata-csv-optional" title="Permalink to this headline">¶</a></h1>
+<h2>Check for Metadata CSV (optional)<a class="headerlink" href="#check-for-metadata-csv-optional" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Check for a metadata CSV file ###</span>
@@ -499,7 +522,7 @@ This notebook takes as input:</p>
 </div>
 </div>
 <div class="section" id="import-the-text-files-into-nltk">
-<h1>Import the Text Files into NLTK<a class="headerlink" href="#import-the-text-files-into-nltk" title="Permalink to this headline">¶</a></h1>
+<h2>Import the Text Files into NLTK<a class="headerlink" href="#import-the-text-files-into-nltk" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Establish root folder holding all text files ###</span>
@@ -522,7 +545,7 @@ This notebook takes as input:</p>
 </div>
 </div>
 <div class="section" id="generate-and-output-data-to-json-l-file">
-<h1>Generate and Output Data to JSON-L File<a class="headerlink" href="#generate-and-output-data-to-json-l-file" title="Permalink to this headline">¶</a></h1>
+<h2>Generate and Output Data to JSON-L File<a class="headerlink" href="#generate-and-output-data-to-json-l-file" title="Permalink to this headline">¶</a></h2>
 <p><strong>If an old json-l file already exists, this process will overwrite it</strong></p>
 <p>For each text, this code will:</p>
 <ol class="simple">
@@ -619,7 +642,7 @@ This notebook takes as input:</p>
 </div>
 </div>
 <div class="section" id="gzip-the-json-l-file">
-<h1>Gzip the JSON-L file<a class="headerlink" href="#gzip-the-json-l-file" title="Permalink to this headline">¶</a></h1>
+<h2>Gzip the JSON-L file<a class="headerlink" href="#gzip-the-json-l-file" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># GZip dataset</span>
@@ -631,6 +654,7 @@ This notebook takes as input:</p>
 <span class="n">f_in</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Compression complete. </span><span class="se">\n</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s1">.gz has been created.&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

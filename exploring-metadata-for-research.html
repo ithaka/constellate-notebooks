@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Define Dataset ID &#8212; Intro to Text Analysis</title>
+    <title>Exploring Metadata and Pre-Processing for Researchers &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -161,6 +161,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-objects.html">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="creating-stopwords-list.html">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working-with-dataset-files.html">
+   Working with Dataset Files (60 minutes)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
   Reference
  </span>
 </p>
@@ -278,32 +300,32 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-dataset-id">
    Define Dataset ID
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-dataset-and-load-into-dataframe">
    Import Dataset and Load into Dataframe
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#metadata-type-by-column-name">
    Metadata Type by Column Name
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#choose-columns-to-drop">
    Choose Columns to Drop
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#choose-rows-to-drop">
    Choose Rows to Drop
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#saving-a-list-of-ids-to-a-csv-file">
    Saving a list of IDs to a CSV file
   </a>
@@ -324,7 +346,8 @@
 Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 <strong>For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.</strong><br /></p>
 <hr class="docutils" />
-<p><strong>Exploring Metadata and Pre-Processing for Researchers</strong></p>
+<div class="section" id="exploring-metadata-and-pre-processing-for-researchers">
+<h1>Exploring Metadata and Pre-Processing for Researchers<a class="headerlink" href="#exploring-metadata-and-pre-processing-for-researchers" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description of methods in this notebook:</strong>
 This notebook helps researchers generate a list of IDs and export them into a CSV file. If this is your first time doing this process, you should first see <a class="reference internal" href="exploring-metadata.html"><span class="doc std std-doc">Exploring Metadata and Pre-Processing For Learners</span></a>.</p>
 <p>The code below is a starting point for:</p>
@@ -355,7 +378,7 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
 <div class="section" id="define-dataset-id">
-<h1>Define Dataset ID<a class="headerlink" href="#define-dataset-id" title="Permalink to this headline">¶</a></h1>
+<h2>Define Dataset ID<a class="headerlink" href="#define-dataset-id" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a variable `dataset_id` to hold our dataset ID</span>
@@ -368,7 +391,7 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 </div>
 </div>
 <div class="section" id="import-dataset-and-load-into-dataframe">
-<h1>Import Dataset and Load into Dataframe<a class="headerlink" href="#import-dataset-and-load-into-dataframe" title="Permalink to this headline">¶</a></h1>
+<h2>Import Dataset and Load into Dataframe<a class="headerlink" href="#import-dataset-and-load-into-dataframe" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Metadata for the dataset and load it into a dataframe</span>
@@ -394,7 +417,7 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 </div>
 </div>
 <div class="section" id="metadata-type-by-column-name">
-<h1>Metadata Type by Column Name<a class="headerlink" href="#metadata-type-by-column-name" title="Permalink to this headline">¶</a></h1>
+<h2>Metadata Type by Column Name<a class="headerlink" href="#metadata-type-by-column-name" title="Permalink to this headline">¶</a></h2>
 <p>Here are descriptions for the metadata types found in each column:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -467,7 +490,7 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 </table>
 </div>
 <div class="section" id="choose-columns-to-drop">
-<h1>Choose Columns to Drop<a class="headerlink" href="#choose-columns-to-drop" title="Permalink to this headline">¶</a></h1>
+<h2>Choose Columns to Drop<a class="headerlink" href="#choose-columns-to-drop" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the pandas option to show all columns</span>
@@ -489,7 +512,7 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 </div>
 </div>
 <div class="section" id="choose-rows-to-drop">
-<h1>Choose Rows to Drop<a class="headerlink" href="#choose-rows-to-drop" title="Permalink to this headline">¶</a></h1>
+<h2>Choose Rows to Drop<a class="headerlink" href="#choose-rows-to-drop" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all texts without an author</span>
@@ -528,12 +551,13 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 </div>
 </div>
 <div class="section" id="saving-a-list-of-ids-to-a-csv-file">
-<h1>Saving a list of IDs to a CSV file<a class="headerlink" href="#saving-a-list-of-ids-to-a-csv-file" title="Permalink to this headline">¶</a></h1>
+<h2>Saving a list of IDs to a CSV file<a class="headerlink" href="#saving-a-list-of-ids-to-a-csv-file" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write the column &quot;id&quot; to a CSV file called `pre-processed_###.csv` where ### is the `dataset_id`</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/pre-processed_&#39;</span> <span class="o">+</span> <span class="n">dataset_id</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Purpose of a Stopwords List &#8212; Intro to Text Analysis</title>
+    <title>Creating a Stopwords List &#8212; Intro to Text Analysis</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,6 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Working with Dataset Files" href="working-with-dataset-files.html" />
+    <link rel="prev" title="Counter Objects" href="counter-objects.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -156,6 +158,28 @@
  <li class="toctree-l1">
   <a class="reference internal" href="topic-modeling.html">
    Latent Dirichlet Allocation (LDA) Topic Modeling
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Additional Recommended Lessons
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-objects.html">
+   Counter Objects (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Creating a Stopwords List (20 minutes)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working-with-dataset-files.html">
+   Working with Dataset Files (60 minutes)
   </a>
  </li>
 </ul>
@@ -278,22 +302,22 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-purpose-of-a-stopwords-list">
    The Purpose of a Stopwords List
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examining-the-nltk-stopwords-list">
    Examining the NLTK Stopwords List
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#storing-stopwords-in-a-csv-file">
    Storing Stopwords in a CSV File
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reading-in-a-stopwords-csv">
    Reading in a Stopwords CSV
   </a>
@@ -314,7 +338,8 @@
 <p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> and Ted Lawless for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<p><strong>Creating a Stopwords List</strong></p>
+<div class="section" id="creating-a-stopwords-list">
+<h1>Creating a Stopwords List<a class="headerlink" href="#creating-a-stopwords-list" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
 This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">notebook</a> explains what a stopwords list is and how to create one. The following processes are described:</p>
 <ul class="simple">
@@ -341,7 +366,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
 <div class="section" id="the-purpose-of-a-stopwords-list">
-<h1>The Purpose of a Stopwords List<a class="headerlink" href="#the-purpose-of-a-stopwords-list" title="Permalink to this headline">¶</a></h1>
+<h2>The Purpose of a Stopwords List<a class="headerlink" href="#the-purpose-of-a-stopwords-list" title="Permalink to this headline">¶</a></h2>
 <p>Many text analytics techniques are based on counting the occurrence of words in a given text or set of texts (called a corpus). The most frequent words can reveal general textual patterns, but the most frequent words for any given text in English tend to look very similar to this:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -399,7 +424,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <p>Because every research project may require unique stopwords, it is important for researchers to learn to create and modify stopwords lists.</p>
 </div>
 <div class="section" id="examining-the-nltk-stopwords-list">
-<h1>Examining the NLTK Stopwords List<a class="headerlink" href="#examining-the-nltk-stopwords-list" title="Permalink to this headline">¶</a></h1>
+<h2>Examining the NLTK Stopwords List<a class="headerlink" href="#examining-the-nltk-stopwords-list" title="Permalink to this headline">¶</a></h2>
 <p>The Natural Language Toolkit Stopwords list is well-known and a natural starting point for creating your own list. Let’s take a look at what it contains before learning to make our own modifications.</p>
 <p>We will store our stopwords in a Python list variable called <code class="docutils literal notranslate"><span class="pre">stop_words</span></code>.</p>
 <div class="cell docutils container">
@@ -421,7 +446,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 <div class="section" id="storing-stopwords-in-a-csv-file">
-<h1>Storing Stopwords in a CSV File<a class="headerlink" href="#storing-stopwords-in-a-csv-file" title="Permalink to this headline">¶</a></h1>
+<h2>Storing Stopwords in a CSV File<a class="headerlink" href="#storing-stopwords-in-a-csv-file" title="Permalink to this headline">¶</a></h2>
 <p>Storing the stopwords list in a variable like <code class="docutils literal notranslate"><span class="pre">stop_words</span></code> is useful for analysis, but we will likely want to keep the list even after the session is over for future changes and analyses. We can store our stop words list in a CSV file. A CSV, or “Comma-Separated Values” file, is a plain-text file with commas separating each entry. The file can be opened and modified with a text editor or spreadsheet software such as Excel or Google Sheets.</p>
 <p>Here’s what our NLTK stopwords list will look like as a CSV file opened in a plain text editor.</p>
 <p><img alt="The csv file as an image" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/stopwordsCSV.png" /></p>
@@ -450,7 +475,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <p>Now let’s read our CSV file back and overwrite our original <code class="docutils literal notranslate"><span class="pre">stop_words</span></code> list variable.</p>
 </div>
 <div class="section" id="reading-in-a-stopwords-csv">
-<h1>Reading in a Stopwords CSV<a class="headerlink" href="#reading-in-a-stopwords-csv" title="Permalink to this headline">¶</a></h1>
+<h2>Reading in a Stopwords CSV<a class="headerlink" href="#reading-in-a-stopwords-csv" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the CSV file and list the contents</span>
@@ -468,6 +493,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <li><p>The material you are analyzing (for example, journal articles may repeat words like “abstract”)</p></li>
 </ul>
 <p>If your results are not satisfactory, you can always come back and adjust the stopwords. You may need to run your analysis many times to refine a good stopword list.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -495,6 +521,8 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="counter-objects.html" title="previous page">Counter Objects</a>
+    <a class='right-next' id="next-link" href="working-with-dataset-files.html" title="next page">Working with Dataset Files</a>
 
         </div>
         
