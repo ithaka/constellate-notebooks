@@ -16,6 +16,9 @@ from urllib.request import urlretrieve
 import progressbar
 import requests
 
+# workaround for matplotlib issues
+import matplotlib.font_manager
+
 from IPython.core.display import display, HTML
 
 version = 0.26
