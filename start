@@ -21,8 +21,5 @@ jupyter nbextension enable toc2/main
 jupyter nbextension enable livemdpreview/livemdpreview
 jupyter nbextension enable --py itap_jupyter_notebookparams
 
-# workaround for matplotlib issues
-python -c "import matplotlib.font_manager as fm; fm._rebuild()"
-
 exec "$@"
 
