@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Working with Dataset Files &#8212; Intro to Text Analysis</title>
+    <title>Working with Dataset Files &#8212; Teaching Text Analysis with Constellate</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pandas I" href="pandas-1.html" />
-    <link rel="prev" title="Creating a Stopwords List" href="creating-stopwords-list.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -74,8 +72,10 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="index.html">
   
+  <img src="_static/constellate-beta.png" class="logo" alt="logo">
   
-  <h1 class="site-logo" id="site-title">Intro to Text Analysis</h1>
+  
+  <h1 class="site-logo" id="site-title">Teaching Text Analysis with Constellate</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -86,105 +86,51 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="book/intro.html">
-   Welcome to Intro to Text Analysis
+   About
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Why learn text analysis?
+  The Course
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="book/parts/why-text-analysis/dh.html">
-   Digital humanists
+  <a class="reference internal" href="book/schedule.html">
+   Course Schedule
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="book/parts/why-text-analysis/ds.html">
-   Data scientists and business professionals
+  <a class="reference internal" href="book/syllabus.html">
+   Course Syllabus
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Beginner Lessons
+  Lesson Repository
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="getting-started-with-jupyter.html">
-   Getting started with Jupyter Notebooks
+  <a class="reference internal" href="book/all-notebooks.html">
+   All Notebooks
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python-basics-1.html">
-   Python Basics 1
+  <a class="reference internal" href="book/existing-lessons.html">
+   Improving existing lessons
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python-basics-2.html">
-   Python Basics 2
+  <a class="reference internal" href="book/new-lessons.html">
+   Creating/Suggesting new lessons
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python-basics-3.html">
-   Python Basics 3
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Intermediate Lessons
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="exploring-metadata.html">
-   Exploring metadata and pre-processing
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="exploring-word-frequencies.html">
-   Exploring Word Frequencies
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="finding-significant-terms.html">
-   Finding Significant Words Using TF/IDF
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="topic-modeling.html">
-   Latent Dirichlet Allocation (LDA) Topic Modeling
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Additional Recommended Lessons
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="counter-objects.html">
-   Counter Objects (20 minutes)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="creating-stopwords-list.html">
-   Creating a Stopwords List (20 minutes)
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Working with Dataset Files (60 minutes)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pandas-1.html">
-   Pandas 1 (75 minutes)
+  <a class="reference internal" href="book/keep-learning.html">
+   More ways to keep learning
   </a>
  </li>
 </ul>
@@ -195,8 +141,29 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
+  <a class="reference external" href="https://tdm-pilot.org">
+   Constellate Platform
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.tdm-pilot.org/">
+   Constellate Documentation
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/">
    Text Analysis Glossary
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://jupyterbook.org/intro.html">
+   Jupyter Book Documentation
    <i class="fas fa-external-link-alt">
    </i>
   </a>
@@ -944,8 +911,6 @@ For questions/comments/improvements, email <a class="reference external" href="m
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="creating-stopwords-list.html" title="previous page">Creating a Stopwords List</a>
-    <a class='right-next' id="next-link" href="pandas-1.html" title="next page">Pandas I</a>
 
         </div>
         
@@ -955,11 +920,11 @@ For questions/comments/improvements, email <a class="reference external" href="m
     <div class="container">
       <p>
         
-          By Nathan Kelber<br/>
+          By Nathan Kelber and Ted Lawless<br/>
         
           <div class="extra_footer">
             <div>
-<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+<a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
 </div>
 
           </div>
