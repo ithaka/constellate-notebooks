@@ -1,9 +1,9 @@
 # Open Educational Resources for Text Analysis
 A set of notebooks for JSTOR's text analysis project, [Constellate](https://tdm-pilot.org/). 
 
-These [examples and tutorials](https://docs.tdm-pilot.org/topic/beginner-lessons/) are intended to be run via a hosted Binder solution in conjuction with our [dataset builder web application](https://tdm-pilot.org/).
+These examples and tutorials are accessible through the website: [Teaching Text Analysis with Constellate](https://ithaka.github.io/tdm-notebooks/book/intro.html). They are gathered inside a [Jupyter Book](https://jupyterbook.org/intro.html) and intended to be run via a hosted Binder solution in conjuction with our [dataset builder web application](https://tdm-pilot.org/builder/).
 
-##### Installing
+## Local Installation
 
 You can also clone this repository and run the examples in a local Jupyter Notebook environment. 
 Please keep in mind that this project is in a beta phase and both the notebooks and client code may change frequently. 
@@ -21,4 +21,5 @@ Some of the examples use [nltk](https://www.nltk.org/) model files. Download the
 <hr/>
 
 Created by [Nathan Kelber](http://nkelber.com) and [Ted Lawless](https://github.com/lawlesst) for [JSTOR Labs](https://labs.jstor.org/) under [Creative Commons CC BY License](https://creativecommons.org/licenses/by/4.0/)
+
 **For questions/comments/improvements, email tdm@ithaka.org.**<br />![CC BY License Logo](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png)

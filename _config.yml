@@ -5,10 +5,10 @@
 
 #######################################################################################
 # Book settings
-title                       : Intro to Text Analysis  # The title of the book. Will be placed in the left navbar.
-author                      : Nathan Kelber  # The author of the book
+title                       : Teaching Text Analysis with Constellate  # The title of the book. Will be placed in the left navbar.
+author                      : Nathan Kelber and Ted Lawless  # The author of the book
 copyright                   : "None"  # Copyright year to be placed in the footer
-logo                        : "" #logo.png  # A path to the book logo
+logo                        : "book/img/constellate-beta.png" #logo.png  # A path to the book logo
 exclude_patterns            : [Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 
 # Auto-exclude files not in the toc
@@ -53,7 +53,7 @@ html:
   extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
   extra_footer              : | # Will be displayed underneath the footer.
     <div>
-    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+    <a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
     </div>
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar

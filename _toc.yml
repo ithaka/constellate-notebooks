@@ -3,47 +3,31 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: book/intro
 
-- part: Why learn text analysis?
+- part: The Course
   chapters:
-  - file: book/parts/why-text-analysis/dh
-    title: Digital humanists
-  - file: book/parts/why-text-analysis/ds
-    title: Data scientists and business professionals
+  - file: book/schedule
+    title: Course Schedule
+  - file: book/syllabus
+    title: Course Syllabus
 
-- part: Beginner Lessons
+- part: Lesson Repository
   chapters:
-  - file: getting-started-with-jupyter
-    title: Getting started with Jupyter Notebooks
-  - file: python-basics-1
-    title: Python Basics 1
-  - file: python-basics-2
-    title: Python Basics 2
-  - file: python-basics-3
-    title: Python Basics 3
-
-- part: Intermediate Lessons
-  chapters:
-  - file: exploring-metadata
-    title: Exploring metadata and pre-processing
-  - file: exploring-word-frequencies
-    title: Exploring Word Frequencies
-  - file: finding-significant-terms
-    title: Finding Significant Words Using TF/IDF
-  - file: topic-modeling
-    title: Latent Dirichlet Allocation (LDA) Topic Modeling
-
-- part: Additional Recommended Lessons
-  chapters:
-  - file: counter-objects
-    title: Counter Objects (20 minutes)
-  - file: creating-stopwords-list
-    title: Creating a Stopwords List (20 minutes)
-  - file: working-with-dataset-files
-    title: Working with Dataset Files (60 minutes)
-  - file: pandas-1
-    title: Pandas 1 (75 minutes)
+  - file: book/all-notebooks
+    title: All Notebooks
+  - file: book/existing-lessons
+    title: Improving existing lessons
+  - file: book/new-lessons
+    title: Creating/Suggesting new lessons
+  - file: book/keep-learning
+    title: More ways to keep learning
 
 - part: Reference
   chapters:
+    - url: https://tdm-pilot.org
+      title: Constellate Platform
+    - url: https://docs.tdm-pilot.org/
+      title: Constellate Documentation
     - url: https://docs.tdm-pilot.org/key-terms/
       title: Text Analysis Glossary
+    - url: https://jupyterbook.org/intro.html
+      title: Jupyter Book Documentation
