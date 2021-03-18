@@ -494,7 +494,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
         <span class="c1"># Skip documents not in our filtered_id_list</span>
         <span class="k">if</span> <span class="n">document_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">filtered_id_list</span><span class="p">:</span>
             <span class="k">continue</span>
-    <span class="n">unigrams</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;unigramCount&quot;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="n">unigrams</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;unigramCount&quot;</span><span class="p">,</span> <span class="p">{})</span>
     <span class="k">for</span> <span class="n">gram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">unigrams</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">clean_gram</span> <span class="o">=</span> <span class="n">process_token</span><span class="p">(</span><span class="n">gram</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">clean_gram</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
