@@ -79,7 +79,7 @@ def get_description(dataset_id):
 
 def get_metadata(dataset_id, fname=None, force=False):
     """
-    Downloads a CSV of document mentadata for all
+    Downloads a CSV of document metadata for all
     documents in the dataset.
     """
     description = get_description(dataset_id)
@@ -93,7 +93,7 @@ def get_metadata(dataset_id, fname=None, force=False):
         output_file = f"{fname}.csv"
     output_path = os.path.join(datasets_dir, output_file)
     if (force is False) and (os.path.exists(output_path)):
-        logging.info(f"Metdata file {output_path} exists. Not re-downloading.")
+        logging.info(f"Metadata file {output_path} exists. Not re-downloading.")
     else:
         logging.info(f"Downloading {dataset_id} metadata to {output_path}")
         _ = urlretrieve(metadata_url, output_path, ProgressBar())
