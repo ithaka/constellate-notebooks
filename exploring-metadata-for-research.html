@@ -370,21 +370,18 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Metadata for the dataset and load it into a dataframe</span>
 
-<span class="c1"># Import the `tdm_client`</span>
 <span class="kn">import</span> <span class="nn">tdm_client</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Pull in our dataset CSV using </span>
 <span class="n">dataset_metadata</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
-
-<span class="c1"># Import pandas </span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Create our dataframe</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataset_metadata</span><span class="p">)</span>
 
 <span class="c1"># Confirm dataset ingest</span>
 <span class="n">original_document_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total documents in dataframe:&#39;</span><span class="p">,</span> <span class="n">original_document_count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total documents in dataframe: &#39;</span><span class="p">,</span> <span class="n">original_document_count</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -475,11 +472,16 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop each of these named columns</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;outputFormat&#39;</span><span class="p">,</span> <span class="s1">&#39;pageEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;pageStart&#39;</span><span class="p">,</span> <span class="s1">&#39;datePublished&#39;</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Show the first five rows of our updated dataframe</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview dataframe</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop each of these named columns</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;outputFormat&#39;</span><span class="p">,</span> <span class="s1">&#39;pageEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;pageStart&#39;</span><span class="p">,</span> <span class="s1">&#39;datePublished&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -490,23 +492,25 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all texts without an author</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dropping rows without authors...&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">before_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;creator&#39;</span><span class="p">])</span> <span class="c1">#drop each row that has no value under &#39;creators&#39;</span>
 
-<span class="c1"># Print the total original documents followed by the current number</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total original documents:&#39;</span><span class="p">,</span> <span class="n">original_document_count</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total current documents: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">total_dropped</span> <span class="o">=</span> <span class="n">before_count</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">total_dropped</span><span class="si">}</span><span class="s1"> rows dropped.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all items with a particular title</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all texts with a particular title</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dropping rows with title &quot;Article Review&quot;...&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">before_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">title</span> <span class="o">!=</span> <span class="s1">&#39;Review Article&#39;</span><span class="p">]</span> <span class="c1"># Change `Review Article` to your desired title</span>
 
-<span class="c1"># Print the total original documents followed by the current number</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total original documents:&#39;</span><span class="p">,</span> <span class="n">original_document_count</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total current documents: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">total_dropped</span> <span class="o">=</span> <span class="n">before_count</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">total_dropped</span><span class="si">}</span><span class="s1"> rows dropped.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -514,11 +518,20 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all items with less than 3000 words</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dropping rows with &gt; 3000 words...&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">before_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">wordCount</span> <span class="o">&gt;</span> <span class="mi">3000</span><span class="p">]</span> <span class="c1"># Change `3000` to your desired number</span>
 
-<span class="c1"># Print the total original documents followed by the current number</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total original documents:&#39;</span><span class="p">,</span> <span class="n">original_document_count</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total current documents: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">total_dropped</span> <span class="o">=</span> <span class="n">before_count</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">total_dropped</span><span class="si">}</span><span class="s1"> rows dropped.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Final total</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cleaning complete </span><span class="se">\n</span><span class="s1"> Original document count: </span><span class="si">{</span><span class="n">original_document_count</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> Final document count:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -529,7 +542,10 @@ This notebook helps researchers generate a list of IDs and export them into a CS
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write the column &quot;id&quot; to a CSV file called `pre-processed_###.csv` where ### is the `dataset_id`</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/pre-processed_&#39;</span> <span class="o">+</span> <span class="n">dataset_id</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/pre-processed_</span><span class="si">{</span><span class="n">dataset_id</span><span class="si">}</span><span class="s1">.csv&#39;</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pre-Processed CSV written to </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
