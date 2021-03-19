@@ -511,7 +511,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop each of these named columns</span>
 <span class="c1"># axis=1 specifies we are dropping columns</span>
 <span class="c1"># axis=0 would specify to drop rows</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;outputFormat&#39;</span><span class="p">,</span> <span class="s1">&#39;pageEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;pageStart&#39;</span><span class="p">,</span> <span class="s1">&#39;datePublished&#39;</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;outputFormat&#39;</span><span class="p">,</span> <span class="s1">&#39;pageEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;pageStart&#39;</span><span class="p">,</span> <span class="s1">&#39;datePublished&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Show the first five rows of our updated dataframe</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>

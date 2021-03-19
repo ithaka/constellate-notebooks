@@ -285,18 +285,25 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extract-the-unigram-counts-from-the-dataset-json-file">
-   Extract the Unigram Counts from the dataset JSON file
+  <a class="reference internal nav-link" href="#extract-unigram-counts-from-the-json-file-no-cleaning">
+   Extract Unigram Counts from the JSON file (No cleaning)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-most-common-unigrams">
+     Find Most Common Unigrams
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-issues-to-consider">
+     Some issues to consider
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#find-most-common-unigrams">
-   Find Most Common Unigrams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clean-up-tokens">
-   Clean Up Tokens
+  <a class="reference internal nav-link" href="#extract-unigram-counts-from-the-json-file-with-cleaning">
+   Extract Unigram Counts from the JSON File (with cleaning)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -305,8 +312,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#apply-processing">
-     Apply Processing
+    <a class="reference internal nav-link" href="#gather-unigrams-again-with-extra-cleaning-steps">
+     Gather unigrams again with extra cleaning steps
     </a>
    </li>
   </ul>
@@ -399,6 +406,9 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <span class="kn">import</span> <span class="nn">tdm_client</span>
 <span class="c1"># Pull in the dataset that matches `dataset_id`</span>
 <span class="c1"># in the form of a gzipped JSON lines file.</span>
+<span class="c1"># The .get_dataset() method downloads the gzipped JSONL file</span>
+<span class="c1"># to the /data folder and returns a string for the file name and location</span>
+<span class="c1"># dataset_metadata will be a string containing that file name and location</span>
 <span class="n">dataset_file</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -407,7 +417,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 <div class="section" id="apply-pre-processing-filters-if-available">
 <h2>Apply Pre-Processing Filters (if available)<a class="headerlink" href="#apply-pre-processing-filters-if-available" title="Permalink to this headline">¶</a></h2>
-<p>If you completed pre-processing with the “Exploring Metadata and Pre-processing” notebook, you can use your CSV file of dataset IDs to automatically filter the dataset. Your pre-processed CSV file  must be in the same directory as this notebook.</p>
+<p>If you completed pre-processing with the “Exploring Metadata and Pre-processing” notebook, you can use your CSV file of dataset IDs to automatically filter the dataset. Your pre-processed CSV file should be in the /data directory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a pre-processed CSV file of filtered dataset IDs.</span>
@@ -416,13 +426,16 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
+<span class="c1"># Define a string that describes the path to the CSV</span>
 <span class="n">pre_processed_file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/pre-processed_</span><span class="si">{</span><span class="n">dataset_id</span><span class="si">}</span><span class="s1">.csv&#39;</span>
 
+<span class="c1"># Test if the path to the CSV exists</span>
+<span class="c1"># If true, then read the IDs into filtered_id_list</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pre_processed_file_name</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">pre_processed_file_name</span><span class="p">)</span>
     <span class="n">filtered_id_list</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
     <span class="n">use_filtered_list</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pre-Processed CSV found. Successfully read in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; documents.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Pre-Processed CSV found. Filtered dataset is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; documents.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span> 
     <span class="n">use_filtered_list</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No pre-processed CSV file found. Full dataset will be used.&#39;</span><span class="p">)</span>
@@ -431,8 +444,8 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
-<div class="section" id="extract-the-unigram-counts-from-the-dataset-json-file">
-<h2>Extract the Unigram Counts from the dataset JSON file<a class="headerlink" href="#extract-the-unigram-counts-from-the-dataset-json-file" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="extract-unigram-counts-from-the-json-file-no-cleaning">
+<h2>Extract Unigram Counts from the JSON file (No cleaning)<a class="headerlink" href="#extract-unigram-counts-from-the-json-file-no-cleaning" title="Permalink to this headline">¶</a></h2>
 <p>We pulled in our dataset using a <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>. The file, which resides in the datasets/ folder, is a compressed JSON Lines file (jsonl.gz) that contains all the metadata information found in the metadata CSV <em>plus</em> the textual data necessary for analysis including:</p>
 <ul class="simple">
 <li><p>Unigram Counts</p></li>
@@ -452,6 +465,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
+<p>We can read in each document using the tdm_client.dataset_reader.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gather unigramCounts from documents in `filtered_id_list` if it is available</span>
@@ -468,16 +482,15 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 
 <span class="c1"># Print success message</span>
 <span class="k">if</span> <span class="n">use_filtered_list</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unigrams have been collected for documents in filtered_id_list&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unigrams have been collected only for the &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; documents listed in your CSV file.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unigrams have been collected for all documents without filtering&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unigrams have been collected for all documents without filtering from a CSV file.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="find-most-common-unigrams">
-<h2>Find Most Common Unigrams<a class="headerlink" href="#find-most-common-unigrams" title="Permalink to this headline">¶</a></h2>
+<h3>Find Most Common Unigrams<a class="headerlink" href="#find-most-common-unigrams" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have a list of the frequency of all the unigrams in our corpus, we need to sort them to find which are most common</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -488,14 +501,18 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
-<div class="section" id="clean-up-tokens">
-<h2>Clean Up Tokens<a class="headerlink" href="#clean-up-tokens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="some-issues-to-consider">
+<h3>Some issues to consider<a class="headerlink" href="#some-issues-to-consider" title="Permalink to this headline">¶</a></h3>
 <p>We have successfully created a word frequency list. There are a couple small issues, however, that we still need to address:</p>
 <ol class="simple">
 <li><p>There are many <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function-words">function words</a>, words like “the”, “in”, and “of” that are grammatically important but do not carry as much semantic meaning like <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#content-words">content words</a>, such as nouns and verbs.</p></li>
 <li><p>The words represented here are actually case-sensitive <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">strings</a>. That means that the string “the” is a different from the string “The”. You may notice this in your results above.</p></li>
 </ol>
-<p>To solve these issues, we need to find a way to remove common <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function-words">function words</a> and combine <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">strings</a> that may have capital letters in them. We can solve these issues by:</p>
+</div>
+</div>
+<div class="section" id="extract-unigram-counts-from-the-json-file-with-cleaning">
+<h2>Extract Unigram Counts from the JSON File (with cleaning)<a class="headerlink" href="#extract-unigram-counts-from-the-json-file-with-cleaning" title="Permalink to this headline">¶</a></h2>
+<p>To address these issues, we need to find a way to remove common <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function-words">function words</a> and combine <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">strings</a> that may have capital letters in them. We can address these issues by:</p>
 <ol class="simple">
 <li><p>Using a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#stop-words">stopwords</a> list to remove common <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function-words">function words</a></p></li>
 <li><p>Lowercasing all the characters in each string to combine our counts</p></li>
@@ -529,15 +546,15 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
-<div class="section" id="apply-processing">
-<h3>Apply Processing<a class="headerlink" href="#apply-processing" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="gather-unigrams-again-with-extra-cleaning-steps">
+<h3>Gather unigrams again with extra cleaning steps<a class="headerlink" href="#gather-unigrams-again-with-extra-cleaning-steps" title="Permalink to this headline">¶</a></h3>
 <p>In addition to using a stopwords list, we will clean up the tokens by lowercasing all tokens and combining them. This will combine tokens with different capitalization such as “quarterly” and “Quarterly.” We will also remove any tokens that are not alphanumeric.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gather unigramCounts from documents in `filtered_id_list` if available</span>
 <span class="c1"># and apply the processing.</span>
 
-<span class="n">transformed_word_frequency</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="n">word_frequency</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">dataset_reader</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">use_filtered_list</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
@@ -552,7 +569,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
             <span class="k">continue</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">clean_gram</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
             <span class="k">continue</span>
-        <span class="n">transformed_word_frequency</span><span class="p">[</span><span class="n">clean_gram</span><span class="p">]</span> <span class="o">+=</span> <span class="n">count</span>
+        <span class="n">word_frequency</span><span class="p">[</span><span class="n">clean_gram</span><span class="p">]</span> <span class="o">+=</span> <span class="n">count</span>
 </pre></div>
 </div>
 </div>
@@ -565,7 +582,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the most common processed unigrams and their counts</span>
-<span class="k">for</span> <span class="n">gram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">transformed_word_frequency</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">gram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">word_frequency</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">gram</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">count</span><span class="p">)</span>
 </pre></div>
 </div>
