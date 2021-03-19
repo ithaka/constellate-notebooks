@@ -983,14 +983,6 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><p>All documents from JSTOR published in African American Review, Black American Literature Forum, Negro American Literature Forum from 1967 - 2020</p><p>3972 documents.</p></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Downloading b4668c50-a970-c4d7-eb2c-bb6d04313542 to b4668c50-a970-c4d7-eb2c-bb6d04313542.jsonl.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100% |########################################################################|
-</pre></div>
-</div>
-<div class="output text_html">Use and download of datasets is covered by the <a target="_blank" href="https://tdm-pilot.org/terms-and-conditions/">Terms & Conditions of Use</a></div></div>
 </div>
 </div>
 <div class="section" id="apply-pre-processing-filters-if-available">
@@ -1014,11 +1006,6 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <span class="k">else</span><span class="p">:</span> 
     <span class="n">use_filtered_list</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No pre-processed CSV file found. Full dataset will be used.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No pre-processed CSV file found. Full dataset will be used.
 </pre></div>
 </div>
 </div>
@@ -1048,11 +1035,6 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
     <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
     <span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NLTK stopwords list loaded&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NLTK stopwords list loaded
 </pre></div>
 </div>
 </div>
@@ -1122,11 +1104,6 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unigrams collected and processed.
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now that we have all the cleaned unigrams in a list, we can use Gensim to compute TF/IDF.</p>
 </div>
@@ -1150,22 +1127,11 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
-INFO:gensim.corpora.dictionary:built Dictionary(42532 unique tokens: [&#39;able&#39;, &#39;absolutely&#39;, &#39;academic&#39;, &#39;accent&#39;, &#39;accents&#39;]...) from 500 documents (total 371980 corpus positions)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now that we have a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim-dictionary">gensim dictionary</a>, we can get a preview that displays the number of unique tokens across all of our texts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dictionary(42532 unique tokens: [&#39;able&#39;, &#39;absolutely&#39;, &#39;academic&#39;, &#39;accent&#39;, &#39;accents&#39;]...)
 </pre></div>
 </div>
 </div>
@@ -1177,30 +1143,11 @@ INFO:gensim.corpora.dictionary:built Dictionary(42532 unique tokens: [&#39;able&
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;able&#39;: 0,
- &#39;absolutely&#39;: 1,
- &#39;academic&#39;: 2,
- &#39;accent&#39;: 3,
- &#39;accents&#39;: 4,
- &#39;acceptable&#39;: 5,
- &#39;accounts&#39;: 6,
- &#39;accused&#39;: 7,
- &#39;acquainted&#39;: 8,
- &#39;acquired&#39;: 9}
-</pre></div>
-</div>
-</div>
 </div>
 <p>We can also look up the corresponding ID for a token using the <code class="docutils literal notranslate"><span class="pre">.get</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span><span class="o">.</span><span class="n">token2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;people&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Get the value for the key &#39;people&#39;. Return 0 if there is no token matching &#39;people&#39;. The number returned is the gensim dictionary ID for the token. </span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>662
 </pre></div>
 </div>
 </div>
@@ -1219,40 +1166,12 @@ INFO:gensim.corpora.dictionary:built Dictionary(42532 unique tokens: [&#39;able&
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 1),
- (1, 1),
- (2, 1),
- (3, 1),
- (4, 1),
- (5, 1),
- (6, 1),
- (7, 1),
- (8, 1),
- (9, 1)]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Using IDs can seem a little abstract, but we can discover the word associated with a particular ID. For demonstration purposes, the following code will replace the token IDs in the last example with the actual tokens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_counts</span> <span class="o">=</span> <span class="p">[[(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">],</span> <span class="n">count</span><span class="p">)</span> <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">example_bow_corpus</span><span class="p">]</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">word_counts</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;able&#39;, 1),
- (&#39;absolutely&#39;, 1),
- (&#39;academic&#39;, 1),
- (&#39;accent&#39;, 1),
- (&#39;accents&#39;, 1),
- (&#39;acceptable&#39;, 1),
- (&#39;accounts&#39;, 1),
- (&#39;accused&#39;, 1),
- (&#39;acquainted&#39;, 1),
- (&#39;acquired&#39;, 1)]
 </pre></div>
 </div>
 </div>
@@ -1265,11 +1184,6 @@ INFO:gensim.corpora.dictionary:built Dictionary(42532 unique tokens: [&#39;able&
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">token</span> <span class="k">for</span> <span class="n">dict_id</span><span class="p">,</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">dict_id</span> <span class="o">==</span> <span class="mi">100</span><span class="p">]</span> <span class="c1"># Find the corresponding token in our gensim dictionary for the gensim dictionary ID</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;beyond&#39;]
 </pre></div>
 </div>
 </div>
@@ -1303,13 +1217,6 @@ INFO:gensim.corpora.dictionary:built Dictionary(42532 unique tokens: [&#39;able&
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gensim.models.tfidfmodel:collecting document frequencies
-INFO:gensim.models.tfidfmodel:PROGRESS: processing document #0
-INFO:gensim.models.tfidfmodel:calculating IDF weights for 500 documents and 42532 features (358101 matrix non-zeros)
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now, we apply our model to the <code class="docutils literal notranslate"><span class="pre">bow_corpus</span></code> to create our results in <code class="docutils literal notranslate"><span class="pre">corpus_tfidf</span></code>. The <code class="docutils literal notranslate"><span class="pre">corpus_tfidf</span></code> is a python list of each document similar to <code class="docutils literal notranslate"><span class="pre">bow_document</span></code>. Instead of listing the frequency next to the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim-dictionary">gensim dictionary</a> ID, however, it contains the TF-IDF](<a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tf-idf">https://docs.tdm-pilot.org/key-terms/#tf-idf</a>) score for the associated token. Below, we display the first document in <code class="docutils literal notranslate"><span class="pre">corpus_tfidf</span></code>.</p>
 <div class="cell docutils container">
@@ -1319,40 +1226,12 @@ INFO:gensim.models.tfidfmodel:calculating IDF weights for 500 documents and 4253
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 0.010322696905911956),
- (1, 0.02615409228137154),
- (2, 0.020911970652767616),
- (3, 0.03421506719297349),
- (4, 0.042432587153558125),
- (5, 0.031049508078614698),
- (6, 0.021243348177055095),
- (7, 0.029013768640912728),
- (8, 0.03993441991205587),
- (9, 0.03361243388900338)]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s display the tokens instead of the <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim-dictionary">gensim dictionary</a> IDs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_tfidf_scores</span> <span class="o">=</span> <span class="p">[[(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">],</span> <span class="n">count</span><span class="p">)</span> <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">corpus_tfidf</span><span class="p">]</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">example_tfidf_scores</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># List out the TF-IDF scores for the first 10 tokens of the first text in the corpus</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;able&#39;, 0.010322696905911956),
- (&#39;absolutely&#39;, 0.02615409228137154),
- (&#39;academic&#39;, 0.020911970652767616),
- (&#39;accent&#39;, 0.03421506719297349),
- (&#39;accents&#39;, 0.042432587153558125),
- (&#39;acceptable&#39;, 0.031049508078614698),
- (&#39;accounts&#39;, 0.021243348177055095),
- (&#39;accused&#39;, 0.029013768640912728),
- (&#39;acquainted&#39;, 0.03993441991205587),
- (&#39;acquired&#39;, 0.03361243388900338)]
 </pre></div>
 </div>
 </div>
@@ -1370,20 +1249,6 @@ INFO:gensim.models.tfidfmodel:calculating IDF weights for 500 documents and 4253
     <span class="k">return</span> <span class="n">tfidf_tuples</span> 
 
 <span class="nb">list</span><span class="p">(</span><span class="n">Sort</span><span class="p">(</span><span class="n">example_tfidf_scores</span><span class="p">[</span><span class="mi">0</span><span class="p">])[:</span><span class="mi">10</span><span class="p">])</span> <span class="c1">#List the top ten tokens in our example document by their TF-IDF scores</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;umbrella&#39;, 0.09599078964731564),
- (&#39;selfhood&#39;, 0.07255817321510287),
- (&#39;reginald&#39;, 0.06722486777800676),
- (&#39;alking&#39;, 0.06177572245434214),
- (&#39;ashe&#39;, 0.06177572245434214),
- (&#39;bateson&#39;, 0.06177572245434214),
- (&#39;bertrand&#39;, 0.06177572245434214),
- (&#39;blacken&#39;, 0.06177572245434214),
- (&#39;deepdown&#39;, 0.06177572245434214),
- (&#39;doudou&#39;, 0.06177572245434214)]
 </pre></div>
 </div>
 </div>
@@ -1407,35 +1272,6 @@ INFO:gensim.models.tfidfmodel:calculating IDF weights for 500 documents and 4253
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zinnias 0.5470628324974958
-deternfined 0.42983792011464605
-jelalian 0.42983792011464605
-dang 0.4062261201929576
-capsize 0.3935078378273342
-shark 0.36716082120549287
-inject 0.3496178862811527
-nazarene 0.3496178862811527
-caimpaignas 0.34806387715759823
-honky 0.34806387715759823
-ruefulok 0.34806387715759823
-lustrous 0.32456350825307995
-platter 0.32456350825307995
-tatder 0.32456350825307995
-awlins 0.3156469042073778
-bikfwomen 0.3156469042073778
-biktwomen 0.3156469042073778
-blkartsouth 0.3156469042073778
-minifine 0.3156469042073778
-undefiled 0.3156469042073778
-dameron 0.3102794672775127
-délana 0.3102794672775127
-ouick 0.3102794672775127
-raptured 0.3102794672775127
-aderibigbe 0.3069607191763414
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="display-top-result-for-all-documents">
@@ -1452,21 +1288,6 @@ aderibigbe 0.3069607191763414
     <span class="nb">print</span><span class="p">(</span><span class="n">document_ids</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word_id</span><span class="p">),</span> <span class="n">score</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
         <span class="k">break</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>http://www.jstor.org/stable/2903312 umbrella 0.09599078964731564
-http://www.jstor.org/stable/3042066 booby 0.15322197502890947
-http://www.jstor.org/stable/1512373 masculinity 0.09034775731568181
-http://www.jstor.org/stable/2904212 amira 0.08930939391216648
-http://www.jstor.org/stable/3041715 acct 0.09311722100235685
-http://www.jstor.org/stable/3041937 sheets 0.13074109668546313
-http://www.jstor.org/stable/2901447 arguable 0.09210396385177078
-http://www.jstor.org/stable/3041332 brandeis 0.07799339231096143
-http://www.jstor.org/stable/2904334 symbolism 0.06497220874477062
-http://www.jstor.org/stable/3042111 desert 0.13218960115934114
-http://www.jstor.org/stable/2903379 ynamic 0.17551668979692245
 </pre></div>
 </div>
 </div>
