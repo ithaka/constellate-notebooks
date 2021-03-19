@@ -280,13 +280,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metadata-type-by-column-name">
-   Metadata Type by Column Name
+  <a class="reference internal nav-link" href="#filtering-out-columns-using-pandas">
+   Filtering out columns using Pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filtering-out-unwanted-texts">
-   Filtering Out Unwanted Texts
+  <a class="reference internal nav-link" href="#filtering-out-rows-with-pandas">
+   Filtering out rows with Pandas
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -384,7 +384,10 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the `tdm_client`</span>
 <span class="kn">import</span> <span class="nn">tdm_client</span>
 
-<span class="c1"># Pull in our dataset CSV using </span>
+<span class="c1"># Pull in our dataset CSV using</span>
+<span class="c1"># The .get_metadata() method downloads the CSV file for our metadata</span>
+<span class="c1"># to the /data folder and returns a string for the file name and location</span>
+<span class="c1"># dataset_metadata will be a string containing that file name and location</span>
 <span class="n">dataset_metadata</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -393,10 +396,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <p>We are ready to import pandas for our analysis and create a dataframe. We will use the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> method to create our dataframe from the CSV file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For displaying plots</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="c1"># Import pandas </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import pandas </span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Create our dataframe</span>
@@ -409,7 +409,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">original_document_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total original documents:&#39;</span><span class="p">,</span> <span class="n">original_document_count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total original documents: </span><span class="si">{</span><span class="n">original_document_count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -418,18 +418,18 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the pandas option to show all columns</span>
+<span class="c1"># Setting None gives us all columns</span>
+<span class="c1"># To show less columns replace None with an integer</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;max_columns&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> 
 
 <span class="c1"># Show the first five rows of our dataframe</span>
+<span class="c1"># To show a different number of preview rows</span>
+<span class="c1"># Pass an integer into the .head()</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> 
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<hr class="docutils" />
-<div class="section" id="metadata-type-by-column-name">
-<h2>Metadata Type by Column Name<a class="headerlink" href="#metadata-type-by-column-name" title="Permalink to this headline">¶</a></h2>
 <p>Here are descriptions for the metadata types found in each column:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -500,11 +500,17 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </tr>
 </tbody>
 </table>
+</div>
+<hr class="docutils" />
+<div class="section" id="filtering-out-columns-using-pandas">
+<h2>Filtering out columns using Pandas<a class="headerlink" href="#filtering-out-columns-using-pandas" title="Permalink to this headline">¶</a></h2>
 <p>If there are any columns you would like to drop from your analysis, you can drop them with:</p>
-<p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">df.drop(['column_name1',</span> <span class="pre">'column_name2',</span> <span class="pre">...],</span> <span class="pre">axis=1)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">df.drop(['column_name1',</span> <span class="pre">'column_name2',</span> <span class="pre">...],</span> <span class="pre">axis=1)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop each of these named columns</span>
+<span class="c1"># axis=1 specifies we are dropping columns</span>
+<span class="c1"># axis=0 would specify to drop rows</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;outputFormat&#39;</span><span class="p">,</span> <span class="s1">&#39;pageEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;pageStart&#39;</span><span class="p">,</span> <span class="s1">&#39;datePublished&#39;</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Show the first five rows of our updated dataframe</span>
@@ -513,31 +519,24 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 </div>
 </div>
-<p>If you would like to know if a particular id is in the dataframe, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to return a boolean value (True or False).</p>
+</div>
+<div class="section" id="filtering-out-rows-with-pandas">
+<h2>Filtering out rows with Pandas<a class="headerlink" href="#filtering-out-rows-with-pandas" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have filtered out unwanted metadata columns, we can begin filtering out any texts that may not match our research interests. Let’s examine the first and last ten rows of the dataframe to see if we can identify texts that we would like to remove. We are looking for patterns in the metadata that could help us remove many texts at once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if a particular item id is in the `id` column</span>
-<span class="s1">&#39;http://www.jstor.org/stable/2868641&#39;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">values</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="filtering-out-unwanted-texts">
-<h2>Filtering Out Unwanted Texts<a class="headerlink" href="#filtering-out-unwanted-texts" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have filtered out unwanted metadata columns, we can begin filtering out any texts that may not match our research interests. Let’s examine the first and last twenty rows of the dataframe to see if we can identify texts that we would like to remove. We are looking for patterns in the metadata that could help us remove many texts at once.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview the first twenty items in the dataframe</span>
-<span class="c1"># df.head(20) # Change 20 to view a greater or lesser number of rows</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview the first ten items in the dataframe</span>
+<span class="c1"># Can you identify patterns to select rows to remove?</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview the last twenty items in the dataframe</span>
-<span class="c1"># df.tail(20) # Change 20 to view a greater or lesser number of rows</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview the last ten items in the dataframe</span>
+<span class="c1"># Can you identify patterns to select rows to remove?</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -556,8 +555,8 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the total original documents followed by the current number</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total original documents:&#39;</span><span class="p">,</span> <span class="n">original_document_count</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total current documents: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total original documents: </span><span class="si">{</span><span class="n">original_document_count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total current documents: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -565,11 +564,27 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 <div class="section" id="remove-row-based-on-the-content-of-a-particular-column">
 <h3>Remove row based on the content of a particular column<a class="headerlink" href="#remove-row-based-on-the-content-of-a-particular-column" title="Permalink to this headline">¶</a></h3>
-<p>We can also remove texts that have a particular value in a column. Here are a few examples.</p>
+<p>We can also remove texts, depending on whether we do (or do not) want a particular value in a column. Here are a few examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all items with a particular title</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">title</span> <span class="o">!=</span> <span class="s1">&#39;Review Article&#39;</span><span class="p">]</span> <span class="c1"># Change `Review Article` to your desired title</span>
+<span class="c1"># Change title to desired column</span>
+<span class="c1"># Change `Review Article` to your undesired title</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">title</span> <span class="o">!=</span> <span class="s1">&#39;Review Article&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total current documents &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keep only items with a particular language</span>
+<span class="c1"># Change language to desired column</span>
+<span class="c1"># Change &#39;eng&#39; to your desired language</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">language</span> <span class="o">==</span> <span class="s1">&#39;eng&#39;</span><span class="p">])</span> <span class="c1"># Change to another language code for other languages</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total current documents &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -577,7 +592,11 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all items with less than 3000 words</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">wordCount</span> <span class="o">&gt;</span> <span class="mi">3000</span><span class="p">]</span> <span class="c1"># Change `3000` to your desired number</span>
+<span class="c1"># Change wordCount to desired column</span>
+<span class="c1"># Change &#39;&gt; 3000&#39; to your desired expression to evaluate</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">wordCount</span> <span class="o">&gt;</span> <span class="mi">1500</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total current documents &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -594,7 +613,8 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <p>Take a final look at your dataframe to make sure the current texts fit your research goals. In the next step, we will save the IDs of your pre-processed dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview the first 50 lines of your dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Preview the first 50 rows of your dataset</span>
+<span class="c1"># If all the items look good, move to the next step.</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -617,6 +637,14 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <hr class="docutils" />
 <div class="section" id="visualizing-the-pre-processed-data">
 <h2>Visualizing the Pre-Processed Data<a class="headerlink" href="#visualizing-the-pre-processed-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For displaying plots</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group the data by publication year and the aggregated number of ids into a bar chart</span>
