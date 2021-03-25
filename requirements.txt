@@ -5,6 +5,6 @@ progressbar
 pandas
 gensim
 nltk
-pyLDAvis
+pyLDAvis==3.2.2
 matplotlib
 vaderSentiment
