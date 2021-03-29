@@ -41,7 +41,7 @@ Constellate provides value to users in three core areas -- they can teach and le
     * Open content - bibliographic metadata, full-text, unigrams, bigrams, trigrams
 * Dataset Dashboard: Easily view datasets you have built or accessed.
 
-## Analyze
+### Analyze
 * Analytics Lab: Integrated computational environment powered by BinderHub that will allow users to seamlessly analyze text content using provided template Jupyter Notebooks and tutorials.
 * Visualize: Built-in visualizations for your datasets.
 * Work with Rights Restricted Full Text: We are investigating the best way to meet this need -- please contact us at [tdm@ithaka.org](mailto:tdm@ithaka.org) if you need rights restricted full-text or just want to talk about your research.
