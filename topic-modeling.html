@@ -328,15 +328,15 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <div class="section" id="latent-dirichlet-allocation-lda-topic-modeling">
 <h1>Latent Dirichlet Allocation (LDA) Topic Modeling<a class="headerlink" href="#latent-dirichlet-allocation-lda-topic-modeling" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
-This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">notebook</a> demonstrates how to do topic modeling. The following processes are described:</p>
+This <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebook</a> demonstrates how to do topic modeling. The following processes are described:</p>
 <ul class="simple">
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to retrieve a dataset</p></li>
 <li><p>Filtering based on a pre-processed ID list</p></li>
-<li><p>Filtering based on a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#stop-words">stop words list</a></p></li>
+<li><p>Filtering based on a <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stop words list</a></p></li>
 <li><p>Cleaning the tokens in the dataset</p></li>
-<li><p>Creating a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim-dictionary">gensim dictionary</a></p></li>
-<li><p>Creating a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim">gensim</a> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#bag-of-words">bag of words</a> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#corpus">corpus</a></p></li>
-<li><p>Computing a topic list using <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim">gensim</a></p></li>
+<li><p>Creating a <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a></p></li>
+<li><p>Creating a <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> <a class="reference external" href="https://docs.constellate.org/key-terms/#bag-of-words">bag of words</a> <a class="reference external" href="https://docs.constellate.org/key-terms/#corpus">corpus</a></p></li>
+<li><p>Computing a topic list using <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a></p></li>
 <li><p>Visualizing the topic list with <code class="docutils literal notranslate"><span class="pre">pyldavis</span></code></p></li>
 </ul>
 <p><strong>Use Case:</strong> For Researchers (Mostly code without explanation, not ideal for learners)</p>
@@ -352,15 +352,15 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <li><p><a class="reference internal" href="working-with-dataset-files.html"><span class="doc std std-doc">Working with Dataset Files</span></a></p></li>
 <li><p><a class="reference internal" href="pandas-1.html"><span class="doc std std-doc">Pandas I</span></a></p></li>
 <li><p><a class="reference internal" href="creating-stopwords-list.html"><span class="doc std std-doc">Creating a Stopwords List</span></a></p></li>
-<li><p>A familiarity with <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim">gensim</a> is helpful but not required.</p></li>
+<li><p>A familiarity with <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> is helpful but not required.</p></li>
 </ul>
-<p><strong>Data Format:</strong> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jsonl">JSON Lines (.jsonl)</a></p>
+<p><strong>Data Format:</strong> <a class="reference external" href="https://docs.constellate.org/key-terms/#jsonl">JSON Lines (.jsonl)</a></p>
 <p><strong>Libraries Used:</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> to load a preprocessing list</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">csv</span></code> to load a custom stopwords list</p></li>
-<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#gensim">gensim</a> to accomplish the topic modeling</p></li>
-<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#nltk">NLTK</a> to create a stopwords list (if no list is supplied)</p></li>
+<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> to accomplish the topic modeling</p></li>
+<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#nltk">NLTK</a> to create a stopwords list (if no list is supplied)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pyldavis</span></code> to visualize our topic model</p></li>
 </ul>
 <p><strong>Research Pipeline</strong></p>
@@ -380,12 +380,12 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="section" id="import-your-dataset">
 <h2>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h2>
 <p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
-<p>Enter a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
+<p>Enter a <a class="reference external" href="https://docs.constellate.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
 <p>If you don’t have a dataset ID, you can:</p>
 <ul class="simple">
 <li><p>Use the sample dataset ID already in the code cell</p></li>
-<li><p><a class="reference external" href="https://tdm-pilot.org/builder">Create a new dataset</a></p></li>
-<li><p><a class="reference external" href="https://tdm-pilot.org/dataset/dashboard">Use a dataset ID from other pre-built sample datasets</a></p></li>
+<li><p><a class="reference external" href="https://constellate.org/builder">Create a new dataset</a></p></li>
+<li><p><a class="reference external" href="https://constellate.org/dataset/dashboard">Use a dataset ID from other pre-built sample datasets</a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -443,7 +443,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </div>
 <div class="section" id="load-stopwords-list">
 <h2>Load Stopwords List<a class="headerlink" href="#load-stopwords-list" title="Permalink to this headline">¶</a></h2>
-<p>If you have created a stopword list in the stopwords notebook, we will import it here. (You can always modify the CSV file to add or subtract words then reload the list.) Otherwise, we’ll load the NLTK <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#stop-words">stopwords</a> list automatically.</p>
+<p>If you have created a stopword list in the stopwords notebook, we will import it here. (You can always modify the CSV file to add or subtract words then reload the list.) Otherwise, we’ll load the NLTK <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stopwords</a> list automatically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load a custom data/stop_words.csv if available</span>

@@ -1,7 +1,7 @@
 # Constellate Collaborative Notebooks and Lessons
-Constellate is a platform to learn and perform text analysis, build datasets, and share analytics course materials. Open the black box of text analysis with [Constellate](https://tdm-pilot.org/), from JSTOR and Portico. 
+Constellate is a platform to learn and perform text analysis, build datasets, and share analytics course materials. Open the black box of text analysis with [Constellate](https://constellate.org/), from JSTOR and Portico. 
 
-This repository is a collection of Jupyter Notebooks that may be used by individuals for learning or teaching text analytics.  You may access them in our textbook, [Teaching Text Analysis with Constellate](https://ithaka.github.io/tdm-notebooks/book/intro.html), and also interact with a number of them from your [Constellate datasets](https://tdm-pilot.org/dataset/dashboard/).  All these Notebooks will run in the Constellate environment.  
+This repository is a collection of Jupyter Notebooks that may be used by individuals for learning or teaching text analytics.  You may access them in our textbook, [Teaching Text Analysis with Constellate](https://ithaka.github.io/tdm-notebooks/book/intro.html), and also interact with a number of them from your [Constellate datasets](https://constellate.org/dataset/dashboard/).  All these Notebooks will run in the Constellate environment.  
 
 Read more about Constellate below, after the nuts and bolts of cloning these notebooks.
 
@@ -35,7 +35,7 @@ Constellate provides value to users in three core areas -- they can teach and le
 * Collaborative Teaching Materials Creation: Users may create, edit, reuse and collaborate in the creation of tutorials, code, documentation, and other educational resources for text analysis.
 
 ### Build
-* Multiple Collections: Anchor collections from JSTOR and Portico, with additional content sources continually added (such as Library of Congress’ Chronicling America). Further [details about the collections](https://docs.tdm-pilot.org/data-sources/) are available.
+* Multiple Collections: Anchor collections from JSTOR and Portico, with additional content sources continually added (such as Library of Congress’ Chronicling America). Further [details about the collections](https://docs.constellate.org/data-sources/) are available.
 * Data Download in JSON
     * All content - bibliographic metadata, unigrams, bigrams, trigrams
     * Open content - bibliographic metadata, full-text, unigrams, bigrams, trigrams
@@ -47,7 +47,7 @@ Constellate provides value to users in three core areas -- they can teach and le
 * Work with Rights Restricted Full Text: We are investigating the best way to meet this need -- please contact us at [tdm@ithaka.org](mailto:tdm@ithaka.org) if you need rights restricted full-text or just want to talk about your research.
 
 # Interested in Participating?
-Reach out to us to participate in [our beta program](https://docs.tdm-pilot.org/participate-and-launch/#roll-out-and-beta-evaluation) and get access to larger datasets and text analytics classes.
+Reach out to us to participate in [our beta program](https://docs.constellate.org/participate-and-launch/#roll-out-and-beta-evaluation) and get access to larger datasets and text analytics classes.
 
 <hr/>
 

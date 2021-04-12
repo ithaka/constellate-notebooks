@@ -342,12 +342,12 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <div class="section" id="exploring-word-frequencies">
 <h1>Exploring Word Frequencies<a class="headerlink" href="#exploring-word-frequencies" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description:</strong>
-This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jupyter-notebook">notebook</a> shows how to find the most common words in a
-<a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dataset">dataset</a>. The following processes are described:</p>
+This <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebook</a> shows how to find the most common words in a
+<a class="reference external" href="https://docs.constellate.org/key-terms/#dataset">dataset</a>. The following processes are described:</p>
 <ul class="simple">
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to create a Pandas DataFrame</p></li>
 <li><p>Filtering based on a pre-processed ID list</p></li>
-<li><p>Filtering based on a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#stop-words">stop words list</a></p></li>
+<li><p>Filtering based on a <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stop words list</a></p></li>
 <li><p>Using a <code class="docutils literal notranslate"><span class="pre">Counter()</span></code> object to get the most common words</p></li>
 </ul>
 <p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
@@ -365,12 +365,12 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <li><p><a class="reference internal" href="counter-objects.html"><span class="doc std std-doc">Counter Objects</span></a></p></li>
 <li><p><a class="reference internal" href="creating-stopwords-list.html"><span class="doc std std-doc">Creating a Stopwords List</span></a></p></li>
 </ul>
-<p><strong>Data Format:</strong> <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#jsonl">JSON Lines (.jsonl)</a></p>
+<p><strong>Data Format:</strong> <a class="reference external" href="https://docs.constellate.org/key-terms/#jsonl">JSON Lines (.jsonl)</a></p>
 <p><strong>Libraries Used:</strong></p>
 <ul class="simple">
-<li><p><strong><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#tdm-client">tdm_client</a></strong> to collect, unzip, and read our dataset</p></li>
-<li><p><strong><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#nltk">NLTK</a></strong> to help <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#clean-data">clean</a> up our dataset</p></li>
-<li><p><a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#python-counter">Counter</a> from <strong>Collections</strong> to help sum up our word frequencies</p></li>
+<li><p><strong><a class="reference external" href="https://docs.constellate.org/key-terms/#tdm-client">tdm_client</a></strong> to collect, unzip, and read our dataset</p></li>
+<li><p><strong><a class="reference external" href="https://docs.constellate.org/key-terms/#nltk">NLTK</a></strong> to help <a class="reference external" href="https://docs.constellate.org/key-terms/#clean-data">clean</a> up our dataset</p></li>
+<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#python-counter">Counter</a> from <strong>Collections</strong> to help sum up our word frequencies</p></li>
 </ul>
 <p><strong>Research Pipeline:</strong></p>
 <ol class="simple">
@@ -383,12 +383,12 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="section" id="import-your-dataset">
 <h2>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h2>
 <p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
-<p>Enter a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
+<p>Enter a <a class="reference external" href="https://docs.constellate.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
 <p>If you don’t have a dataset ID, you can:</p>
 <ul class="simple">
 <li><p>Use the sample dataset ID already in the code cell</p></li>
-<li><p><a class="reference external" href="https://tdm-pilot.org/builder">Create a new dataset</a></p></li>
-<li><p><a class="reference external" href="https://tdm-pilot.org/dataset/dashboard">Use a dataset ID from other pre-built sample datasets</a></p></li>
+<li><p><a class="reference external" href="https://constellate.org/builder">Create a new dataset</a></p></li>
+<li><p><a class="reference external" href="https://constellate.org/dataset/dashboard">Use a dataset ID from other pre-built sample datasets</a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,21 +505,21 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <h3>Some issues to consider<a class="headerlink" href="#some-issues-to-consider" title="Permalink to this headline">¶</a></h3>
 <p>We have successfully created a word frequency list. There are a couple small issues, however, that we still need to address:</p>
 <ol class="simple">
-<li><p>There are many <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function-words">function words</a>, words like “the”, “in”, and “of” that are grammatically important but do not carry as much semantic meaning like <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#content-words">content words</a>, such as nouns and verbs.</p></li>
-<li><p>The words represented here are actually case-sensitive <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">strings</a>. That means that the string “the” is a different from the string “The”. You may notice this in your results above.</p></li>
+<li><p>There are many <a class="reference external" href="https://docs.constellate.org/key-terms/#function-words">function words</a>, words like “the”, “in”, and “of” that are grammatically important but do not carry as much semantic meaning like <a class="reference external" href="https://docs.constellate.org/key-terms/#content-words">content words</a>, such as nouns and verbs.</p></li>
+<li><p>The words represented here are actually case-sensitive <a class="reference external" href="https://docs.constellate.org/key-terms/#string">strings</a>. That means that the string “the” is a different from the string “The”. You may notice this in your results above.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="extract-unigram-counts-from-the-json-file-with-cleaning">
 <h2>Extract Unigram Counts from the JSON File (with cleaning)<a class="headerlink" href="#extract-unigram-counts-from-the-json-file-with-cleaning" title="Permalink to this headline">¶</a></h2>
-<p>To address these issues, we need to find a way to remove common <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function-words">function words</a> and combine <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#string">strings</a> that may have capital letters in them. We can address these issues by:</p>
+<p>To address these issues, we need to find a way to remove common <a class="reference external" href="https://docs.constellate.org/key-terms/#function-words">function words</a> and combine <a class="reference external" href="https://docs.constellate.org/key-terms/#string">strings</a> that may have capital letters in them. We can address these issues by:</p>
 <ol class="simple">
-<li><p>Using a <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#stop-words">stopwords</a> list to remove common <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#function-words">function words</a></p></li>
+<li><p>Using a <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stopwords</a> list to remove common <a class="reference external" href="https://docs.constellate.org/key-terms/#function-words">function words</a></p></li>
 <li><p>Lowercasing all the characters in each string to combine our counts</p></li>
 </ol>
 <div class="section" id="load-stopwords-list">
 <h3>Load Stopwords List<a class="headerlink" href="#load-stopwords-list" title="Permalink to this headline">¶</a></h3>
-<p>If you have created a stopword list in the stopwords notebook, we will import it here. (You can always modify the CSV file to add or subtract words then reload the list.) Otherwise, we’ll load the NLTK <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#stop-words">stopwords</a> list automatically.</p>
+<p>If you have created a stopword list in the stopwords notebook, we will import it here. (You can always modify the CSV file to add or subtract words then reload the list.) Otherwise, we’ll load the NLTK <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stopwords</a> list automatically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load a custom data/stop_words.csv if available</span>

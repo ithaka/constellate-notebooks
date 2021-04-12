@@ -835,11 +835,11 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <li><p>The JSON Lines data is a little more complex to parse since it is nested. It cannot be easily represented in a table form in something like Pandas. It is nice to be able to easily view all the metadata in a Pandas dataframe.</p></li>
 <li><p>The JSON Lines data can be very large. Each file contains all of the metadata <em>plus</em> unigram counts, bigram counts, trigram counts, and full-text (when available). Manipulating all that data takes significant computer time and costs. Even a modest dataset (~5000 files) can be over 1 GB in size uncompressed.</p></li>
 </ol>
-<p>More information is available, including the metadata categories, in the FAQ <a class="reference external" href="https://docs.tdm-pilot.org/what-format-are-jstor-portico-datasets/">“What is the data file format?”</a>.</p>
+<p>More information is available, including the metadata categories, in the FAQ <a class="reference external" href="https://docs.constellate.org/what-format-are-jstor-portico-datasets/">“What is the data file format?”</a>.</p>
 </div>
 <div class="section" id="retrieving-data-tdm-client-methods">
 <h3>Retrieving data (<code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> methods)<a class="headerlink" href="#retrieving-data-tdm-client-methods" title="Permalink to this headline">¶</a></h3>
-<p>By passing the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> a dataset ID (here called <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>), we can automatically download the metadata CSV file or the full JSON Lines dataset created by the <a class="reference external" href="https://tdm-pilot.org/builder/">dataset builder</a>.</p>
+<p>By passing the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> a dataset ID (here called <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>), we can automatically download the metadata CSV file or the full JSON Lines dataset created by the <a class="reference external" href="https://constellate.org/builder/">dataset builder</a>.</p>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">.get_metadata()</span></code> method to retrieve the metadata CSV file</p></li>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">get_dataset()</span></code> method to retrieve the full JSON data file</p></li>
