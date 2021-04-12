@@ -390,8 +390,14 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a variable `dataset_id` to hold our dataset ID</span>
-<span class="c1"># The default dataset is Shakespeare Quarterly, 1950-present</span>
-<span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;7e41317e-740f-e86a-4729-20dab492e925&quot;</span>
+<span class="c1"># The default dataset is Independent Voices</span>
+<span class="c1"># Independent Voices is an open access digital collection of alternative press newspapers, magazines and journals,</span>
+<span class="c1"># drawn from the special collections of participating libraries. These periodicals were produced by feminists, </span>
+<span class="c1"># dissident GIs, campus radicals, Native Americans, anti-war activists, Black Power advocates, Hispanics, </span>
+<span class="c1"># LGBT activists, the extreme right-wing press and alternative literary magazines </span>
+<span class="c1"># during the latter half of the 20th century.</span>
+
+<span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;ac017df6-06b0-d415-7235-98fb729dac4e&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -407,11 +413,6 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><p>All documents from JSTOR published in Shakespeare Quarterly from 1950 - 2020</p><p>6745 documents.</p></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Dataset file 7e41317e-740f-e86a-4729-20dab492e925.jsonl.gz exists. Not re-downloading.
-</pre></div>
-</div>
-<div class="output text_html">Use and download of datasets is covered by the <a target="_blank" href="https://tdm-pilot.org/terms-and-conditions/">Terms & Conditions of Use</a></div></div>
 </div>
 </div>
 <div class="section" id="apply-pre-processing-filters-if-available">
@@ -435,11 +436,6 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <span class="k">else</span><span class="p">:</span> 
     <span class="n">use_filtered_list</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No pre-processed CSV file found. Full dataset will be used.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No pre-processed CSV file found. Full dataset will be used.
 </pre></div>
 </div>
 </div>
@@ -469,11 +465,6 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NLTK stopwords list loaded
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="define-a-function-to-process-tokens">
@@ -498,7 +489,7 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Limit to n documents. Set to None to use all documents.</span>
 
-<span class="n">limit</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">1500</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">documents</span> <span class="o">=</span> <span class="p">[]</span>
@@ -532,27 +523,14 @@ This <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/#j
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
-INFO:gensim.corpora.dictionary:built Dictionary(49145 unique tokens: [&#39;able&#39;, &#39;according&#39;, &#39;achieves&#39;, &#39;activity&#39;, &#39;addition&#39;]...) from 499 documents (total 318488 corpus positions)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
 <span class="n">num_topics</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># Change the number of topics</span>
-
-<span class="c1"># Remove terms that appear in less than 10% of documents and more than 75% of documents.</span>
-<span class="n">dictionary</span><span class="o">.</span><span class="n">filter_extremes</span><span class="p">(</span><span class="n">no_below</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="o">.</span><span class="mi">10</span><span class="p">,</span> <span class="n">no_above</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gensim.corpora.dictionary:discarding 2 tokens: [(&#39;quarterly&#39;, 396), (&#39;shakespeare&#39;, 471)]...
-INFO:gensim.corpora.dictionary:keeping 49143 tokens which were in no less than 1 and no more than 374 (=75.0%) documents
-INFO:gensim.corpora.dictionary:resulting dictionary: Dictionary(49143 unique tokens: [&#39;able&#39;, &#39;according&#39;, &#39;achieves&#39;, &#39;activity&#39;, &#39;addition&#39;]...)
+<span class="n">passes</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># The number of passes the model runs</span>
+<span class="c1"># Remove terms that appear in less than 10 documents and terms that occur in more than 50% of documents.</span>
+<span class="n">dictionary</span><span class="o">.</span><span class="n">filter_extremes</span><span class="p">(</span><span class="n">no_below</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">no_above</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -566,29 +544,13 @@ INFO:gensim.corpora.dictionary:resulting dictionary: Dictionary(49143 unique tok
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train the LDA model.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train the LDA model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">gensim</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">LdaModel</span><span class="p">(</span>
     <span class="n">corpus</span><span class="o">=</span><span class="n">bow_corpus</span><span class="p">,</span>
     <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span>
-    <span class="n">num_topics</span><span class="o">=</span><span class="n">num_topics</span>
+    <span class="n">num_topics</span><span class="o">=</span><span class="n">num_topics</span><span class="p">,</span>
+    <span class="n">passes</span><span class="o">=</span><span class="n">passes</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:gensim.models.ldamodel:using symmetric alpha at 0.14285714285714285
-INFO:gensim.models.ldamodel:using symmetric eta at 0.14285714285714285
-INFO:gensim.models.ldamodel:using serial LDA version on this node
-INFO:gensim.models.ldamodel:running online (single-pass) LDA training, 7 topics, 1 passes over the supplied corpus of 499 documents, updating model once every 499 documents, evaluating perplexity every 499 documents, iterating 50x with a convergence threshold of 0.001000
-WARNING:gensim.models.ldamodel:too few updates, training might not converge; consider increasing the number of passes or iterations to improve accuracy
-INFO:gensim.models.ldamodel:-12.281 per-word bound, 4977.4 perplexity estimate based on a held-out corpus of 499 documents with 317170 words
-INFO:gensim.models.ldamodel:PROGRESS: pass 0, at document #499/499
-INFO:gensim.models.ldamodel:topic #6 (0.143): 0.001*&quot;like&quot; + 0.001*&quot;early&quot; + 0.001*&quot;book&quot; + 0.001*&quot;university&quot; + 0.001*&quot;even&quot; + 0.001*&quot;first&quot; + 0.001*&quot;play&quot; + 0.001*&quot;also&quot; + 0.001*&quot;much&quot; + 0.001*&quot;stage&quot;
-INFO:gensim.models.ldamodel:topic #1 (0.143): 0.001*&quot;much&quot; + 0.001*&quot;plays&quot; + 0.001*&quot;book&quot; + 0.001*&quot;modern&quot; + 0.001*&quot;first&quot; + 0.001*&quot;also&quot; + 0.001*&quot;well&quot; + 0.001*&quot;play&quot; + 0.001*&quot;like&quot; + 0.001*&quot;would&quot;
-INFO:gensim.models.ldamodel:topic #3 (0.143): 0.001*&quot;first&quot; + 0.001*&quot;play&quot; + 0.001*&quot;university&quot; + 0.001*&quot;many&quot; + 0.001*&quot;even&quot; + 0.001*&quot;much&quot; + 0.001*&quot;part&quot; + 0.001*&quot;john&quot; + 0.001*&quot;time&quot; + 0.001*&quot;plays&quot;
-INFO:gensim.models.ldamodel:topic #0 (0.143): 0.001*&quot;like&quot; + 0.001*&quot;plays&quot; + 0.001*&quot;first&quot; + 0.001*&quot;early&quot; + 0.001*&quot;book&quot; + 0.001*&quot;play&quot; + 0.001*&quot;also&quot; + 0.001*&quot;modern&quot; + 0.001*&quot;much&quot; + 0.001*&quot;well&quot;
-INFO:gensim.models.ldamodel:topic #5 (0.143): 0.002*&quot;even&quot; + 0.001*&quot;first&quot; + 0.001*&quot;would&quot; + 0.001*&quot;play&quot; + 0.001*&quot;many&quot; + 0.001*&quot;book&quot; + 0.001*&quot;much&quot; + 0.001*&quot;stage&quot; + 0.001*&quot;like&quot; + 0.001*&quot;plays&quot;
-INFO:gensim.models.ldamodel:topic diff=2.380725, rho=1.000000
 </pre></div>
 </div>
 </div>
@@ -609,17 +571,6 @@ INFO:gensim.models.ldamodel:topic diff=2.380725, rho=1.000000
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic 0     like plays first early book play also modern much well
-Topic 1     much plays book modern first also well play like would
-Topic 2     book would since first much also like english plays university
-Topic 3     first play university many even much part john time plays
-Topic 4     like first also stage plays even modern many well time
-Topic 5     even first would play many book much stage like plays
-Topic 6     like early book university even first play also much stage
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="visualize-the-topic-distances-on-a-flat-plane">
@@ -630,18 +581,6 @@ Topic 6     like early book university even first play also much stage
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyLDAvis.gensim</span>
 <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">enable_notebook</span><span class="p">()</span>
 <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">gensim</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">bow_corpus</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">fc0c6a611c49</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pyLDAvis.gensim</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">enable_notebook</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">gensim</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">bow_corpus</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyLDAvis.gensim&#39;
 </pre></div>
 </div>
 </div>
