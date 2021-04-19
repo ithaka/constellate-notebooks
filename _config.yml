@@ -55,7 +55,7 @@ html:
     <div>
     <a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
     </div>
-  google_analytics_id       : ""  # A GA id that can be used to track book views.
+  google_analytics_id       : "UA-125778965-3"  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
   baseurl                   : ""  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   comments:
