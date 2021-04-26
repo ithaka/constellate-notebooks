@@ -5,8 +5,11 @@
 version=0.1
 
 cd /tmp
-mv ~/tdm_client.py .
+mv ~/src/tdm_client.py .
 python tdm_client.py install
+mv ~/src/constellate-plugin .
+pip install constellate-plugin/
+rm -rf ~/src
 cd -
 
 # Book files not needed for notebooks.
@@ -19,7 +22,7 @@ jupyter contrib nbextension install --user
 jupyter nbextension install jupyter_contrib_nbextensions/nbextensions/toc2 --user
 jupyter nbextension enable toc2/main
 jupyter nbextension enable livemdpreview/livemdpreview
-jupyter nbextension enable --py itap_jupyter_notebookparams
+jupyter nbextension enable --py constellate_plugin
 
 exec "$@"
 

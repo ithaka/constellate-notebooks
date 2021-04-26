@@ -14,7 +14,7 @@ If you have created your own notebooks, or used the client code in some way, we 
 To install the client run the following.
 
 * `python -m pip install -r requirements.txt`
-* `python tdm_client.py install`
+* `python src/tdm_client.py install`
 
 Some of the examples use [nltk](https://www.nltk.org/) model files. Download these with:
 

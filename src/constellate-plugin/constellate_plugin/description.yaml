@@ -1,0 +1,10 @@
+Type: Jupyter Notebook Extension
+Compatibility: 3.x, 4.x, 5.x, 6.x
+Name: ITAP Notebook Params
+Main: main.js
+Link: README.md
+Description: |
+  Adds and runs a default cell at the top of each new notebook initialised with URL query parameters.
+  Also adds a button to insert and run the default cell above the current cell.
+Parameters:
+- none

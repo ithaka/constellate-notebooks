@@ -1,9 +1,8 @@
-git+git://github.com/lawlesst/itap-jupyter-notebookparams.git#egg=itap-jupyter-notebookparams
 jupyter_contrib_nbextensions
 requests
 progressbar
 pandas
-gensim
+gensim==3.8.3
 nltk
 pyLDAvis==3.2.2
 matplotlib
