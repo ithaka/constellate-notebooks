@@ -9,17 +9,15 @@
     title: Course Schedule
   - file: book/syllabus
     title: Course Syllabus
-
-- part: Lesson Repository
-  chapters:
   - file: book/all-notebooks
-    title: All Notebooks
-  - file: book/existing-lessons
-    title: Improving existing lessons
-  - file: book/new-lessons
-    title: Creating/Suggesting new lessons
-  - file: book/keep-learning
-    title: More ways to keep learning
+    title: All Teaching Notebooks
+    
+- part: Create your own Teaching Website
+  chapters:
+  - file: book/create-your-own
+    title: Create your own Jupyter Book
+  - file: book/install-software
+    title: Installing software to modify your Book
 
 - part: Reference
   chapters:
@@ -31,3 +29,5 @@
       title: Text Analysis Glossary
     - url: https://jupyterbook.org/intro.html
       title: Jupyter Book Documentation
+    - file: book/keep-learning
+      title: More ways to keep learning
