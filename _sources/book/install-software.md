@@ -22,148 +22,219 @@ Let's install each of these.
 ### Install git (Apple Mac OS X)
 
 1. **Open terminal.** Terminal is included in Mac OS X by default Press command (⌘) and spacebar to launch spotlight search. (Alternatively, you can launch spotlight by clicking the magnifying glass in the upper righthand corner of OS X.) Type in "terminal" and hit enter. (You can also launch terminal by navigating to your Applications folder.)
-2. **Install Brew** Copy and paste the following code into your terminal. 
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-Then press *return*. This will install Brew, a package manager for OS X. These directions come directly from the [Brew install site](https://brew.sh/).
-3. **Install git** Type (or copy and paste) the following code into your terminal.
-```brew install git```
-Then press *return*. Your installation should now start.
-4. **Confirm successful installation** Type (or copy and paste) the following code into your terminal.
-```git --version```
-Then press *return*. You should receive a version number in return such as:
-```git version 2.92.2```
+2. **Check if Brew is installed** Type or copy and paste the following code into your terminal, then press *return*.
+    ```
+    brew --version
+    ```
+   If you receive a brew version, then it is already installed on your machine. You may skip the next step.
+3. **Install Brew if not installed** First we install xcode, copy and paste the following code into your terminal, then press *return*.
+    ```
+    xcode-select --install
+    ```
+   This will install Xcode on your machine.
+    ```{Note}
+    If you have trouble getting xcode to install, you can [download it directly from the Apple Developer Tools Site](https://developer.apple.com/downloads/index.action). You will need to create an Apple Developer account.
+    ```
+    To [install Brew](https://brew.sh/), copy and paste the following into your terminal, then press *return*.
+    ```   
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+4. **Install git** Type (or copy and paste) the following code into your terminal, then press *return*.
+    ```
+    brew install git
+    ```
+5. **Confirm successful installation** Type (or copy and paste) the following code into your terminal then press *return*.
+    ```
+    git --version
+    ```
+    You should receive a version number in return such as:
+    ```
+    git version 2.92.2
+    ```
 
-**Note:** You may also install git without using the command line by [installing from a binary](https://git-scm.com/download/mac).
+```{note}
+You may also install git without using the command line by [installing from a binary](https://git-scm.com/download/mac).
+```
 
 ### Install Python (Apple Mac OS X)
 
 1. **Install Python from terminal** Assuming you have Brew installed, type (or copy and paste) the following code into your terminal.
-```brew install python3```
-Then press *return*. Your installation should now start.
+    ```
+    brew install python3
+    ```
+    Then press *return*. Your installation should now start.
 2. **Confirm successful installation** Type (or copy and paste) the following code into your terminal.
-```python --version```
-Then press *return*. You should receive a version number in return such as:
-```python version 3.9```
+    ```python --version```
+    Then press *return*. You should receive a version number in return such as:
+    ```python version 3.9```
 
-**Note:** You may also install Pyton without using the command line by [installing from a binary](https://www.python.org/downloads/mac-osx/). Only install Python 3; Python 2 is no longer being used.
+```{note}
+You may also install Python without using the command line by [installing from a binary](https://www.python.org/downloads/mac-osx/). Only install Python 3; Python 2 is no longer being used.
+```
 
 ### Install The Jupyter Notebook (Apple Mac OS X)
 
 1. **Check if "pip" is installed** When you installed Python, it should have also installed "pip." You can check to see if you have pip by typing:
-```pip --version```
-in the terminal and pressing *return*. You should receive a version number in return such as:
-```pip 20.1.1 from /opt/anaconda3/lib/python3.8/site-packages/pip (python 3.8)```
-If you do not receive confirmation, you can also try: ```pip3 --version```.
+    ```
+    pip --version
+    ```
+    in the terminal and pressing *return*. You should receive a version number in return such as:
+    ```
+    pip 20.1.1 from /opt/anaconda3/lib/python3.8/site-packages/pip (python 3.8)
+    ```
+    If you do not receive confirmation, you can also try: ```pip3 --version```.
 2. **Install Jupyter Notebook** type the following into your terminal.
-```pip install notebook```
-Then press *return*. Your installation should now start.
+    ```
+    pip install notebook
+    ```
+    Then press *return*. Your installation should now start.
 3. **Confirm successful installation** type:
-```jupyter-notebook --version```
+    ```
+    jupyter-notebook --version
+    ```
 Then press *return*. You should receive a version number in return such as:
-```6.0.3```
+    ```
+    6.0.3
+    ```
 
 ### Install Jupyter Book (Apple Mac OS X)
 
 1. **Check if "pip" is installed** When you installed Python, it should have also installed "pip." You can check to see if you have pip by typing:
-```pip --version```
-in the terminal and pressing *return*. You should receive a version number in return such as:
-```pip 20.1.1 from /opt/anaconda3/lib/python3.8/site-packages/pip (python 3.8)```
-If you do not receive confirmation, you can also try: ```pip3 --version```.
+    ```
+    pip --version
+    ```
+    in the terminal and pressing *return*. You should receive a version number in return such as:
+    ```
+    pip 20.1.1 from /opt/anaconda3/lib/python3.8/site-packages/pip (python 3.8)
+    ```
+    If you do not receive confirmation, you can also try: ```pip3 --version```.
 2. **Install Jupyter Book** type the following into your terminal.
-```pip install jupyter-book```
-Then press *return*. Your installation should now start.
+    ```
+    pip install jupyter-book
+    ```
+    Then press *return*. Your installation should now start.
 3. **Confirm successful installation** type:
-```jupyter-book --version```
-Then press *return*. You should receive a version number in return such as:
-```
-Jupyter Book: 0.10.0
-MyST-NB: 0.11.1
-Sphinx Book Theme: 0.0.39
-MyST-Parser: 0.13.3
-Jupyter-Cache: 0.4.2
-NbClient: 0.5.1
-```
+    ```
+    jupyter-book --version
+    ```
+    Then press *return*. You should receive a version number in return such as:
+    ```
+    Jupyter Book: 0.10.0
+    MyST-NB: 0.11.1
+    Sphinx Book Theme: 0.0.39
+    MyST-Parser: 0.13.3
+    Jupyter-Cache: 0.4.2
+    NbClient: 0.5.1
+    ```
 Congratulations, you've installed all the necessary software for Apple Mac OS X!
 
 ## Microsoft Windows 10 Installations
 <a id="windows"></a>
-
-The following directions are for Windows 10. **Note:** The order of installations matters; earlier installations are used in order to complete later installations.
+```{warning}
+The order of these installations matters! Earlier installations are used in order to complete later installations.
+```
 
 ### Install git (Microsoft Windows 10)
 
 1. **Download Git** Go to the [git website](https://git-scm.com/download/win). Download the "64-bit Git for Windows Setup". 
 2. **Install Git** For each setting, choose the default. You may, optionally, wish to change the default editor from Vim (an advanced text editor) to something simpler like Notepad. *This is not necessary for our purposes but it may be easier for you if the command line is intimidating.*
 3. **Confirm successful installation** Click on the Windows icon in the lower left corner. Type the following:
-```git bash```
-Then press "Enter." This will launch Git Bash, allowing you to use git.
+    ```
+    git bash
+    ```
+    Then press "Enter." This will launch Git Bash, allowing you to use git.
 4. **Confirm successful installation** Type (or copy and paste) the following code into Git Bash.
-```git --version```
-Then press *return*. You should receive a version number in return such as:
-```git version 2.31.1.windows.1```
+    ```
+    git --version
+    ```
+    Then press *return*. You should receive a version number in return such as:
+    ```
+    git version 2.31.1.windows.1
+    ```
 
-**Note: Git Bash vs. Command Prompt**
+```{note}
+Git Bash vs. Command Prompt
 For these directions, we assume you are using Git Bash rather than the Windows Command Prompt. It is possible to use Git with the Windows Command Prompt, but some of the commands will be different. To check which one you are using, look in the upper lefthand corner of the window. 
 
 **Git Bash** will say "MINGW64" in the upper lefthand corner of the window.
-**Command Prompt** will say "Command Prompt". 
+**Command Prompt** will say "Command Prompt".
+```
 
 ### Install Python (Microsoft Windows 10)
-**Note:** Jupyter Book has [an incompatibility](https://jupyterbook.org/advanced/windows.html#working-on-windows) with Python 3.8. We will use Python 3.7 for better compatibility.
+```{Note}
+Jupyter Book has [an incompatibility](https://jupyterbook.org/advanced/windows.html#working-on-windows) with Python 3.8. We will use Python 3.7 for better compatibility.
+```
 
 1. **Download Python 3.7.9** from the [Python website](https://www.python.org/downloads/release/python-379/). At the bottom of the page, choose "Windows x86-64 executable installer". 
-2. **Start the installation** by double-clicking on the executable file. **Note: ** Make sure to select "Add Python 3.7 to PATH" before choosing "Install Now." 
-3. **Confirm successful installation** If you have a Git Bash window already open, close it and then open a new one. Type:
-```python --version```
-then press *Enter*. You should receive a response like:
-```Python 3.7.9```
+2. **Start the installation** by double-clicking on the executable file. 
+    ```{warning}
+    Make sure to select "Add Python 3.7 to PATH" before choosing "Install Now."
+    ```
+3. **Confirm successful installation**
+    ```{note}
+    If you have a Git Bash window already open, close it and then open a new one.
+    ```
+    Type: `python --version` then press *Enter*. You should receive a response like: `Python 3.7.9`
 
 ### Install The Jupyter Notebook (Microsoft Windows 10)
 
 1. **Check if "pip" is installed** When you installed Python, it should have also installed "pip." You can check to see if you have pip by typing:
-```pip --version```
-in Git Bash and pressing *Enter*. You should receive a version number in return such as:
-```
-pip 20.1.1 from c:\users\username\appdata\local\programs\python\python37\lib\site-packages\pip (python 3.7)
-```
-If you do not receive confirmation, you can also try: ```pip3 --version```.
+    ```
+    pip --version
+    ```
+    in Git Bash and pressing *Enter*. You should receive a version number in return such as:
+    ```
+    pip 20.1.1 from c:\users\username\appdata\local\programs\python\python37\lib\site-packages\pip (python 3.7)
+    ```
+    If you do not receive confirmation, you can also try: 
+    ```
+    pip3 --version
+    ```
 2. **Install Jupyter Notebook** type the following into your terminal.
-```pip install notebook```
+    ```
+    pip install notebook
+    ```
 Then press *return*. Your installation should now start.
 3. **Confirm successful installation** type:
-```jupyter-notebook --version```
+    ```
+    jupyter-notebook --version
+    ```
 Then press *return*. You should receive a version number in return such as:
-```6.3.0```
+    ```
+    6.3.0
+    ```
 
 ### Install Jupyter Book (Microsoft Windows 10)
 
-**Note: ** Jupyter Book has [compatibility issues with Python 3.8](https://jupyterbook.org/advanced/windows.html#working-on-windows). Please make sure you have installed Python 3.7.
+```{note}
+Jupyter Book has [compatibility issues with Python 3.8](https://jupyterbook.org/advanced/windows.html#working-on-windows). Please make sure you have installed Python 3.7.
+```
 
 1. **Check if "pip" is installed** When you installed Python, it should have also installed "pip." You can check to see if you have pip by typing:
-```pip --version```
-in Git Bash and pressing *Enter*. You should receive a version number in return such as:
-```
-pip 20.1.1 from c:\users\username\appdata\local\programs\python\python37\lib\site-packages\pip (python 3.7)
-```
-If you do not receive confirmation, you can also try: ```pip3 --version```.
+    ```
+    pip --version
+    ```
+    in Git Bash and pressing *Enter*. You should receive a version number in return such as:
+    ```
+    pip 20.1.1 from c:\users\username\appdata\local\programs\python\python37\lib\site-packages\pip (python 3.7)
+    ```
+    If you do not receive confirmation, you can also try: ```pip3 --version```.
 2. **Install Jupyter Book** type the following into your terminal.
-```pip install jupyter-book```
-Then press *Enter*. Your installation should now start.
+    ```
+    pip install jupyter-book
+    ```
+    Then press *Enter*. Your installation should now start.
 3. **Confirm successful installation** type:
-```jupyter-book --version```
-Then press *Enter*. You should receive a version number in return such as:
-```
-Jupyter Book: 0.10.2
-MyST-NB: 0.12.3
-Sphinx Book Theme: 0.1.0
-MyST-Parser: 0.13.7
-Jupyter-Cache: 0.4.2
-NbClient: 0.5.3
-```
+    ```
+    jupyter-book --version
+    ```
+    Then press *Enter*. You should receive a version number in return such as:
+    ```
+    Jupyter Book: 0.10.2
+    MyST-NB: 0.12.3
+    Sphinx Book Theme: 0.1.0
+    MyST-Parser: 0.13.7
+    Jupyter-Cache: 0.4.2
+    NbClient: 0.5.3
+    ```
 Congratulations, you've installed all the necessary software for Microsoft Windows 10!
-
-```python
-
-```

@@ -332,68 +332,119 @@
 <p><a class="reference external" href="#windows">Skip to Windows installation Instructions -&gt;</a></p>
 <div class="section" id="install-git-apple-mac-os-x">
 <h3>Install git (Apple Mac OS X)<a class="headerlink" href="#install-git-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
+<ol>
 <li><p><strong>Open terminal.</strong> Terminal is included in Mac OS X by default Press command (⌘) and spacebar to launch spotlight search. (Alternatively, you can launch spotlight by clicking the magnifying glass in the upper righthand corner of OS X.) Type in “terminal” and hit enter. (You can also launch terminal by navigating to your Applications folder.)</p></li>
-<li><p><strong>Install Brew</strong> Copy and paste the following code into your terminal.</p></li>
-</ol>
+<li><p><strong>Check if Brew is installed</strong> Type or copy and paste the following code into your terminal, then press <em>return</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>If you receive a brew version, then it is already installed on your machine. You may skip the next step.</p>
+</li>
+<li><p><strong>Install Brew if not installed</strong> First we install xcode, copy and paste the following code into your terminal, then press <em>return</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>This will install Xcode on your machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have trouble getting xcode to install, you can <a class="reference external" href="https://developer.apple.com/downloads/index.action">download it directly from the Apple Developer Tools Site</a>. You will need to create an Apple Developer account.</p>
+</div>
+<p>To <a class="reference external" href="https://brew.sh/">install Brew</a>, copy and paste the following into your terminal, then press <em>return</em>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span>
 </pre></div>
 </div>
-<p>Then press <em>return</em>. This will install Brew, a package manager for OS X. These directions come directly from the <a class="reference external" href="https://brew.sh/">Brew install site</a>.
-3. <strong>Install git</strong> Type (or copy and paste) the following code into your terminal.
-<code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git</span></code>
-Then press <em>return</em>. Your installation should now start.
-4. <strong>Confirm successful installation</strong> Type (or copy and paste) the following code into your terminal.
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>
-Then press <em>return</em>. You should receive a version number in return such as:
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.92.2</span></code></p>
-<p><strong>Note:</strong> You may also install git without using the command line by <a class="reference external" href="https://git-scm.com/download/mac">installing from a binary</a>.</p>
+</li>
+<li><p><strong>Install git</strong> Type (or copy and paste) the following code into your terminal, then press <em>return</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Confirm successful installation</strong> Type (or copy and paste) the following code into your terminal then press <em>return</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>You should receive a version number in return such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">version</span> <span class="mf">2.92</span><span class="o">.</span><span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may also install git without using the command line by <a class="reference external" href="https://git-scm.com/download/mac">installing from a binary</a>.</p>
+</div>
 </div>
 <div class="section" id="install-python-apple-mac-os-x">
 <h3>Install Python (Apple Mac OS X)<a class="headerlink" href="#install-python-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p><strong>Install Python from terminal</strong> Assuming you have Brew installed, type (or copy and paste) the following code into your terminal.
-<code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">python3</span></code>
-Then press <em>return</em>. Your installation should now start.</p></li>
+<ol>
+<li><p><strong>Install Python from terminal</strong> Assuming you have Brew installed, type (or copy and paste) the following code into your terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">python3</span>
+</pre></div>
+</div>
+<p>Then press <em>return</em>. Your installation should now start.</p>
+</li>
 <li><p><strong>Confirm successful installation</strong> Type (or copy and paste) the following code into your terminal.
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code>
 Then press <em>return</em>. You should receive a version number in return such as:
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">version</span> <span class="pre">3.9</span></code></p></li>
 </ol>
-<p><strong>Note:</strong> You may also install Pyton without using the command line by <a class="reference external" href="https://www.python.org/downloads/mac-osx/">installing from a binary</a>. Only install Python 3; Python 2 is no longer being used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may also install Python without using the command line by <a class="reference external" href="https://www.python.org/downloads/mac-osx/">installing from a binary</a>. Only install Python 3; Python 2 is no longer being used.</p>
+</div>
 </div>
 <div class="section" id="install-the-jupyter-notebook-apple-mac-os-x">
 <h3>Install The Jupyter Notebook (Apple Mac OS X)<a class="headerlink" href="#install-the-jupyter-notebook-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--version</span></code>
-in the terminal and pressing <em>return</em>. You should receive a version number in return such as:
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">20.1.1</span> <span class="pre">from</span> <span class="pre">/opt/anaconda3/lib/python3.8/site-packages/pip</span> <span class="pre">(python</span> <span class="pre">3.8)</span></code>
-If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p></li>
-<li><p><strong>Install Jupyter Notebook</strong> type the following into your terminal.
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code>
-Then press <em>return</em>. Your installation should now start.</p></li>
-<li><p><strong>Confirm successful installation</strong> type:
-<code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span> <span class="pre">--version</span></code>
-Then press <em>return</em>. You should receive a version number in return such as:
-<code class="docutils literal notranslate"><span class="pre">6.0.3</span></code></p></li>
+<ol>
+<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>in the terminal and pressing <em>return</em>. You should receive a version number in return such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p>
+</li>
+<li><p><strong>Install Jupyter Notebook</strong> type the following into your terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>Then press <em>return</em>. Your installation should now start.</p>
+</li>
+<li><p><strong>Confirm successful installation</strong> type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">notebook</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</li>
 </ol>
+<p>Then press <em>return</em>. You should receive a version number in return such as:
+<code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">6.0.3</span>&#160;&#160;&#160; </code></p>
 </div>
 <div class="section" id="install-jupyter-book-apple-mac-os-x">
 <h3>Install Jupyter Book (Apple Mac OS X)<a class="headerlink" href="#install-jupyter-book-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--version</span></code>
-in the terminal and pressing <em>return</em>. You should receive a version number in return such as:
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">20.1.1</span> <span class="pre">from</span> <span class="pre">/opt/anaconda3/lib/python3.8/site-packages/pip</span> <span class="pre">(python</span> <span class="pre">3.8)</span></code>
-If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p></li>
-<li><p><strong>Install Jupyter Book</strong> type the following into your terminal.
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyter-book</span></code>
-Then press <em>return</em>. Your installation should now start.</p></li>
-<li><p><strong>Confirm successful installation</strong> type:
-<code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code>
-Then press <em>return</em>. You should receive a version number in return such as:</p></li>
-</ol>
+<ol>
+<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>in the terminal and pressing <em>return</em>. You should receive a version number in return such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p>
+</li>
+<li><p><strong>Install Jupyter Book</strong> type the following into your terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>
+</pre></div>
+</div>
+<p>Then press <em>return</em>. Your installation should now start.</p>
+</li>
+<li><p><strong>Confirm successful installation</strong> type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Then press <em>return</em>. You should receive a version number in return such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jupyter</span> <span class="n">Book</span><span class="p">:</span> <span class="mf">0.10</span><span class="o">.</span><span class="mi">0</span>
 <span class="n">MyST</span><span class="o">-</span><span class="n">NB</span><span class="p">:</span> <span class="mf">0.11</span><span class="o">.</span><span class="mi">1</span>
 <span class="n">Sphinx</span> <span class="n">Book</span> <span class="n">Theme</span><span class="p">:</span> <span class="mf">0.0</span><span class="o">.</span><span class="mi">39</span>
@@ -402,80 +453,126 @@ Then press <em>return</em>. You should receive a version number in return such a
 <span class="n">NbClient</span><span class="p">:</span> <span class="mf">0.5</span><span class="o">.</span><span class="mi">1</span>
 </pre></div>
 </div>
+</li>
+</ol>
 <p>Congratulations, you’ve installed all the necessary software for Apple Mac OS X!</p>
 </div>
 </div>
 <div class="section" id="microsoft-windows-10-installations">
 <h2>Microsoft Windows 10 Installations<a class="headerlink" href="#microsoft-windows-10-installations" title="Permalink to this headline">¶</a></h2>
 <p><a id="windows"></a></p>
-<p>The following directions are for Windows 10. <strong>Note:</strong> The order of installations matters; earlier installations are used in order to complete later installations.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The order of these installations matters! Earlier installations are used in order to complete later installations.</p>
+</div>
 <div class="section" id="install-git-microsoft-windows-10">
 <h3>Install git (Microsoft Windows 10)<a class="headerlink" href="#install-git-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
+<ol>
 <li><p><strong>Download Git</strong> Go to the <a class="reference external" href="https://git-scm.com/download/win">git website</a>. Download the “64-bit Git for Windows Setup”.</p></li>
 <li><p><strong>Install Git</strong> For each setting, choose the default. You may, optionally, wish to change the default editor from Vim (an advanced text editor) to something simpler like Notepad. <em>This is not necessary for our purposes but it may be easier for you if the command line is intimidating.</em></p></li>
-<li><p><strong>Confirm successful installation</strong> Click on the Windows icon in the lower left corner. Type the following:
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>
-Then press “Enter.” This will launch Git Bash, allowing you to use git.</p></li>
-<li><p><strong>Confirm successful installation</strong> Type (or copy and paste) the following code into Git Bash.
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>
-Then press <em>return</em>. You should receive a version number in return such as:
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.31.1.windows.1</span></code></p></li>
+<li><p><strong>Confirm successful installation</strong> Click on the Windows icon in the lower left corner. Type the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">bash</span>
+</pre></div>
+</div>
+<p>Then press “Enter.” This will launch Git Bash, allowing you to use git.</p>
+</li>
+<li><p><strong>Confirm successful installation</strong> Type (or copy and paste) the following code into Git Bash.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Then press <em>return</em>. You should receive a version number in return such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">version</span> <span class="mf">2.31</span><span class="o">.</span><span class="mf">1.</span><span class="n">windows</span><span class="o">.</span><span class="mi">1</span>
+</pre></div>
+</div>
+</li>
 </ol>
-<p><strong>Note: Git Bash vs. Command Prompt</strong>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Git Bash vs. Command Prompt
 For these directions, we assume you are using Git Bash rather than the Windows Command Prompt. It is possible to use Git with the Windows Command Prompt, but some of the commands will be different. To check which one you are using, look in the upper lefthand corner of the window.</p>
 <p><strong>Git Bash</strong> will say “MINGW64” in the upper lefthand corner of the window.
 <strong>Command Prompt</strong> will say “Command Prompt”.</p>
 </div>
+</div>
 <div class="section" id="install-python-microsoft-windows-10">
 <h3>Install Python (Microsoft Windows 10)<a class="headerlink" href="#install-python-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
-<p><strong>Note:</strong> Jupyter Book has <a class="reference external" href="https://jupyterbook.org/advanced/windows.html#working-on-windows">an incompatibility</a> with Python 3.8. We will use Python 3.7 for better compatibility.</p>
-<ol class="simple">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jupyter Book has <a class="reference external" href="https://jupyterbook.org/advanced/windows.html#working-on-windows">an incompatibility</a> with Python 3.8. We will use Python 3.7 for better compatibility.</p>
+</div>
+<ol>
 <li><p><strong>Download Python 3.7.9</strong> from the <a class="reference external" href="https://www.python.org/downloads/release/python-379/">Python website</a>. At the bottom of the page, choose “Windows x86-64 executable installer”.</p></li>
-<li><p><strong>Start the installation</strong> by double-clicking on the executable file. **Note: ** Make sure to select “Add Python 3.7 to PATH” before choosing “Install Now.”</p></li>
-<li><p><strong>Confirm successful installation</strong> If you have a Git Bash window already open, close it and then open a new one. Type:
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code>
-then press <em>Enter</em>. You should receive a response like:
-<code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.7.9</span></code></p></li>
+<li><p><strong>Start the installation</strong> by double-clicking on the executable file.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to select “Add Python 3.7 to PATH” before choosing “Install Now.”</p>
+</div>
+</li>
+<li><p><strong>Confirm successful installation</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have a Git Bash window already open, close it and then open a new one.</p>
+</div>
+<p>Type: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> then press <em>Enter</em>. You should receive a response like: <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.7.9</span></code></p>
+</li>
 </ol>
 </div>
 <div class="section" id="install-the-jupyter-notebook-microsoft-windows-10">
 <h3>Install The Jupyter Notebook (Microsoft Windows 10)<a class="headerlink" href="#install-the-jupyter-notebook-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--version</span></code>
-in Git Bash and pressing <em>Enter</em>. You should receive a version number in return such as:</p></li>
-</ol>
+<ol>
+<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>in Git Bash and pressing <em>Enter</em>. You should receive a version number in return such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">username</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.7</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.
-2. <strong>Install Jupyter Notebook</strong> type the following into your terminal.
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code>
-Then press <em>return</em>. Your installation should now start.
+<p>If you do not receive confirmation, you can also try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install Jupyter Notebook</strong> type the following into your terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Then press <em>return</em>. Your installation should now start.
 3. <strong>Confirm successful installation</strong> type:
-<code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span> <span class="pre">--version</span></code>
+<code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">jupyter-notebook</span> <span class="pre">--version</span>&#160;&#160;&#160; </code>
 Then press <em>return</em>. You should receive a version number in return such as:
-<code class="docutils literal notranslate"><span class="pre">6.3.0</span></code></p>
+<code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">6.3.0</span>&#160;&#160;&#160; </code></p>
 </div>
 <div class="section" id="install-jupyter-book-microsoft-windows-10">
 <h3>Install Jupyter Book (Microsoft Windows 10)<a class="headerlink" href="#install-jupyter-book-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
-<p>**Note: ** Jupyter Book has <a class="reference external" href="https://jupyterbook.org/advanced/windows.html#working-on-windows">compatibility issues with Python 3.8</a>. Please make sure you have installed Python 3.7.</p>
-<ol class="simple">
-<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--version</span></code>
-in Git Bash and pressing <em>Enter</em>. You should receive a version number in return such as:</p></li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jupyter Book has <a class="reference external" href="https://jupyterbook.org/advanced/windows.html#working-on-windows">compatibility issues with Python 3.8</a>. Please make sure you have installed Python 3.7.</p>
+</div>
+<ol>
+<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>in Git Bash and pressing <em>Enter</em>. You should receive a version number in return such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">username</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.7</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.
-2. <strong>Install Jupyter Book</strong> type the following into your terminal.
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyter-book</span></code>
-Then press <em>Enter</em>. Your installation should now start.
-3. <strong>Confirm successful installation</strong> type:
-<code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code>
-Then press <em>Enter</em>. You should receive a version number in return such as:</p>
+<p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p>
+</li>
+<li><p><strong>Install Jupyter Book</strong> type the following into your terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>
+</pre></div>
+</div>
+<p>Then press <em>Enter</em>. Your installation should now start.</p>
+</li>
+<li><p><strong>Confirm successful installation</strong> type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Then press <em>Enter</em>. You should receive a version number in return such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jupyter</span> <span class="n">Book</span><span class="p">:</span> <span class="mf">0.10</span><span class="o">.</span><span class="mi">2</span>
 <span class="n">MyST</span><span class="o">-</span><span class="n">NB</span><span class="p">:</span> <span class="mf">0.12</span><span class="o">.</span><span class="mi">3</span>
 <span class="n">Sphinx</span> <span class="n">Book</span> <span class="n">Theme</span><span class="p">:</span> <span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span>
@@ -484,10 +581,9 @@ Then press <em>Enter</em>. You should receive a version number in return such as
 <span class="n">NbClient</span><span class="p">:</span> <span class="mf">0.5</span><span class="o">.</span><span class="mi">3</span>
 </pre></div>
 </div>
+</li>
+</ol>
 <p>Congratulations, you’ve installed all the necessary software for Microsoft Windows 10!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
