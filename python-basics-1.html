@@ -103,31 +103,26 @@
    Course Syllabus
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/all-notebooks.html">
+   All Teaching Notebooks
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Lesson Repository
+  Create your own Teaching Website
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="book/all-notebooks.html">
-   All Notebooks
+  <a class="reference internal" href="book/create-your-own.html">
+   Create your own Jupyter Book
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="book/existing-lessons.html">
-   Improving existing lessons
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/new-lessons.html">
-   Creating/Suggesting new lessons
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/keep-learning.html">
-   More ways to keep learning
+  <a class="reference internal" href="book/install-software.html">
+   Installing software to modify your Book
   </a>
  </li>
 </ul>
@@ -155,6 +150,11 @@
  <li class="toctree-l1">
   <a class="reference external" href="https://jupyterbook.org/intro.html">
    Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/keep-learning.html">
+   More ways to keep learning
   </a>
  </li>
 </ul>
@@ -359,6 +359,40 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p><strong>Libraries Used:</strong> None</p>
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tdm_client</span> <span class="kn">import</span> <span class="n">alert</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mi">4</span><span class="n">dd3020d01b9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">tdm_client</span> <span class="kn">import</span> <span class="n">alert</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;alert&#39; from &#39;tdm_client&#39; (/Users/test/code/tdm-notebooks/tdm_client.py)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tdm_client</span><span class="o">.</span><span class="n">alert</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">31</span><span class="n">a9b287f92f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">alert</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: module &#39;tdm_client&#39; has no attribute &#39;alert&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=90wFLSjlFL8"><img alt="Getting Started with Jupyter Notebooks" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/video/python-basics.png" /></a></p>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>

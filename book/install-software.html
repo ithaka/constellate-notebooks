@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installing Software on your Local Machine &#8212; Teaching Text Analysis with Constellate</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="More ways to keep learning" href="keep-learning.html" />
+    <link rel="prev" title="Creating your own Jupyter Book Website for Teaching" href="create-your-own.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/constellate-beta.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Teaching Text Analysis with Constellate</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   About
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Course Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="syllabus.html">
+   Course Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="all-notebooks.html">
+   All Teaching Notebooks
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Create your own Teaching Website
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="create-your-own.html">
+   Create your own Jupyter Book
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Installing software to modify your Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://tdm-pilot.org">
+   Constellate Platform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.tdm-pilot.org/">
+   Constellate Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.tdm-pilot.org/key-terms/">
+   Text Analysis Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://jupyterbook.org/intro.html">
+   Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="keep-learning.html">
+   More ways to keep learning
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/book/install-software.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/install-software.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/install-software.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apple-os-x-installations">
+   Apple OS X Installations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-git-apple-mac-os-x">
+     Install git (Apple Mac OS X)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-python-apple-mac-os-x">
+     Install Python (Apple Mac OS X)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-jupyter-notebook-apple-mac-os-x">
+     Install The Jupyter Notebook (Apple Mac OS X)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-jupyter-book-apple-mac-os-x">
+     Install Jupyter Book (Apple Mac OS X)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#microsoft-windows-10-installations">
+   Microsoft Windows 10 Installations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-git-microsoft-windows-10">
+     Install git (Microsoft Windows 10)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-python-microsoft-windows-10">
+     Install Python (Microsoft Windows 10)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-jupyter-notebook-microsoft-windows-10">
+     Install The Jupyter Notebook (Microsoft Windows 10)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-jupyter-book-microsoft-windows-10">
+     Install Jupyter Book (Microsoft Windows 10)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><a class="reference internal" href="create-your-own.html"><span class="doc std std-doc">&lt;- Creating your own Jupyter Book Website for Teaching</span></a></p>
+<hr class="docutils" />
+<div class="section" id="installing-software-on-your-local-machine">
+<h1>Installing Software on your Local Machine<a class="headerlink" href="#installing-software-on-your-local-machine" title="Permalink to this headline">¶</a></h1>
+<p>You have successfully created an account on GitHub, forked our project, and created a website. Now you’re ready to start modifying the website to meet your needs for teaching. You can think of GitHub as the place where we will store the latest version of your site. Each time you make an improvement to your site, we will “save” a version to GitHub. Not only will GitHub save your latest changes, but every change you make to your site and lessons!</p>
+<p>In order to make changes to your site, we will download your files to your local machine. On your own machine, you can make changes and test them out before “saving” them back to GitHub and updating your website to make the changes “live.” To edit your site on your local machine, you will need some software:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/">git</a>- command line software for uploading and downloading your files from GitHub</p></li>
+<li><p><a class="reference external" href="https://www.python.org/">Python</a>- the Python progamming language we will use for writing code</p></li>
+<li><p><a class="reference external" href="https://jupyter.org/">The Jupyter Notebook</a>- a local version that runs on your machine to view and edit your notebooks and other files</p></li>
+<li><p><a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a>- command line software to convert your notebooks and markdown files into HTML website files</p></li>
+</ul>
+<p>Let’s install each of these.
+<strong>Note:</strong> The order of these installations does matter. Some of these installation methods will not work if you run them out of order.</p>
+<div class="section" id="apple-os-x-installations">
+<h2>Apple OS X Installations<a class="headerlink" href="#apple-os-x-installations" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="#windows">Skip to Windows installation Instructions -&gt;</a></p>
+<div class="section" id="install-git-apple-mac-os-x">
+<h3>Install git (Apple Mac OS X)<a class="headerlink" href="#install-git-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><strong>Open terminal.</strong> Terminal is included in Mac OS X by default Press command (⌘) and spacebar to launch spotlight search. (Alternatively, you can launch spotlight by clicking the magnifying glass in the upper righthand corner of OS X.) Type in “terminal” and hit enter. (You can also launch terminal by navigating to your Applications folder.)</p></li>
+<li><p><strong>Install Brew</strong> Copy and paste the following code into your terminal.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span>
+</pre></div>
+</div>
+<p>Then press <em>return</em>. This will install Brew, a package manager for OS X. These directions come directly from the <a class="reference external" href="https://brew.sh/">Brew install site</a>.
+3. <strong>Install git</strong> Type (or copy and paste) the following code into your terminal.
+<code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git</span></code>
+Then press <em>return</em>. Your installation should now start.
+4. <strong>Confirm successful installation</strong> Type (or copy and paste) the following code into your terminal.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>
+Then press <em>return</em>. You should receive a version number in return such as:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.92.2</span></code></p>
+<p><strong>Note:</strong> You may also install git without using the command line by <a class="reference external" href="https://git-scm.com/download/mac">installing from a binary</a>.</p>
+</div>
+<div class="section" id="install-python-apple-mac-os-x">
+<h3>Install Python (Apple Mac OS X)<a class="headerlink" href="#install-python-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><strong>Install Python from terminal</strong> Assuming you have Brew installed, type (or copy and paste) the following code into your terminal.
+<code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">python3</span></code>
+Then press <em>return</em>. Your installation should now start.</p></li>
+<li><p><strong>Confirm successful installation</strong> Type (or copy and paste) the following code into your terminal.
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code>
+Then press <em>return</em>. You should receive a version number in return such as:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">version</span> <span class="pre">3.9</span></code></p></li>
+</ol>
+<p><strong>Note:</strong> You may also install Pyton without using the command line by <a class="reference external" href="https://www.python.org/downloads/mac-osx/">installing from a binary</a>. Only install Python 3; Python 2 is no longer being used.</p>
+</div>
+<div class="section" id="install-the-jupyter-notebook-apple-mac-os-x">
+<h3>Install The Jupyter Notebook (Apple Mac OS X)<a class="headerlink" href="#install-the-jupyter-notebook-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--version</span></code>
+in the terminal and pressing <em>return</em>. You should receive a version number in return such as:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">20.1.1</span> <span class="pre">from</span> <span class="pre">/opt/anaconda3/lib/python3.8/site-packages/pip</span> <span class="pre">(python</span> <span class="pre">3.8)</span></code>
+If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p></li>
+<li><p><strong>Install Jupyter Notebook</strong> type the following into your terminal.
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code>
+Then press <em>return</em>. Your installation should now start.</p></li>
+<li><p><strong>Confirm successful installation</strong> type:
+<code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span> <span class="pre">--version</span></code>
+Then press <em>return</em>. You should receive a version number in return such as:
+<code class="docutils literal notranslate"><span class="pre">6.0.3</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="install-jupyter-book-apple-mac-os-x">
+<h3>Install Jupyter Book (Apple Mac OS X)<a class="headerlink" href="#install-jupyter-book-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--version</span></code>
+in the terminal and pressing <em>return</em>. You should receive a version number in return such as:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">20.1.1</span> <span class="pre">from</span> <span class="pre">/opt/anaconda3/lib/python3.8/site-packages/pip</span> <span class="pre">(python</span> <span class="pre">3.8)</span></code>
+If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p></li>
+<li><p><strong>Install Jupyter Book</strong> type the following into your terminal.
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyter-book</span></code>
+Then press <em>return</em>. Your installation should now start.</p></li>
+<li><p><strong>Confirm successful installation</strong> type:
+<code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code>
+Then press <em>return</em>. You should receive a version number in return such as:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jupyter</span> <span class="n">Book</span><span class="p">:</span> <span class="mf">0.10</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">MyST</span><span class="o">-</span><span class="n">NB</span><span class="p">:</span> <span class="mf">0.11</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">Sphinx</span> <span class="n">Book</span> <span class="n">Theme</span><span class="p">:</span> <span class="mf">0.0</span><span class="o">.</span><span class="mi">39</span>
+<span class="n">MyST</span><span class="o">-</span><span class="n">Parser</span><span class="p">:</span> <span class="mf">0.13</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">Jupyter</span><span class="o">-</span><span class="n">Cache</span><span class="p">:</span> <span class="mf">0.4</span><span class="o">.</span><span class="mi">2</span>
+<span class="n">NbClient</span><span class="p">:</span> <span class="mf">0.5</span><span class="o">.</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Congratulations, you’ve installed all the necessary software for Apple Mac OS X!</p>
+</div>
+</div>
+<div class="section" id="microsoft-windows-10-installations">
+<h2>Microsoft Windows 10 Installations<a class="headerlink" href="#microsoft-windows-10-installations" title="Permalink to this headline">¶</a></h2>
+<p><a id="windows"></a></p>
+<p>The following directions are for Windows 10. <strong>Note:</strong> The order of installations matters; earlier installations are used in order to complete later installations.</p>
+<div class="section" id="install-git-microsoft-windows-10">
+<h3>Install git (Microsoft Windows 10)<a class="headerlink" href="#install-git-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><strong>Download Git</strong> Go to the <a class="reference external" href="https://git-scm.com/download/win">git website</a>. Download the “64-bit Git for Windows Setup”.</p></li>
+<li><p><strong>Install Git</strong> For each setting, choose the default. You may, optionally, wish to change the default editor from Vim (an advanced text editor) to something simpler like Notepad. <em>This is not necessary for our purposes but it may be easier for you if the command line is intimidating.</em></p></li>
+<li><p><strong>Confirm successful installation</strong> Click on the Windows icon in the lower left corner. Type the following:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>
+Then press “Enter.” This will launch Git Bash, allowing you to use git.</p></li>
+<li><p><strong>Confirm successful installation</strong> Type (or copy and paste) the following code into Git Bash.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>
+Then press <em>return</em>. You should receive a version number in return such as:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.31.1.windows.1</span></code></p></li>
+</ol>
+<p><strong>Note: Git Bash vs. Command Prompt</strong>
+For these directions, we assume you are using Git Bash rather than the Windows Command Prompt. It is possible to use Git with the Windows Command Prompt, but some of the commands will be different. To check which one you are using, look in the upper lefthand corner of the window.</p>
+<p><strong>Git Bash</strong> will say “MINGW64” in the upper lefthand corner of the window.
+<strong>Command Prompt</strong> will say “Command Prompt”.</p>
+</div>
+<div class="section" id="install-python-microsoft-windows-10">
+<h3>Install Python (Microsoft Windows 10)<a class="headerlink" href="#install-python-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
+<p><strong>Note:</strong> Jupyter Book has <a class="reference external" href="https://jupyterbook.org/advanced/windows.html#working-on-windows">an incompatibility</a> with Python 3.8. We will use Python 3.7 for better compatibility.</p>
+<ol class="simple">
+<li><p><strong>Download Python 3.7.9</strong> from the <a class="reference external" href="https://www.python.org/downloads/release/python-379/">Python website</a>. At the bottom of the page, choose “Windows x86-64 executable installer”.</p></li>
+<li><p><strong>Start the installation</strong> by double-clicking on the executable file. **Note: ** Make sure to select “Add Python 3.7 to PATH” before choosing “Install Now.”</p></li>
+<li><p><strong>Confirm successful installation</strong> If you have a Git Bash window already open, close it and then open a new one. Type:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code>
+then press <em>Enter</em>. You should receive a response like:
+<code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.7.9</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="install-the-jupyter-notebook-microsoft-windows-10">
+<h3>Install The Jupyter Notebook (Microsoft Windows 10)<a class="headerlink" href="#install-the-jupyter-notebook-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--version</span></code>
+in Git Bash and pressing <em>Enter</em>. You should receive a version number in return such as:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">username</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.7</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.
+2. <strong>Install Jupyter Notebook</strong> type the following into your terminal.
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">notebook</span></code>
+Then press <em>return</em>. Your installation should now start.
+3. <strong>Confirm successful installation</strong> type:
+<code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span> <span class="pre">--version</span></code>
+Then press <em>return</em>. You should receive a version number in return such as:
+<code class="docutils literal notranslate"><span class="pre">6.3.0</span></code></p>
+</div>
+<div class="section" id="install-jupyter-book-microsoft-windows-10">
+<h3>Install Jupyter Book (Microsoft Windows 10)<a class="headerlink" href="#install-jupyter-book-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
+<p>**Note: ** Jupyter Book has <a class="reference external" href="https://jupyterbook.org/advanced/windows.html#working-on-windows">compatibility issues with Python 3.8</a>. Please make sure you have installed Python 3.7.</p>
+<ol class="simple">
+<li><p><strong>Check if “pip” is installed</strong> When you installed Python, it should have also installed “pip.” You can check to see if you have pip by typing:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">--version</span></code>
+in Git Bash and pressing <em>Enter</em>. You should receive a version number in return such as:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">username</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.7</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.
+2. <strong>Install Jupyter Book</strong> type the following into your terminal.
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyter-book</span></code>
+Then press <em>Enter</em>. Your installation should now start.
+3. <strong>Confirm successful installation</strong> type:
+<code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--version</span></code>
+Then press <em>Enter</em>. You should receive a version number in return such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jupyter</span> <span class="n">Book</span><span class="p">:</span> <span class="mf">0.10</span><span class="o">.</span><span class="mi">2</span>
+<span class="n">MyST</span><span class="o">-</span><span class="n">NB</span><span class="p">:</span> <span class="mf">0.12</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">Sphinx</span> <span class="n">Book</span> <span class="n">Theme</span><span class="p">:</span> <span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">MyST</span><span class="o">-</span><span class="n">Parser</span><span class="p">:</span> <span class="mf">0.13</span><span class="o">.</span><span class="mi">7</span>
+<span class="n">Jupyter</span><span class="o">-</span><span class="n">Cache</span><span class="p">:</span> <span class="mf">0.4</span><span class="o">.</span><span class="mi">2</span>
+<span class="n">NbClient</span><span class="p">:</span> <span class="mf">0.5</span><span class="o">.</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>Congratulations, you’ve installed all the necessary software for Microsoft Windows 10!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="create-your-own.html" title="previous page">Creating your own Jupyter Book Website for Teaching</a>
+    <a class='right-next' id="next-link" href="keep-learning.html" title="next page">More ways to keep learning</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber and Ted Lawless<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-125778965-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

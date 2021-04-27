@@ -103,31 +103,26 @@
    Course Syllabus
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/all-notebooks.html">
+   All Teaching Notebooks
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Lesson Repository
+  Create your own Teaching Website
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="book/all-notebooks.html">
-   All Notebooks
+  <a class="reference internal" href="book/create-your-own.html">
+   Create your own Jupyter Book
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="book/existing-lessons.html">
-   Improving existing lessons
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/new-lessons.html">
-   Creating/Suggesting new lessons
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/keep-learning.html">
-   More ways to keep learning
+  <a class="reference internal" href="book/install-software.html">
+   Installing software to modify your Book
   </a>
  </li>
 </ul>
@@ -155,6 +150,11 @@
  <li class="toctree-l1">
   <a class="reference external" href="https://jupyterbook.org/intro.html">
    Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/keep-learning.html">
+   More ways to keep learning
   </a>
  </li>
 </ul>
@@ -368,6 +368,55 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <li><p>Complete the word frequencies analysis with this notebook</p></li>
 </ol>
 <hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="n">javascript_functions</span> <span class="o">=</span> <span class="p">{</span><span class="kc">False</span><span class="p">:</span> <span class="s2">&quot;hide()&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="s2">&quot;show()&quot;</span><span class="p">}</span>
+<span class="n">button_descriptions</span>  <span class="o">=</span> <span class="p">{</span><span class="kc">False</span><span class="p">:</span> <span class="s2">&quot;Show all&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="s2">&quot;Only Show Code&quot;</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">toggle_code</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Toggles the JavaScript show()/hide() function on the div.input element.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">output_string</span> <span class="o">=</span> <span class="s2">&quot;&lt;script&gt;$(</span><span class="se">\&quot;</span><span class="s2">div.text_cell</span><span class="se">\&quot;</span><span class="s2">).</span><span class="si">{}</span><span class="s2">&lt;/script&gt;&quot;</span>
+    <span class="n">output_args</span>   <span class="o">=</span> <span class="p">(</span><span class="n">javascript_functions</span><span class="p">[</span><span class="n">state</span><span class="p">],)</span>
+    <span class="n">output</span>        <span class="o">=</span> <span class="n">output_string</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">output_args</span><span class="p">)</span>
+
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">button_action</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calls the toggle_code function and updates the button description.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">state</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">new</span>
+
+    <span class="n">toggle_code</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+    <span class="n">value</span><span class="o">.</span><span class="n">owner</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">button_descriptions</span><span class="p">[</span><span class="n">state</span><span class="p">]</span>
+
+
+<span class="n">state</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">toggle_code</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">description</span> <span class="o">=</span> <span class="n">button_descriptions</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
+<span class="n">button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">button_action</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><script>$("div.text_cell").show()</script></div><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "2f2a12c6e0e24630992fe74d962e37a2", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><script>$("div.text_cell").hide()</script></div><div class="output text_html"><script>$("div.text_cell").show()</script></div></div>
+</div>
 <div class="section" id="import-your-dataset">
 <h2>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h2>
 <p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
