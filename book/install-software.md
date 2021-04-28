@@ -131,7 +131,8 @@ Congratulations, you've installed all the necessary software for Apple Mac OS X!
 ## Microsoft Windows 10 Installations
 <a id="windows"></a>
 ```{warning}
-The order of these installations matters! Earlier installations are used in order to complete later installations.
+**Order Matters** The order of these installations matters! Earlier installations are used in order to complete later installations.
+**Administrator Access Required** If you are using a laptop supplied by your institution, make sure you have administrative privileges to install software. [How can I check?](check-for-admin.md)
 ```
 
 ### Install git (Microsoft Windows 10)
