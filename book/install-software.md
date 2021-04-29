@@ -1,6 +1,3 @@
-[<- Creating your own Jupyter Book Website for Teaching](create-your-own.md)
-___
-
 # Installing Software on your Local Machine
 
 You have successfully created an account on GitHub, forked our project, and created a website. Now you're ready to start modifying the website to meet your needs for teaching. You can think of GitHub as the place where we will store the latest version of your site. Each time you make an improvement to your site, we will "save" a version to GitHub. Not only will GitHub save your latest changes, but every change you make to your site and lessons! 
@@ -132,7 +129,7 @@ Congratulations, you've installed all the necessary software for Apple Mac OS X!
 <a id="windows"></a>
 ```{warning}
 **Order Matters** The order of these installations matters! Earlier installations are used in order to complete later installations.
-**Administrator Access Required** If you are using a laptop supplied by your institution, make sure you have administrative privileges to install software. [How can I check?](check-for-admin.md)
+**Administrator Access Required** If you are using a laptop supplied by your institution, make sure you have administrative privileges to install software. [How can I check?](windows-installation-help.md)
 ```
 
 ### Install git (Microsoft Windows 10)
@@ -175,7 +172,14 @@ Jupyter Book has [an incompatibility](https://jupyterbook.org/advanced/windows.h
     ```{note}
     If you have a Git Bash window already open, close it and then open a new one.
     ```
-    Type: `python --version` then press *Enter*. You should receive a response like: `Python 3.7.9`
+   Type: 
+   ```
+   python --version
+   ``` 
+   then press *Enter*. You should receive a response like: 
+   ```
+   Python 3.7.9
+   ```
 
 ### Install The Jupyter Notebook (Microsoft Windows 10)
 

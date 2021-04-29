@@ -18,6 +18,12 @@
     title: Create your own Jupyter Book
   - file: book/install-software
     title: Installing software to modify your Book
+  - file: book/configure-git
+    title: Clone your repository to your local machine
+  - file: book/making-site-changes
+    title: Make local changes
+  - file: book/pushing-to-git
+    title: Push changes to the web
 
 - part: Reference
   chapters:

@@ -23,20 +23,23 @@ In the repository, click on "Settings" and rename the repository to your course 
 
 ## GitHub Pages Settings
 
-Navigate back into "Settings" then scroll down the page to "GitHub Pages". Check that the source is the branch "gh-pages" and the folder is "/(root)". If necessary, click the "Save" button. (This is also where you can find settings for a custom domain if you own one you would like to use.)
+Navigate back into "Settings" then choose "Pages" in the lefthand navigation. Check that the source is the branch "gh-pages" and the folder is "/(root)". If necessary, click the "Save" button. (This is also where you can find settings for a custom domain if you own one you would like to use.)
 
 ![The GitHub Pages settings form](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/pages-settings.png)
 
-## View your Site
+If a link is listed, you should be able to click it to view your site immediately.
 
-It may take 1-2 minutes for GitHub to load your settings. When your site is ready, it will be available at the site: https://**your-github-username**.github.io/**your-repository-name**/ 
+## Approving GitHub Actions
 
-If you navigate back to "Settings > GitHub Pages", a link to your site will be supplied.
+Our last step is to approve automatic workflows called GitHub actions. These will automatically create a new version of your website every time you make a change. Click on the "Actions" tab, then click "I understand my workflows, go ahead and enable them."
 
-## The Next Step
-[Installing Software on your Local Machine ->](./install-software.md)
+![the enable workflows button](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/approve-workflows.png)
 
+There are two workflows created by default: 
+* Ensure Clean Notebook Metadata- Reminds users if they forget to clear all notebook cells. This workflow can be safely deleted if it is not useful to you.
+* deploy-book- This workflow automatically generates your website after you make a change. We recommend keeping it in place to make updating your website easy. This method is [documented in the official Jupyter Book documentation](https://jupyterbook.org/publish/gh-pages.html).
 
-```python
+When you first open this page, it will say "There are no workflow runs yet" since the workflows are triggered by making a change to your repository. After each subsequent change, you will be able to inspect a log of the workflows to see if they completed successfully. 
 
-```
+![the box showing no workflows have run](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/no-workflows.png)
+
