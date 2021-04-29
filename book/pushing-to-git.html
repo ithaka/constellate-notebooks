@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checking for Administrator Rights on Microsoft Windows 10 &#8212; Teaching Text Analysis with Constellate</title>
+    <title>Push Changes to the Web &#8212; Teaching Text Analysis with Constellate</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="More ways to keep learning" href="keep-learning.html" />
+    <link rel="prev" title="Make local changes" href="making-site-changes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -114,7 +116,7 @@
   Create your own Teaching Website
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="create-your-own.html">
    Create your own Jupyter Book
@@ -123,6 +125,21 @@
  <li class="toctree-l1">
   <a class="reference internal" href="install-software.html">
    Installing software to modify your Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="configure-git.html">
+   Clone your repository to your local machine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="making-site-changes.html">
+   Make local changes
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Push changes to the web
   </a>
  </li>
 </ul>
@@ -198,7 +215,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/book/check-for-admin.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/book/pushing-to-git.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -218,10 +235,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/check-for-admin.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/pushing-to-git.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/check-for-admin.md"><button
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/pushing-to-git.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -241,6 +258,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-three-essential-git-commands">
+   The three essential git commands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-if-i-mess-up-local-installation">
+   What if I mess up local installation?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-if-i-need-to-go-back-a-version">
+   What if I need to go back a version?
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -249,14 +289,56 @@
         
               <div>
                 
-  <div class="section" id="checking-for-administrator-rights-on-microsoft-windows-10">
-<h1>Checking for Administrator Rights on Microsoft Windows 10<a class="headerlink" href="#checking-for-administrator-rights-on-microsoft-windows-10" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="push-changes-to-the-web">
+<h1>Push Changes to the Web<a class="headerlink" href="#push-changes-to-the-web" title="Permalink to this headline">¶</a></h1>
+<p>Now that you have made changes to your site, the final step is to make those changes live on the web. In the language of <em>git</em>, we need to <em>push</em> our changes to our GitHub repository. Here, we assume that you are working alone on the site, so we are not going to go into issues that may be significant for working collaboratively with <em>git</em>. (For example, these directions discuss <em>pushing</em> to GitHub, but do not discuss <em>pulling</em>, <em>merging</em>, or other more advanced methods. If you would like to learn more about git, a great starting point is <a class="reference external" href="https://youtu.be/HVsySz-h9r4">Corey Schafer’s YouTube Series on git</a>.)</p>
+<div class="section" id="the-three-essential-git-commands">
+<h2>The three essential git commands<a class="headerlink" href="#the-three-essential-git-commands" title="Permalink to this headline">¶</a></h2>
+<p>When it comes to <em>pushing</em> your repository to GitHub, we will use three commands:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>git command</p></th>
+<th class="head"><p>purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code></p></td>
+<td><p>Add all the files in the repository</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;A</span> <span class="pre">message</span> <span class="pre">describing</span> <span class="pre">your</span> <span class="pre">commit&quot;</span></code></p></td>
+<td><p>Attach this message to my updates</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></td>
+<td><p>Push my changes to GitHub</p></td>
+</tr>
+</tbody>
+</table>
 <ol class="simple">
-<li><p>Open “Control Panel”.</p></li>
-<li><p>Navigate to User Accounts &gt; User Accounts</p></li>
-<li><p>Examine your user account and make sure it says “Administrator” under your account.</p></li>
+<li><p>Open up your command line, either Git Bash or terminal, then navigate to your repository using <code class="docutils literal notranslate"><span class="pre">cd</span></code>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-A</span></code> command to add all the files in the repository. If you would prefer to just add one file, you can specify that file instead of using the <code class="docutils literal notranslate"><span class="pre">-A</span></code> flag.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Put</span> <span class="pre">a</span> <span class="pre">commit</span> <span class="pre">message</span> <span class="pre">here&quot;</span></code> command to commit a message to your changes. The text in quotation marks should describe the changes you made for this update. Git keeps track of all of your changes, so if you ever need to roll back changes this message will be very useful for finding which version of your repository you want to return to.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> command to push to your GitHub repository. When you push for the first time, you will need to validate your identity as the owner of your GitHub account by entering your password. It is important here that the git global user email you set also matches your GitHub account email. If git prompts you to login to GitHub through the website, choose that option, as it may set permissions so that future logins are not necessary. Alternatively, you can <a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">send a personal access token</a> as your password which should keep you from having to enter your password every time you push.</p></li>
 </ol>
-<p><em>If your account is not an administrator, you will need to contact your IT department in order to get administrative privileges for installing the necessary software.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After your push completes successfully, it may take 2-3 minutes before the live version of your site is updated. The change is not immediate.</p>
+</div>
+</div>
+<div class="section" id="what-if-i-mess-up-local-installation">
+<h2>What if I mess up local installation?<a class="headerlink" href="#what-if-i-mess-up-local-installation" title="Permalink to this headline">¶</a></h2>
+<p>It happens to everyone at some point. If your local install is completely broken, you can simply delete the local repository folder from your computer. Simply use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command again to download a new copy from GitHub. The downloaded copy will contain any changes from your last push.</p>
+</div>
+<div class="section" id="what-if-i-need-to-go-back-a-version">
+<h2>What if I need to go back a version?<a class="headerlink" href="#what-if-i-need-to-go-back-a-version" title="Permalink to this headline">¶</a></h2>
+<p>We don’t recommend doing this if you’re collaborating with others. If you’re the only person pushing to the repository though, you can use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code> command to undo your last push. You will need the seven-digit “hash” of your last commit which can be found on the GitHub website.</p>
+<p><img alt="the most recent commit hash" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/commit-hash.png" /></p>
+<p>If you click on the clock which shows the number of commits, it will show the hashes for all recent commits.</p>
+<p><img alt="all recent commit hashes in github" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/recent-commits.png" /></p>
+<p>Grab the hash for the commit  you would like to revert and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">revert</span> <span class="mi">1234567</span>
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -284,6 +366,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="making-site-changes.html" title="previous page">Make local changes</a>
+    <a class='right-next' id="next-link" href="keep-learning.html" title="next page">More ways to keep learning</a>
 
         </div>
         

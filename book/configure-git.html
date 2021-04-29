@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>More ways to keep learning &#8212; Teaching Text Analysis with Constellate</title>
+    <title>Clone your repository to your local machine &#8212; Teaching Text Analysis with Constellate</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Push Changes to the Web" href="pushing-to-git.html" />
+    <link rel="next" title="Make local changes" href="making-site-changes.html" />
+    <link rel="prev" title="Installing Software on your Local Machine" href="install-software.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -115,7 +116,7 @@
   Create your own Teaching Website
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="create-your-own.html">
    Create your own Jupyter Book
@@ -126,8 +127,8 @@
    Installing software to modify your Book
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="configure-git.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Clone your repository to your local machine
   </a>
  </li>
@@ -147,7 +148,7 @@
   Reference
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference external" href="https://tdm-pilot.org">
    Constellate Platform
@@ -168,8 +169,8 @@
    Jupyter Book Documentation
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="keep-learning.html">
    More ways to keep learning
   </a>
  </li>
@@ -214,7 +215,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/book/keep-learning.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/book/configure-git.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -234,10 +235,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/keep-learning.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/configure-git.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/keep-learning.md"><button
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/configure-git.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -263,18 +264,18 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#online-lessons-and-workshops">
-   Online Lessons and Workshops
+  <a class="reference internal nav-link" href="#navigating-folders-in-terminal-and-git-bash">
+   Navigating folders in terminal and Git Bash
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#books">
-   Books
+  <a class="reference internal nav-link" href="#setting-up-git-on-your-local-machine">
+   Setting up git on your local machine
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-resources-we-missed">
-   Other resources we missed?
+  <a class="reference internal nav-link" href="#cloning-your-repository">
+   Cloning your repository
   </a>
  </li>
 </ul>
@@ -288,41 +289,108 @@
         
               <div>
                 
-  <div class="section" id="more-ways-to-keep-learning">
-<h1>More ways to keep learning<a class="headerlink" href="#more-ways-to-keep-learning" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="online-lessons-and-workshops">
-<h2>Online Lessons and Workshops<a class="headerlink" href="#online-lessons-and-workshops" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="clone-your-repository-to-your-local-machine">
+<h1>Clone your repository to your local machine<a class="headerlink" href="#clone-your-repository-to-your-local-machine" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have all of our software installed, we will configure <em>git</em> on our local machine to interact with <em>GitHub</em>. Our first goal is to download the materials in your <em>GitHub</em> repository to your local machine.</p>
+<p>When we have the files on our local machine, we can then make changes using an editor of our choice. We recommend using <em>The Jupyter Notebook</em> to edit <em>.ipynb</em> files, so you can see exactly how they will look online.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are a variety of other editors that will open and edit <em>.ipynb</em> files, from the most basic tools like <em>TextEdit</em> (OS X) or <em>Notepad</em> (Windows 10) to advanced, fully-featured Integrated Development Environments (IDEs) such as <em>Visual Studio</em> and <em>PyCharm</em>. For our purposes, simple editors will be enough but you may eventually want to investigate other options that have many helpful features.</p>
+</div>
+<div class="section" id="navigating-folders-in-terminal-and-git-bash">
+<h2>Navigating folders in terminal and Git Bash<a class="headerlink" href="#navigating-folders-in-terminal-and-git-bash" title="Permalink to this headline">¶</a></h2>
+<p>Both the terminal (Apple OS X) and Git Bash (Microsoft Windows 10) use unix for navigating and working with local folders and files. We will use some basic commands to move around in your local folders and files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Our goal is mainly to be able to navigate the file system, not to do any advanced tasks with Unix commands. If you would like to learn more unix commands, we recommend:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://labs.jstor.org/tapi">The Text Analysis Pedagogy Institute</a> <br />
-National institutes on teaching text analysis featuring master instructors</p></li>
-<li><p><a class="reference external" href="https://www.dhinstitutes.org/curricula/">Digital Humanities Research Institutes</a> <br />
-Technical lessons for humanists on areas such as: command line, databases, digital ethics, git and GitHub, HTML &amp; CSS, machine learning, QGIS, Omeka, Python, Text Analysis, and the Twitter API.</p></li>
-<li><p><a class="reference external" href="https://carpentries.org/">The Carpentries</a> <br />
-Workshops (with traveling instructors) for learning technical skills related to data, software, and information.</p></li>
-<li><p><a class="reference external" href="https://programminghistorian.org/en/lessons/">The Programming Historian</a> <br />
-A peer-reviewed, open access set of tutorials for digital humanities research methods.</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/channel/UC5vr5PwcXiKX_-6NTteAlXw">Python for Digital Humanities</a> <br />
-A series of Python Tutorials by Dr. William Mattingly.</p></li>
-<li><p><a class="reference external" href="https://discourse.computational-humanities-research.org/">Computational Humanities Research</a> <br />
-A community forum of digital humanists discussing computational research.</p></li>
-<li><p><a class="reference external" href="https://github.com/YaleDHLab/lab-workshops">YaleDHLab Lab Workshops</a> <br />
-A variety of learning and research materials focused on building digital humanities skills.</p></li>
-<li><p><a class="reference external" href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html">Introduction to Cultural Analytics and Python</a> <br />
-A Jupyter Book created by Dr. Melanie Walsh for teaching at Cornell University.</p></li>
-<li><p><a class="reference external" href="https://github.com/quinnanya/dh-jupyter/blob/master/README.md">Jupyter notebooks for digital humanities</a>
-A collection of Jupyter notebooks assembled by Quinn Dombrowski</p></li>
+<li><p><a class="reference external" href="https://github.com/DHRI-Curriculum/command-line/blob/v2.0/sections/01-what-is-the-command-line.md">Command Line lesson</a> from the <a class="reference external" href="https://www.dhinstitutes.org/curricula/">Digital Humanities Research Institute curriculum</a></p></li>
+<li><p><a class="reference external" href="http://swcarpentry.github.io/shell-novice/">The Unix Shell lesson from Software Carpentry</a> from <a class="reference external" href="https://software-carpentry.org/">Software Carpentry</a></p></li>
+<li><p><a class="reference external" href="https://programminghistorian.org/en/lessons/intro-to-bash">Introduction to the Bash Command Line</a> from <a class="reference external" href="https://programminghistorian.org/">The Programming Historian</a></p></li>
 </ul>
 </div>
-<div class="section" id="books">
-<h2>Books<a class="headerlink" href="#books" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><em>Automate the Boring Stuff with Python: Practical Programming for Total Beginners</em> by Al Sweigart</p></li>
-<li><p><em>Python Crash Course: A Handson, project-based introduction to programming</em> by Eric Matthes</p></li>
-</ul>
+<p>We will learn three unix commands for navigating folders:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Unix command</p></th>
+<th class="head"><p>English meaning</p></th>
+<th class="head"><p>purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></td>
+<td><p>Present Working Directory</p></td>
+<td><p>outputs your current location on your computer file system</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ls</span></code></p></td>
+<td><p>list</p></td>
+<td><p>outputs the files and directories in your current location</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code></p></td>
+<td><p>list all</p></td>
+<td><p>the addition of the -a flag includes output of hidden files and directories which begin with a period</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folderName/</span></code></p></td>
+<td><p>change directory</p></td>
+<td><p>moves the user down into the folderName directory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code></p></td>
+<td><p>change directory</p></td>
+<td><p>moves the user up one directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code></p></td>
+<td><p>change directory</p></td>
+<td><p>move to user’s home directory</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On <em>Apple OS X</em>, the user’s home directory is <code class="docutils literal notranslate"><span class="pre">/Users/UserName</span></code>.
+On <em>Microsoft Windows 10</em>, the user’s home directory is usually <code class="docutils literal notranslate"><span class="pre">/c/Users/UserName</span></code></p>
 </div>
-<div class="section" id="other-resources-we-missed">
-<h2>Other resources we missed?<a class="headerlink" href="#other-resources-we-missed" title="Permalink to this headline">¶</a></h2>
-<p>Use the GitHub menu above to “Open an issue” or “Suggest an edit”</p>
+<p>Open either terminal and Git Bash to try out each of these commands. Explore your file system for practice. Finally, navigate to the directory where you would like to make a copy of your website on your local machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you are navigating to a particular file or directory using <code class="docutils literal notranslate"><span class="pre">cd</span></code>, you usually do not need to type out the whole name. Simply type out a few letters then press <em>tab</em>. If there is a single match in the current directory, the full name will be completed automatically! If the name is not auto-completed, press tab twice to show all matching results for the letters typed so far. You can then type a few more letters to make your selection clear before tabbing one more time to automatically complete the name.</p>
+</div>
+</div>
+<div class="section" id="setting-up-git-on-your-local-machine">
+<h2>Setting up git on your local machine<a class="headerlink" href="#setting-up-git-on-your-local-machine" title="Permalink to this headline">¶</a></h2>
+<p>We will use the following git commands to set up git. We will only use them a single time. They are important for setup, but you will not use them again unless you set up git on another machine or need to re-install git.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>git setup commands</p></th>
+<th class="head"><p>English meaning</p></th>
+<th class="head"><p>purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;Judith</span> <span class="pre">Cohen&quot;</span></code></p></td>
+<td><p>Configure the global git user with this name</p></td>
+<td><p>Sets the user name in git. <em>Only needs to be run once.</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&quot;username&#64;gmail.com&quot;</span></code></p></td>
+<td><p>Configure the global git user with this email address</p></td>
+<td><p>Sets the user email for git. Use the same email address as your GitHub account. <em>Only needs to be run once.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cloning-your-repository">
+<h2>Cloning your repository<a class="headerlink" href="#cloning-your-repository" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">clone</span></code> command helps us copy a repository from GitHub to our local machine. First, however, we need to grab an address from GitHub to clone our repository. Open your web browser and log into GitHub. Click on your repository. Then click on the large, green “Code” button. Finally click on the clipboard to copy the “HTTPS” address.
+<img alt="the clone address" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/clone-address.png" />
+The address will look like <code class="docutils literal notranslate"><span class="pre">https://github.com/yourGitHubUserName/yourRepoName.git</span></code></p>
+<p>Return to your terminal or Git Bash. Use the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command to confirm you are in the directory where you would like to make a local copy of your repository. If everything looks good, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> followed by the address you copied. It should look something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">yourGitHubUserName</span><span class="o">/</span><span class="n">yourRepoName</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The familiar shortcut for paste in Windows (Ctrl + V) does not work in Git Bash. To paste in Git Bash, you can use the keyboard key “Insert” or right-click then select “paste”.</p>
+</div>
+<p>Congratulations! You’ve copied your repository to your local machine. Now let’s learn how to make changes.</p>
 </div>
 </div>
 
@@ -351,7 +419,8 @@ A collection of Jupyter notebooks assembled by Quinn Dombrowski</p></li>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="pushing-to-git.html" title="previous page">Push Changes to the Web</a>
+    <a class='left-prev' id="prev-link" href="install-software.html" title="previous page">Installing Software on your Local Machine</a>
+    <a class='right-next' id="next-link" href="making-site-changes.html" title="next page">Make local changes</a>
 
         </div>
         
