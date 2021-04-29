@@ -27,11 +27,11 @@
 
 - part: Reference
   chapters:
-    - url: https://tdm-pilot.org
+    - url: https://constellate.org
       title: Constellate Platform
-    - url: https://docs.tdm-pilot.org/
+    - url: https://docs.constellate.org/
       title: Constellate Documentation
-    - url: https://docs.tdm-pilot.org/key-terms/
+    - url: https://docs.constellate.org/key-terms/
       title: Text Analysis Glossary
     - url: https://jupyterbook.org/intro.html
       title: Jupyter Book Documentation

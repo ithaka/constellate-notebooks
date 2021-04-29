@@ -89,7 +89,7 @@ You may also install Python without using the command line by [installing from a
     ```
     jupyter-notebook --version
     ```
-Then press *return*. You should receive a version number in return such as:
+    Then press *return*. You should receive a version number in return such as:
     ```
     6.0.3
     ```
@@ -156,6 +156,7 @@ For these directions, we assume you are using Git Bash rather than the Windows C
 
 **Git Bash** will say "MINGW64" in the upper lefthand corner of the window.
 **Command Prompt** will say "Command Prompt".
+![Git Bash vs. Command Prompt differences](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/bash-vs-cmd.png)
 ```
 
 ### Install Python (Microsoft Windows 10)
@@ -168,6 +169,7 @@ Jupyter Book has [an incompatibility](https://jupyterbook.org/advanced/windows.h
     ```{warning}
     Make sure to select "Add Python 3.7 to PATH" before choosing "Install Now."
     ```
+   ![The "Add Python 3.7 to path" prompt](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/python-path.png)
 3. **Confirm successful installation**
     ```{note}
     If you have a Git Bash window already open, close it and then open a new one.
@@ -199,12 +201,12 @@ Jupyter Book has [an incompatibility](https://jupyterbook.org/advanced/windows.h
     ```
     pip install notebook
     ```
-Then press *return*. Your installation should now start.
+    Then press *return*. Your installation should now start.
 3. **Confirm successful installation** type:
     ```
     jupyter-notebook --version
     ```
-Then press *return*. You should receive a version number in return such as:
+    Then press *return*. You should receive a version number in return such as:
     ```
     6.3.0
     ```
