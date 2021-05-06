@@ -10,10 +10,14 @@
   - file: book/syllabus
     title: Course Syllabus
 
-- part: Open Educational Notebook Repository
+- part: Open Educational Directory
   chapters:
   - file: book/all-notebooks
-    title: Notebook Directory
+    title: Open Notebook Lessons Directory
+  - file: book/more-classes
+    title: More teachers using this model
+  - file: book/add-my-lesson
+    title: Add your lesson or class
 
 - part: Create your own Teaching Website
   chapters:
