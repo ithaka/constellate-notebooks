@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Common Microsoft Windows 10 Installation Issues &#8212; Teaching Text Analysis with Constellate</title>
+    <title>Common Apple OS X Installation Issues &#8212; Teaching Text Analysis with Constellate</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -213,7 +213,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/book/windows-installation-help.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/book/mac-installation-help.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -233,10 +233,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/windows-installation-help.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fbook/mac-installation-help.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/windows-installation-help.md"><button
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/book/mac-installation-help.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -262,13 +262,8 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#checking-if-you-are-an-administrator">
-   Checking if you are an administrator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resolving-path-issues">
-   Resolving Path Issues
+  <a class="reference internal nav-link" href="#fixing-symbolic-links-to-an-old-version-of-python">
+   Fixing Symbolic Links to an old version of Python
   </a>
  </li>
 </ul>
@@ -282,64 +277,42 @@
         
               <div>
                 
-  <div class="section" id="common-microsoft-windows-10-installation-issues">
-<h1>Common Microsoft Windows 10 Installation Issues<a class="headerlink" href="#common-microsoft-windows-10-installation-issues" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference external" href="#check">Checking if you are an administrator</a></p></li>
-<li><p><a class="reference external" href="#resolve-path">Resolving Path Issues</a></p></li>
-</ul>
-<p><a id="check"></a></p>
-<div class="section" id="checking-if-you-are-an-administrator">
-<h2>Checking if you are an administrator<a class="headerlink" href="#checking-if-you-are-an-administrator" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Open “Control Panel”.</p></li>
-<li><p>Navigate to User Accounts.</p></li>
-<li><p>Examine your user account and make sure it says “Administrator” under your account.</p></li>
-</ol>
-<p><img alt="The place where administrators are listed" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/win-admin-check.png" /></p>
-<p><em>If your account is not an administrator, you will need to contact your IT department in order to get administrative privileges for installing the necessary software.</em></p>
-<p><a id="resolve-path"></a></p>
-</div>
-<div class="section" id="resolving-path-issues">
-<h2>Resolving Path Issues<a class="headerlink" href="#resolving-path-issues" title="Permalink to this headline">¶</a></h2>
-<p>One of the most challenging issues on Microsoft Windows can be resolving Path Issues. A PATH helps Git Bash or the Command Line find the appropriate application to launch. For example, you might be sure you installed Python, Git, Pip, or The Jupyter Notebook, but when you type something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-<p>Pip is not found on your machine. This could give an error saying the application was not found or it may, puzzlingly, return nothing at all. When the command returns nothing, that may be an indication that you have an old Path that needs to be deleted. This could be caused by something like an old installation of Python.</p>
-<p>To attempt to fix the path issue, there are a couple of recommended troubleshooting steps.</p>
+  <div class="section" id="common-apple-os-x-installation-issues">
+<h1>Common Apple OS X Installation Issues<a class="headerlink" href="#common-apple-os-x-installation-issues" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fixing-symbolic-links-to-an-old-version-of-python">
+<h2>Fixing Symbolic Links to an old version of Python<a class="headerlink" href="#fixing-symbolic-links-to-an-old-version-of-python" title="Permalink to this headline">¶</a></h2>
 <ol>
-<li><p><strong>Re-Install Python</strong> If your path issue is with Python or Pip, make sure you selected “Add Python 3.7 to PATH” before choosing “Install Now” in the Python installer. You may want to use “Add/Remove Programs” to remove Python and Python Launcher then try re-installing to make sure to select that option. It is very easy to overlook.</p></li>
-<li><p><strong>Find the application location</strong> Open Git Bash (or the command line) in order to search for the particular application that is missing using the <code class="docutils literal notranslate"><span class="pre">where</span></code> command. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">where</span> <span class="n">python</span>
-</pre></div>
-</div>
-<p>If the program has been installed on the computer, it will return a list of locations, such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">YourUserName</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Programs</span>\<span class="n">Python</span>\<span class="n">Python37</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span>
-<span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">YourUserName</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Microsoft</span>\<span class="n">WindowsApps</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span>
-</pre></div>
-</div>
-<p>One of these is the location that we need to add to your path.</p>
-</li>
-<li><p><strong>Check your current existing paths</strong> Click on the Windows Icon and type “env”. Click on “Edit the system environment variables”.
-<img alt="The edit environmental variables menu" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/edit-env.png" />
-At the bottom of the “Advanced” tab, click on “Environment Variables”. The top box will display the Paths that are currently available for your user. Check to make sure there are no variables pointing to old versions of the trouble software. Delete old variables, if necessary.
-<img alt="The environmental tools button" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/env-variables.png" /></p></li>
-<li><p><strong>Create a new path variable</strong> Click “New…” under the user variables. Give it a “variable name” of your choice that will help you remember what the path is for. Instead of typing out the “variable value”, it is recommended to choose “Browse File”, then navigate to the appropriate file based on your above results from the <code class="docutils literal notranslate"><span class="pre">where</span></code> command. Finally, press “OK”.</p></li>
-<li><p><strong>Check to confirm the program is recognized</strong> Close out of the system properties. Close any Git Bash and Command Prompt windows, then re-open them to confirm the program is now recognized. For example:</p>
+<li><p>Open terminal using either Spotlight (the magnifying glass in the upper righthand corner) or navigating to
+<strong>Macintosh HD &gt; Applications &gt; Terminal</strong></p></li>
+<li><p>Try the following command to verify the old version of Python is being recognized:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p>If the program is not recognized, try changing the path to match a different path listed from the <code class="docutils literal notranslate"><span class="pre">where</span></code> command.</p>
+<p>If an old version of Python, such as Python 2.7, is returned, you’ll need to update your symbolic links.</p>
+</li>
+<li><p>Verify where your new installation is installed. The following command will search your computer for where there are existing Python installations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span><span class="o">*</span>
+</pre></div>
+</div>
+<p>The terminal should return a list of places where Python is installed.
+<img alt="Terminal output of locations" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/sym-link-check.png" />
+Find the location for the version of Python you would like to use, such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span>
+</pre></div>
+</div>
+</li>
+<li><p>Finally, we will create the symbolic link. Assuming the link is at <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/python3.9</span></code>, enter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
+</pre></div>
+</div>
+</li>
+<li><p>Close your terminal session and open a new one. Enter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>You should receive the correct version in response.</p>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you know the location of a program from the <code class="docutils literal notranslate"><span class="pre">where</span></code> command, you can navigate to it in the Windows file explorer. (You may need to make invisible files visible by selecting “View” then click on the radio box for “Hidden items”.</p>
-<p>If you have Git Bash installed, you can right-click inside the folder with the file (e.g. pip.exe) and select “Git Bash Here”. That will open Git Bash in that folder. Then you should be able to launch the executable from that location by typing a “./” before the file. For example, <code class="docutils literal notranslate"><span class="pre">./pip</span></code>.</p>
-<p>This may serve as a momentary workaround but it will not resolve your underlying Path issue since you will need to be in the folder. Of course, you could also type out the whole address when referencing the program but this is tedious experience.</p>
-<p>If you are unable to resolve your path issue, contact your local campus IT for help.</p>
-</div>
 </div>
 </div>
 

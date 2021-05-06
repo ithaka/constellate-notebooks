@@ -13,7 +13,11 @@ Let's install each of these.
 **Note:** The order of these installations does matter. Some of these installation methods will not work if you run them out of order.
 
 ## Apple OS X Installations
+```{note}
+If you have an older installation of Python (such as Python 2.7), you may run into issues with symbolic links. See [fixing symbolic links](mac-installation-help.md).
 
+
+```
 [Skip to Windows installation Instructions ->](#windows)
 
 ### Install git (Apple Mac OS X)
@@ -128,8 +132,17 @@ Congratulations, you've installed all the necessary software for Apple Mac OS X!
 ## Microsoft Windows 10 Installations
 <a id="windows"></a>
 ```{warning}
-**Order Matters** The order of these installations matters! Earlier installations are used in order to complete later installations.
-**Administrator Access Required** If you are using a laptop supplied by your institution, make sure you have administrative privileges to install software. [How can I check?](windows-installation-help.md)
+**Order Matters** 
+
+The order of these installations matters! Earlier installations are used in order to complete later installations.
+
+**Administrator Access Required** 
+
+If you are using a laptop supplied by your institution, make sure you have administrative privileges to install software. [How can I check?](windows-installation-help.md)
+
+**PATH Issues**
+
+If you have successfully installed an application but it is not recognized in Git Bash, you may have a path issue. See [fixing PATH issues](windows-installation-help.md).
 ```
 
 ### Install git (Microsoft Windows 10)

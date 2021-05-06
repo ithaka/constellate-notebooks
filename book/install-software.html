@@ -342,6 +342,10 @@
 <strong>Note:</strong> The order of these installations does matter. Some of these installation methods will not work if you run them out of order.</p>
 <div class="section" id="apple-os-x-installations">
 <h2>Apple OS X Installations<a class="headerlink" href="#apple-os-x-installations" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have an older installation of Python (such as Python 2.7), you may run into issues with symbolic links. See <a class="reference internal" href="mac-installation-help.html"><span class="doc std std-doc">fixing symbolic links</span></a>.</p>
+</div>
 <p><a class="reference external" href="#windows">Skip to Windows installation Instructions -&gt;</a></p>
 <div class="section" id="install-git-apple-mac-os-x">
 <h3>Install git (Apple Mac OS X)<a class="headerlink" href="#install-git-apple-mac-os-x" title="Permalink to this headline">¶</a></h3>
@@ -377,7 +381,7 @@
 </pre></div>
 </div>
 <p>You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">version</span> <span class="mf">2.92</span><span class="o">.</span><span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">version</span> <span class="mf">2.92.2</span>
 </pre></div>
 </div>
 </li>
@@ -414,7 +418,7 @@ Then press <em>return</em>. You should receive a version number in return such a
 </pre></div>
 </div>
 <p>in the terminal and pressing <em>return</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.8</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1.1</span> <span class="kn">from</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.8</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p>
@@ -430,7 +434,7 @@ Then press <em>return</em>. You should receive a version number in return such a
 </pre></div>
 </div>
 <p>Then press <em>return</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">6.0</span><span class="o">.</span><span class="mi">3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">6.0.3</span>
 </pre></div>
 </div>
 </li>
@@ -444,7 +448,7 @@ Then press <em>return</em>. You should receive a version number in return such a
 </pre></div>
 </div>
 <p>in the terminal and pressing <em>return</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.8</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1.1</span> <span class="kn">from</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.8</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p>
@@ -460,12 +464,12 @@ Then press <em>return</em>. You should receive a version number in return such a
 </pre></div>
 </div>
 <p>Then press <em>return</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jupyter</span> <span class="n">Book</span><span class="p">:</span> <span class="mf">0.10</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">MyST</span><span class="o">-</span><span class="n">NB</span><span class="p">:</span> <span class="mf">0.11</span><span class="o">.</span><span class="mi">1</span>
-<span class="n">Sphinx</span> <span class="n">Book</span> <span class="n">Theme</span><span class="p">:</span> <span class="mf">0.0</span><span class="o">.</span><span class="mi">39</span>
-<span class="n">MyST</span><span class="o">-</span><span class="n">Parser</span><span class="p">:</span> <span class="mf">0.13</span><span class="o">.</span><span class="mi">3</span>
-<span class="n">Jupyter</span><span class="o">-</span><span class="n">Cache</span><span class="p">:</span> <span class="mf">0.4</span><span class="o">.</span><span class="mi">2</span>
-<span class="n">NbClient</span><span class="p">:</span> <span class="mf">0.5</span><span class="o">.</span><span class="mi">1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jupyter</span> <span class="n">Book</span><span class="p">:</span> <span class="mf">0.10.0</span>
+<span class="n">MyST</span><span class="o">-</span><span class="n">NB</span><span class="p">:</span> <span class="mf">0.11.1</span>
+<span class="n">Sphinx</span> <span class="n">Book</span> <span class="n">Theme</span><span class="p">:</span> <span class="mf">0.0.39</span>
+<span class="n">MyST</span><span class="o">-</span><span class="n">Parser</span><span class="p">:</span> <span class="mf">0.13.3</span>
+<span class="n">Jupyter</span><span class="o">-</span><span class="n">Cache</span><span class="p">:</span> <span class="mf">0.4.2</span>
+<span class="n">NbClient</span><span class="p">:</span> <span class="mf">0.5.1</span>
 </pre></div>
 </div>
 </li>
@@ -478,8 +482,12 @@ Then press <em>return</em>. You should receive a version number in return such a
 <p><a id="windows"></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>Order Matters</strong> The order of these installations matters! Earlier installations are used in order to complete later installations.
-<strong>Administrator Access Required</strong> If you are using a laptop supplied by your institution, make sure you have administrative privileges to install software. <a class="reference internal" href="windows-installation-help.html"><span class="doc std std-doc">How can I check?</span></a></p>
+<p><strong>Order Matters</strong></p>
+<p>The order of these installations matters! Earlier installations are used in order to complete later installations.</p>
+<p><strong>Administrator Access Required</strong></p>
+<p>If you are using a laptop supplied by your institution, make sure you have administrative privileges to install software. <a class="reference internal" href="windows-installation-help.html"><span class="doc std std-doc">How can I check?</span></a></p>
+<p><strong>PATH Issues</strong></p>
+<p>If you have successfully installed an application but it is not recognized in Git Bash, you may have a path issue. See <a class="reference internal" href="windows-installation-help.html"><span class="doc std std-doc">fixing PATH issues</span></a>.</p>
 </div>
 <div class="section" id="install-git-microsoft-windows-10">
 <h3>Install git (Microsoft Windows 10)<a class="headerlink" href="#install-git-microsoft-windows-10" title="Permalink to this headline">¶</a></h3>
@@ -497,7 +505,7 @@ Then press <em>return</em>. You should receive a version number in return such a
 </pre></div>
 </div>
 <p>Then press <em>return</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">version</span> <span class="mf">2.31</span><span class="o">.</span><span class="mf">1.</span><span class="n">windows</span><span class="o">.</span><span class="mi">1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">version</span> <span class="mf">2.31.1</span><span class="o">.</span><span class="n">windows</span><span class="mf">.1</span>
 </pre></div>
 </div>
 </li>
@@ -536,7 +544,7 @@ For these directions, we assume you are using Git Bash rather than the Windows C
 </pre></div>
 </div>
 <p>then press <em>Enter</em>. You should receive a response like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.7</span><span class="o">.</span><span class="mi">9</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.7.9</span>
 </pre></div>
 </div>
 </li>
@@ -550,7 +558,7 @@ For these directions, we assume you are using Git Bash rather than the Windows C
 </pre></div>
 </div>
 <p>in Git Bash and pressing <em>Enter</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">username</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.7</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1.1</span> <span class="kn">from</span> <span class="nn">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">username</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.7</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you do not receive confirmation, you can also try:</p>
@@ -569,7 +577,7 @@ For these directions, we assume you are using Git Bash rather than the Windows C
 </pre></div>
 </div>
 <p>Then press <em>return</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">6.3</span><span class="o">.</span><span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">6.3.0</span>
 </pre></div>
 </div>
 </li>
@@ -587,7 +595,7 @@ For these directions, we assume you are using Git Bash rather than the Windows C
 </pre></div>
 </div>
 <p>in Git Bash and pressing <em>Enter</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1</span><span class="o">.</span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">username</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.7</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="mf">20.1.1</span> <span class="kn">from</span> <span class="nn">c</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">username</span>\<span class="n">appdata</span>\<span class="n">local</span>\<span class="n">programs</span>\<span class="n">python</span>\<span class="n">python37</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mf">3.7</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you do not receive confirmation, you can also try: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">--version</span></code>.</p>
@@ -603,12 +611,12 @@ For these directions, we assume you are using Git Bash rather than the Windows C
 </pre></div>
 </div>
 <p>Then press <em>Enter</em>. You should receive a version number in return such as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jupyter</span> <span class="n">Book</span><span class="p">:</span> <span class="mf">0.10</span><span class="o">.</span><span class="mi">2</span>
-<span class="n">MyST</span><span class="o">-</span><span class="n">NB</span><span class="p">:</span> <span class="mf">0.12</span><span class="o">.</span><span class="mi">3</span>
-<span class="n">Sphinx</span> <span class="n">Book</span> <span class="n">Theme</span><span class="p">:</span> <span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">MyST</span><span class="o">-</span><span class="n">Parser</span><span class="p">:</span> <span class="mf">0.13</span><span class="o">.</span><span class="mi">7</span>
-<span class="n">Jupyter</span><span class="o">-</span><span class="n">Cache</span><span class="p">:</span> <span class="mf">0.4</span><span class="o">.</span><span class="mi">2</span>
-<span class="n">NbClient</span><span class="p">:</span> <span class="mf">0.5</span><span class="o">.</span><span class="mi">3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Jupyter</span> <span class="n">Book</span><span class="p">:</span> <span class="mf">0.10.2</span>
+<span class="n">MyST</span><span class="o">-</span><span class="n">NB</span><span class="p">:</span> <span class="mf">0.12.3</span>
+<span class="n">Sphinx</span> <span class="n">Book</span> <span class="n">Theme</span><span class="p">:</span> <span class="mf">0.1.0</span>
+<span class="n">MyST</span><span class="o">-</span><span class="n">Parser</span><span class="p">:</span> <span class="mf">0.13.7</span>
+<span class="n">Jupyter</span><span class="o">-</span><span class="n">Cache</span><span class="p">:</span> <span class="mf">0.4.2</span>
+<span class="n">NbClient</span><span class="p">:</span> <span class="mf">0.5.3</span>
 </pre></div>
 </div>
 </li>

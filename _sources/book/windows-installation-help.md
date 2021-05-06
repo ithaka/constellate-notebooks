@@ -10,6 +10,8 @@
 2. Navigate to User Accounts.
 3. Examine your user account and make sure it says "Administrator" under your account.
 
+![The place where administrators are listed](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/win-admin-check.png)
+
 *If your account is not an administrator, you will need to contact your IT department in order to get administrative privileges for installing the necessary software.*
 
 <a id="resolve-path"></a>
@@ -34,7 +36,10 @@ To attempt to fix the path issue, there are a couple of recommended troubleshoot
     C:\Users\YourUserName\AppData\Local\Microsoft\WindowsApps\python.exe
    ```
     One of these is the location that we need to add to your path.
-3. **Check your current existing paths** Click on the Windows Icon and type "env". Click on "Edit the system environment variables". At the bottom of the "Advanced" tab, click on "Environment Variables". The top box will display the Paths that are currently available for your user. Check to make sure there are no variables pointing to old versions of the trouble software. Delete old variables, if necessary.
+3. **Check your current existing paths** Click on the Windows Icon and type "env". Click on "Edit the system environment variables". 
+    ![The edit environmental variables menu](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/edit-env.png)
+    At the bottom of the "Advanced" tab, click on "Environment Variables". The top box will display the Paths that are currently available for your user. Check to make sure there are no variables pointing to old versions of the trouble software. Delete old variables, if necessary.
+    ![The environmental tools button](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/env-variables.png)
 4. **Create a new path variable** Click "New.." under the user variables. Give it a "variable name" of your choice that will help you remember what the path is for. Instead of typing out the "variable value", it is recommended to choose "Browse File", then navigate to the appropriate file based on your above results from the `where` command. Finally, press "OK".
 5. **Check to confirm the program is recognized** Close out of the system properties. Close any Git Bash and Command Prompt windows, then re-open them to confirm the program is now recognized. For example:
     ```

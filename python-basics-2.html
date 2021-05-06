@@ -533,6 +533,11 @@
      </span>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coding-challenge-solutions">
+     Coding Challenge! Solutions
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1199,6 +1204,45 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<h2 style="color:red; display:inline">Coding Challenge! &lt; / &gt; </h2>
+<p><strong>Using your knowledge of flow control statements, can you write a program that asks a user for their name, then prints out a response depending on whether they are old enough to drive? Check the end of this notebook for example solutions.</strong></p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level 1 Challenge</span>
+
+<span class="c1"># Ask the user for their name and store it in a variable `user_name`</span>
+<span class="c1"># Ask the user for their age and store it in a variable `user_age`</span>
+<span class="c1"># Write an if, elif, else statement that checks to see if the user is driving age.</span>
+<span class="c1"># If the user is driving age, print out &quot;user_name is old enough to drive.&quot;</span>
+<span class="c1"># If the user is not driving age, print out &quot;user_name is not old enough to drive.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level 2 Challenge</span>
+
+<span class="c1"># Improve your flow control to consider whether the user has input a realistic age</span>
+<span class="c1"># If the user inputs an age over 120, print &quot;Is `user_name` a human or a turtle?&quot;</span>
+<span class="c1"># If the user inputs an age less than 5, print &quot;`user_name` is not even ready for a bicycle!&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level 3 Challenge</span>
+<span class="c1"># A program that checks to see if a user is old enough to drive.</span>
+<span class="c1"># Verifies user has input a number and it is realistic.</span>
+
+<span class="c1"># Find a solution to address when a user enters text that is not a number.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="functions">
@@ -1331,13 +1375,13 @@ For questions/comments/improvements, email <a class="reference external" href="m
 
 <span class="k">def</span> <span class="nf">fortune_picker</span><span class="p">(</span><span class="n">fortune_number</span><span class="p">):</span> <span class="c1"># A function definition statement that has a parameter `fortune_number`</span>
     <span class="k">if</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;You will have six children&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;You will have six children.&#39;</span>
     <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;You will become very wise&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;You will become very wise.&#39;</span>
     <span class="k">elif</span>  <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;A new friend will help you find yourself&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;A new friend will help you find yourself.&#39;</span>
     <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;Do not eat the sushi&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;Do not eat the sushi.&#39;</span>
     <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;That promising venture... it is a trap.&#39;</span>
     <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span> 
@@ -1357,13 +1401,13 @@ For questions/comments/improvements, email <a class="reference external" href="m
 
 <span class="k">def</span> <span class="nf">fortune_picker</span><span class="p">(</span><span class="n">fortune_number</span><span class="p">):</span> <span class="c1"># A function definition statement that has a parameter `fortune_number`</span>
     <span class="k">if</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;You will have six children&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;You will have six children.&#39;</span>
     <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;You will become very wise&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;You will become very wise.&#39;</span>
     <span class="k">elif</span>  <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;A new friend will help you find yourself&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;A new friend will help you find yourself.&#39;</span>
     <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;Do not eat the sushi&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;Do not eat the sushi.&#39;</span>
     <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;That promising venture... it is a trap.&#39;</span>
     <span class="k">elif</span> <span class="n">fortune_number</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span> 
@@ -1455,6 +1499,86 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </ul>
 <div class="section" id="start-next-lesson-python-basics-3">
 <h3>Start Next Lesson: <a class="reference internal" href="python-basics-3.html"><span class="doc std std-doc">Python Basics 3</span></a><a class="headerlink" href="#start-next-lesson-python-basics-3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="coding-challenge-solutions">
+<h3>Coding Challenge! Solutions<a class="headerlink" href="#coding-challenge-solutions" title="Permalink to this headline">¶</a></h3>
+<p>There are often many ways to solve programming problems. Here are a few possible ways to solve the challenges, but there are certainly more!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level 1 Solution</span>
+<span class="c1"># A program that checks to see if a user is old enough to drive.</span>
+
+<span class="c1"># Ask the user for their name and store it in a variable `user_name`</span>
+<span class="c1"># Ask the user for their age and store it in a variable `user_age`</span>
+<span class="c1"># Write an if, elif, else statement that checks to see if the user is driving age.</span>
+<span class="c1"># If the user is driving age, print out &quot;user_name is old enough to drive.&quot;</span>
+<span class="c1"># If the user is not driving age, print out &quot;user_name is not old enough to drive.&quot;</span>
+
+<span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
+<span class="n">user_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;And what is your age? &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">user_age</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is old enough to drive.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is not old enough to drive.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level 2 Solution</span>
+<span class="c1"># A program that checks to see if a user is old enough to drive.</span>
+<span class="c1"># Now with improved ability to check if the age number is realistic.</span>
+
+<span class="c1"># Improve your flow control to consider whether the user has input a realistic age</span>
+<span class="c1"># If the user inputs an age over 120, print &quot;Is `user_name` a human or a turtle?&quot;</span>
+<span class="c1"># If the user inputs an age less than 5, print &quot;`user_name` is not even ready for a bicycle!&quot;</span>
+
+<span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
+<span class="n">user_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;And what is your age? &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">user_age</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Is </span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> a human or a turtle?&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is not even ready for a bicycle!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is old enough to drive.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is not old enough to drive.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level 3 Solution</span>
+<span class="c1"># A program that checks to see if a user is old enough to drive.</span>
+<span class="c1"># Verifies user has input a number and it is realistic.</span>
+
+<span class="c1"># Find a solution to address when a user enters text that is not a number.</span>
+
+<span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
+<span class="n">user_age</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">while</span> <span class="n">user_age</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">user_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;And what is your age? &#39;</span><span class="p">))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please input a natural number for your age.&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user_age</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Is </span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> a human or a turtle?&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is not even ready for a bicycle!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is old enough to drive.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is not old enough to drive.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
