@@ -3,15 +3,15 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: book/intro
 
-- part: Course Materials
+- part: The Course
   chapters:
   - file: book/schedule
     title: Course Schedule
   - file: book/syllabus
     title: Course Syllabus
   - file: book/all-notebooks
-    title: More Constellate Notebooks
-    
+    title: All Teaching Notebooks
+
 - part: Create your own Teaching Website
   chapters:
   - file: book/create-your-own
