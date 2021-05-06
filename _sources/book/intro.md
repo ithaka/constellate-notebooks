@@ -27,6 +27,6 @@ This website has been written as a template ready for adoption by other teachers
 
 ## Citing the original creators
 
-This [Reused, Revised, Remixed] lesson courtesy of FirstName LastName.
-Original version **CC BY**, Nathan Kelber and Ted Lawless for Constellate.
+This [site, lesson] is a [Reused, Revised, Remixed] version of
+[Teaching Text Analysis with Constellate](https://github.com/ithaka/tdm-notebooks), a [Jupyter Book](http://jupyterbook.org) **CC BY**, [Nathan Kelber](http://nkelber.com) and Ted Lawless for [Constellate](https://constellate.org).
 
