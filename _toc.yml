@@ -3,14 +3,14 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: book/intro
 
-- part: The Course
+- part: Course Materials
   chapters:
   - file: book/schedule
     title: Course Schedule
   - file: book/syllabus
     title: Course Syllabus
   - file: book/all-notebooks
-    title: All Teaching Notebooks
+    title: More Open Educational Notebooks!
     
 - part: Create your own Teaching Website
   chapters:
