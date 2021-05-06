@@ -9,8 +9,11 @@
     title: Course Schedule
   - file: book/syllabus
     title: Course Syllabus
+
+- part: Open Educational Notebook Repository
+  chapters:
   - file: book/all-notebooks
-    title: All Teaching Notebooks
+    title: Notebook Directory
 
 - part: Create your own Teaching Website
   chapters:

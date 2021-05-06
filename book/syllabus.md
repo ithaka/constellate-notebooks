@@ -1,6 +1,6 @@
 # Course Syllabus Template
 
-## Intro to Text Analysis (March 2021)
+## Intro to Text Analysis (Semester 2021)
 ___
 ## Course Information
 
@@ -10,7 +10,7 @@ ___
 
 **Email Address:** nathan.kelber@ithaka.org
 
-**Meeting Times:** Tuesdays/Thursdays (March 2nd - March 25th)
+**Meeting Times:** Tuesdays/Thursdays
 * Morning Section (10am-11:30am) EST
 * Afternoon Section (3:30pm-5pm) EST
 
