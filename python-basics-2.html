@@ -1596,6 +1596,37 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Level 3 Solution (using continue/break)</span>
+<span class="c1"># A program that checks to see if a user is old enough to drive.</span>
+<span class="c1"># Verifies user has input a number and it is realistic.</span>
+
+<span class="c1"># Find a solution to address when a user enters text that is not a number.</span>
+
+<span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">user_age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your age? &#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">user_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_age</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please input a number for your age.&#39;</span><span class="p">)</span>
+        <span class="k">continue</span>
+        
+<span class="k">if</span> <span class="n">user_age</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Is </span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> a human or a turtle?&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is not even ready for a bicycle!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is old enough to drive.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_age</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s1"> is not old enough to drive.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
