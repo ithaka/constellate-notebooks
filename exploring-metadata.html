@@ -563,15 +563,15 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We create a function to report how many documents were removed.</span>
 
-<span class="k">def</span> <span class="nf">texts_report</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">texts_report</span><span class="p">(</span><span class="n">pre_count</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Prints out a report of:</span>
 <span class="sd">    1. How many documents were removed</span>
 <span class="sd">    2. The total original number of documents</span>
 <span class="sd">    3. The total current number of documents</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="n">total_dropped</span> <span class="o">=</span> <span class="n">before_count</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">total_dropped</span><span class="si">}</span><span class="s1"> texts were removed.&#39;</span><span class="p">)</span>
+    <span class="n">removed_count</span> <span class="o">=</span> <span class="n">pre_count</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">removed_count</span><span class="si">}</span><span class="s1"> texts were removed.&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total original documents: </span><span class="si">{</span><span class="n">original_document_count</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total current documents: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
 </pre></div>
@@ -585,12 +585,12 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all texts without an author</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Removing texts without authors...&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">before_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Removing texts without authors...&#39;</span><span class="p">)</span>
+<span class="n">initial_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;creator&#39;</span><span class="p">])</span> <span class="c1">#drop each row that has no value under &#39;creators&#39;</span>
 
 <span class="c1"># Report the number of texts removed</span>
-<span class="n">texts_report</span><span class="p">()</span>
+<span class="n">texts_report</span><span class="p">(</span><span class="n">initial_count</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -607,12 +607,12 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <span class="n">title_to_remove</span> <span class="o">=</span> <span class="s1">&#39;Review Article&#39;</span>
 
 <span class="c1"># Removing texts</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removing texts with title &quot;</span><span class="si">{</span><span class="n">title_to_remove</span><span class="si">}</span><span class="s1">&quot;...&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">before_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removing texts with title &quot;</span><span class="si">{</span><span class="n">title_to_remove</span><span class="si">}</span><span class="s1">&quot;...&#39;</span><span class="p">)</span>
+<span class="n">initial_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">title</span> <span class="o">!=</span> <span class="n">title_to_remove</span><span class="p">]</span>
 
 <span class="c1"># Report the number of texts removed</span>
-<span class="n">texts_report</span><span class="p">()</span>
+<span class="n">texts_report</span><span class="p">(</span><span class="n">initial_count</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -626,11 +626,11 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 
 <span class="c1"># Removing texts</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removing texts not in &quot;</span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s1">&quot; language...&#39;</span><span class="p">)</span>
-<span class="n">before_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">initial_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">language</span> <span class="o">==</span> <span class="n">language</span><span class="p">])</span> <span class="c1"># Change to another language code for other languages</span>
 
 <span class="c1"># Report the number of texts removed</span>
-<span class="n">texts_report</span><span class="p">()</span>
+<span class="n">texts_report</span><span class="p">(</span><span class="n">initial_count</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -644,11 +644,11 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 
 <span class="c1"># Removing texts</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Removing texts with fewer than </span><span class="si">{</span><span class="n">min_word_count</span><span class="si">}</span><span class="s1"> words...&#39;</span><span class="p">)</span>
-<span class="n">before_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">initial_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">wordCount</span> <span class="o">&gt;</span> <span class="n">min_word_count</span><span class="p">]</span>
 
 <span class="c1"># Report the number of texts removed</span>
-<span class="n">texts_report</span><span class="p">()</span>
+<span class="n">texts_report</span><span class="p">(</span><span class="n">initial_count</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
