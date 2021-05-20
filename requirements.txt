@@ -7,3 +7,6 @@ nltk
 pyLDAvis==3.2.2
 matplotlib
 vaderSentiment
+numpy
+PIL
+wordcloud
