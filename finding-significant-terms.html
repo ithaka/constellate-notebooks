@@ -360,6 +360,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collect-lists-of-document-ids-titles-and-unigrams">
+   Collect lists of Document IDs, Titles, and Unigrams
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-gensim-to-compute-term-frequency-inverse-document-frequency">
    Using Gensim to Compute “Term Frequency- Inverse Document Frequency”
   </a>
@@ -1035,8 +1040,8 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Default dataset is &quot;Signs&quot;, a feminist journal</span>
-<span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;d16f6e75-ff6f-3abd-0706-52e73c05df2c&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Default dataset is &quot;Shakespeare Quarterly,&quot; 1950-present</span>
+<span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;7e41317e-740f-e86a-4729-20dab492e925&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1139,13 +1144,15 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 </div>
-<p>Next, we process all the unigrams into a list called <code class="docutils literal notranslate"><span class="pre">documents</span></code>. For demonstration purposes, this code runs on a limit of 500 documents, but we can change this to process all the documents.</p>
+</div>
+<div class="section" id="collect-lists-of-document-ids-titles-and-unigrams">
+<h2>Collect lists of Document IDs, Titles, and Unigrams<a class="headerlink" href="#collect-lists-of-document-ids-titles-and-unigrams" title="Permalink to this headline">¶</a></h2>
+<p>Next, we process all the unigrams into a list called <code class="docutils literal notranslate"><span class="pre">documents</span></code>. For demonstration purposes, this code runs on a limit of 500 documents, but we can change this to process all the documents. We are also collecting the document titles and ids so we can reference them later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collecting the unigrams and processing them into `documents`</span>
 
-<span class="n">limit</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># Change number of documents being analyzed. Set to `None` to do all documents.</span>
-<span class="c1"># limit = None</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Change number of documents being analyzed. Set to `None` to do all documents.</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">documents</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">document_ids</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1177,8 +1184,9 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 </div>
-<p>At this point, we have unigrams collected for all our documents insde the <code class="docutils literal notranslate"><span class="pre">documents</span></code> list variable. Each index of our list is a single document, starting with <code class="docutils literal notranslate"><span class="pre">documents[0]</span></code>. Th</p>
-<p>We could see the word frequencies for any given documents by using its index.</p>
+<p>At this point, we have unigrams collected for all our documents insde the <code class="docutils literal notranslate"><span class="pre">documents</span></code> list variable. Each index of our list is a single document, starting with <code class="docutils literal notranslate"><span class="pre">documents[0]</span></code>. Each document is, in turn, a list with a single stringe for each unigram.</p>
+<p><strong>Note:</strong> As we collect the unigrams for each document, we are simply including them in a list of strings. This is not the same as collecting them into word counts, and we are not using a Counter() object here like the Word Frequencies notebook.</p>
+<p>The next cell demonstrates the contents of each item in our <code class="docutils literal notranslate"><span class="pre">document</span></code> list. Essentially,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the unigrams collected for a particular document</span>
@@ -1191,10 +1199,20 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 </div>
-<p>Each document at this point is a collection of unigrams represented by a string. Some of the words repeat and we could get a word frequency of a particular document by turning it into a counter object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import counter to help count word frequencies</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we wanted to see word frequencies, we could convert the lists at this point into <code class="docutils literal notranslate"><span class="pre">Counter()</span></code> objects. The next cell demonstrates that operation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert a given document into a Counter object to determine</span>
+<span class="c1"># word frequencies count</span>
+
+<span class="c1"># Import counter to help count word frequencies</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
 <span class="c1"># Use n to represent a particular document index</span>
@@ -1238,15 +1256,15 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 </div>
-<p>The <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> stores a unique identifier (starting with 0) for every unique token in the corpus. The <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> does not contain information on word frequencies; it only catalogs all the words in the corpus. You can see the unique ID for each token in the text using the .token2id() method. Your corpus may have hundreds of thousands of unique words so here we just give a preview of the first ten.</p>
+<p>The <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> stores a unique identifier (starting with 0) for every unique token in the corpus. The <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> does not contain information on word frequencies; it only catalogs all the unique words in the corpus. You can see the unique ID for each token in the text using the .token2id() method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dictionary</span><span class="o">.</span><span class="n">token2id</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># Print the first ten tokens and their associated IDs.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dictionary</span><span class="o">.</span><span class="n">token2id</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can also look up the corresponding ID for a token using the <code class="docutils literal notranslate"><span class="pre">.get</span></code> method.</p>
+<p>We could also look up the corresponding ID for a token using the <code class="docutils literal notranslate"><span class="pre">.get</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the value for the key &#39;people&#39;. Return 0 if there is no token matching &#39;people&#39;. </span>
@@ -1268,9 +1286,6 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <span class="k">for</span> <span class="n">dict_id</span><span class="p">,</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">dict_id</span> <span class="o">==</span> <span class="n">token_id</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
-        
-<span class="c1"># This analysis shortened as a list comprehension</span>
-<span class="c1"># [token for dict_id, token in dictionary.items() if dict_id == 100] </span>
 </pre></div>
 </div>
 </div>
@@ -1280,13 +1295,27 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="section" id="creating-a-bag-of-words-corpus">
 <h2>Creating a Bag of Words Corpus<a class="headerlink" href="#creating-a-bag-of-words-corpus" title="Permalink to this headline">¶</a></h2>
 <p>The next step is to connect our word frequency data found within <code class="docutils literal notranslate"><span class="pre">documents</span></code> to our <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> token IDs. For every document, we want to know how many times a word (notated by its ID) occurs. We will create a <a class="reference external" href="https://docs.constellate.org/key-terms/#python-list">Python list</a> called <code class="docutils literal notranslate"><span class="pre">bow_corpus</span></code> that will turn our word counts into a series of <a class="reference external" href="https://docs.constellate.org/key-terms/#tuple">tuples</a> where the first number is the <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> token ID and the second number is the word frequency.</p>
+<p><img alt="Combining Gensim dictionary with documents list to create Bag of Words Corpus" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/bag-of-words-creation.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an example bag of words corpus. We select a document at random to use as our sample.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a bag of words corpus</span>
+
 <span class="n">bow_corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">]</span>
 
-<span class="c1"># List out the first ten tuples in ``example_bow_corpus``</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">bow_corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bag of words corpus created successfully.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Examine the bag of words corpus for a specific document</span>
+
+<span class="c1"># Select a particular document in our documents list</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="c1"># List out a slice of the first ten items in that document</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">bow_corpus</span><span class="p">[</span><span class="n">n</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1295,19 +1324,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_counts</span> <span class="o">=</span> <span class="p">[[(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">],</span> <span class="n">count</span><span class="p">)</span> <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">bow_corpus</span><span class="p">]</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">word_counts</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Our “Bag of Words” corpus is just token ids followed by word frequencies.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change n to view a different document</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1">#Show the bag of words corpus for a given document</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">bow_corpus</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> 
+<span class="nb">list</span><span class="p">(</span><span class="n">word_counts</span><span class="p">[</span><span class="n">n</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1325,7 +1342,6 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create our gensim TF-IDF model</span>
-<span class="c1"># Associating our dictionary ids with </span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">gensim</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">TfidfModel</span><span class="p">(</span><span class="n">bow_corpus</span><span class="p">)</span> 
 </pre></div>
 </div>
@@ -1412,6 +1428,8 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each document, print the ID, most significant/unique word, and TF/IDF score</span>
 
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+
 <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">corpus_tfidf</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">continue</span>
@@ -1443,7 +1461,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pick a unigram to discover its score across documents</span>
-<span class="n">search_term</span> <span class="o">=</span> <span class="s1">&#39;african&#39;</span>
+<span class="n">search_term</span> <span class="o">=</span> <span class="s1">&#39;coriolanus&#39;</span>
 
 <span class="c1"># Display a list of documents and scores for the search term</span>
 <span class="n">matching</span> <span class="o">=</span> <span class="n">terms_to_docs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_term</span><span class="p">)</span>
