@@ -11,6 +11,7 @@ import os
 import sys
 import zipfile
 from pathlib import Path
+import time
 from urllib.request import urlretrieve
 
 import progressbar
@@ -19,7 +20,7 @@ import requests
 
 from IPython.core.display import display, HTML
 
-version = 0.26
+version = 0.3
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger()
@@ -27,7 +28,7 @@ logger.setLevel(logging.INFO)
 
 
 SERVICE_URL = 'https://backend.tdm-pilot.org/'
-#SERVICE_URL = "http://localhost:5000/"
+#SERVICE_URL = "http://localhost:8000/"
 
 if os.environ.get("COLAB_GPU") is not None:
     home = "/content"
@@ -39,12 +40,18 @@ Path(datasets_dir).mkdir(parents=True, exist_ok=True)
 
 
 def display_terms_of_use():
-    msg = """Use and download of datasets is covered by the <a target="_blank" href="https://tdm-pilot.org/terms-and-conditions/">Terms & Conditions of Use</a>"""
+    msg = """Constellate: use and download of datasets is covered by the <a target="_blank" href="https://tdm-pilot.org/terms-and-conditions/">Terms & Conditions of Use</a>"""
     display(HTML(msg))
+
+display_terms_of_use()
 
 
 def display_description(description):
     display(HTML(f"<p>{description.get('search_description')}</p><p>{description['num_documents']} documents.</p>"))
+
+
+def display_file_not_found_error(dataset_id, download_type):
+    display(HTML(f"<p class=\"ansi-red-fg\">Dataset: {dataset_id} {download_type} not found.</p>"))
 
 
 class ProgressBar():
@@ -72,9 +79,52 @@ def get_description(dataset_id):
     """
     Downloads dataset metadata as JSON.
     """
-    url = SERVICE_URL + f"nb/dataset/{dataset_id}/meta"
+    url = SERVICE_URL + f"nb/v2/dataset/{dataset_id}"
     rsp = requests.get(url, headers={"User-Agent": "labs-tdm-client"})
     return rsp.json()
+
+
+def _get_download_type_details(description, download_type):
+    info = None
+    for download in description["downloads"]:
+        if download["name"] == download_type:
+            info = download
+            break
+    return info
+
+
+def _download_file(dataset_id, download_type, file_name=None, force=False):
+    description = get_description(dataset_id)
+    _ = display_description(description)
+    info = _get_download_type_details(description, download_type)
+
+    if (info is None):
+        display_file_not_found_error(dataset_id, download_type)
+        raise Exception(f"Dataset {dataset_id} {download_type} not found.")
+
+    output_path = os.path.join(datasets_dir, file_name or info["file_name"])
+    if (force is False) and (os.path.exists(output_path)):
+        logging.info(f"File {output_path} exists. Not re-downloading.")
+        return output_path
+
+    attempts = 0
+    delay = 5
+    max_attempts = 10
+    while info["status"] == "in-progress":
+        attempts += 1
+        logging.info(f"{dataset_id} is in progress. Waiting {delay} seconds.")
+        time.sleep(delay)
+        description = get_description(dataset_id)
+        info = _get_download_type_details(description, download_type)
+        if attempts > max_attempts:
+            raise Exception(f"Dataset download {download_type} not found after delaying {delay * attempts} seconds.")
+
+    if info["status"] != "complete":
+        raise Exception(f"Dataset {dataset_id}. Unexpected error. {download_type} not found. Status {info['status']}")
+
+    logging.info(f"Downloading {dataset_id} metadata to {output_path}")
+    _ = urlretrieve(info["url"], output_path, ProgressBar())
+    return output_path
 
 
 def get_metadata(dataset_id, fname=None, force=False):
@@ -82,23 +132,7 @@ def get_metadata(dataset_id, fname=None, force=False):
     Downloads a CSV of document metadata for all
     documents in the dataset.
     """
-    description = get_description(dataset_id)
-    _ = display_description(description)
-    metadata_url = description.get("metadata_url")
-    if metadata_url is None:
-        raise Exception(f"Dataset {dataset_id} not found.")
-    if fname is None:
-        output_file = f"{dataset_id}.csv"
-    else:
-        output_file = f"{fname}.csv"
-    output_path = os.path.join(datasets_dir, output_file)
-    if (force is False) and (os.path.exists(output_path)):
-        logging.info(f"Metadata file {output_path} exists. Not re-downloading.")
-    else:
-        logging.info(f"Downloading {dataset_id} metadata to {output_path}")
-        _ = urlretrieve(metadata_url, output_path, ProgressBar())
-    display_terms_of_use()
-    return output_path
+    return _download_file(dataset_id, "sampled-metadata", file_name=fname, force=force)
 
 
 def get_dataset(dataset_id, fname=None, force=False):
@@ -106,23 +140,11 @@ def get_dataset(dataset_id, fname=None, force=False):
     Downloads the gzip'ed JSONL file of all documents
     in the requested dataset.
     """
-    description = get_description(dataset_id)
-    _ = display_description(description)
-    download_url = description.get("download_url")
-    if download_url is None:
-        raise Exception(f"Dataset {dataset_id} not found.")
-    if fname is None:
-        output_file = f"{dataset_id}.jsonl.gz"
-    else:
-        output_file = f"{fname}.jsonl.gz"
-    output_path = os.path.join(datasets_dir, output_file)
-    if (force is False) and (os.path.exists(output_path)):
-        logging.info(f"Dataset file {output_file} exists. Not re-downloading.")
-    else:
-        logging.info(f"Downloading {dataset_id} to {output_file}")
-        _ = urlretrieve(download_url, output_path, ProgressBar())
-    display_terms_of_use()
-    return output_path
+    return _download_file(dataset_id, "sampled-jsonl", file_name=fname, force=force)
+
+
+def download(dataset_id, download_type, fname=None, force=False):
+    return _download_file(dataset_id, download_type, file_name=fname, force=force)
 
 
 def dataset_reader(file_path):
