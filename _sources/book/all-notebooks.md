@@ -15,7 +15,7 @@
 * [Working with Dataset Files](../working-with-dataset-files.ipynb) by Nathan Kelber
 * [Pandas 1](../pandas-1.ipynb) by Nathan Kelber
 * [Creating a Stopwords List](../creating-stopwords-list.ipynb) by Nathan Kelber
-* [Counter Objects](../creating-stopwords-list.ipynb) by Nathan Kelber
+* [Counter Objects](../counter-objects.ipynb) by Nathan Kelber
 * [Sentiment Analysis with VADER](../sentiment-analysis-with-vader.ipynb) by Nathan Kelber
 
 ### Research Notebooks

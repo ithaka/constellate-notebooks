@@ -1190,18 +1190,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the unigrams collected for a particular document</span>
-<span class="c1"># Change n to see another document</span>
-<span class="n">n</span><span class="o">=</span><span class="mi">0</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total documents: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Preview of a single document: &#39;</span><span class="p">,</span> <span class="n">documents</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1215,12 +1204,8 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <span class="c1"># Import counter to help count word frequencies</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
-<span class="c1"># Use n to represent a particular document index</span>
-<span class="c1"># Change n to see another document</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">word_freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">documents</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
-<span class="n">word_freq</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">word_freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Change documents index to see a different document</span>
+<span class="n">word_freq</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -1311,11 +1296,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Examine the bag of words corpus for a specific document</span>
 
-<span class="c1"># Select a particular document in our documents list</span>
-<span class="n">n</span><span class="o">=</span><span class="mi">0</span>
-
-<span class="c1"># List out a slice of the first ten items in that document</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">bow_corpus</span><span class="p">[</span><span class="n">n</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">bow_corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># List out a slice of the first ten items</span>
 </pre></div>
 </div>
 </div>
@@ -1324,7 +1305,7 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_counts</span> <span class="o">=</span> <span class="p">[[(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">],</span> <span class="n">count</span><span class="p">)</span> <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">bow_corpus</span><span class="p">]</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">word_counts</span><span class="p">[</span><span class="n">n</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">word_counts</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
