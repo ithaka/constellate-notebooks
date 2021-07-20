@@ -1,16 +1,13 @@
-
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-- file: book/intro
-
-- part: The Course
+format: jb-book
+root: book/intro
+parts:
+- caption: The Course
   chapters:
   - file: book/schedule
     title: Course Schedule
   - file: book/syllabus
     title: Course Syllabus
-
-- part: Open Educational Directory
+- caption: Open Educational Directory
   chapters:
   - file: book/all-notebooks
     title: Open Notebook Lessons Directory
@@ -20,16 +17,15 @@
     title: Add your lesson or class
   - url: https://constellate.org/docs/how-to-create-a-course-website
     title: Create Course from this template
-
-- part: Reference
+- caption: Reference
   chapters:
-    - url: https://constellate.org
-      title: Constellate Platform
-    - url: https://constellate.org/docs
-      title: Constellate Documentation
-    - url: https://constellate.org/docs/key-terms
-      title: Text Analysis Glossary
-    - url: https://jupyterbook.org/intro.html
-      title: Jupyter Book Documentation
-    - file: book/keep-learning
-      title: More ways to keep learning
+  - url: https://constellate.org
+    title: Constellate Platform
+  - url: https://constellate.org/docs
+    title: Constellate Documentation
+  - url: https://constellate.org/docs/key-terms
+    title: Text Analysis Glossary
+  - url: https://jupyterbook.org/intro.html
+    title: Jupyter Book Documentation
+  - file: book/keep-learning
+    title: More ways to keep learning
