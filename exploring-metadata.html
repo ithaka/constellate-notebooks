@@ -377,6 +377,11 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <span class="c1"># to the /data folder and returns a string for the file name and location</span>
 <span class="c1"># dataset_metadata will be a string containing that file name and location</span>
 <span class="n">dataset_metadata</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+
+<span class="c1"># To download the full dataset (up to a limit of 25,000 documents),</span>
+<span class="c1"># request it first in the builder environment. See the Constellate Client</span>
+<span class="c1"># documentation at: https://constellate.org/docs/constellate-client</span>
+<span class="c1"># dataset_metadata = tdm_client.download(dataset_id, &#39;metadata&#39;)</span>
 </pre></div>
 </div>
 </div>
