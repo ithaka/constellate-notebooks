@@ -20,8 +20,7 @@ setup(
     data_files=[(
             'share/jupyter/nbextensions/constellate-plugin', [
                 'constellate_plugin/static/main.js'
-        ]),
-        ('etc/jupyter/nbconfig/notebook.d' , ['constellate_plugin.json'])
+        ])
     ],
     zip_safe=False,
     include_package_data=True,
