@@ -843,10 +843,10 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </tr>
 </tbody>
 </table>
-<p>text1: $<span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 1 \cdot .6021 = 0\)</span><span class="math notranslate nohighlight">\(
-text2: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 1 \cdot .6021 = 0\)</span><span class="math notranslate nohighlight">\(
+<p>text1: $<span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 0 \cdot .6021 = 0\)</span><span class="math notranslate nohighlight">\(
+text2: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 0 \cdot .6021 = 0\)</span><span class="math notranslate nohighlight">\(
 text3: \)</span><span class="math notranslate nohighlight">\( tf-idf = 2 \cdot \mbox{log} \frac{4}{(1)} = 2 \cdot \mbox{log} 4 = 2 \cdot .6021 = 1.2042\)</span><span class="math notranslate nohighlight">\(
-text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 1 \cdot .6021 = 0\)</span>$</p>
+text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 0 \cdot .6021 = 0\)</span>$</p>
 <p>As should be expected, we can see that the word ‘met’ is very significant in text3 but not significant in any other text since it does not occur in any other text.</p>
 </div>
 <div class="section" id="the-full-tf-idf-example-table">
@@ -1024,9 +1024,13 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing your dataset with a dataset ID</span>
 <span class="kn">import</span> <span class="nn">tdm_client</span>
-<span class="c1"># Pull in the dataset that matches `dataset_id`</span>
+<span class="c1"># Pull in the sampled dataset that matches `dataset_id`</span>
 <span class="c1"># in the form of a gzipped JSON lines file.</span>
 <span class="n">dataset_file</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+
+<span class="c1"># Pull in the full dataset that matches `dataset_id`</span>
+<span class="c1"># The full dataset must be requested first!</span>
+<span class="c1">#dataset_file = tdm_client.download(dataset_id, &#39;jsonl&#39;) </span>
 </pre></div>
 </div>
 </div>

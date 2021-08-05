@@ -407,12 +407,16 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing your dataset with a dataset ID</span>
 <span class="kn">import</span> <span class="nn">tdm_client</span>
-<span class="c1"># Pull in the dataset that matches `dataset_id`</span>
+<span class="c1"># Pull in the sampled dataset that matches `dataset_id`</span>
 <span class="c1"># in the form of a gzipped JSON lines file.</span>
 <span class="c1"># The .get_dataset() method downloads the gzipped JSONL file</span>
 <span class="c1"># to the /data folder and returns a string for the file name and location</span>
 <span class="c1"># dataset_metadata will be a string containing that file name and location</span>
 <span class="n">dataset_file</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+
+<span class="c1"># Pull in the full dataset that matches `dataset_id`</span>
+<span class="c1"># The full dataset must be requested first!</span>
+<span class="c1">#dataset_file = tdm_client.download(dataset_id, &#39;jsonl&#39;)</span>
 </pre></div>
 </div>
 </div>
