@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -271,43 +271,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#term-frequency-function">
-     Term Frequency Function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inverse-document-frequency-function">
-     Inverse Document Frequency Function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tf-idf-calculation-in-plain-english">
      TF-IDF Calculation in Plain English
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#an-example-calculation-of-tf-idf">
-     An Example Calculation of TF-IDF
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#computing-tf-idf-example-1">
-     Computing TF-IDF (Example 1)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#computing-tf-idf-example-2">
-     Computing TF-IDF (Example 2)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#computing-tf-idf-example-3">
-     Computing TF-IDF (Example 3)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-full-tf-idf-example-table">
-     The Full TF-IDF Example Table
     </a>
    </li>
   </ul>
@@ -320,11 +285,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#apply-pre-processing-filters-if-available">
    Apply Pre-Processing Filters (if available)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-stopwords-list">
-   Load Stopwords List
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -402,7 +362,6 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <li><p>An educational overview of TF-IDF, including how it is calculated</p></li>
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to retrieve a dataset</p></li>
 <li><p>Filtering based on a pre-processed ID list</p></li>
-<li><p>Filtering based on a <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stop words list</a></p></li>
 <li><p>Cleaning the tokens in the dataset</p></li>
 <li><p>Creating a <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a></p></li>
 <li><p>Creating a <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> <a class="reference external" href="https://docs.constellate.org/key-terms/#bag-of-words">bag of words</a> <a class="reference external" href="https://docs.constellate.org/key-terms/#corpus">corpus</a></p></li>
@@ -421,14 +380,12 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <li><p><span class="xref myst">Exploring Metadata</span></p></li>
 <li><p><a class="reference internal" href="working-with-dataset-files.html"><span class="doc std std-doc">Working with Dataset Files</span></a></p></li>
 <li><p><a class="reference internal" href="pandas-1.html"><span class="doc std std-doc">Pandas I</span></a></p></li>
-<li><p><a class="reference internal" href="creating-stopwords-list.html"><span class="doc std std-doc">Creating a Stopwords List</span></a></p></li>
 <li><p>A familiarity with <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> is helpful but not required.</p></li>
 </ul>
 <p><strong>Data Format:</strong> <a class="reference external" href="https://docs.constellate.org/key-terms/#jsonl">JSON Lines (.jsonl)</a></p>
 <p><strong>Libraries Used:</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> to load a preprocessing list</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">csv</span></code> to load a custom stopwords list</p></li>
 <li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> to help compute the <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">tf-idf</a> calculations</p></li>
 <li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#nltk">NLTK</a> to create a stopwords list (if no list is supplied)</p></li>
 </ul>
@@ -436,7 +393,6 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <ol class="simple">
 <li><p>Build a dataset</p></li>
 <li><p>Create a “Pre-Processing CSV” with <a class="reference internal" href="exploring-metadata.html"><span class="doc std std-doc">Exploring Metadata</span></a> (Optional)</p></li>
-<li><p>Create a “Custom Stopwords List” with <a class="reference internal" href="creating-stopwords-list.html"><span class="doc std std-doc">Creating a Stopwords List</span></a> (Optional)</p></li>
 <li><p>Complete the TF-IDF analysis with this notebook</p></li>
 </ol>
 <hr class="docutils" />
@@ -447,560 +403,14 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <li><p>Term Frequency- A measure of how many times a given word appears in a document</p></li>
 <li><p>Inverse Document Frequency- A measure of how many times the same word occurs in other documents within the corpus</p></li>
 </ol>
-<p>If we were to merely consider <a class="reference external" href="https://docs.constellate.org/key-terms/#word-frequency">word frequency</a>, the most frequent words would be common <a class="reference external" href="https://docs.constellate.org/key-terms/#function-words">function words</a> like: “the”, “and”, “of”. We could use a <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stopwords list</a> to remove the common <a class="reference external" href="https://docs.constellate.org/key-terms/#function-words">function words</a>, but that still may not give us results that describe the unique terms in the document since the uniqueness of terms depends on the context of a larger body of documents. In other words, the same term could be significant or insignificant depending on the context. Consider these examples:</p>
-<ul class="simple">
-<li><p>Given a set of scientific journal articles in biology, the term “lab” may not be significant since biologists often rely on and mention labs in their research. However, if the term “lab” were to occur frequently in a history or English article, then it is likely to be significant since humanities articles rarely discuss labs.</p></li>
-<li><p>If we were to look at thousands of articles in literary studies, then the term “postcolonial” may be significant for any given article. However, if were to look at a few hundred articles on the topic of “the global south,” then the term “postcolonial” may occur so frequently that it is not a significant way to differentiate between the articles.</p></li>
-</ul>
-<p>The <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> calculation reveals the words that are frequent in this document <strong>yet rare in other documents</strong>. The goal is to find out what is unique or remarkable about a document given the context (and <em>the given context</em> can change the results of the analysis).</p>
-<p>Here is how the calculation is mathematically written:</p>
-<div class="math notranslate nohighlight">
-\[tfidf_{t,d} = tf_{t,d} \cdot idf_{t,D}\]</div>
-<p>In plain English, this means: <strong>The value of <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> is the product (or multiplication) of a given term’s frequency multiplied by its inverse document frequency.</strong> Let’s unpack these terms one at a time.</p>
-<div class="section" id="term-frequency-function">
-<h3>Term Frequency Function<a class="headerlink" href="#term-frequency-function" title="Permalink to this headline">¶</a></h3>
-<div class="math notranslate nohighlight">
-\[tf_{t,d}\]</div>
-<p>The number of times (t) a term occurs in a given document (d)</p>
-</div>
-<div class="section" id="inverse-document-frequency-function">
-<h3>Inverse Document Frequency Function<a class="headerlink" href="#inverse-document-frequency-function" title="Permalink to this headline">¶</a></h3>
-<div class="math notranslate nohighlight">
-\[idf_i = \mbox{log} \frac{N}{|{d : t_i \in d}|}\]</div>
-<p>The inverse document frequency can be expanded to the calculation on the right. In plain English, this means: <strong>The log of the total number of documents (N) divided by the number of documents that contain the term</strong></p>
-</div>
+<p><strong>Before starting this lesson,</strong> we recommend reading the <a class="reference external" href="https://ghost.constellate.org/what-is-tf-idf/">explanation of TF/IDF</a> in the Constellate documentation.</p>
 <div class="section" id="tf-idf-calculation-in-plain-english">
 <h3>TF-IDF Calculation in Plain English<a class="headerlink" href="#tf-idf-calculation-in-plain-english" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[(Times-the-word-occurs-in-given-document) \cdot \mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
 <p>There are variations on the <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> formula, but this is the most widely-used version.</p>
 </div>
-<div class="section" id="an-example-calculation-of-tf-idf">
-<h3>An Example Calculation of TF-IDF<a class="headerlink" href="#an-example-calculation-of-tf-idf" title="Permalink to this headline">¶</a></h3>
-<p>Let’s take a look at an example to illustrate the fundamentals of <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a>. First, we need several texts to compare. Our texts will be very simple.</p>
-<ul class="simple">
-<li><p>text1 = ‘The grass was green and spread out the distance like the sea.’</p></li>
-<li><p>text2 = ‘Green eggs and ham were spread out like the book.’</p></li>
-<li><p>text3 = ‘Green sailors were met like the sea met troubles.’</p></li>
-<li><p>text4 = ‘The grass was green.’</p></li>
-</ul>
-<p>The first step is we need to discover how many unique words are in each text.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>text1</p></th>
-<th class="head"><p>text2</p></th>
-<th class="head"><p>text3</p></th>
-<th class="head"><p>text4</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>the</p></td>
-<td><p>green</p></td>
-<td><p>green</p></td>
-<td><p>the</p></td>
-</tr>
-<tr class="row-odd"><td><p>grass</p></td>
-<td><p>eggs</p></td>
-<td><p>sailors</p></td>
-<td><p>grass</p></td>
-</tr>
-<tr class="row-even"><td><p>was</p></td>
-<td><p>and</p></td>
-<td><p>were</p></td>
-<td><p>was</p></td>
-</tr>
-<tr class="row-odd"><td><p>green</p></td>
-<td><p>ham</p></td>
-<td><p>met</p></td>
-<td><p>green</p></td>
-</tr>
-<tr class="row-even"><td><p>and</p></td>
-<td><p>were</p></td>
-<td><p>like</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>spread</p></td>
-<td><p>spread</p></td>
-<td><p>the</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>out</p></td>
-<td><p>out</p></td>
-<td><p>sea</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>into</p></td>
-<td><p>like</p></td>
-<td><p>met</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>distance</p></td>
-<td><p>the</p></td>
-<td><p>troubles</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>like</p></td>
-<td><p>book</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>sea</p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p>Our four texts share some similar words. Next, we create a single list of unique words that occur across all three texts. (When we use the <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> library later, we will call this list a <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a>.)</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>id</p></th>
-<th class="head"><p>Unique Words</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>and</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>book</p></td>
-</tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>distance</p></td>
-</tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>eggs</p></td>
-</tr>
-<tr class="row-even"><td><p>4</p></td>
-<td><p>grass</p></td>
-</tr>
-<tr class="row-odd"><td><p>5</p></td>
-<td><p>green</p></td>
-</tr>
-<tr class="row-even"><td><p>6</p></td>
-<td><p>ham</p></td>
-</tr>
-<tr class="row-odd"><td><p>7</p></td>
-<td><p>like</p></td>
-</tr>
-<tr class="row-even"><td><p>8</p></td>
-<td><p>met</p></td>
-</tr>
-<tr class="row-odd"><td><p>9</p></td>
-<td><p>out</p></td>
-</tr>
-<tr class="row-even"><td><p>10</p></td>
-<td><p>sailors</p></td>
-</tr>
-<tr class="row-odd"><td><p>11</p></td>
-<td><p>sea</p></td>
-</tr>
-<tr class="row-even"><td><p>12</p></td>
-<td><p>spread</p></td>
-</tr>
-<tr class="row-odd"><td><p>13</p></td>
-<td><p>the</p></td>
-</tr>
-<tr class="row-even"><td><p>14</p></td>
-<td><p>troubles</p></td>
-</tr>
-<tr class="row-odd"><td><p>15</p></td>
-<td><p>was</p></td>
-</tr>
-<tr class="row-even"><td><p>16</p></td>
-<td><p>were</p></td>
-</tr>
-</tbody>
-</table>
-<p>Now let’s count the occurences of each unique word in each sentence</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>id</p></th>
-<th class="head"><p>word</p></th>
-<th class="head"><p>text1</p></th>
-<th class="head"><p>text2</p></th>
-<th class="head"><p>text3</p></th>
-<th class="head"><p>text4</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>and</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>book</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>distance</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>eggs</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>4</p></td>
-<td><p>grass</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>5</p></td>
-<td><p>green</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>6</p></td>
-<td><p>ham</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>7</p></td>
-<td><p>like</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>8</p></td>
-<td><p>met</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>2</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>9</p></td>
-<td><p>out</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>10</p></td>
-<td><p>sailors</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>11</p></td>
-<td><p>sea</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>12</p></td>
-<td><p>spread</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>13</p></td>
-<td><p>the</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>14</p></td>
-<td><p>troubles</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>15</p></td>
-<td><p>was</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>16</p></td>
-<td><p>were</p></td>
-<td><p>0</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="section" id="computing-tf-idf-example-1">
-<h3>Computing TF-IDF (Example 1)<a class="headerlink" href="#computing-tf-idf-example-1" title="Permalink to this headline">¶</a></h3>
-<p>We have enough information now to compute <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> for every word in our corpus. Recall the plain English formula.</p>
-<div class="math notranslate nohighlight">
-\[(Times-the-word-occurs-in-given-document) \cdot \mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
-<p>We can use the formula to compute <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> for the most common word in our corpus: ‘the’. In total, we will compute <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> four times (once for each of our texts).</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>id</p></th>
-<th class="head"><p>word</p></th>
-<th class="head"><p>text1</p></th>
-<th class="head"><p>text2</p></th>
-<th class="head"><p>text3</p></th>
-<th class="head"><p>text4</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>13</p></td>
-<td><p>the</p></td>
-<td><p>3</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
-<p>text1: $<span class="math notranslate nohighlight">\( tf-idf = 3 \cdot \mbox{log} \frac{4}{(4)} = 3 \cdot \mbox{log} 1 = 3 \cdot 0 = 0\)</span><span class="math notranslate nohighlight">\(
-text2: \)</span><span class="math notranslate nohighlight">\( tf-idf = 1 \cdot \mbox{log} \frac{4}{(4)} = 1 \cdot \mbox{log} 1 = 1 \cdot 0 = 0\)</span><span class="math notranslate nohighlight">\(
-text3: \)</span><span class="math notranslate nohighlight">\( tf-idf = 1 \cdot \mbox{log} \frac{4}{(4)} = 1 \cdot \mbox{log} 1 = 1 \cdot 0 = 0\)</span><span class="math notranslate nohighlight">\(
-text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 1 \cdot \mbox{log} \frac{4}{(4)} = 1 \cdot \mbox{log} 1 = 1 \cdot 0 = 0\)</span>$</p>
-<p>The results of our analysis suggest ‘the’ has a weight of 0 in every document. The word ‘the’ exists in all of our documents, and therefore it is not a significant term to differentiate one document from another.</p>
-<p>Given that idf is</p>
-<div class="math notranslate nohighlight">
-\[\mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[\mbox{log} 1 = 0\]</div>
-<p>we can see that <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> will be 0 for any word that occurs in every document. That is, if a word occurs in every document, then it is not a significant term for any individual document.</p>
-</div>
-<div class="section" id="computing-tf-idf-example-2">
-<h3>Computing TF-IDF (Example 2)<a class="headerlink" href="#computing-tf-idf-example-2" title="Permalink to this headline">¶</a></h3>
-<p>Let’s try a second example with the word ‘out’. Recall the plain English formula.</p>
-<div class="math notranslate nohighlight">
-\[(Times-the-word-occurs-in-given-document) \cdot \mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
-<p>We will compute <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> four times, once for each of our texts.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>id</p></th>
-<th class="head"><p>word</p></th>
-<th class="head"><p>text1</p></th>
-<th class="head"><p>text2</p></th>
-<th class="head"><p>text3</p></th>
-<th class="head"><p>text4</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>9</p></td>
-<td><p>out</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-<p>text1: $<span class="math notranslate nohighlight">\( tf-idf = 1 \cdot \mbox{log} \frac{4}{(2)} = 1 \cdot \mbox{log} 2 = 1 \cdot .3010 = .3010\)</span><span class="math notranslate nohighlight">\(
-text2: \)</span><span class="math notranslate nohighlight">\( tf-idf = 1 \cdot \mbox{log} \frac{4}{(2)} = 1 \cdot \mbox{log} 2 = 1 \cdot .3010 = .3010\)</span><span class="math notranslate nohighlight">\(
-text3: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(2)} = 0 \cdot \mbox{log} 2 = 0 \cdot .3010 = 0\)</span><span class="math notranslate nohighlight">\(
-text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(2)} = 0 \cdot \mbox{log} 2 = 0 \cdot .3010 = 0\)</span>$</p>
-<p>The results of our analysis suggest ‘out’ has some significance in text1 and text2, but no significance for text3 and text4 where the word does not occur.</p>
-</div>
-<div class="section" id="computing-tf-idf-example-3">
-<h3>Computing TF-IDF (Example 3)<a class="headerlink" href="#computing-tf-idf-example-3" title="Permalink to this headline">¶</a></h3>
-<p>Let’s try one last example with the word ‘met’. Here’s the <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> formula again:</p>
-<div class="math notranslate nohighlight">
-\[(Times-the-word-occurs-in-given-document) \cdot \mbox{log} \frac{(Total-number-of-documents)}{(Number-of-documents-containing-word)}\]</div>
-<p>And here’s how many times the word ‘met’ occurs in each text.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>id</p></th>
-<th class="head"><p>word</p></th>
-<th class="head"><p>text1</p></th>
-<th class="head"><p>text2</p></th>
-<th class="head"><p>text3</p></th>
-<th class="head"><p>text4</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>8</p></td>
-<td><p>met</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>2</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-<p>text1: $<span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 0 \cdot .6021 = 0\)</span><span class="math notranslate nohighlight">\(
-text2: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 0 \cdot .6021 = 0\)</span><span class="math notranslate nohighlight">\(
-text3: \)</span><span class="math notranslate nohighlight">\( tf-idf = 2 \cdot \mbox{log} \frac{4}{(1)} = 2 \cdot \mbox{log} 4 = 2 \cdot .6021 = 1.2042\)</span><span class="math notranslate nohighlight">\(
-text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \mbox{log} \frac{4}{(1)} = 0 \cdot \mbox{log} 4 = 0 \cdot .6021 = 0\)</span>$</p>
-<p>As should be expected, we can see that the word ‘met’ is very significant in text3 but not significant in any other text since it does not occur in any other text.</p>
-</div>
-<div class="section" id="the-full-tf-idf-example-table">
-<h3>The Full TF-IDF Example Table<a class="headerlink" href="#the-full-tf-idf-example-table" title="Permalink to this headline">¶</a></h3>
-<p>Here are the original sentences for each text:</p>
-<ul class="simple">
-<li><p>text1 = ‘The grass was green and spread out the distance like the sea.’</p></li>
-<li><p>text2 = ‘Green eggs and ham were spread out like the book.’</p></li>
-<li><p>text3 = ‘Green sailors were met like the sea met troubles.’</p></li>
-<li><p>text4 = ‘The grass was green.’</p></li>
-</ul>
-<p>And here’s the corresponding <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> scores for each word in each text:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>id</p></th>
-<th class="head"><p>word</p></th>
-<th class="head"><p>text1</p></th>
-<th class="head"><p>text2</p></th>
-<th class="head"><p>text3</p></th>
-<th class="head"><p>text4</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>and</p></td>
-<td><p>.3010</p></td>
-<td><p>.3010</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>book</p></td>
-<td><p>0</p></td>
-<td><p>.6021</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>distance</p></td>
-<td><p>.6021</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>eggs</p></td>
-<td><p>0</p></td>
-<td><p>.6021</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>4</p></td>
-<td><p>grass</p></td>
-<td><p>.3010</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>.3010</p></td>
-</tr>
-<tr class="row-odd"><td><p>5</p></td>
-<td><p>green</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>6</p></td>
-<td><p>ham</p></td>
-<td><p>0</p></td>
-<td><p>.6021</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>7</p></td>
-<td><p>like</p></td>
-<td><p>.1249</p></td>
-<td><p>.1249</p></td>
-<td><p>.1249</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>8</p></td>
-<td><p>met</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>1.2042</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>9</p></td>
-<td><p>out</p></td>
-<td><p>.3010</p></td>
-<td><p>.3010</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>10</p></td>
-<td><p>sailors</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>.6021</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>11</p></td>
-<td><p>sea</p></td>
-<td><p>.3010</p></td>
-<td><p>0</p></td>
-<td><p>.3010</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>12</p></td>
-<td><p>spread</p></td>
-<td><p>.3010</p></td>
-<td><p>.3010</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>13</p></td>
-<td><p>the</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>14</p></td>
-<td><p>troubles</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>.6021</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>15</p></td>
-<td><p>was</p></td>
-<td><p>.3010</p></td>
-<td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>.3010</p></td>
-</tr>
-<tr class="row-even"><td><p>16</p></td>
-<td><p>were</p></td>
-<td><p>0</p></td>
-<td><p>.3010</p></td>
-<td><p>.3010</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-<p>There are a few noteworthy things in this data.</p>
-<ul class="simple">
-<li><p>The <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> score for any word that does not occur in a text is 0.</p></li>
-<li><p>The scores for almost every word in text4 are 0 since it is a shorter version of text1. There are no unique words in text4 since text1 contains all the same words. It is also a short text which means that there are only four words to consider. The words ‘the’ and ‘green’ occur in every text, leaving only ‘was’ and ‘grass’ which are also found in text1.</p></li>
-<li><p>The words ‘book’, ‘eggs’, and ‘ham’ are significant in text2 since they only occur in that text.</p></li>
-</ul>
-<p>Now that you have a basic understanding of how <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> is computed at a small scale, let’s try computing <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">TF-IDF</a> on a <a class="reference external" href="https://docs.constellate.org/key-terms/#corpus">corpus</a> which could contain millions of words.</p>
-</div>
-</div>
-<hr class="docutils" />
 <div class="section" id="computing-tf-idf-with-your-dataset">
 <h2>Computing TF-IDF with your Dataset<a class="headerlink" href="#computing-tf-idf-with-your-dataset" title="Permalink to this headline">¶</a></h2>
 <p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
@@ -1062,35 +472,6 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 </div>
 </div>
 </div>
-<div class="section" id="load-stopwords-list">
-<h2>Load Stopwords List<a class="headerlink" href="#load-stopwords-list" title="Permalink to this headline">¶</a></h2>
-<p>If you have created a stopword list in the stopwords notebook, we will import it here. (You can always modify the CSV file to add or subtract words then reload the list.) Otherwise, we’ll load the NLTK <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stopwords</a> list automatically.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load a custom data/stop_words.csv if available</span>
-<span class="c1"># Otherwise, load the nltk stopwords list in English</span>
-
-<span class="c1"># Create an empty Python list to hold the stopwords</span>
-<span class="n">stop_words</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># The filename of the custom data/stop_words.csv file</span>
-<span class="n">stopwords_list_filename</span> <span class="o">=</span> <span class="s1">&#39;data/stop_words.csv&#39;</span>
-
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">stopwords_list_filename</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">csv</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">stopwords_list_filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">stop_words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Custom stopwords list loaded from CSV&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="c1"># Load the NLTK stopwords list</span>
-    <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-    <span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NLTK stopwords list loaded&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 <div class="section" id="define-a-unigram-processing-function">
 <h2>Define a Unigram Processing Function<a class="headerlink" href="#define-a-unigram-processing-function" title="Permalink to this headline">¶</a></h2>
 <p>In this step, we gather the unigrams. If there is a Pre-Processing Filter, we will only analyze documents from the filtered ID list. We will also process each unigram, assessing them individually. We will complete the following tasks:</p>
@@ -1110,12 +491,10 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 
 <span class="k">def</span> <span class="nf">process_token</span><span class="p">(</span><span class="n">token</span><span class="p">):</span>
     <span class="n">token</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">:</span> <span class="c1"># If True, do not return token</span>
-        <span class="k">return</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">token</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span> <span class="c1"># If True, do not return token</span>
-        <span class="k">return</span>
+        <span class="k">return</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()):</span> <span class="c1"># If True, do not return token</span>
-        <span class="k">return</span>
+        <span class="k">return</span> <span class="kc">None</span>
     <span class="k">return</span> <span class="n">token</span> <span class="c1"># If all are False, return the lowercased token</span>
 </pre></div>
 </div>
@@ -1127,36 +506,28 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <p>Next, we process all the unigrams into a list called <code class="docutils literal notranslate"><span class="pre">documents</span></code>. For demonstration purposes, this code runs on a limit of 500 documents, but we can change this to process all the documents. We are also collecting the document titles and ids so we can reference them later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collecting the unigrams and processing them into `documents`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">documents</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># A list that will contain all of our unigrams</span>
+<span class="n">document_ids</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># A list that will contain all of our document ids</span>
+<span class="n">document_titles</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># A list that will contain all of our titles</span>
 
-<span class="n">limit</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Change number of documents being analyzed. Set to `None` to do all documents.</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">documents</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">document_ids</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">document_titles</span> <span class="o">=</span> <span class="p">[]</span>
-    
 <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">dataset_reader</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">):</span>
-    <span class="n">processed_document</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">document_id</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-    <span class="n">document_title</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">processed_document</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Temporarily store the unigrams for this document</span>
+    <span class="n">document_id</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="c1"># Temporarily store the document id for this document</span>
+    <span class="n">document_title</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="c1"># Temporarily store the document title for this document</span>
     <span class="k">if</span> <span class="n">use_filtered_list</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
         <span class="c1"># Skip documents not in our filtered_id_list</span>
         <span class="k">if</span> <span class="n">document_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">filtered_id_list</span><span class="p">:</span>
             <span class="k">continue</span>
-    <span class="n">document_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">document_id</span><span class="p">)</span>
-    <span class="n">document_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">document_title</span><span class="p">)</span> 
     <span class="n">unigrams</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;unigramCount&quot;</span><span class="p">,</span> <span class="p">[])</span>
     <span class="k">for</span> <span class="n">gram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">unigrams</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">clean_gram</span> <span class="o">=</span> <span class="n">process_token</span><span class="p">(</span><span class="n">gram</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">clean_gram</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">continue</span>
-        <span class="n">processed_document</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clean_gram</span><span class="p">)</span>
+        <span class="n">processed_document</span> <span class="o">+=</span> <span class="p">[</span><span class="n">clean_gram</span><span class="p">]</span> <span class="o">*</span> <span class="n">count</span> <span class="c1"># Add the unigram as many times as it was counted</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">processed_document</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">document_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">document_id</span><span class="p">)</span>
+        <span class="n">document_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">document_title</span><span class="p">)</span>
         <span class="n">documents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">processed_document</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="n">limit</span><span class="p">):</span>
-        <span class="k">break</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unigrams collected and processed.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1167,7 +538,8 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the unigrams collected for a particular document</span>
-<span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">document_titles</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1183,6 +555,13 @@ text4: \)</span><span class="math notranslate nohighlight">\( tf-idf = 0 \cdot \
 
 <span class="n">word_freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Change documents index to see a different document</span>
 <span class="n">word_freq</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">document_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
