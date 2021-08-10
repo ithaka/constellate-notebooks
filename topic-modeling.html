@@ -500,7 +500,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
         <span class="n">clean_gram</span> <span class="o">=</span> <span class="n">process_token</span><span class="p">(</span><span class="n">gram</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">clean_gram</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">continue</span>
-        <span class="n">processed_document</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clean_gram</span><span class="p">)</span>
+        <span class="n">processed_document</span> <span class="o">+=</span> <span class="p">[</span><span class="n">clean_gram</span><span class="p">]</span> <span class="o">*</span> <span class="n">count</span> <span class="c1"># Add the unigram as many times as it was counted</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">processed_document</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">documents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">processed_document</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
