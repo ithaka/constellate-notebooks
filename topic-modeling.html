@@ -395,9 +395,12 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing your dataset with a dataset ID</span>
 <span class="kn">import</span> <span class="nn">tdm_client</span>
-<span class="c1"># Pull in the dataset that matches `dataset_id`</span>
+<span class="c1"># Pull in the sampled dataset that matches `dataset_id`</span>
 <span class="c1"># in the form of a gzipped JSON lines file.</span>
 <span class="n">dataset_file</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+
+<span class="c1"># Pull in the full dataset.</span>
+<span class="c1">#dataset_file = tdm_client.download(dataset_id, &#39;jsonl&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -484,7 +487,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Limit to n documents. Set to None to use all documents.</span>
 
-<span class="n">limit</span> <span class="o">=</span> <span class="mi">1500</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">5000</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">documents</span> <span class="o">=</span> <span class="p">[]</span>
@@ -503,9 +506,12 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
         <span class="n">processed_document</span> <span class="o">+=</span> <span class="p">[</span><span class="n">clean_gram</span><span class="p">]</span> <span class="o">*</span> <span class="n">count</span> <span class="c1"># Add the unigram as many times as it was counted</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">processed_document</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">documents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">processed_document</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unigrams collected for </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> documents...&#39;</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="n">limit</span><span class="p">):</span>
        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;All unigrams collected for </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> documents.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -522,10 +528,10 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
-<span class="n">num_topics</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># Change the number of topics</span>
-<span class="n">passes</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># The number of passes the model runs</span>
+<span class="n">num_topics</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Change the number of topics</span>
+<span class="n">passes</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># The number of passes the model runs</span>
 <span class="c1"># Remove terms that appear in less than 10 documents and terms that occur in more than 50% of documents.</span>
-<span class="n">dictionary</span><span class="o">.</span><span class="n">filter_extremes</span><span class="p">(</span><span class="n">no_below</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">no_above</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">dictionary</span><span class="o">.</span><span class="n">filter_extremes</span><span class="p">(</span><span class="n">no_below</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">no_above</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
