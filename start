@@ -5,8 +5,6 @@
 version=0.1
 
 cd /tmp
-mv ~/src/tdm_client.py .
-python tdm_client.py install
 mv ~/src/constellate-plugin .
 pip install constellate-plugin/
 rm -rf ~/src

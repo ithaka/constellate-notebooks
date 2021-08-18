@@ -1,7 +1,8 @@
+# Environment requirements
 jupyter_contrib_nbextensions
 jupyter-offlinenotebook
-requests
-progressbar
+constellate-client
+# Notebook requirements
 pandas
 gensim==3.8.3
 nltk
