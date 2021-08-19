@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command Line Skills for Text Analysis &#8212; Teaching Text Analysis with Constellate</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/constellate-beta.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Teaching Text Analysis with Constellate</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   About
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/schedule.html">
+   Course Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/syllabus.html">
+   Course Syllabus
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Open Educational Directory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/all-notebooks.html">
+   Open Notebook Lessons Directory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/add-my-lesson.html">
+   Add your lesson or class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/how-to-create-a-course-website">
+   Create Course from this template
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org">
+   Constellate Platform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs">
+   Constellate Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/key-terms">
+   Text Analysis Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://jupyterbook.org/intro.html">
+   Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/keep-learning.html">
+   More ways to keep learning
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/command-line-skills.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fcommand-line-skills.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/command-line-skills.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.constellate.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/command-line-skills.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-learn-the-command-line">
+   Why learn the command line?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-the-command-line">
+   Installing the Command Line
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mac-os-x">
+     Mac OS X
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#windows-10">
+     Windows 10
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-a-command-line-window">
+   Opening a Command Line Window
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Mac OS X
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Windows 10
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigating-the-file-system">
+   Navigating the file system
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#present-working-directory-pwd">
+     Present Working Directory
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pwd
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-directory-contents-ls">
+     List directory contents
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ls
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#change-directory-cd">
+     Change Directory
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       cd
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-and-edit-files">
+   Create and edit files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-nano-editor">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     nano
+    </span>
+   </code>
+   editor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-on-windows-10">
+     Installation on Windows 10
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opening-or-creating-a-file-with-nano">
+     Opening or creating a file with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       nano
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#move-and-rename-files-mv">
+     Move and rename files
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       mv
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-directory-mkdir">
+     Make Directory
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       mkdir
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unzip-a-file">
+     Unzip a file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cat">
+     Cat
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grep">
+     Grep
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#less">
+     Less
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-python-packages">
+   Installing Python packages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-python-package-manager-pip">
+     The Python package manager
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pip
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-conda-package-manager-conda">
+     The Conda package manager
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       conda
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<div class="section" id="command-line-skills-for-text-analysis">
+<h1>Command Line Skills for Text Analysis<a class="headerlink" href="#command-line-skills-for-text-analysis" title="Permalink to this headline">¶</a></h1>
+<p><strong>Description:</strong> This notebook is intended to introduce users to the command line. It describes:</p>
+<ul class="simple">
+<li><p>Why you should learn the command line</p></li>
+<li><p>How to install a unix command line on your computer</p></li>
+<li><p>Various commands for manipulating files</p></li>
+<li><p>How to install Python libraries on your local machine</p></li>
+</ul>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Beginner</p>
+<p><strong>Completion Time:</strong> 30 minutes</p>
+<p><strong>Knowledge Required:</strong> None</p>
+<p><strong>Knowledge Recommended:</strong> None</p>
+<p><strong>Data Format:</strong> None</p>
+<p><strong>Libraries Used:</strong> None</p>
+<p><strong>Research Pipeline:</strong> None</p>
+<hr class="docutils" />
+<div class="section" id="why-learn-the-command-line">
+<h2>Why learn the command line?<a class="headerlink" href="#why-learn-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>Most of our everyday experiences with computers involve using a mouse, trackpad, or touchscreen. We use familiar operations like “clicking”, “double-clicking”, or “pinching” on a Graphical User Interface (GUI) to accomplish everyday tasks like browsing the web, reading email, and playing games. Most computer users never use the command line, which foregoes using a cursor, and relies only on text input from the keyboard. Using computers in this way can seem opaque and difficult, so why do folks learn it?</p>
+<p>There are a few reasons:</p>
+<ul class="simple">
+<li><p>Many important and useful programs have no GUI</p></li>
+<li><p>The command line helps Python coders start The Jupyter Notebook and install Python packages</p></li>
+<li><p>Certain file operations, like renaming hundreds of files at once, cannot be done in a GUI</p></li>
+<li><p>The command line is faster for many tasks, requiring a few keystrokes rather than many clicks</p></li>
+<li><p>Multi-step command line tasks can be scripted, letting users run them multiple times or at particular times</p></li>
+<li><p>A simple way to connect and interact with internet servers</p></li>
+</ul>
+</div>
+<div class="section" id="installing-the-command-line">
+<h2>Installing the Command Line<a class="headerlink" href="#installing-the-command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mac-os-x">
+<h3>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h3>
+<p>The command line is already installed by default on Mac OS X machines in a utility named “Terminal.”</p>
+</div>
+<div class="section" id="windows-10">
+<h3>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this headline">¶</a></h3>
+<p>There is a command line installed by default on Windows 10, but we do not recommend learning the command line with it. One of the most significant advantages of learning the command line is the ability to connect and interact with internet servers. The vast majority of servers in the world run on Linux, accepting unix-based commands. By installing a unix-based command line on your Windows machine, you will learn a more popular and portable version of the command line.</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/downloads">Download Git Bash</a></p></li>
+<li><p><strong>Install Git</strong> For each setting, choose the default. You may, optionally, wish to change the default editor from Vim (an advanced text editor) to something simpler like Notepad. This is not necessary for our purposes but it may be easier for you later when you need to edit text files.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="opening-a-command-line-window">
+<h2>Opening a Command Line Window<a class="headerlink" href="#opening-a-command-line-window" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Mac OS X<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Click on the magnifying glass icon in the upper righthand corner of the screen. (Shortcut: ⌘ + spacebar)</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">terminal</span></code> and then press return.</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>Windows 10<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Click on the Windows Start Menu in the lower left corner. (Shortcut: Windows key)</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code> and then press return.</p></li>
+</ol>
+<p><strong>Git Bash vs. Windows Command Prompt</strong></p>
+<p>To check which one you are using, look in the upper lefthand corner of the window. Git Bash will say “MINGW64” in the upper lefthand corner of the window. Command Prompt will say “Command Prompt”. This lesson teaches the more widely-used unix-based commands in Git Bash.
+<img alt="The visual difference between Windows Command Prompt and Git Bash" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/bash-vs-cmd.png" /></p>
+</div>
+</div>
+<div class="section" id="navigating-the-file-system">
+<h2>Navigating the file system<a class="headerlink" href="#navigating-the-file-system" title="Permalink to this headline">¶</a></h2>
+<p>All the files and directories on your computer are organized into a hierarchy starting at the root directory. (A directory is also commonly called a “folder.”) On Mac OS X, the root (or top) directory is just known as <code class="docutils literal notranslate"><span class="pre">/</span></code>. On a Windows 10, the root directory is usually <code class="docutils literal notranslate"><span class="pre">C:/</span></code>.</p>
+<p>Starting from the root, we can write a description of any given file or directory on your machine. For example, if I downloaded a file <code class="docutils literal notranslate"><span class="pre">information.txt</span></code> with my web browser to my downloads directory, the file location could be written:</p>
+<p><code class="docutils literal notranslate"><span class="pre">/Users/MyUserName/Downloads/information.txt</span></code> on Mac OS X</p>
+<p>or</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:/Users/MyUserName/Downloads/information.txt</span></code> on Windows 10</p>
+<p>When you start the command line, the default location can be either your user directory, sometimes called “home”, or the last directory that was open in the command line. To discover the current location of your terminal session, use the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command.</p>
+<div class="section" id="present-working-directory-pwd">
+<h3>Present Working Directory <code class="docutils literal notranslate"><span class="pre">pwd</span></code><a class="headerlink" href="#present-working-directory-pwd" title="Permalink to this headline">¶</a></h3>
+<p>Type in <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and press enter/return. Your current location will be printed.</p>
+<p><img alt="Typing pwd into terminal" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/pwd.gif" /></p>
+<p>This user is in the <code class="docutils literal notranslate"><span class="pre">/Users/nkelber/</span></code> directory.</p>
+</div>
+<div class="section" id="list-directory-contents-ls">
+<h3>List directory contents <code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#list-directory-contents-ls" title="Permalink to this headline">¶</a></h3>
+<p>Type in <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see the contents of the current directory:</p>
+<p><img alt="Typing ls into terminal" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/ls.gif" /></p>
+<p>By default, some files and directories are invisible. To see them, use <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>. Generally, it is not a good idea to change invisible files or directories unless you’re sure about what they do.</p>
+</div>
+<div class="section" id="change-directory-cd">
+<h3>Change Directory <code class="docutils literal notranslate"><span class="pre">cd</span></code><a class="headerlink" href="#change-directory-cd" title="Permalink to this headline">¶</a></h3>
+<p>To change into a directory use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command followed by the directory name. If the directory name is long, you may simply type part of the name then press the tab key to auto-complete. Using tab completion is useful because:</p>
+<ol class="simple">
+<li><p>It is faster than typing out the entire directory name</p></li>
+<li><p>It guards against typos in long directory names</p></li>
+</ol>
+<p>If you mistype a command, you can also use the up arrow key on the keyboard to scroll through commands you have already entered. Then you can delete and insert the correction without having to retype the whole command.</p>
+<p><img alt="Typing cd into terminal" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/cd.gif" /></p>
+<p>To move back up a directory, use <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>. Using <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> repeatedly will eventually take you to the root (top directory).</p>
+<p>If you ever get lost, you can use <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> to return to your home directory. You can also supply an “absolute path” starting with the root directory, such as <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/Users/MyUserName/Downloads</span></code>. This is helpful if the directory you want to enter is far away from the present working directory.</p>
+</div>
+</div>
+<div class="section" id="create-and-edit-files">
+<h2>Create and edit files<a class="headerlink" href="#create-and-edit-files" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="the-nano-editor">
+<h2>The <code class="docutils literal notranslate"><span class="pre">nano</span></code> editor<a class="headerlink" href="#the-nano-editor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installation-on-windows-10">
+<h3>Installation on Windows 10<a class="headerlink" href="#installation-on-windows-10" title="Permalink to this headline">¶</a></h3>
+<p>We recommend the text editor Nano. It is installed by default on Mac OS X, but it must be installed on Windows 10.</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.nano-editor.org/dist/win32-support/nano-git-0d9a7347243.exe">Download nano</a> for Windows</p></li>
+<li><p>Rename the file to nano.exe</p></li>
+<li><p>Move it to C:\Program Files\Git\usr\bin</p></li>
+<li><p>Open Git Bash and enter: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">–global</span> <span class="pre">core.editor</span> <span class="pre">“winpty</span> <span class="pre">nano”</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="opening-or-creating-a-file-with-nano">
+<h3>Opening or creating a file with <code class="docutils literal notranslate"><span class="pre">nano</span></code><a class="headerlink" href="#opening-or-creating-a-file-with-nano" title="Permalink to this headline">¶</a></h3>
+<p>To create or open an existing plaintext file with nano, such as “file.txt”, use <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">file.txt</span></code> when in the same directory as the file. The nano file editor will open in the terminal window.</p>
+<p><img alt="Using the nano editor" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/nano.gif" /></p>
+<ol class="simple">
+<li><p>Make any desired changes</p></li>
+<li><p>Press ctrl + x to exit</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">y</span></code> and press enter/return to confirm you want to save changes</p></li>
+<li><p>Confirm (or change) the filename and press enter/return</p></li>
+</ol>
+</div>
+<div class="section" id="move-and-rename-files-mv">
+<h3>Move and rename files <code class="docutils literal notranslate"><span class="pre">mv</span></code><a class="headerlink" href="#move-and-rename-files-mv" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">mv</span></code> command allows you to move and/or rename a file. To rename a file without moving it, use the syntax:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">oldfilename</span> <span class="pre">newfilename</span></code></p>
+<p>when you are in the directory where the file is located.</p>
+<p>If you are moving the file</p>
+<p>Assuming a file called file.txt, the syntax is:</p>
+<p>`mv file.txt</p>
+</div>
+<div class="section" id="make-directory-mkdir">
+<h3>Make Directory <code class="docutils literal notranslate"><span class="pre">mkdir</span></code><a class="headerlink" href="#make-directory-mkdir" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="unzip-a-file">
+<h3>Unzip a file<a class="headerlink" href="#unzip-a-file" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="cat">
+<h3>Cat<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="grep">
+<h3>Grep<a class="headerlink" href="#grep" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="less">
+<h3>Less<a class="headerlink" href="#less" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="installing-python-packages">
+<h2>Installing Python packages<a class="headerlink" href="#installing-python-packages" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-python-package-manager-pip">
+<h3>The Python package manager <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#the-python-package-manager-pip" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">help</span></code>
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">uninstall</span></code></p>
+</div>
+<div class="section" id="the-conda-package-manager-conda">
+<h3>The Conda package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#the-conda-package-manager-conda" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber and Ted Lawless<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-125778965-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
