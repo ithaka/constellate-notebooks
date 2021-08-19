@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find all sentences that match a word or phrase &#8212; Teaching Text Analysis with Constellate</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/constellate-beta.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Teaching Text Analysis with Constellate</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/intro.html">
+   About
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/schedule.html">
+   Course Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/syllabus.html">
+   Course Syllabus
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Open Educational Directory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/all-notebooks.html">
+   Open Notebook Lessons Directory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/add-my-lesson.html">
+   Add your lesson or class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/how-to-create-a-course-website">
+   Create Course from this template
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org">
+   Constellate Platform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs">
+   Constellate Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/key-terms">
+   Text Analysis Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://jupyterbook.org/intro.html">
+   Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../book/keep-learning.html">
+   More ways to keep learning
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/examples/matching-sentences.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Fexamples/matching-sentences.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/examples/matching-sentences.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder.constellate.org/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/examples/matching-sentences.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#before-getting-started">
+   Before getting started
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-libraries">
+   Import Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-the-dataset-and-specify-the-matching-text">
+   Download the dataset and specify the matching text
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tokenize-the-dataset-into-sentences">
+   Tokenize the dataset into sentences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-sentence-dataframe">
+   Create sentence dataframe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-matching-sentences-over-time">
+   Plot matching sentences over time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#output-a-csv-file-with-the-matching-sentences">
+   Output a csv file with the matching sentences
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created on August 19, 2021
+By Ted Lawless and <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> for <a class="reference external" href="https://labs.jstor.org/">JSTOR Labs</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:tdm&#37;&#52;&#48;ithaka&#46;org">tdm<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<div class="section" id="find-all-sentences-that-match-a-word-or-phrase">
+<h1>Find all sentences that match a word or phrase<a class="headerlink" href="#find-all-sentences-that-match-a-word-or-phrase" title="Permalink to this headline">¶</a></h1>
+<p>The Research Goal:</p>
+<blockquote>
+<div><p>Identify any sentences in a dataset that match a word/phrase and output them to a file.</p>
+</div></blockquote>
+<div class="section" id="before-getting-started">
+<h2>Before getting started<a class="headerlink" href="#before-getting-started" title="Permalink to this headline">¶</a></h2>
+<p>This research question will require a Constellate dataset that contains the full-text of the document. You can create these in the <a class="reference external" href="https://constellate.org/builder/">Constellate dataset builder</a> by selecting “Full text only” from the “Download Availability” filter.</p>
+</div>
+<div class="section" id="import-libraries">
+<h2>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this headline">¶</a></h2>
+<p>First, we will import Python libraries to help us with our analysis. We will use:</p>
+<ul class="simple">
+<li><p>The Pandas library for plotting and outputting our data to CSV</p></li>
+<li><p>The <a class="reference external" href="https://www.nltk.org/">Natural Language Toolkit</a> to parse the raw text into sentences</p></li>
+<li><p>The <a class="reference external" href="https://constellate.org/docs/constellate-client">Constellate client</a> to retrieve our dataset</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+<span class="kn">import</span> <span class="nn">constellate</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may also need to download the NLTK punkt tokenizer, which is required for parsing sentences.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="download-the-dataset-and-specify-the-matching-text">
+<h2>Download the dataset and specify the matching text<a class="headerlink" href="#download-the-dataset-and-specify-the-matching-text" title="Permalink to this headline">¶</a></h2>
+<p>Download a dataset created in the Constellate application into the notebook environment.</p>
+<p>Add the dataset id that you are interested in retreiving as the <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code> variable. This can be found on your <a class="reference external" href="https://constellate.org/dataset/dashboard">dashboard</a> in the Constellate web application.</p>
+<p>If you do not have a dataset, here are two examples you could use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f477f1df-6cd5-c12e-844e-a04128e9b6e5</span></code>: All documents from JSTOR published in Proceedings of the American Philosophical Society from 1900 - 1930</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">88a2bfb7-7196-0ca4-d545-d066ae8cc52c</span></code>: All documents from JSTOR published in The American Economic Review from 1910 - 1930 and limited to full text availability</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;88a2bfb7-7196-0ca4-d545-d066ae8cc52c&quot;</span>
+
+<span class="n">dataset_file</span> <span class="o">=</span> <span class="n">constellate</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, define the <code class="docutils literal notranslate"><span class="pre">matching_phrase</span></code> variable that you want to find in the text of the documents. This can be any string and a case insensitive match will be used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matching_phrase</span> <span class="o">=</span> <span class="s2">&quot;inflation&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tokenize-the-dataset-into-sentences">
+<h2>Tokenize the dataset into sentences<a class="headerlink" href="#tokenize-the-dataset-into-sentences" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Loop through all the documents in the dataset</p></li>
+<li><p>Read the <code class="docutils literal notranslate"><span class="pre">fullText</span></code> field (which is an array of page text) and parse sentences using nltk’s sentence parser</p></li>
+<li><p>Check each sentence to see if it contains the matching phrase (case insensitive)</p></li>
+<li><p>Save matches to a Python list</p></li>
+<li><p>Record the following:</p>
+<ul class="simple">
+<li><p>document identifier</p></li>
+<li><p>publication year</p></li>
+<li><p>the page sequence number where the sentence was found</p></li>
+<li><p>the sentence sequence number within that page</p></li>
+<li><p>the text of the sentence.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lower case our matching phrase and strip any whitespace</span>
+<span class="n">matching_phrase</span> <span class="o">=</span> <span class="n">matching_phrase</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1"># Define an empty list to store our matched sentences</span>
+<span class="n">matched_sentences</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Count our matches</span>
+<span class="n">matched</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Count our loop iterations</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">constellate</span><span class="o">.</span><span class="n">dataset_reader</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">):</span>
+    <span class="n">publication_year</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s2">&quot;publicationYear&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">page_sequence</span><span class="p">,</span> <span class="n">raw_page_text</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fullText&quot;</span><span class="p">)):</span>
+        <span class="c1"># Replace all line breaks with spaces.</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raw_page_text</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">sentence_sequence</span><span class="p">,</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">page</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">matching_phrase</span> <span class="ow">in</span> <span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="n">matched_sentences</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">document</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">publication_year</span><span class="p">,</span> <span class="n">page_sequence</span><span class="p">,</span> <span class="n">sentence_sequence</span><span class="p">,</span> <span class="n">sentence</span><span class="p">))</span>
+                <span class="n">matched</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+       <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> documents scanned&quot;</span><span class="p">,</span> <span class="n">document</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Report number of matches</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">matched_sentences</span><span class="p">)</span><span class="si">}</span><span class="s1"> matching sentences found in your dataset.&#39;</span><span class="p">)</span>
+
+<span class="c1"># Preview the matched sentences</span>
+<span class="c1"># ID, year, page sequence, sentence sequence for page, actual matching sentence</span>
+<span class="n">matched_sentences</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-sentence-dataframe">
+<h2>Create sentence dataframe<a class="headerlink" href="#create-sentence-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Create a pandas DataFrame from the matched sentences. This makes it convenient to output as a CSV or analyze further.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">matched_sentences</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;publication_year&quot;</span><span class="p">,</span> <span class="s2">&quot;page_seq&quot;</span><span class="p">,</span> <span class="s2">&quot;sentence_seq&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-matching-sentences-over-time">
+<h2>Plot matching sentences over time<a class="headerlink" href="#plot-matching-sentences-over-time" title="Permalink to this headline">¶</a></h2>
+<p>Visualize the number of matches grouped by the year they occurred in a bar chart.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;publication_year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>\
+  <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Matching sentences over time&quot;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;publication year&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;matching sentences&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="output-a-csv-file-with-the-matching-sentences">
+<h2>Output a csv file with the matching sentences<a class="headerlink" href="#output-a-csv-file-with-the-matching-sentences" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sent_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;../data/</span><span class="si">{</span><span class="n">dataset_id</span><span class="si">}</span><span class="s2">-sentences.csv&quot;</span>
+
+<span class="n">sentence_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">sent_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./examples"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber and Ted Lawless<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-125778965-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
