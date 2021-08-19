@@ -8,3 +8,5 @@ clean_nbs.py
 tdm_client.py
 __pycache__/
 _build/*
+examples/*
+!examples/*.ipynb
