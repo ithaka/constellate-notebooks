@@ -7,7 +7,7 @@ const config = {
     refreshTimeout: 1200000, // 20 minutes
   },
   ConstellateApi: {
-    url: 'https://backend.tdm-pilot.org'
+    url: 'https://backend.constellate.org'
   }
 };
 
@@ -217,6 +217,11 @@ define([
       initializeGoogleAnalytics();
       refreshSession().then(async res => {
         userSession = await res.json();
+
+        logEvent('binder-session-create', {
+          kernel: Jupyter.notebook.kernel.name,
+          notebook: Jupyter.notebook.notebook_name
+        });
 
         logEvent('notebook-session-create', {
           kernel: Jupyter.notebook.kernel.name,
