@@ -391,23 +391,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unzip-a-file">
+    <a class="reference internal nav-link" href="#unzip-a-file-unzip">
      Unzip a file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cat">
-     Cat
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grep">
-     Grep
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#less">
-     Less
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       unzip
+      </span>
+     </code>
     </a>
    </li>
   </ul>
@@ -586,34 +576,43 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p>when you are in the directory where the file is located.</p>
 <p>If you are moving the file</p>
 <p>Assuming a file called file.txt, the syntax is:</p>
-<p>`mv file.txt</p>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">file.txt</span> <span class="pre">newfolder/file.txt</span></code></p>
+<p>assuming there is a <code class="docutils literal notranslate"><span class="pre">newfolder</span></code> in the same directory. It is possible to both move and rename a file in a single command, such as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">oldfilename.txt</span> <span class="pre">newfolder/newfilename.txt</span></code></p>
+<p>If you need to move a file up a directory, you can supply a full path starting with the root:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">file.txt</span> <span class="pre">/usr/username/folder/file.txt</span></code></p>
+<p>Or you can use <code class="docutils literal notranslate"><span class="pre">..</span></code> to indicate the file should be moved up a directory:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">file.txt</span> <span class="pre">../file.txt</span></code></p>
 </div>
 <div class="section" id="make-directory-mkdir">
 <h3>Make Directory <code class="docutils literal notranslate"><span class="pre">mkdir</span></code><a class="headerlink" href="#make-directory-mkdir" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> command will create a new directory in your present working directory:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">newdirectoryname</span></code></p>
 </div>
-<div class="section" id="unzip-a-file">
-<h3>Unzip a file<a class="headerlink" href="#unzip-a-file" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="cat">
-<h3>Cat<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="grep">
-<h3>Grep<a class="headerlink" href="#grep" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="less">
-<h3>Less<a class="headerlink" href="#less" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="unzip-a-file-unzip">
+<h3>Unzip a file <code class="docutils literal notranslate"><span class="pre">unzip</span></code><a class="headerlink" href="#unzip-a-file-unzip" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">unzip</span></code> command will unzip a compressed zip file:
+<code class="docutils literal notranslate"><span class="pre">unzip</span> <span class="pre">filename.zip</span></code></p>
 </div>
 </div>
 <div class="section" id="installing-python-packages">
 <h2>Installing Python packages<a class="headerlink" href="#installing-python-packages" title="Permalink to this headline">¶</a></h2>
+<p>If you need a particular package installed for Python, the default package manager is called <code class="docutils literal notranslate"><span class="pre">pip</span></code>. A second package manager called <code class="docutils literal notranslate"><span class="pre">conda</span></code> is popular in data science and is often used with the <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda distribution</a> of Python that contains a large variety of packages and software suitable for data science work.</p>
+<p>For most users, it is suitable to install a package for all users. If you find yourself working on multiple projects at a time with different package, it is a good idea to look into virtual environments. For example, you may work on a project that uses <code class="docutils literal notranslate"><span class="pre">package</span> <span class="pre">version</span> <span class="pre">.7</span></code> and <code class="docutils literal notranslate"><span class="pre">package</span> <span class="pre">version</span> <span class="pre">2.0</span></code>. Each time you switched projects, you would need to reinstall the proper version of the package for the project you’re working on. Virtual environments allow you to load a different set of packages depending on which project you’re working on.</p>
 <div class="section" id="the-python-package-manager-pip">
 <h3>The Python package manager <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#the-python-package-manager-pip" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">help</span></code>
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">uninstall</span></code></p>
+<p>Installing a package with pip is simple:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">package-name</span></code></p>
+<p>You can uninstall a package with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">package-name</span></code></p>
 </div>
 <div class="section" id="the-conda-package-manager-conda">
 <h3>The Conda package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#the-conda-package-manager-conda" title="Permalink to this headline">¶</a></h3>
+<p>The Anaconda distribution of Python comes with a graphical user interface that allows you to install and uninstall packages (and create virtual environments) with a mouse. However, you can also use the command line and the process is very simple.</p>
+<p>To install:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">package-name</span></code></p>
+<p>To uninstall:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">uninstall</span> <span class="pre">package-name</span></code></p>
 </div>
 </div>
 </div>
