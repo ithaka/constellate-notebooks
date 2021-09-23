@@ -388,13 +388,14 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#opening-datasets-with-tdm-client">
+  <a class="reference internal nav-link" href="#opening-datasets-with-constellate-client">
    Opening datasets with
    <code class="docutils literal notranslate">
     <span class="pre">
-     tdm_client
+     constellate
     </span>
    </code>
+   client
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -403,14 +404,25 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#retrieving-data-tdm-client-methods">
-     Retrieving data (
+    <a class="reference internal nav-link" href="#retrieving-sampled-data-constellate-client-methods">
+     Retrieving sampled data (
      <code class="docutils literal notranslate">
       <span class="pre">
-       tdm_client
+       constellate
       </span>
      </code>
-     methods)
+     client methods)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retrieving-the-full-dataset-with-constellate-client">
+     Retrieving the full dataset with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       constellate
+      </span>
+     </code>
+     client
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -440,10 +452,10 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p><strong>Description:</strong> This notebook describes how to:</p>
 <ul class="simple">
 <li><p>Read and write files (.txt, .csv, .json)</p></li>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to read in metadata</p></li>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to read in data</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client to read in metadata</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client to read in data</p></li>
 </ul>
-<p>This notebook describes how to read and write text, CSV, and JSON files using Python. Additionally, it explains how the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> can help users easily load and analyze their datasets.</p>
+<p>This notebook describes how to read and write text, CSV, and JSON files using Python. Additionally, it explains how the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client can help users easily load and analyze their datasets.</p>
 <p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
 <p><strong>Difficulty:</strong> Intermediate</p>
 <p><strong>Completion Time:</strong> 60 minutes</p>
@@ -455,9 +467,9 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p><strong>Data Format:</strong> Text (.txt), CSV (.csv), JSON (.json)</p>
 <p><strong>Libraries Used:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> to read and write CSV files</p></li>
+<li><p><a class="reference external" href="https://constellate.org/docs/key-terms/#pandas">pandas</a> to read and write CSV files</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">json</span></code> to read and write JSON files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to retrieve and read data</p></li>
+<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#constellate-client">constellate</a> client to retrieve and read data</p></li>
 </ul>
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
@@ -817,9 +829,9 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </div>
 </div>
 </div>
-<div class="section" id="opening-datasets-with-tdm-client">
-<h2>Opening datasets with <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code><a class="headerlink" href="#opening-datasets-with-tdm-client" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> helps retrieve a given dataset and/or its associated metadata. The metadata is supplied in a CSV file and the full dataset is supplied in a compressed JSON Lines file (.jsonl.gz). For any analysis focused on metadata pre-processing, we recommend users start with the CSV file since it is both easier and faster to view, parse, and manipulate.</p>
+<div class="section" id="opening-datasets-with-constellate-client">
+<h2>Opening datasets with <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client<a class="headerlink" href="#opening-datasets-with-constellate-client" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client helps retrieve a given dataset and/or its associated metadata. The metadata is supplied in a CSV file and the full dataset is supplied in a compressed JSON Lines file (.jsonl.gz). For any analysis focused on metadata pre-processing, we recommend users start with the CSV file since it is both easier and faster to view, parse, and manipulate.</p>
 <div class="section" id="metadata-csv-vs-json-lines-data-file">
 <h3>Metadata CSV vs. JSON Lines Data File<a class="headerlink" href="#metadata-csv-vs-json-lines-data-file" title="Permalink to this headline">¶</a></h3>
 <p>All of the textual data and metadata is available inside of the JSON Lines files, but we have chosen to offer the metadata CSV for two primary reasons:</p>
@@ -827,14 +839,14 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <li><p>The JSON Lines data is a little more complex to parse since it is nested. It cannot be easily represented in a table form in something like Pandas. It is nice to be able to easily view all the metadata in a Pandas dataframe.</p></li>
 <li><p>The JSON Lines data can be very large. Each file contains all of the metadata <em>plus</em> unigram counts, bigram counts, trigram counts, and full-text (when available). Manipulating all that data takes significant computer time and costs. Even a modest dataset (~5000 files) can be over 1 GB in size uncompressed.</p></li>
 </ol>
-<p>More information is available, including the metadata categories, in the FAQ <a class="reference external" href="https://docs.constellate.org/what-format-are-jstor-portico-datasets/">“What is the data file format?”</a>.</p>
+<p>More information is available, including the metadata categories, in the FAQ <a class="reference external" href="https://docs.constellate.org/what-format-are-jstor-portico-datasets/">“What is the data file format?”</a>. There’s also reference documentation for <a class="reference external" href="https://constellate.org/docs/constellate-client">the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client</a>.</p>
 </div>
-<div class="section" id="retrieving-data-tdm-client-methods">
-<h3>Retrieving data (<code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> methods)<a class="headerlink" href="#retrieving-data-tdm-client-methods" title="Permalink to this headline">¶</a></h3>
-<p>By passing the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> a dataset ID (here called <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>), we can automatically download the metadata CSV file or the full JSON Lines dataset created by the <a class="reference external" href="https://constellate.org/builder/">dataset builder</a>.</p>
+<div class="section" id="retrieving-sampled-data-constellate-client-methods">
+<h3>Retrieving sampled data (<code class="docutils literal notranslate"><span class="pre">constellate</span></code> client methods)<a class="headerlink" href="#retrieving-sampled-data-constellate-client-methods" title="Permalink to this headline">¶</a></h3>
+<p>By passing the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client a dataset ID (here called <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code>), we can automatically download the metadata CSV file or the full JSON Lines dataset created by the <a class="reference external" href="https://constellate.org/builder/">dataset builder</a>. By default, these datasets are randomly sampled to 1500 documents. Experience has shown us that this is the right size for teaching/learning where data loads quickly and still gives interesting results.</p>
 <ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">.get_metadata()</span></code> method to retrieve the metadata CSV file</p></li>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">get_dataset()</span></code> method to retrieve the full JSON data file</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">.get_metadata()</span></code> method to retrieve the sampled metadata CSV file</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">.get_dataset()</span></code> method to retrieve the sampled JSON data file</p></li>
 </ul>
 <table class="colwidths-auto table">
 <thead>
@@ -843,20 +855,41 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>f = tdm_client.get_metadata(dataset_id)</p></td>
-<td><p>Automatically retrieves a metadata CSV file and creates a file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+<tr class="row-even"><td><p>f = constellate.get_metadata(dataset_id)</p></td>
+<td><p>Automatically retrieves a sampled metadata CSV file and creates a file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>f = tdm_client.get_dataset(dataset_id)</p></td>
-<td><p>Automatically retrieves a compressed JSON Lines dataset file (jsonl.gz) and creates a file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+<tr class="row-odd"><td><p>f = constellate.get_dataset(dataset_id)</p></td>
+<td><p>Automatically retrieves a sampled, compressed JSON Lines dataset file (jsonl.gz) and creates a file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
 </tr>
 </tbody>
 </table>
 <p>The JSON Lines file will be downloaded in a compressed gzip format (jsonl.gz). We can iterate over each document in the corpus by using the <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> method.</p>
 </div>
+<div class="section" id="retrieving-the-full-dataset-with-constellate-client">
+<h3>Retrieving the full dataset with <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client<a class="headerlink" href="#retrieving-the-full-dataset-with-constellate-client" title="Permalink to this headline">¶</a></h3>
+<p>Researchers wishing to work with larger datasets (up to 25,000 items), first need to request these datasets be built.</p>
+<p><img alt="From the dataset dashboard, select &quot;download&quot; then &quot;More Download Options&quot;" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/request-dataset.png" /></p>
+<p>Then you can request the full dataset using the <code class="docutils literal notranslate"><span class="pre">constellate.download</span></code> method. For more information, see <a class="reference external" href="https://constellate.org/docs/constellate-client">the Constellate Client reference documentation</a>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>f = constellate.download(dataset_id, ‘metadata’)</p></td>
+<td><p>Automatically retrieves a full metadata CSV file and creates a file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>f = constellate.download(dataset_id, ‘jsonl’)</p></td>
+<td><p>Automatically retrieves the full compressed JSON Lines dataset file (jsonl.gz) and creates a file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="reading-in-data-from-a-dataset-object">
 <h3>Reading in data from a dataset object<a class="headerlink" href="#reading-in-data-from-a-dataset-object" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> method will read in data from the compressed JSON dataset file object. By keeping the data in a compressed format and reading in a single line at a time, we reduce the processing time and memory use. These can be substantial for large datasets. Even a modest dataset (~5000 files) can be over 1 GB in size uncompressed.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> essentially unzips each row of the dataset at a time. Each row constitutes all the metadata and data available for a single document. Here is what that looks like the actual tdm_client:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">dataset_reader()</span></code> essentially unzips each row of the dataset at a time. Each row constitutes all the metadata and data available for a single document. Here is what that looks like the actual <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client:</p>
 <div class="highlight-with notranslate"><div class="highlight"><pre><span></span>        for row in input_file:
             yield json.loads(row)
 </pre></div>
@@ -869,7 +902,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>for document in tdm_client.dataset_reader(f):</p></td>
+<tr class="row-even"><td><p>for document in constellate.dataset_reader(f):</p></td>
 <td><p>Iterates over each document in file object <code class="docutils literal notranslate"><span class="pre">f</span></code></p></td>
 </tr>
 </tbody>

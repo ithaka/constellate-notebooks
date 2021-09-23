@@ -322,7 +322,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p><strong>Description:</strong>
 This <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebook</a> demonstrates how to do topic modeling. The following processes are described:</p>
 <ul class="simple">
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to retrieve a dataset</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client to retrieve a dataset</p></li>
 <li><p>Filtering based on a pre-processed ID list</p></li>
 <li><p>Filtering based on a <a class="reference external" href="https://docs.constellate.org/key-terms/#stop-words">stop words list</a></p></li>
 <li><p>Cleaning the tokens in the dataset</p></li>
@@ -349,7 +349,8 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <p><strong>Data Format:</strong> <a class="reference external" href="https://docs.constellate.org/key-terms/#jsonl">JSON Lines (.jsonl)</a></p>
 <p><strong>Libraries Used:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> to load a preprocessing list</p></li>
+<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#tdm-client">constellate</a> client to collect, unzip, and read our dataset</p></li>
+<li><p><a class="reference external" href="https://constellate.org/docs/key-terms/#pandas">pandas</a> to load a preprocessing list</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">csv</span></code> to load a custom stopwords list</p></li>
 <li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> to accomplish the topic modeling</p></li>
 <li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#nltk">NLTK</a> to create a stopwords list (if no list is supplied)</p></li>
@@ -371,7 +372,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 </div>
 <div class="section" id="import-your-dataset">
 <h2>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h2>
-<p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
+<p>We’ll use the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client library to automatically retrieve the dataset in the JSON file format.</p>
 <p>Enter a <a class="reference external" href="https://docs.constellate.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
 <p>If you don’t have a dataset ID, you can:</p>
 <ul class="simple">
@@ -394,17 +395,23 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 </div>
 </div>
 </div>
-<p>Next, import the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code>, passing the <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code> as an argument using the <code class="docutils literal notranslate"><span class="pre">get_dataset</span></code> method.</p>
+<p>Next, import the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client, passing the <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code> as an argument using the <code class="docutils literal notranslate"><span class="pre">get_dataset</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing your dataset with a dataset ID</span>
-<span class="kn">import</span> <span class="nn">tdm_client</span>
+<span class="kn">import</span> <span class="nn">constellate</span>
 <span class="c1"># Pull in the sampled dataset that matches `dataset_id`</span>
 <span class="c1"># in the form of a gzipped JSON lines file.</span>
-<span class="n">dataset_file</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+<span class="c1"># The .get_dataset() method downloads the gzipped JSONL file</span>
+<span class="c1"># to the /data folder and returns a string for the file name and location</span>
+<span class="c1"># dataset_metadata will be a string containing that file name and location</span>
+<span class="n">dataset_file</span> <span class="o">=</span> <span class="n">constellate</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
 
-<span class="c1"># Pull in the full dataset.</span>
-<span class="c1">#dataset_file = tdm_client.download(dataset_id, &#39;jsonl&#39;)</span>
+<span class="c1"># To download the full dataset (up to a limit of 25,000 documents),</span>
+<span class="c1"># request it first in the builder environment. See the Constellate Client</span>
+<span class="c1"># documentation at: https://constellate.org/docs/constellate-client</span>
+<span class="c1"># Then use the `constellate.download` method show below.</span>
+<span class="c1">#dataset_file = constellate.download(dataset_id, &#39;jsonl&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -495,7 +502,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">documents</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">dataset_reader</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">constellate</span><span class="o">.</span><span class="n">dataset_reader</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">):</span>
     <span class="n">processed_document</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">document_id</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">use_filtered_list</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>

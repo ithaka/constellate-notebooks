@@ -364,7 +364,7 @@ For questions/comments/improvements, email <a class="reference external" href="m
 This <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebook</a> shows how to discover significant words. The method for finding significant terms is <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">tf-idf</a>.  The following processes are described:</p>
 <ul class="simple">
 <li><p>An educational overview of TF-IDF, including how it is calculated</p></li>
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to retrieve a dataset</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client to retrieve a dataset</p></li>
 <li><p>Filtering based on a pre-processed ID list</p></li>
 <li><p>Cleaning the tokens in the dataset</p></li>
 <li><p>Creating a <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a></p></li>
@@ -389,7 +389,8 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <p><strong>Data Format:</strong> <a class="reference external" href="https://docs.constellate.org/key-terms/#jsonl">JSON Lines (.jsonl)</a></p>
 <p><strong>Libraries Used:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> to load a preprocessing list</p></li>
+<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#tdm-client">constellate</a> client to collect, unzip, and read our dataset</p></li>
+<li><p><a class="reference external" href="https://constellate.org/docs/key-terms/#pandas">pandas</a> to load a preprocessing list</p></li>
 <li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#gensim">gensim</a> to help compute the <a class="reference external" href="https://docs.constellate.org/key-terms/#tf-idf">tf-idf</a> calculations</p></li>
 <li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#nltk">NLTK</a> to create a stopwords list (if no list is supplied)</p></li>
 </ul>
@@ -417,7 +418,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 </div>
 <div class="section" id="computing-tf-idf-with-your-dataset">
 <h2>Computing TF-IDF with your Dataset<a class="headerlink" href="#computing-tf-idf-with-your-dataset" title="Permalink to this headline">¶</a></h2>
-<p>We’ll use the tdm_client library to automatically retrieve the dataset in the JSON file format.</p>
+<p>We’ll use the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client to automatically retrieve the dataset in the JSON file format.</p>
 <p>Enter a <a class="reference external" href="https://docs.constellate.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
 <p>If you don’t have a dataset ID, you can:</p>
 <ul class="simple">
@@ -433,18 +434,23 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 </div>
 </div>
 </div>
-<p>Next, import the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code>, passing the <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code> as an argument using the <code class="docutils literal notranslate"><span class="pre">get_dataset</span></code> method.</p>
+<p>Next, import the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client, passing the <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code> as an argument using the <code class="docutils literal notranslate"><span class="pre">get_dataset</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing your dataset with a dataset ID</span>
-<span class="kn">import</span> <span class="nn">tdm_client</span>
+<span class="kn">import</span> <span class="nn">constellate</span>
 <span class="c1"># Pull in the sampled dataset that matches `dataset_id`</span>
 <span class="c1"># in the form of a gzipped JSON lines file.</span>
-<span class="n">dataset_file</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+<span class="c1"># The .get_dataset() method downloads the gzipped JSONL file</span>
+<span class="c1"># to the /data folder and returns a string for the file name and location</span>
+<span class="c1"># dataset_metadata will be a string containing that file name and location</span>
+<span class="n">dataset_file</span> <span class="o">=</span> <span class="n">constellate</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
 
-<span class="c1"># Pull in the full dataset that matches `dataset_id`</span>
-<span class="c1"># The full dataset must be requested first!</span>
-<span class="c1">#dataset_file = tdm_client.download(dataset_id, &#39;jsonl&#39;) </span>
+<span class="c1"># To download the full dataset (up to a limit of 25,000 documents),</span>
+<span class="c1"># request it first in the builder environment. See the Constellate Client</span>
+<span class="c1"># documentation at: https://constellate.org/docs/constellate-client</span>
+<span class="c1"># Then use the `constellate.download` method show below.</span>
+<span class="c1">#dataset_file = constellate.download(dataset_id, &#39;jsonl&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -514,7 +520,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <span class="n">document_ids</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># A list that will contain all of our document ids</span>
 <span class="n">document_titles</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># A list that will contain all of our titles</span>
 
-<span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">dataset_reader</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">constellate</span><span class="o">.</span><span class="n">dataset_reader</span><span class="p">(</span><span class="n">dataset_file</span><span class="p">):</span>
     <span class="n">processed_document</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Temporarily store the unigrams for this document</span>
     <span class="n">document_id</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="c1"># Temporarily store the document id for this document</span>
     <span class="n">document_title</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="c1"># Temporarily store the document title for this document</span>

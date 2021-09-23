@@ -344,6 +344,7 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 <li><p>json</p></li>
 <li><p>collections</p></li>
 <li><p>pandas</p></li>
+<li><p>constellate client</p></li>
 </ul>
 <p><strong>Research Pipeline:</strong></p>
 <ol class="simple">
@@ -370,10 +371,10 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 </div>
 <div class="section" id="download-and-inspect-sample-files">
 <h2>Download and inspect sample files<a class="headerlink" href="#download-and-inspect-sample-files" title="Permalink to this headline">¶</a></h2>
-<p>For purposes of this tutorial, we will download a set of sample files from Project Gutenberg using a helper function from the tdm_client.</p>
+<p>For purposes of this tutorial, we will download a set of sample files from Project Gutenberg using a helper function from the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tdm_client</span> <span class="kn">import</span> <span class="n">download_gutenberg_sample</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">constellate</span> <span class="kn">import</span> <span class="n">download_gutenberg_sample</span>
 
 <span class="n">text_file_directory</span> <span class="o">=</span> <span class="n">download_gutenberg_sample</span><span class="p">()</span>
 </pre></div>
@@ -550,7 +551,7 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 </div>
 <div class="section" id="generate-a-constellate-gzip-file">
 <h2>Generate a Constellate gzip file<a class="headerlink" href="#generate-a-constellate-gzip-file" title="Permalink to this headline">¶</a></h2>
-<p>You may now want to create a gzip file so that it matches what you have downloaded from Constellate. You could also then use the <code class="docutils literal notranslate"><span class="pre">gzip_reader</span></code> that’s part of the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> to read it.</p>
+<p>You may now want to create a gzip file so that it matches what you have downloaded from Constellate. You could also then use the <code class="docutils literal notranslate"><span class="pre">gzip_reader</span></code> that’s part of the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client to read it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_file</span> <span class="o">=</span> <span class="n">text_file_directory</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s2">&quot;sample_gutenberg_dataset.json.gzip&quot;</span>
@@ -567,7 +568,7 @@ You may have text files and metadata that you want to tokenize into ngrams with 
 <p>Now use the dataset reader to read your file back in and verify it is what we expect.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tdm_client</span> <span class="kn">import</span> <span class="n">dataset_reader</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">constellate</span> <span class="kn">import</span> <span class="n">dataset_reader</span>
 
 <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset_reader</span><span class="p">(</span><span class="n">output_file</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">],</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;creator&quot;</span><span class="p">],</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&quot;publicationYear&quot;</span><span class="p">])</span>

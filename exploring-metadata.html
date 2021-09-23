@@ -346,14 +346,14 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <p><strong>Data Format:</strong> <a class="reference external" href="https://docs.constellate.org/key-terms/#csv-file">CSV file</a></p>
 <p><strong>Libraries Used:</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#tdm-client">tdm_client</a> to retrieve the <a class="reference external" href="https://docs.constellate.org/key-terms/#metadata">metadata</a> in a <a class="reference external" href="https://docs.constellate.org/key-terms/#csv-file">CSV file</a></p></li>
-<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#pandas">Pandas</a> to manipulate and visualize the metadata</p></li>
+<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#constellate-client">constellate</a> client to retrieve the <a class="reference external" href="https://docs.constellate.org/key-terms/#metadata">metadata</a> in a <a class="reference external" href="https://docs.constellate.org/key-terms/#csv-file">CSV file</a></p></li>
+<li><p><a class="reference external" href="https://docs.constellate.org/key-terms/#pandas">pandas</a> to manipulate and visualize the metadata</p></li>
 </ul>
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
 <div class="section" id="import-your-dataset">
 <h2>Import your dataset<a class="headerlink" href="#import-your-dataset" title="Permalink to this headline">¶</a></h2>
-<p>We’ll use the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code> library to automatically retrieve the <a class="reference external" href="https://docs.constellate.org/key-terms/#metadata">metadata</a> for a <a class="reference external" href="https://docs.constellate.org/key-terms/#dataset">dataset</a>. We can retrieve <a class="reference external" href="https://docs.constellate.org/key-terms/#metadata">metadata</a> in a <a class="reference external" href="https://docs.constellate.org/key-terms/#csv-file">CSV file</a> using the <code class="docutils literal notranslate"><span class="pre">get_metadata</span></code> method.</p>
+<p>We’ll use the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client to automatically retrieve the <a class="reference external" href="https://docs.constellate.org/key-terms/#metadata">metadata</a> for a <a class="reference external" href="https://docs.constellate.org/key-terms/#dataset">dataset</a>. We can retrieve <a class="reference external" href="https://docs.constellate.org/key-terms/#metadata">metadata</a> in a <a class="reference external" href="https://docs.constellate.org/key-terms/#csv-file">CSV file</a> using the <code class="docutils literal notranslate"><span class="pre">get_metadata</span></code> method.</p>
 <p>Enter a <a class="reference external" href="https://docs.constellate.org/key-terms/#dataset-ID">dataset ID</a> in the next code cell.</p>
 <p>If you don’t have a dataset ID, you can:</p>
 <ul class="simple">
@@ -370,22 +370,23 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 </div>
 </div>
 </div>
-<p>Next, import the <code class="docutils literal notranslate"><span class="pre">tdm_client</span></code>, passing the <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code> as an argument using the <code class="docutils literal notranslate"><span class="pre">get_metadata</span></code> method.</p>
+<p>Next, import the <code class="docutils literal notranslate"><span class="pre">constellate</span></code> client, passing the <code class="docutils literal notranslate"><span class="pre">dataset_id</span></code> as an argument using the <code class="docutils literal notranslate"><span class="pre">get_metadata</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the `tdm_client`</span>
-<span class="kn">import</span> <span class="nn">tdm_client</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the `constellate` client</span>
+<span class="kn">import</span> <span class="nn">constellate</span>
 
 <span class="c1"># Pull in our dataset CSV using</span>
 <span class="c1"># The .get_metadata() method downloads the CSV file for our metadata</span>
 <span class="c1"># to the /data folder and returns a string for the file name and location</span>
 <span class="c1"># dataset_metadata will be a string containing that file name and location</span>
-<span class="n">dataset_metadata</span> <span class="o">=</span> <span class="n">tdm_client</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
+<span class="n">dataset_metadata</span> <span class="o">=</span> <span class="n">constellate</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">)</span>
 
 <span class="c1"># To download the full dataset (up to a limit of 25,000 documents),</span>
 <span class="c1"># request it first in the builder environment. See the Constellate Client</span>
 <span class="c1"># documentation at: https://constellate.org/docs/constellate-client</span>
-<span class="c1"># dataset_metadata = tdm_client.download(dataset_id, &#39;metadata&#39;)</span>
+<span class="c1"># Then use the `constellate.download` method show below.</span>
+<span class="c1"># dataset_metadata = constellate.download(dataset_id, &#39;metadata&#39;)</span>
 </pre></div>
 </div>
 </div>
