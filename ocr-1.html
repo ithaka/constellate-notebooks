@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Gentle Introduction to Optical Character Recognition with PyTesseract &#8212; Teaching Text Analysis with Constellate</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/constellate-beta.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Teaching Text Analysis with Constellate</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   About
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/schedule.html">
+   Course Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/syllabus.html">
+   Course Syllabus
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Open Educational Directory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/all-notebooks.html">
+   Open Notebook Lessons Directory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/add-my-lesson.html">
+   Add your lesson or class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/how-to-create-a-course-website">
+   Create Course from this template
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org">
+   Constellate Platform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs">
+   Constellate Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/key-terms">
+   Text Analysis Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://jupyterbook.org/intro.html">
+   Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/keep-learning.html">
+   More ways to keep learning
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ocr-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Focr-1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/ocr-1.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="http://backend.constellate.org/binder/launch/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/ocr-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-ocr-why-is-it-important">
+   What is OCR? Why is it important?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-ocr">
+   What is OCR?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ocr-tools">
+   OCR Tools
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#questions-when-considering-an-ocr-tool">
+     Questions when considering an OCR tool
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proprietary-or-open-source-a-id-proprietary-or-open-a">
+       Proprietary or open source?
+       <a id="proprietary-or-open">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gui-graphical-user-interface-or-script-based-a-id-gui-or-script-a">
+       GUI (graphical user interface) or script-based?
+       <a id="gui-or-script">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#file-types-supported-a-id-file-types-a">
+       File types supported?
+       <a id="file-types">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#languages-supported-a-id-languages-a">
+       Languages supported?
+       <a id="languages">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#which-printed-scripts-can-it-read-a-id-print-scripts-a">
+       Which printed scripts can it read?
+       <a id="print-scripts">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#preprocessing-features-a-id-preprocessing-a">
+       Preprocessing features?
+       <a id="preprocessing">
+       </a>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accuracy-and-error-assessment-a-id-accuracy-a">
+       Accuracy and error assessment?
+       <a id="accuracy">
+       </a>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#popular-ocr-tools">
+     Popular OCR Tools
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#abbyy-fine-reader">
+       ABBYY Fine Reader
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adobe-acrobat">
+       Adobe Acrobat
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#amazon-textract">
+       Amazon Textract
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#google-cloud-vision">
+       Google Cloud Vision
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tesseract">
+       Tesseract
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pytesseract">
+       Pytesseract
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-tesseract">
+   Introduction to Tesseract
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-files">
+     Input Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#output-files">
+     Output Files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pytesseract-basics">
+   PyTesseract Basics
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://hannahlangstonjacobs.com/">Hannah Jacobs</a> for the <a class="reference external" href="https://nkelber.github.io/tapi2021/book/intro.html">2021 Text Analysis Pedagogy Institute</a>.</p>
+<p>Adapted by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<div class="section" id="a-gentle-introduction-to-optical-character-recognition-with-pytesseract">
+<h1>A Gentle Introduction to Optical Character Recognition with PyTesseract<a class="headerlink" href="#a-gentle-introduction-to-optical-character-recognition-with-pytesseract" title="Permalink to this headline">¶</a></h1>
+<p>These <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebooks</a> describe how to turn images and/or pdf documents into plain text using Tesseract <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>.</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Intermediate</p>
+<p><strong>Completion time:</strong> 90 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p>Python Basics (<a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Start Python Basics I</span></a>)</p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong></p>
+<p><strong>Data Format:</strong></p>
+<ul class="simple">
+<li><p>image files (.jpg, .png)</p></li>
+<li><p>document files (.pdf)</p></li>
+<li><p>plain text (.txt)</p></li>
+</ul>
+<p><strong>Libraries Used:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tesseract-ocr.github.io/">Tesseract</a> for performing <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>.</p></li>
+</ul>
+<p><strong>Learning Objectives:</strong>
+By the end of this lessons, students will be able to</p>
+<ol class="simple">
+<li><p>Define “OCR”</p></li>
+<li><p>Explain the importance of OCR for computer-aided reading and analysis</p></li>
+<li><p>Perform basic OCR operations using Python, Tesseract, and Jupyter Notebooks</p></li>
+</ol>
+<p><strong>Research Pipeline:</strong></p>
+<ol class="simple">
+<li><p>Convert images/pdfs to text using OCR (this process)</p></li>
+<li><p>Tokenize your texts</p></li>
+<li><p>Perform analysis</p></li>
+</ol>
+<div class="section" id="what-is-ocr-why-is-it-important">
+<h2>What is OCR? Why is it important?<a class="headerlink" href="#what-is-ocr-why-is-it-important" title="Permalink to this headline">¶</a></h2>
+<p>In order to do text analysis (or <a class="reference external" href="https://docs.constellate.org/key-terms/#nlp">natural language processing</a>, we need to have our text in a machine-readable format such as plaintext. In practice, this usually means converting an image file (e.g. a file ending in .png or jpg) into a plaintext file (.txt). Text is machine-readable if you are able to select, copy, and paste it’s individual characters.</p>
+<p>The difference can be illustrated by a digital image (.png) of the print edition of Dr. Faust.</p>
+<p><img alt="An image of the German print edition of Dr. Faust" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/faust.png" /></p>
+<p>and the <a class="reference external" href="https://www.gutenberg.org/files/2229/2229-0.txt">text version found on Project Gutenberg</a>. While a human can read the text of the digital image, a computer is not able to manipulate the individual characters of the text. The digital text cannot be easily copied and pasted for manipulation in other applications.</p>
+<p><img alt="Image of the text &quot;Blackwell's&quot; showing the pixels." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/blackwell-pixels.jpeg" /></p>
+<p>While we might see this as the word <code class="docutils literal notranslate"><span class="pre">Blackwell's</span></code>, the computer understands the above as a series of squares, <strong>pixels</strong>, containing information about which color the pixel should be–<em>not</em> which character to display.  If we want the computer to be able to work this text <em>as</em> text, we need to convert the image above into this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">01000010</span> <span class="pre">01101100</span> <span class="pre">01100001</span> <span class="pre">01100011</span> <span class="pre">01101011</span> <span class="pre">01110111</span> <span class="pre">01100101</span> <span class="pre">01101100</span> <span class="pre">01101100</span> <span class="pre">00100111</span> <span class="pre">01110011</span></code></p>
+<p>…which the computer will then display for human readers as <code class="docutils literal notranslate"><span class="pre">Blackwell's</span></code>. We can then use our computers to search for instances of this word, analyze its freqency, patterns in occurrence, collocation, and so on. We can also ask the computer to read this and any other words in the page aloud if we need to hear them instead of viewing them on a screen.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="what-is-ocr">
+<h2>What is OCR?<a class="headerlink" href="#what-is-ocr" title="Permalink to this headline">¶</a></h2>
+<p>OCR, or “Optical Character Recognition,” is <strong>a computational process that converts digital images of text into computer-readable text</strong>. OCR is both a noun and a verb.</p>
+<p>More specifically:</p>
+<blockquote>
+<div><p><strong>OCR software attempts to replicate the combined functions of the human eye and brain, which is why it is referred to as artificial intelligence software.</strong> A human can quickly and easily recognise text of varying fonts and of various print qualities on a newspaper page, and will apply their language and cognitive abilities to correctly translate this text into meaningful words. Humans can recognise, translate and interpret the text on a newspaper page very rapidly, even text on an old poor quality newspaper page from the 1800s. We can quickly scan layout, sections and headings, and read the text of articles in the right order (which is much more difficult than reading the page of a book). <strong>OCR software can now do all these things too, but not to the same level of perfection as a human can.</strong> - (<a class="reference external" href="http://www.dlib.org/dlib/march09/holley/03holley.html">Holley, “How Good Can It Get? Analysing and Improving OCR Accuracy in Large Scale Historic Newspaper Digitisation Programs”</a>).</p>
+</div></blockquote>
+<blockquote>
+<div><p>“Optical character recognition (OCR) software is <strong>a type of artificial intelligence software designed to mimic the functions of the human eye and brain and discern which marks within an image represent letterforms or other markers of written language.</strong> OCR scans an image for semantically-meaningful material and transcribes what language it finds into text data.” - <a class="reference external" href="https://ryancordell.org/research/why-ocr/">Cordell, “Why You (A Humanist) Should Care About Optical Character Recognition”</a>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="ocr-tools">
+<h2>OCR Tools<a class="headerlink" href="#ocr-tools" title="Permalink to this headline">¶</a></h2>
+<p>If you have <a class="reference external" href="https://acrobat.adobe.com/us/en/">Adobe Acrobat</a> on your computer, then you have probably already been using software that contains OCR functionality. Acrobat’s OCR is designed to help users <a class="reference external" href="https://helpx.adobe.com/acrobat/using/edit-scanned-pdfs.html">edit scanned PDFs or PDFs created by others</a>. It can also be used to export editable text versions (e.g. Microsoft Word documents), or to ask the computer to read aloud the text contained in the PDF. However, <em>at scale</em> and working with <em>older printed documents, perhaps with irregular printing patterns</em>, Acrobat may not give you the best results.</p>
+<div class="section" id="questions-when-considering-an-ocr-tool">
+<h3>Questions when considering an OCR tool<a class="headerlink" href="#questions-when-considering-an-ocr-tool" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="#proprietary-or-open">Proprietary or open source?</a></p></li>
+<li><p><a class="reference external" href="#gui-or-script">GUI (graphical user interface) or script-based?</a></p></li>
+<li><p><a class="reference external" href="#file-types">File types supported?</a></p></li>
+<li><p><a class="reference external" href="#languages">Languages supported?</a></p></li>
+<li><p><a class="reference external" href="#print-scripts">Which printed scripts can it read?</a></p></li>
+<li><p><a class="reference external" href="#preprocessing">Preprocessing features?</a></p></li>
+<li><p><a class="reference external" href="#accuracy">Accuracy and error assessment?</a></p></li>
+</ul>
+<p>There may be other questions you’ll need to add to this list, but it will get you started. Likewise, you may wish to reorder these questions based on your project’s priorities.</p>
+<div class="section" id="proprietary-or-open-source-a-id-proprietary-or-open-a">
+<h4>Proprietary or open source? <a id="proprietary-or-open"></a><a class="headerlink" href="#proprietary-or-open-source-a-id-proprietary-or-open-a" title="Permalink to this headline">¶</a></h4>
+<p>Proprietary, meaning do you need to purchase a license? Knowing the resources you have or need to start your OCR project is key to how you make your decision. You may wish to work with a program such as <a class="reference external" href="https://pdf.abbyy.com/pricing/">ABBYY FineReader</a>, which includes a number of graphical features for preprocessing that you’d like to use. But you’ll need to be prepared to pay $200-300 for it. If you don’t have those funds, you may wish to work with a free tool.</p>
+<p>Although <em>free</em> software is not necessarily the same as <em>open source</em> software, <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_model">open source</a> software is free. <strong>Open source, in the software world, refers to software whose creators have made the underlying code available for others to edit and build upon.</strong> You may opt to choose an open source OCR tool so that you have more access to the codebase, and therefore better understanding of the computation that goes into performing OCR on your corpora.</p>
+</div>
+<div class="section" id="gui-graphical-user-interface-or-script-based-a-id-gui-or-script-a">
+<h4>GUI (graphical user interface) or script-based?<a id="gui-or-script"></a><a class="headerlink" href="#gui-graphical-user-interface-or-script-based-a-id-gui-or-script-a" title="Permalink to this headline">¶</a></h4>
+<p>If you are working on a project alone with no coding experience, you may be thinking that a GUI that provides the ease of clicking a button is the best way to go–and it may be if you have a small set of documents with modern typefaces.</p>
+<p>On the other hand, you may wish to learn some coding if there are a significant number of documents and/or those documents contain unusual features (typefaces, language, text layouts, etc.). If so, learning how to run OCR with Python is a great opportunity. Even if you’re collaborating with a programmer who will write most of your OCR code, you may want to learn some of the concepts and basic steps behind the OCR to ensure you have a good understanding of this project phase and to aid communications with your collaborator.</p>
+</div>
+<div class="section" id="file-types-supported-a-id-file-types-a">
+<h4>File types supported?<a id="file-types"></a><a class="headerlink" href="#file-types-supported-a-id-file-types-a" title="Permalink to this headline">¶</a></h4>
+<p>Does the OCR tool work only with PDFs, or can it also read image files? Which file type(s) are you working with? This may seem a small point, but if you have image files, and you purchase a license for OCR software that works only with PDFs, you may be a bit surprised. There are tools out there that can help you convert images to PDFs, but you may risk degrading the scanned text with these conversions.</p>
+</div>
+<div class="section" id="languages-supported-a-id-languages-a">
+<h4>Languages supported?<a id="languages"></a><a class="headerlink" href="#languages-supported-a-id-languages-a" title="Permalink to this headline">¶</a></h4>
+<p>If you are working with texts that are not in English, it’s a good idea to check. At this point, most OCR tools work with multiple languages.</p>
+</div>
+<div class="section" id="which-printed-scripts-can-it-read-a-id-print-scripts-a">
+<h4>Which printed scripts can it read?<a id="print-scripts"></a><a class="headerlink" href="#which-printed-scripts-can-it-read-a-id-print-scripts-a" title="Permalink to this headline">¶</a></h4>
+<p>If you’re working with a language written in a script no longer commonly in use, you may need to seek out some specific tools to assist you. Even if you’re working with <a class="reference external" href="https://chroniclingamerica.loc.gov/lccn/sn93060356/1917-01-18/ed-1/seq-1/#date1=1880&amp;index=11&amp;date2=1917&amp;searchType=advanced&amp;language=&amp;sequence=0&amp;words=son+sonille&amp;proxdistance=5&amp;state=Missouri&amp;rows=20&amp;ortext=son&amp;proxtext=&amp;phrasetext=&amp;andtext=&amp;dateFilterType=yearRange&amp;page=1">late-nineteenth- and early-twentieth-century American non-English newspapers</a>, you may need to find out which tools handle specific scripts.</p>
+</div>
+<div class="section" id="preprocessing-features-a-id-preprocessing-a">
+<h4>Preprocessing features?<a id="preprocessing"></a><a class="headerlink" href="#preprocessing-features-a-id-preprocessing-a" title="Permalink to this headline">¶</a></h4>
+<p><strong>Preprocessing is a set of steps that we can use to try to minimize issues such as a skewed page, faded text, or smudges on a page <em>before</em> performing OCR.</strong> Some OCR tools offer some preprocessing tools. Others don’t. Even if a tool can run preprocessing, though, you may find you have a specific need that must be met with another tool.</p>
+</div>
+<div class="section" id="accuracy-and-error-assessment-a-id-accuracy-a">
+<h4>Accuracy and error assessment?<a id="accuracy"></a><a class="headerlink" href="#accuracy-and-error-assessment-a-id-accuracy-a" title="Permalink to this headline">¶</a></h4>
+<p>Can the tool help you evaluate how well the process has gone and where there may be errors to correct? Are there tools to support both automated and manual error correction? How will you know if the OCRed corpus you’ve produced is of a high enough quality?</p>
+</div>
+</div>
+<div class="section" id="popular-ocr-tools">
+<h3>Popular OCR Tools<a class="headerlink" href="#popular-ocr-tools" title="Permalink to this headline">¶</a></h3>
+<p><em>This list is not comprehensive!</em></p>
+<div class="section" id="abbyy-fine-reader">
+<h4><a class="reference external" href="https://pdf.abbyy.com/">ABBYY Fine Reader</a><a class="headerlink" href="#abbyy-fine-reader" title="Permalink to this headline">¶</a></h4>
+<p>Perhaps at the opposite end of the OCR spectrum from Pytesseract, ABBYY is another powerful OCR tool. It has a GUI (graphical user interface) in which users can make adjustments (preprocessing), and it also has an SDK (software developer toolkit) that programmers can use to run ABBYY tools in their own programs. ABBYY even has a cloud service. Like Tesseract, ABBYY supports many languages and a number of file formats. ABBYY is, however, proprietary–you’ll need to be prepared to pay a minimum of $200 if your institution does not provide a license.</p>
+</div>
+<div class="section" id="adobe-acrobat">
+<h4><a class="reference external" href="https://acrobat.adobe.com/us/en/acrobat.html">Adobe Acrobat</a><a class="headerlink" href="#adobe-acrobat" title="Permalink to this headline">¶</a></h4>
+<p>A common PDF reader, Acrobat can do a lot of things including OCR. It comes in DC and Pro DC versions, and both are paid. DC includes OCR functionality in the “Enhance PDF” menu.</p>
+</div>
+<div class="section" id="amazon-textract">
+<h4><a class="reference external" href="https://aws.amazon.com/textract/resources/?blog-posts-cards.sort-by=item.additionalFields.createdDate&amp;blog-posts-cards.sort-order=desc">Amazon Textract</a><a class="headerlink" href="#amazon-textract" title="Permalink to this headline">¶</a></h4>
+<p>Like Pytesseract, this tool from Amazon runs in Python. Like ABBYY Fine Reader, it’s proprietary code, which means we don’t know what’s happening in Textract itself when we use it–it’s a black box. There is a free tier to get started if you’re working with fewer than 1,000 pages, and you can run your Textract code in Amazon’s cloud environment. The cost to use it, if you are planning to learn a little programming or are working with a programmer, is significantly lower than the cost of an ABBYY license.</p>
+</div>
+<div class="section" id="google-cloud-vision">
+<h4><a class="reference external" href="https://cloud.google.com/vision/docs">Google Cloud Vision</a><a class="headerlink" href="#google-cloud-vision" title="Permalink to this headline">¶</a></h4>
+<p>A competitor of Amazon’s, Google’s Cloud Vision API (application programming interface) is likewise proprietary after a certain number of uses, requires programming knowledge, and can be used in the cloud. This same tool can be used to perform computer vision tasks such as facial recognition. Because we don’t know what’s happening in Cloud Vision’s code when we use it, we might not be able to explain unexpected results–it’s another <a class="reference external" href="01-AlgorithmsOfResistance-WhatIsAnAlgorithm.ipynb#algorithms">black box</a>.</p>
+</div>
+<div class="section" id="tesseract">
+<h4><a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Home.html">Tesseract</a><a class="headerlink" href="#tesseract" title="Permalink to this headline">¶</a></h4>
+<p>An OCR engine (basically, a collection of algorithms and training data) originally developed by Hewlett Packard and maintained by Google. Tesseract is open source and supports many languages and scripts. It also offers possibilities to customize OCR outputs in ways that may or may not be possible with proprietary software. The ability to add your own training data is also a big feature, though a resource-intensive process. Programmers have taken advantage of Tesseract being open source and have created <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/User-Projects-%E2%80%93-3rdParty">a number of tools based on Tesseract</a> (some with GUIs).</p>
+</div>
+<div class="section" id="pytesseract">
+<h4><a class="reference external" href="https://pypi.org/project/pytesseract/">Pytesseract</a><a class="headerlink" href="#pytesseract" title="Permalink to this headline">¶</a></h4>
+<p>Pytesseract (or Python-tesseract) is a powerful OCR tool made for the programming language Python using the Tesseract OCR Engine. It can work with many file formats and (human) languages, and, like <a class="reference external" href="https://github.com/tesseract-ocr/tesseract">Tesseract</a>, is open source. Since Pytesseract is used in a larger programming ecosystem, it can be combined with a variety of other Python packages to perform many different tasks. Furthermore, Python is both highly used and a popular computer language for beginning programmers, making it possible for users to move quickly from the basics of Python into working with Pytesseract.</p>
+</div>
+</div>
+</div>
+<div class="section" id="introduction-to-tesseract">
+<h2>Introduction to Tesseract<a class="headerlink" href="#introduction-to-tesseract" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/tesseract-ocr/tesseract">Tesseract</a> was initially developed by Hewlett-Packward between 1985-1994. HP made it open source in 2005. <a class="reference external" href="https://opensource.google/projects/tesseract">Google developed it</a> between 2006-2018. It is still open source and maintained Zdenko Podobny. There is an <a class="reference external" href="https://groups.google.com/g/tesseract-ocr">active user forum</a>.</p>
+<p>Tesseract supports over <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">100 languages</a> and can be <a class="reference external" href="https://github.com/tesseract-ocr/tesseract#running-tesseract">run in the command line</a> on Windows, MacOS, and Linux. Its outputs can be stored in several interoperable file formats. There are a number of <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/User-Projects-%E2%80%93-3rdParty.html">third party GUIs available</a>.</p>
+<p>The latest versions (4x) of Tesseract incorporate <a class="reference external" href="https://en.wikipedia.org/wiki/Long_short-term_memory">LSTM (Long Short-Term Memory)</a>, an artificial Recurrent Neural Network. LSTM is a set of algorithms that computers can run to process lots of data, “remember” that data, and apply what it “learns” from that data to other data as it’s processing.</p>
+<p>Because Tesseract is free and open source, it’s <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/tess4/TrainingTesseract-4.00.html">possible to retrain Tesseract in order to OCR a specific corpus</a>. This requires a large and specific dataset, some expertise, and some time. But it’s a key feature that you won’t get from proprietary or closed-source software.</p>
+<p><a class="reference external" href="https://pypi.org/project/pytesseract/">PyTesseract</a> is a “wrapper” – basically it makes Tesseract legible to Python so that it can be incorporated into various Python environments and functionalities. This means that if you’re already working in Python, you don’t need to leave your environment to build a dataset. You could also build PyTesseract into a Python application and/or into a code base that you plan to reuse. It was <a class="reference external" href="https://github.com/madmaze/pytesseract">developed and maintained</a> beginning in 2014 by a group of programmers led by Mattias Lee.</p>
+<div class="section" id="input-files">
+<h3>Input Files<a class="headerlink" href="#input-files" title="Permalink to this headline">¶</a></h3>
+<p>In order to perform OCR on a text corpus, we need the following:</p>
+<ul class="simple">
+<li><p>A <strong>single file folder</strong> containing all of the corpus files. If the corpus is small enough (e.g. 1 book), this could be simply a single file (e.g. a .pdf).</p></li>
+<li><p>All corpus files should be of the <strong>same file format</strong>.</p></li>
+<li><p>The chosen file format should be <strong>interoperable</strong> (usable by many software and operating systems) and stable (changes rarely if ever).</p></li>
+<li><p>For our work with Python and Tesseract, the files should be <strong>images</strong>, which means that each file will correspond to 1 single-sided page (recto or verso, assuming a book format).</p></li>
+</ul>
+<p><img alt="First page of the 1955 North Carolina Session Laws" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/sessionlaw-example.jpeg" /></p>
+<p><strong>To keep image files organized,</strong> it is helpful to create a file structure where every book is within a unique folder. Each book’s folder then contains a series of numbered images for each page.</p>
+<p><img alt="Screenshot of a file structure for image files to be OCR'ed." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/folder-structure.jpeg" /></p>
+<p>Note that the file naming structure identifies <em>both</em> which volume the images are part of <em>and</em> which scanned page they correspond to, which helps us maintain the order of the volume. These numbers <em>may not</em> correspond to page numbers because bookscanning usually includes the outer and inner covers, title pages, and other book pages that are not usually numbered.</p>
+<p>Note that we are working with .jpg files here. The process we’ll be using, though, can also be run with .png, .tiff, .jp2, and other common interoperable image formats.</p>
+</div>
+<div class="section" id="output-files">
+<h3>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h3>
+<p>For each folder of files (whether .jpg, .png, or .pdf), we will create a single plaintext file (.txt) that contains the full-text.  The plain text file format is interoperable, stable, and fully computer readable, meaning it will be ready for performing computational analysis and for storing in repositories and databases.</p>
+</div>
+</div>
+<div class="section" id="pytesseract-basics">
+<h2>PyTesseract Basics<a class="headerlink" href="#pytesseract-basics" title="Permalink to this headline">¶</a></h2>
+<p>Here we will describe the basic process of OCRing using PyTesseract. The first step is to install Tesseract on your machine using the command line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Tesseract in the Constellate Analytics Lab.</span>
+<span class="c1"># The exclamation runs the command as a terminal command.</span>
+<span class="c1"># This may take 1-2 minutes.</span>
+<span class="o">!</span>conda install -c conda-forge -y tesseract
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: / ^C
+failed with repodata from current_repodata.json, will retry with next repodata source.
+
+CondaError: KeyboardInterrupt
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will also install <code class="docutils literal notranslate"><span class="pre">Pillow</span></code>, a library for analyzing images, and some Tesseract training data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install additional libraries</span>
+<span class="c1"># Pytesseract is a Python wrapper for Tesseract</span>
+<span class="o">!</span>pip install pytesseract
+
+<span class="c1"># Install Tesseract training data in the Constellate Analytics Lab.</span>
+<span class="c1"># The exclamation runs the command as a terminal command.</span>
+
+<span class="o">!</span>wget https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata
+<span class="o">!</span>mv eng.traineddata /srv/conda/envs/notebook/share/tessdata/eng.traineddata
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Invalid requirement: &#39;pillow,&#39;</span>
+/bin/bash: wget: command not found
+mv: rename eng.traineddata to /srv/conda/envs/notebook/share/tessdata/eng.traineddata: No such file or directory
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will convert a <span class="xref myst">sample .jpg image</span> to text. The sample comes from the Session Laws of the State of North Carolina. The material was OCRed for the <a class="reference external" href="https://www.neh.gov/">NEH-funded</a>, <a class="reference external" href="https://collectionsasdata.github.io/">Collections as Data</a> project <a class="reference external" href="https://onthebooks.lib.unc.edu/">On the Books: Jim Crow and Algorithms of Resistance</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the Image module from the Pillow Library, which will help us access the image.</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># Import the pytesseract library, which will run the OCR process.</span>
+<span class="kn">import</span> <span class="nn">pytesseract</span>
+
+<span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR),</span>
+<span class="c1"># and then print the results for us to see here.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber and Ted Lawless<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-125778965-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
