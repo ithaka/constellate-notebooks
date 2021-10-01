@@ -399,6 +399,90 @@
    PyTesseract Basics
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variations-on-a-theme-tesseracts-options">
+   Variations on a Theme: Tesseract’s Options
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ocr-engine-modes-oems">
+     OCR Engine Modes (OEMs)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#page-segmentation-modes-psm">
+     Page Segmentation Modes (PSM)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-formats">
+     File Formats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#languages">
+     Languages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-apply-to-your-own-files">
+   Practice: Apply to your own files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upload-your-selected-text-s-to-the-data-folder-in-your-space-in-the-constellate-analytics-lab">
+     1. Upload your selected text(s) to the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       data/
+      </span>
+     </code>
+     folder in your space in the Constellate Analytics Lab:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perform-ocr-on-your-image-file">
+     2. Perform OCR on your image file.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources-a-class-anchor-id-resources-a">
+   Resources
+   <a class="anchor" id="resources">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-notebooks-tutorials-reference">
+     Jupyter Notebooks Tutorials &amp; Reference
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readings-on-ocr">
+     Readings on OCR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ocr-tutorials-reference">
+     OCR Tutorials &amp; Reference
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-reading">
+     Additional Reading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-tutorials-thanks-to-everyone-who-contributed">
+     Additional Tutorials – Thanks to everyone who contributed!
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -576,46 +660,32 @@ By the end of this lessons, students will be able to</p>
 </div>
 <div class="section" id="pytesseract-basics">
 <h2>PyTesseract Basics<a class="headerlink" href="#pytesseract-basics" title="Permalink to this headline">¶</a></h2>
-<p>Here we will describe the basic process of OCRing using PyTesseract. The first step is to install Tesseract on your machine using the command line.</p>
+<p>Here we will describe the basic process of OCRing using PyTesseract. The first step is to install Tesseract on your machine using the command line. The following code cell installs Tesseract-OCR on the command line.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Tesseract in the Constellate Analytics Lab.</span>
-<span class="c1"># The exclamation runs the command as a terminal command.</span>
-<span class="c1"># This may take 1-2 minutes.</span>
-<span class="o">!</span>conda install -c conda-forge -y tesseract
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting package metadata (current_repodata.json): done
-Solving environment: failed with initial frozen solve. Retrying with flexible solve.
-Solving environment: / ^C
-failed with repodata from current_repodata.json, will retry with next repodata source.
-
-CondaError: KeyboardInterrupt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+apt install tesseract-ocr
+y
 </pre></div>
 </div>
 </div>
 </div>
-<p>We will also install <code class="docutils literal notranslate"><span class="pre">Pillow</span></code>, a library for analyzing images, and some Tesseract training data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install additional libraries</span>
-<span class="c1"># Pytesseract is a Python wrapper for Tesseract</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install PyTesseract, the Python wrapper for Tesseract</span>
+<span class="c1"># An exclamation point runs the command on the command line</span>
 <span class="o">!</span>pip install pytesseract
-
-<span class="c1"># Install Tesseract training data in the Constellate Analytics Lab.</span>
-<span class="c1"># The exclamation runs the command as a terminal command.</span>
-
-<span class="o">!</span>wget https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata
-<span class="o">!</span>mv eng.traineddata /srv/conda/envs/notebook/share/tessdata/eng.traineddata
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">ERROR: Invalid requirement: &#39;pillow,&#39;</span>
-/bin/bash: wget: command not found
-mv: rename eng.traineddata to /srv/conda/envs/notebook/share/tessdata/eng.traineddata: No such file or directory
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Tesseract training data in the Constellate Analytics Lab.</span>
+<span class="c1"># The exclamation runs the command as a terminal command.</span>
+
+<span class="o">!</span>wget https://github.com/tesseract-ocr/tessdata/raw/main/eng.traineddata
+<span class="o">!</span>mv eng.traineddata /usr/share/tesseract-ocr/4.00/tessdata/eng.traineddata
 </pre></div>
 </div>
 </div>
@@ -635,6 +705,400 @@ mv: rename eng.traineddata to /srv/conda/envs/notebook/share/tessdata/eng.traine
 </pre></div>
 </div>
 </div>
+</div>
+<p>Let’s break down the above code, from the inside out:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Image.open(&quot;./data/ocr_sample.jpeg&quot;),</span> <span class="pre">lang=&quot;eng&quot;)</span></code> - Open the image file <code class="docutils literal notranslate"><span class="pre">ocr_sample.jpeg</span></code> in the <code class="docutils literal notranslate"><span class="pre">/data</span></code> folder. Set the language to English.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pytesseract.image_to_string()</span></code> - Using PyTesseract’s <code class="docutils literal notranslate"><span class="pre">image_to_string</span></code> function, detect alphanumeric characters in the image and convert them into computer-readable text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> - Display the computer-readable text output.</p></li>
+</ol>
+</div>
+<div class="section" id="variations-on-a-theme-tesseracts-options">
+<h2>Variations on a Theme: Tesseract’s Options<a class="headerlink" href="#variations-on-a-theme-tesseracts-options" title="Permalink to this headline">¶</a></h2>
+<p>Tesseract offers a number of different modes, or settings, that we can use to customize output. There are two types of modes: OEMs (OCR Engine Modes), which specify which OCR tools are available to Tesseract to use, and PSMs (Page Segmentations Modes), which specify how the OCR tools should read the image files–how to separate and order sections of text in the image file.</p>
+<div class="section" id="ocr-engine-modes-oems">
+<h3>OCR Engine Modes (OEMs)<a class="headerlink" href="#ocr-engine-modes-oems" title="Permalink to this headline">¶</a></h3>
+<p>Run the following command to view the list of OEMs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List the Tesseract OCR Engine Modes (OEMs)</span>
+<span class="c1"># Run a terminal command using an exclamation point</span>
+<span class="o">!</span>tesseract --help-oem
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s more of an explanation of OCR Engine Modes (OEMs):</p>
+<ul class="simple">
+<li><p><em>0 - Original Tesseract only.</em> - This mode runs only the main Tesseract mode.</p></li>
+<li><p><em>1 - Cube only.</em> - This mode runs only Cube, <a class="reference external" href="https://code.google.com/archive/p/tesseract-ocr-extradocs/wikis/Cube.wiki">according to Google</a>, “an alternative recognition mode for Tesseract. It is slower than the original recognition engine, but often produces better results.” <a class="reference external" href="https://nanonets.com/blog/ocr-with-tesseract/">A Nanonets tutorial explains</a> that this is the LSTM mode. There is not much documentation out about this.</p></li>
+<li><p><em>2 - Tesseract + Cube.</em> - Both Tesseract (Nanonets refers to this as “Legacy”) and Cube (LSTM) modes are used.</p></li>
+<li><p><em>3 - Default, based on what is available.</em> - Tesseract will choose an OEM based on the configurations (language, PSM) we give it. Even if we don’t include the configuration information, Tesseract will run in OEM 3.</p></li>
+</ul>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p>Run the following script, trying each of the different OEMs in turn replace the number in the first line to change the OEM.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the OEM number below to try</span>
+<span class="c1"># running another OCR mode.</span>
+<span class="c1"># 3 is the default setting.</span>
+<span class="n">custom_oem_config</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;--oem 3&#39;</span>
+
+<span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR)</span>
+<span class="c1"># following the language and mode configuration we specify,</span>
+<span class="c1"># and then print the results for us to see here.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">custom_oem_config</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="page-segmentation-modes-psm">
+<h3>Page Segmentation Modes (PSM)<a class="headerlink" href="#page-segmentation-modes-psm" title="Permalink to this headline">¶</a></h3>
+<p>Run the following command to view all of the PSMs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tesseract --help-psm
+</pre></div>
+</div>
+</div>
+</div>
+<p>This time, our configuration looks like</p>
+<p><code class="docutils literal notranslate"><span class="pre">custom_oem_config</span> <span class="pre">=</span> <span class="pre">r'--psm</span> <span class="pre">3'</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the PSM number below to try</span>
+<span class="c1"># running another page segmentation mode.</span>
+<span class="c1"># 3 is the default setting.</span>
+<span class="n">custom_psm_config</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;--psm 3&#39;</span>
+
+<span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR)</span>
+<span class="c1"># following the language and mode configuration we specify,</span>
+<span class="c1"># and then print the results for us to see here.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">custom_psm_config</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many of the PSMs are meant for images that have little text in them – such as images that include road or store signs. <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/ImproveQuality">See Tesseract’s documentation on improving OCR quality.</a></p>
+<p><strong>Most of the time, the default OEM and PSM is best.</strong> There may be times when you are working with materials for which experimenting with these options may be useful.</p>
+<p>Note that it’s possible to customize the <code class="docutils literal notranslate"><span class="pre">oem</span></code> and <code class="docutils literal notranslate"><span class="pre">psm</span></code> together. Here’s how:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the numbers below to try</span>
+<span class="c1"># running other modes together.</span>
+<span class="n">custom_oem_psm_config</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;--oem 3 --psm 4&#39;</span>
+
+<span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR)</span>
+<span class="c1"># following the language and mode configuration we specify,</span>
+<span class="c1"># and then print the results for us to see here.</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span>
+        <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span>
+        <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">custom_oem_psm_config</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="file-formats">
+<h3>File Formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h3>
+<p>In addition to .txt, Tesseract can convert OCR’ed images into <a class="reference external" href="https://en.wikipedia.org/wiki/HOCR">hOCR (HTML)</a>, searchable PDF, and TSV.</p>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p>The scripts below output various file formats. Try each and then click the file link below each script to view the output. You’ll also find the files by clicking on the Jupyter icon at the top of this window.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output to text file (.txt)</span>
+
+<span class="c1"># File location</span>
+<span class="c1"># You can change the filename in quotes below to OCR a different file.</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span>
+
+<span class="c1"># Open the file named above. </span>
+<span class="c1"># While it&#39;s open, do several things:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inputFile</span><span class="p">:</span>
+        
+    <span class="c1"># Read the file using PIL&#39;s Image module.</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">inputFile</span><span class="p">)</span>
+    
+    <span class="c1"># Run OCR on the open file.</span>
+    <span class="n">ocrText</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        
+<span class="c1"># Get a file name--without the extension-- </span>
+<span class="c1"># to use when we name the output file.</span>
+    
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># The image file above will be closed before moving on to this line.</span>
+<span class="c1"># The OCR&#39;ed text has been pulled from the image and stored in</span>
+<span class="c1"># a Python variable for us to continue to use.</span>
+
+<span class="c1"># Create and open a new text file, name it to match its input file,</span>
+<span class="c1"># declare its encoding to be UTF-8 so that it correctly outputs</span>
+<span class="c1"># non-ASCII characters.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fileName</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outFile</span><span class="p">:</span>
+        
+    <span class="c1"># and write the OCR&#39;ed text to the file.</span>
+    <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ocrText</span><span class="p">)</span>
+
+<span class="c1"># Display a message to let us know the file has been created</span>
+<span class="c1"># and the script successfully completed.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="s2">&quot;text file successfully created.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To open this file, use the file menu to select: <strong>File &gt; Open</strong>. You may then choose to view, edit, modify, or download the file to your local machine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output to pdf file (.pdf)</span>
+
+<span class="c1"># File location</span>
+<span class="c1"># You can change the filename in quotes below to OCR a different file.</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span>
+
+<span class="c1"># Get a file name--without the extension-- </span>
+<span class="c1"># to use when we name the output file.</span>
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Run OCR on an image file and save it as a PDF object (not file)</span>
+<span class="c1"># within Python.</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_pdf_or_hocr</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">&#39;pdf&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a new empty pdf.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fileName</span> <span class="o">+</span> <span class="s2">&quot;.pdf&quot;</span><span class="p">,</span> <span class="s1">&#39;w+b&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    
+    <span class="c1"># Save the PDF object to the new empty PDF file.</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
+
+<span class="c1"># Display a message to let us know the file has been created</span>
+<span class="c1"># and the script successfully completed.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="s2">&quot;PDF successfully created.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To open this file, use the file menu to select: <strong>File &gt; Open</strong>. You may then choose to view, edit, modify, or download the file to your local machine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output to html file (.html)</span>
+
+<span class="c1"># File location</span>
+<span class="c1"># You can change the filename in quotes below to OCR a different file.</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span>
+
+<span class="c1"># Get a file name--without the extension-- </span>
+<span class="c1"># to use when we name the output file.</span>
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Run OCR on an image file and save it as an HTML object (not file)</span>
+<span class="c1"># within Python.</span>
+<span class="n">hocr</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_pdf_or_hocr</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">&#39;hocr&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a new empty HTML file. Open it in &quot;w+b&quot; mode.</span>
+<span class="c1"># &quot;w+b&quot; is a mode that tells Python to write whatever</span>
+<span class="c1"># data we give to a file in binary mode--meaning that </span>
+<span class="c1"># it will not apply any encoding or try to translate</span>
+<span class="c1"># a non-ASCII character to an ASCII character.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fileName</span> <span class="o">+</span> <span class="s2">&quot;.html&quot;</span><span class="p">,</span> <span class="s1">&#39;w+b&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    
+    <span class="c1"># Save the PDF object to the new empty PDF file.</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">hocr</span><span class="p">)</span>
+
+<span class="c1"># Display a message to let us know the file has been created</span>
+<span class="c1"># and the script successfully completed.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="s2">&quot;HTML successfully created.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To open this file, use the file menu to select: <strong>File &gt; Open</strong>. You may then choose to view, edit, modify, or download the file to your local machine.</p>
+</div>
+<div class="section" id="languages">
+<h3>Languages<a class="headerlink" href="#languages" title="Permalink to this headline">¶</a></h3>
+<p>If we do not include <code class="docutils literal notranslate"><span class="pre">lang=&quot;eng&quot;</span></code> when we run the above code, Tesseract will <em>assume</em> English. Run the following to get a list of all the language codes. <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">A table of these is available here.</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display a list of languages in their 3-letter codes supported by Tesseract.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">get_languages</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TO DO</span>
+<span class="c1"># Write code to bring in additional languages</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p>Try OCR’ing a page from Dr. Faust: (<a class="reference external" href="https://archive.org/details/fausteinetragodi00goet/page/n7/mode/2up">Source</a>). Change the <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">3-letter language code</a> to match the language in that document. You’ll also need to download the page in question, rename it to something simple, and upload it to the Constellate Analytics Lab.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR),</span>
+<span class="c1"># and then print the results for us to see here.</span>
+
+<span class="c1"># Modify the following line of code to work with your image file.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;REPLACE_THIS_FILE_NAME.jpg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;REPLACE_THIS_LANGUAGE&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try OCR’ing a page with multiple languages, such as The Bible in Hindi: (<a class="reference external" href="https://archive.org/details/holybibleinhindi00alla">Source</a>). The syntax will be <code class="docutils literal notranslate"><span class="pre">lang=&quot;lan+gua&quot;</span></code> – replace <code class="docutils literal notranslate"><span class="pre">lan</span></code> and <code class="docutils literal notranslate"><span class="pre">gua</span></code> with the correct language codes. <em>The first language will be the “primary” language. Try changing the order of the languages to see how the output changes.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR),</span>
+<span class="c1"># and then print the results for us to see here.</span>
+
+<span class="c1"># REPLACE THE FILE NAME with one of the sample files above. (bible.png)</span>
+<span class="c1"># REPLACE THE LANGUAGE attribute with the correct language code(s).</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;REPLACE_THIS_FILE_NAME.jpg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;lan+gua&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="practice-apply-to-your-own-files">
+<h2>Practice: Apply to your own files<a class="headerlink" href="#practice-apply-to-your-own-files" title="Permalink to this headline">¶</a></h2>
+<p>Use the following code blocks to try OCR’ing various texts. You could use your own files containing digitized texts or locate files to try via <a class="reference external" href="https://www.jstor.org/">JStor</a>, the <a class="reference external" href="https://archive.org/">Internet Archive</a>, <a class="reference external" href="https://chroniclingamerica.loc.gov/">Chronicling America</a> or other resources. Try texts in different languages, fonts or types, formats, layouts, etc.</p>
+<div class="section" id="upload-your-selected-text-s-to-the-data-folder-in-your-space-in-the-constellate-analytics-lab">
+<h3>1. Upload your selected text(s) to the <code class="docutils literal notranslate"><span class="pre">data/</span></code> folder in your space in the Constellate Analytics Lab:<a class="headerlink" href="#upload-your-selected-text-s-to-the-data-folder-in-your-space-in-the-constellate-analytics-lab" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Make sure that the texts you select are stored in an image (.jpg, .png, .tiff) format. If you have selected a text with multiple pages, make sure each page is stored in a separate file. <em>If you have PDF files and are not sure how to generate images from them, bring them to Lesson 02. We’ll be looking at how to generate image files together during the lesson.</em></p></li>
+</ul>
+<ol class="simple">
+<li><p>Select <strong>File &gt; Open</strong></p></li>
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">data/</span></code> folder.</p></li>
+<li><p>Select “Upload” and then locate and select the file on your local machine.</p></li>
+<li><p>If the filename is long, rename it to something simple.</p></li>
+<li><p><em>Click “Upload” again to start the upload.</em></p></li>
+</ol>
+</div>
+<div class="section" id="perform-ocr-on-your-image-file">
+<h3>2. Perform OCR on your image file.<a class="headerlink" href="#perform-ocr-on-your-image-file" title="Permalink to this headline">¶</a></h3>
+<p>Use the code blocks above or start fresh below. Change the language attribute to match the text’s language. Try out the various settings we looked at above.</p>
+<p>Below, make sure to replace “FOLDER NAME/FILE NAME” with your folder name and specific file name. For example, <code class="docutils literal notranslate"><span class="pre">./data/MY_FILE_NAME.jpg</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Name the image file. (Assign it to a variable.)</span>
+<span class="c1"># REPLACE THE FOLDER AND FILE NAME BELOW.</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/MY_FILE_NAME.jpg&quot;</span>
+
+<span class="n">custom_oem_psm_config</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;--oem 3 --psm 3&#39;</span>
+
+<span class="c1"># Open the file named above. </span>
+<span class="c1"># While it&#39;s open, do several things:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inputFile</span><span class="p">:</span>
+        
+    <span class="c1"># Read the file using PIL&#39;s Image module.</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">inputFile</span><span class="p">)</span>
+    
+    <span class="c1"># Run OCR on the open file.</span>
+    <span class="n">ocrText</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">custom_oem_psm_config</span><span class="p">)</span>
+        
+    <span class="c1"># Get a file name--without the extension-- </span>
+    <span class="c1"># to use when we name the output file.</span>
+    <span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>
+
+<span class="c1"># The image file above will be closed before moving on to this line.</span>
+<span class="c1"># The OCR&#39;ed text has been pulled from the image and stored in</span>
+<span class="c1"># a Python variable for us to continue to use.</span>
+
+<span class="c1"># Create and open a new text file, name it to match its input file,</span>
+<span class="c1"># declare its encoding to be UTF-8 so that it correctly outputs</span>
+<span class="c1"># non-ASCII characters,</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fileName</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outFile</span><span class="p">:</span>
+        
+    <span class="c1"># and write the OCR&#39;ed text to the file.</span>
+    <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ocrText</span><span class="p">)</span>
+
+<span class="c1"># Display a message to let us know the file has been created</span>
+<span class="c1"># and the script successfully completed.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="s2">&quot;text file successfully created.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="resources-a-class-anchor-id-resources-a">
+<h2>Resources <a class="anchor" id="resources"></a><a class="headerlink" href="#resources-a-class-anchor-id-resources-a" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="jupyter-notebooks-tutorials-reference">
+<h3>Jupyter Notebooks Tutorials &amp; Reference<a class="headerlink" href="#jupyter-notebooks-tutorials-reference" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">Jupyter Notebooks documentation</a></p></li>
+<li><p>Jupyter Notebooks keyboard shortcuts: press Esc+H to show a full list.</p></li>
+<li><p><a class="reference external" href="https://www.ibm.com/docs/en/watson-studio-local/1.2.3?topic=notebooks-markdown-jupyter-cheatsheet">“Markdown for Jupyter notebooks cheatsheet.”</a> <em>IBM Watson Studio Local.</em></p></li>
+<li><p>Olivia Smith. <a class="reference external" href="https://www.datacamp.com/community/tutorials/markdown-in-jupyter-notebook">“Markdown in Jupyter Notebook.”</a> <em>Data Camp.</em></p></li>
+</ul>
+</div>
+<div class="section" id="readings-on-ocr">
+<h3>Readings on OCR<a class="headerlink" href="#readings-on-ocr" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Algun, Selcuk. 2018. [“Review for Tesseract and Kraken OCR for text recognition.”](Review for Tesseract and Kraken OCR for text recognition) <em>Data Driven Investor.</em></p></li>
+<li><p>Bakker, Rebecca. <a class="reference external" href="https://digitalcommons.fiu.edu/cgi/viewcontent.cgi?article=1047&amp;context=glworks">“OCR for Digital Collections.”</a> <em>FIU Digital Commons.</em></p></li>
+<li><p>Baumman, Ryan. <a class="reference external" href="https://ryanfb.github.io/etc/2015/03/16/automatic_evaluation_of_ocr_quality.html">“Automatic evaluation of OCR quality.”</a> <em>/etc.</em></p></li>
+<li><p>Cordell, R. 2017. <a class="reference external" href="https://ryancordell.org/research/qijtb-the-raven/">“Q i-jtb the Raven”: Taking Dirty OCR Seriously.”</a> <em>Book History</em>, 20, 188-225.</p></li>
+<li><p>Cordell, Ryan. 2019. <a class="reference external" href="https://ryancordell.org/research/why-ocr/">“Why You (A Humanist) Should Care About Optical Character Recognition.”</a> <em>Ryan Cordell.</em></p></li>
+<li><p>Coyle, Karen. <a class="reference external" href="https://kcoyle.blogspot.com/2012/04/digital-urtext.html">“Digital Urtext.”</a> <em>Coyle’s InFormation.</em></p></li>
+<li><p>Hawk, Brandon W. <a class="reference external" href="https://brandonwhawk.net/2015/04/20/ocr-and-medieval-manuscripts-establishing-a-baseline/">“OCR and Medieval Manuscripts: Establishing a Baseline.”</a> <em>Brandon W. Hawk.</em> (This post is a comparison of ABBYY FineReader &amp; Adobe Acrobat OCR technologies as applied to medieval texts.)</p></li>
+<li><p>Holley, Rose. 2009. <a class="reference external" href="http://www.dlib.org/dlib/march09/holley/03holley.html">How Good Can It Get? Analysing and Improving OCR Accuracy in Large Scale Historic Newspaper Digitisation Programs,”</a> <em>D-Lib Magazine</em> 15, no. 3/4.</p></li>
+<li><p>Milligan, I. 2013. <a class="reference external" href="https://www.muse.jhu.edu/article/527016">“Illusionary Order: Online Databases, Optical Character Recognition, and Canadian History, 1997–2010.</a> <em>The Canadian Historical Review</em> 94(4), 540-569.</p></li>
+<li><p>Smith, David, and Ryan Cordell. 2018. <a class="reference external" href="http://hdl.handle.net/2047/D20297452">“A Research Agenda for Historical and Multilingual Optical Character Recognition.”</a></p></li>
+<li><p>Smith, Ray. 2007. <a class="reference external" href="https://tesseract-ocr.github.io/docs/tesseracticdar2007.pdf">“An Overview of the Tesseract OCR Engine.”</a></p></li>
+<li><p>Smith, Ray, Daria Antonova, and Dar-Shyang Lee. 2009. <a class="reference external" href="https://dl.acm.org/doi/10.1145/1577802.1577804">“Adapting the Tesseract open source OCR engine for multilingual OCR.”</a> MOCR ‘09: Proceedings of the International Workshop on Multilingual OCR.</p></li>
+<li><p>Tanner, Simon. <a class="reference external" href="https://www.kb.nl/sites/default/files/docs/OCRFeasibility_final.pdf">“Deciding whether Optical Character Recognition is feasible.”</a> <em>King’s Digital Consultancy Services.</em></p></li>
+</ul>
+</div>
+<div class="section" id="ocr-tutorials-reference">
+<h3>OCR Tutorials &amp; Reference<a class="headerlink" href="#ocr-tutorials-reference" title="Permalink to this headline">¶</a></h3>
+<p><em>The following is a list of tutorials that include different scholars’ approaches to OCR. Some also use Tesseract, but most use different scripting or programming languages. There is no single best way to do OCR, so if you have the time they worth trying to see which works best for your project.</em></p>
+<ul class="simple">
+<li><p>Aidan. <a class="reference external" href="https://medhieval.com/classes/hh2019/blog/ocr-with-python/">“OCR with Python.”</a> <em>Hacking the Humanities 2019.</em></p></li>
+<li><p>Akhlaghi, Andrew. <a class="reference external" href="http://programminghistorian.org/en/lessons/OCR-and-Machine-Translation">“OCR and Machine Translation.”</a> <em>The Programming Historian.</em> (Note that this tutorial uses Tesseract but works with the bash scripting language instead of Python.)</p></li>
+<li><p>Baumman, Ryan. <a class="reference external" href="https://ryanfb.github.io/etc/2014/11/13/command_line_ocr_on_mac_os_x.html">“Command-Line OCR with Tesseract on Mac OS X.”</a> <em>/etc.</em></p></li>
+<li><p>Dull, Joshua. <a class="reference external" href="https://github.com/JoshuaDull/Text-Recognition-Introduction/">“Text Recognition with Adobe Acrobat and ABBYY FineReader.”</a></p></li>
+<li><p>Graham, Shawn. <a class="reference external" href="https://electricarchaeology.ca/2014/07/15/doing-ocr-within-r/">“Extracting Text from PDFs; Doing OCR; all within R.”</a> <em>Electric Archaeology.</em> (This blog post describes a method for OCR using the R programming language.)</p></li>
+<li><p>Mähr, Moritz. <a class="reference external" href="https://programminghistorian.org/en/lessons/working-with-batches-of-pdf-files">“Working with batches of PDF files.”</a> <em>The Programming Historian.</em> (Note that this tutorial uses Tesseract and works in the command line without Python.)</p></li>
+<li><p>Shperber, Gidi. <a class="reference external" href="https://towardsdatascience.com/a-gentle-introduction-to-ocr-ee1469a201aa">“A gentle introduction to OCR.”</a> <em>Toward Data Science.</em> October 22, 2018.</p></li>
+<li><p>Tarnopol, Rebecca. <a class="reference external" href="https://business.tutsplus.com/tutorials/how-to-ocr-documents-for-free-in-google-drive--cms-20460">“How to OCR Documents for Free in Google Drive.”</a> <em>TutsPlus.</em></p></li>
+<li><p><a class="reference external" href="https://github.com/madmaze/pytesseract"><strong>PyTesseract documentation</strong></a></p></li>
+<li><p><a class="reference external" href="https://tesseract-ocr.github.io/"><strong>Tesseract documentation</strong></a></p></li>
+</ul>
+</div>
+<div class="section" id="additional-reading">
+<h3>Additional Reading<a class="headerlink" href="#additional-reading" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Rockwell, Geoffrey, and Stéfan Sinclair. 2016. <a class="reference external" href="http://hermeneuti.ca/"><em>Hermeneutica: Computer Assisted Interpretation in the Humanities.</em></a></p></li>
+<li><p>Underwood, Ted. <a class="reference external" href="https://tedunderwood.com/2011/10/07/the-challenges-of-digital-work-on-early-19c-collections/">“The challenges of digital work on early-19c collections.”</a> <em>The Stone and the Shell.</em></p></li>
+<li><p><a class="reference external" href="https://cordis.europa.eu/project/id/600707/results">TranScriptorium’s handwritten text recognition project results.</a></p></li>
+<li><p><a class="reference external" href="https://readcoop.eu/transkribus/howto/how-to-transcribe-documents-with-transkribus-introduction/">“How to Transcribe Documents with Transkribus - Introduction.”</a> <em>Read Coop.</em></p></li>
+<li><p><strong><a class="reference external" href="https://copyright.columbia.edu/basics/fair-use.html">Basics of Fair Use</a></strong> from Columbia University.</p></li>
+</ul>
+</div>
+<div class="section" id="additional-tutorials-thanks-to-everyone-who-contributed">
+<h3>Additional Tutorials – Thanks to everyone who contributed!<a class="headerlink" href="#additional-tutorials-thanks-to-everyone-who-contributed" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://towardsdatascience.com/social-network-analysis-from-theory-to-applications-with-python-d12e9a34c2c7">“Social Network Analysis from Theory to Applications with Python.”</a> <em>Toward Data Science.</em></p></li>
+<li><p><a class="reference external" href="https://nkelber.github.io/tapi2021/book/courses/pandas.html">TAP Institute Pandas course materials</a> – for “cleaning” data using Python.</p></li>
+<li><p><a class="reference external" href="https://programminghistorian.org/en/lessons/cleaning-data-with-openrefine">“Cleaning Data with Open Refine.”</a> <em>The Programming Historian.</em></p></li>
+<li><p><a class="reference external" href="https://automatetheboringstuff.com/chapter8/">Working with Files in Python</a> from <em>Automate the Boring Stuff</em>.</p></li>
+</ul>
 </div>
 </div>
 </div>
