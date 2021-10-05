@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A Gentle Introduction to Optical Character Recognition with PyTesseract &#8212; Teaching Text Analysis with Constellate</title>
+    <title>Optical Character Recognition Basics &#8212; Teaching Text Analysis with Constellate</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -202,7 +202,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ocr-1.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/ocr-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -222,10 +222,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Focr-1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Focr-basics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/ocr-1.ipynb"><button
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/ocr-basics.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -245,7 +245,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="http://backend.constellate.org/binder/launch/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/ocr-1.ipynb"><button type="button"
+        <a class="binder-button" href="http://backend.constellate.org/binder/launch/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/ocr-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -400,8 +400,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variations-on-a-theme-tesseracts-options">
-   Variations on a Theme: Tesseract’s Options
+  <a class="reference internal nav-link" href="#tesseract-options">
+   Tesseract Options
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -499,8 +499,8 @@
 <p>Adapted by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
 For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
 <hr class="docutils" />
-<div class="section" id="a-gentle-introduction-to-optical-character-recognition-with-pytesseract">
-<h1>A Gentle Introduction to Optical Character Recognition with PyTesseract<a class="headerlink" href="#a-gentle-introduction-to-optical-character-recognition-with-pytesseract" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="optical-character-recognition-basics">
+<h1>Optical Character Recognition Basics<a class="headerlink" href="#optical-character-recognition-basics" title="Permalink to this headline">¶</a></h1>
 <p>These <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebooks</a> describe how to turn images and/or pdf documents into plain text using Tesseract <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>.</p>
 <p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
 <p><strong>Difficulty:</strong> Intermediate</p>
@@ -529,7 +529,8 @@ By the end of this lessons, students will be able to</p>
 </ol>
 <p><strong>Research Pipeline:</strong></p>
 <ol class="simple">
-<li><p>Convert images/pdfs to text using OCR (this process)</p></li>
+<li><p>Digitize documents</p></li>
+<li><p><strong>Optical Character Recognition</strong></p></li>
 <li><p>Tokenize your texts</p></li>
 <li><p>Perform analysis</p></li>
 </ol>
@@ -712,8 +713,8 @@ y
 <li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> - Display the computer-readable text output.</p></li>
 </ol>
 </div>
-<div class="section" id="variations-on-a-theme-tesseracts-options">
-<h2>Variations on a Theme: Tesseract’s Options<a class="headerlink" href="#variations-on-a-theme-tesseracts-options" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tesseract-options">
+<h2>Tesseract Options<a class="headerlink" href="#tesseract-options" title="Permalink to this headline">¶</a></h2>
 <p>Tesseract offers a number of different modes, or settings, that we can use to customize output. There are two types of modes: OEMs (OCR Engine Modes), which specify which OCR tools are available to Tesseract to use, and PSMs (Page Segmentations Modes), which specify how the OCR tools should read the image files–how to separate and order sections of text in the image file.</p>
 <div class="section" id="ocr-engine-modes-oems">
 <h3>OCR Engine Modes (OEMs)<a class="headerlink" href="#ocr-engine-modes-oems" title="Permalink to this headline">¶</a></h3>

@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optical Character Recognition Workflows &#8212; Teaching Text Analysis with Constellate</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/constellate-beta.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Teaching Text Analysis with Constellate</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   About
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/schedule.html">
+   Course Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/syllabus.html">
+   Course Syllabus
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Open Educational Directory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/all-notebooks.html">
+   Open Notebook Lessons Directory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/add-my-lesson.html">
+   Add your lesson or class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/how-to-create-a-course-website">
+   Create Course from this template
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org">
+   Constellate Platform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs">
+   Constellate Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/key-terms">
+   Text Analysis Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://jupyterbook.org/intro.html">
+   Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/keep-learning.html">
+   More ways to keep learning
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ocr-workflows.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Focr-workflows.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/ocr-workflows.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="http://backend.constellate.org/binder/launch/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/ocr-workflows.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planning-your-ocr-workflow">
+   Planning your OCR Workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-much-text-a-id-how-much-a">
+     How much text?
+     <a id="how-much">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#born-digital-or-digitized-a-id-born-digital-a">
+     Born-digital or digitized?
+     <a id="born-digital">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hand-written-manuscript-or-printed-using-a-press-a-id-hand-written-a">
+     Hand-written manuscript or printed using a press?
+     <a id="hand-written">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-formatting-a-id-formatting-a">
+     Text formatting?
+     <a id="formatting">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-condition-and-image-quality-a-id-text-condition-a">
+     Text condition and image quality?
+     <a id="text-condition">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#historical-script-a-id-historical-script-a">
+     Historical script?
+     <a id="historical-script">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#language-support-a-id-language-support-a">
+     Language support?
+     <a id="language-support">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-tesseract">
+   Install Tesseract
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://hannahlangstonjacobs.com/">Hannah Jacobs</a> for the <a class="reference external" href="https://nkelber.github.io/tapi2021/book/intro.html">2021 Text Analysis Pedagogy Institute</a>.</p>
+<p>Adapted by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<div class="section" id="optical-character-recognition-workflows">
+<h1>Optical Character Recognition Workflows<a class="headerlink" href="#optical-character-recognition-workflows" title="Permalink to this headline">¶</a></h1>
+<p>These <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebooks</a> describe how to turn images and/or pdf documents into plain text using Tesseract <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>. The goal of this notebook is to help users design a workflow for a research project.</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Intermediate</p>
+<p><strong>Completion time:</strong> 90 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p>Python Basics (<a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Start Python Basics I</span></a>)</p></li>
+<li><p><span class="xref myst">Optical Character Recognition Basics</span></p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong></p>
+<p><strong>Data Format:</strong></p>
+<ul class="simple">
+<li><p>image files (.jpg, .png)</p></li>
+<li><p>document files (.pdf)</p></li>
+<li><p>plain text (.txt)</p></li>
+</ul>
+<p><strong>Libraries Used:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tesseract-ocr.github.io/">Tesseract</a> for performing <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>.</p></li>
+</ul>
+<p><strong>Learning Objectives:</strong></p>
+<ol class="simple">
+<li><p>Describe and implement an OCR workflow including pre- and post-processing steps</p></li>
+<li><p>Explain the importance of performing adjustments (pre-processing) to inputs before running OCR</p></li>
+<li><p>Identify possible technical challenges presented by specific texts and propose potential solutions</p></li>
+<li><p>Assess the degree of accuracy they have achieved in performing OCR.</p></li>
+</ol>
+<p><strong>Research Pipeline:</strong></p>
+<ol class="simple">
+<li><p>Digitize documents</p></li>
+<li><p><strong>Optical Character Recognition</strong></p></li>
+<li><p>Tokenize your texts</p></li>
+<li><p>Perform analysis</p></li>
+</ol>
+<div class="section" id="planning-your-ocr-workflow">
+<h2>Planning your OCR Workflow<a class="headerlink" href="#planning-your-ocr-workflow" title="Permalink to this headline">¶</a></h2>
+<p>Some questions to consider when planning your OCR workflow:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="#how-much">How much text?</a></p></li>
+<li><p><a class="reference external" href="#born-digital">Born-digital or digitized?</a></p></li>
+<li><p><a class="reference external" href="#hand-written">Hand-written manuscript or printed using a press?</a></p></li>
+<li><p><a class="reference external" href="#formatting">Text formatting?</a></p></li>
+<li><p><a class="reference external" href="#text-condition">Text condition and image quality?</a></p></li>
+<li><p><a class="reference external" href="#historical-script">Historical script?</a></p></li>
+<li><p><a class="reference external" href="#language-support">Language support?</a></p></li>
+</ol>
+<div class="section" id="how-much-text-a-id-how-much-a">
+<h3>How much text? <a id="how-much"></a><a class="headerlink" href="#how-much-text-a-id-how-much-a" title="Permalink to this headline">¶</a></h3>
+<p>We begin with this question because if you have only a few pages, there may be merit in typing them out by hand in a text editor, and perhaps working with a team to do so. If you have hundreds of thousands of pages, though, it may take far longer than you have time, even working with a team, to manually transcribe every page you need to complete a project. That may mean that you’ll want to start with an automated transcription (OCR) process and then work to correct what the computer outputs.</p>
+</div>
+<div class="section" id="born-digital-or-digitized-a-id-born-digital-a">
+<h3>Born-digital or digitized?<a id="born-digital"></a><a class="headerlink" href="#born-digital-or-digitized-a-id-born-digital-a" title="Permalink to this headline">¶</a></h3>
+<p>In most cases, born-digital texts in PDF and image formats are easier for a computer to “recognize” than scanned documents, even if the scanners use the highest resolution equipment. This is particularly true of older printed texts with unique scripts or layouts.</p>
+<p>An exception to this is if a born-digital text is stored in an image or other non-text-editable format that is uncommon, proprietary, or outdated. Then computers may have a hard time accessing the file in order to parse the text contained. (So always save documents in an interoperable—can be opened by different software programs—file format either as <a class="reference external" href="https://www.archives.gov/records-mgmt/policy/transfer-guidance-tables.html#textualdata">editable text</a> or as <a class="reference external" href="https://www.archives.gov/records-mgmt/policy/transfer-guidance-tables.html#scannedtext">non-editable image or archival document–PDF–formats</a>.)</p>
+</div>
+<div class="section" id="hand-written-manuscript-or-printed-using-a-press-a-id-hand-written-a">
+<h3>Hand-written manuscript or printed using a press?<a id="hand-written"></a><a class="headerlink" href="#hand-written-manuscript-or-printed-using-a-press-a-id-hand-written-a" title="Permalink to this headline">¶</a></h3>
+<p>OCR technologies were initially developed to deal only with digitized texts created using a <a class="reference external" href="https://en.wikipedia.org/wiki/Printing_press">printing press</a>. This was because printing presses offer a certain amount of consistency in typeface, font, and layout that programmers could use to create rules for computers to follow (algorithms!).</p>
+<p>Meanwhile, handwriting is, by and large, more individualistic and inconsistent. Most programs for OCR still focus only on printed texts, but there are a growing number of projects and toolkits now available for what’s called variously <a class="reference external" href="https://academic.oup.com/dsh/article/32/suppl_2/ii89/4259068">“digital paleography”</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Handwriting_recognition">“handwriting recognition” (HWR)</a>, and <a class="reference external" href="https://en.wikipedia.org/wiki/Handwriting_recognition">“handwritten text recognition” (HTR)</a>. <a class="reference external" href="https://readcoop.eu/transkribus/">Transkribus</a> is a popular example.</p>
+<p>As an example, let’s compare excerpts from Toni Morrison’s <em>Beloved</em>. The first image below is a page from an early draft, written in Morrison’s own hand on a legal pad. The second image is a segment from a digitized print version. These are not the same passages, but they are noticably different in how we read them: Try reading each. What’s different about the experience–think about order of reading, ease of reading, and any other differences that come to mind:</p>
+<p>An early draft of Toni Morrison’s <em>Beloved</em>. Image credit: <a class="reference external" href="https://blogs.princeton.edu/manuscripts/2016/06/07/toni-morrison-papers-open-for-research/">Princeton University Library</a></p>
+<a class="reference internal image-reference" href="images/07-ocr-02.jpeg"><img alt="Screenshot of a page in Toni Morrison's Beloved. Preview hosted on Google Books." src="images/07-ocr-02.jpeg" style="width: 90%;" /></a>
+<p>Screenshot from a digitized version of the published <em>Beloved</em>, available in <a class="reference external" href="https://www.google.com/books/edition/Beloved/sfmp6gjZGP8C?hl=en&amp;gbpv=1&amp;dq=toni+morrison+beloved&amp;printsec=frontcover">Google Books</a>.</p>
+</div>
+<div class="section" id="text-formatting-a-id-formatting-a">
+<h3>Text formatting?<a id="formatting"></a><a class="headerlink" href="#text-formatting-a-id-formatting-a" title="Permalink to this headline">¶</a></h3>
+<p><em>Look at the texts above again: How are they formatted similarly or differently?</em> While both use a left-to-right writing system, the printed version appears in a single column that is evenly spaced both horizontally and vertically. The manuscript text appears on lined paper in a single column, but it includes a number of corrections written between lines or even in different directions (vertically) on the page. You might have tilted your head to read some of that text–if you had been holding the paper in your hands, you might have turned the paper 90 degrees. But computers don’t necessarily know to do that (yet). They need a predictable pattern to follow, which the printed text provides.</p>
+<p>That said, not all historical printings are as regular as this <em>Beloved</em> excerpt. Let’s take a look at one more example from <em>On The Books</em>:</p>
+<a class="reference internal image-reference" href="images/07-ocr-04.jpeg"><img alt="Screenshot from the 1887 North Carolina session laws digitized by UNC Libraries and shared via the Internet Archive." src="images/07-ocr-04.jpeg" style="width: 70%;" /></a>
+<p>Like the printed <em>Beloved</em> example, this selection from the <a class="reference external" href="https://archive.org/details/lawsresolutionso1887nort/page/776/mode/2up">1887 North Carolina session laws</a> was created using a printing press and with mostly even vertical spacing between lines that run left to right. However, in addition to the changing typeface, there is in addition to the main column of text a much smaller column of annotations–<a class="reference external" href="https://en.wikipedia.org/wiki/Marginalia">“marginalia”</a>–created to aid readers who would have been looking for quick topical references rather than reading a volume from start to finish. These created a problem for the <em>On The Books</em> team because the computer read them as being part of the main text. What resulted (with other OCR errors removed) would have looked like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">SECTION</span> <span class="pre">1.</span> <span class="pre">The</span> <span class="pre">Julian</span> <span class="pre">S.</span> <span class="pre">Carr,</span> <span class="pre">of</span> <span class="pre">Durham,</span> <span class="pre">North</span> <span class="pre">Carolina,</span> <span class="pre">Mar-</span> <span class="pre">Body</span> <span class="pre">politic.</span> <span class="pre">cellus</span> <span class="pre">E.</span> <span class="pre">McDowell,</span> <span class="pre">Samuel</span> <span class="pre">H.</span> <span class="pre">Austin,</span> <span class="pre">Jr.,</span> <span class="pre">and</span> <span class="pre">John</span> <span class="pre">A.</span> <span class="pre">McDowell,</span></code></p>
+<p>What’s the problem here? The marginalia, <code class="docutils literal notranslate"><span class="pre">Body</span> <span class="pre">politic</span></code>, have been interspersed with the text as the computer “reads” all the way across the page. The line should read:</p>
+<p><code class="docutils literal notranslate"><span class="pre">SECTION</span> <span class="pre">1.</span> <span class="pre">The</span> <span class="pre">Julian</span> <span class="pre">S.</span> <span class="pre">Carr,</span> <span class="pre">of</span> <span class="pre">Durham,</span> <span class="pre">North</span> <span class="pre">Carolina,</span> <span class="pre">Mar-cellus</span> <span class="pre">E.</span> <span class="pre">McDowell,</span> <span class="pre">Samuel</span> <span class="pre">H.</span> <span class="pre">Austin,</span> <span class="pre">Jr.,</span> <span class="pre">and</span> <span class="pre">John</span> <span class="pre">A.</span> <span class="pre">McDowell,</span></code></p>
+<p>The computer doesn’t realize that it’s creating errors, and if the annotations are not in any way mispelled, the <em>On The Books</em> team might have a hard time finding and removing all of these insertions. The insertions might then have also caused major difficulties in future computational analyses.</p>
+<p>Because marginalia would have caused such havoc in their dataset, the <em>On The Books</em> team decided to remove the marginalia as part of preparing for OCR. You can <a class="reference external" href="https://github.com/UNC-Libraries-data/OnTheBooks/tree/master/examples/marginalia_determination">find the documentation about this in the team’s Github</a>.</p>
+</div>
+<div class="section" id="text-condition-and-image-quality-a-id-text-condition-a">
+<h3>Text condition and image quality?<a id="text-condition"></a><a class="headerlink" href="#text-condition-and-image-quality-a-id-text-condition-a" title="Permalink to this headline">¶</a></h3>
+<p>Even with the use of state of the art scanning equipment (<a class="reference external" href="https://www.digitalnc.org/about/what-we-use-to-digitize-materials/">for example</a>), annotations on or damage to analog physical media can interfere with OCR. Here are some examples.</p>
+<p><em>Someone writing on a printed text.</em> These check marks might be read as “l” or “V” by the computer:</p>
+<a class="reference internal image-reference" href="images/07-ocr-05.jpeg"><img alt="Screenshot of check marks written in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." src="images/07-ocr-05.jpeg" style="width: 70%;" /></a>
+<p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">be</span> <span class="pre">worked</span> <span class="pre">on</span> <span class="pre">said</span> <span class="pre">railroad</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">counties</span> <span class="pre">of</span> <span class="pre">New</span> <span class="pre">l</span> <span class="pre">Hanover</span> <span class="pre">or</span> <span class="pre">Pender.</span></code></p>
+<p>The <em>printed text has faded</em> so that individual characters are broken up, and the ink is harder to read. (Historic newpapers are notorious for this. <a class="reference external" href="https://chroniclingamerica.loc.gov/lccn/sn85042104/1897-01-14/ed-1/seq-6/#date1=1890&amp;index=2&amp;rows=20&amp;words=asylum+ASYLUM+Asylum&amp;searchType=basic&amp;sequence=0&amp;state=North+Carolina&amp;date2=1910&amp;proxtext=asylum&amp;y=0&amp;x=0&amp;dateFilterType=yearRange&amp;page=1">Here’s an example</a>.):</p>
+<a class="reference internal image-reference" href="images/07-ocr-06.jpeg"><img alt="Screenshot of faded text printed in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." src="images/07-ocr-06.jpeg" style="width: 70%;" /></a>
+<p><code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">hundred</span> <span class="pre">dollars'</span> <span class="pre">t\&quot;Orth</span> <span class="pre">of</span> <span class="pre">property</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">arnouut</span></code></p>
+<p>A <em>smudge, spot, or spill has appeared on the page</em>, causing the computer to misinterpret a character or eroneously add characters:</p>
+<a class="reference internal image-reference" href="images/07-ocr-06.jpeg"><img alt="Screenshot of spot on text in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." src="images/07-ocr-06.jpeg" style="width: 70%;" /></a>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">S€1'.)arate</span> <span class="pre">fund,</span></code></p>
+<p>There is also one additional possibility that can be a result of close binding, or the human doing the scanning avoiding the possibility of breaking tight or damaged binding: that is, <strong>text that is rotated slightly</strong> on the digitized page so that it appears at a slight angle.</p>
+<img src="images/07-ocr-08.jpeg" width="70%" style="padding-top:20px; box-shadow: 25px 25px 20px -30px rgba(0, 0, 0);" alt="Screenshot of tilted text in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." title="Screenshot of tilted text in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." />
+<br/></div>
+<div class="section" id="historical-script-a-id-historical-script-a">
+<h3>Historical script?<a id="historical-script"></a><a class="headerlink" href="#historical-script-a-id-historical-script-a" title="Permalink to this headline">¶</a></h3>
+<p>This applies mainly to students and scholars working with <em>historical texts printed or written in scripts that are not commonly legible to humans (or computers) today</em>. These could be anything from medieval scripts like Carolingian miniscule to neogothic scripts used in <a class="reference external" href="https://chroniclingamerica.loc.gov/lccn/sn84027107/1915-07-01/ed-1/seq-1/">twentieth-century German-American newspapers</a> to the many, many historic non-Western scripts. These are areas where research is in progress, but you might find this <a class="reference external" href="https://manuscriptocr.org/">Manuscript OCR</a> tool of interest as well as this <a class="reference external" href="http://digitalhumanities.org/dhq/vol/13/1/000412/000412.html">essay on the challenges medievalists continue to face when using OCR technologies</a>. When choosing an OCR tool, this is one of the capabilities you’ll want to check for.</p>
+</div>
+<div class="section" id="language-support-a-id-language-support-a">
+<h3>Language support?<a id="language-support"></a><a class="headerlink" href="#language-support-a-id-language-support-a" title="Permalink to this headline">¶</a></h3>
+<p>Similar to the historic script issue, for scholars and students working with or studying <em>less common, perhaps endangered, and especially non-Western languages</em>, you’ll want to see if an OCR tool supports your particular language. Tesseract offers <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">a list of the languages and scripts it supports</a>. Tesseract supports 125 languages and dialects–likely those most commonly spoken, based on shared <a class="reference external" href="https://en.wikipedia.org/wiki/Writing_system">writing systems</a>, and/or those that researchers may have invested time in training Tesseract to “read” for some specific reason. This is just a fraction of the languages and scripts in the world, though.</p>
+<p>Unfortunately, if you’re working with Indigenous writing systems such as <a class="reference external" href="https://en.wikipedia.org/wiki/Canadian_Aboriginal_syllabics">Canadian Aboriginal Syllabics</a>, you still may need to seek out additional support from computer scientists for developing OCR technologies to “read” these languages. This lack of support for many endangered languages is just one example of bias found in the broader technology industry.</p>
+</div>
+</div>
+<div class="section" id="install-tesseract">
+<h2>Install Tesseract<a class="headerlink" href="#install-tesseract" title="Permalink to this headline">¶</a></h2>
+<p>We will install Tesseract on your machine using the command line. The following code cell installs Tesseract-OCR on the command line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+apt install tesseract-ocr
+y
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install PyTesseract, the Python wrapper for Tesseract</span>
+<span class="c1"># An exclamation point runs the command on the command line</span>
+<span class="o">!</span>pip install pytesseract
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Tesseract training data in the Constellate Analytics Lab.</span>
+<span class="c1"># The exclamation runs the command as a terminal command.</span>
+
+<span class="o">!</span>wget https://github.com/tesseract-ocr/tessdata/raw/main/eng.traineddata
+<span class="o">!</span>mv eng.traineddata /usr/share/tesseract-ocr/4.00/tessdata/eng.traineddata
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we will run Tesseract on a sample file to confirm it is working properly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the Image module from the Pillow Library, which will help us access the image.</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># Import the pytesseract library, which will run the OCR process.</span>
+<span class="kn">import</span> <span class="nn">pytesseract</span>
+
+<span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR),</span>
+<span class="c1"># and then print the results for us to see here.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber and Ted Lawless<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-125778965-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
