@@ -604,7 +604,6 @@ By the end of this lessons, students will be able to</p>
 </div>
 <div class="section" id="popular-ocr-tools">
 <h3>Popular OCR Tools<a class="headerlink" href="#popular-ocr-tools" title="Permalink to this headline">¶</a></h3>
-<p><em>This list is not comprehensive!</em></p>
 <div class="section" id="abbyy-fine-reader">
 <h4><a class="reference external" href="https://pdf.abbyy.com/">ABBYY Fine Reader</a><a class="headerlink" href="#abbyy-fine-reader" title="Permalink to this headline">¶</a></h4>
 <p>Perhaps at the opposite end of the OCR spectrum from Pytesseract, ABBYY is another powerful OCR tool. It has a GUI (graphical user interface) in which users can make adjustments (preprocessing), and it also has an SDK (software developer toolkit) that programmers can use to run ABBYY tools in their own programs. ABBYY even has a cloud service. Like Tesseract, ABBYY supports many languages and a number of file formats. ABBYY is, however, proprietary–you’ll need to be prepared to pay a minimum of $200 if your institution does not provide a license.</p>
@@ -934,30 +933,55 @@ y
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
+<p>Try OCR’ing the first page from Gabriel Garcia-Marquez’s <em>Cien Años de Soledad</em> (<em>One Hundred Years of Solitude</em>):</p>
+<p><img alt="The first page from one hundred years of solitude" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/cien-an%CC%83os-de-soledad.png" /></p>
+<hr class="docutils" />
+<p>The following code will download the file automatically. Can you figure out how to change the <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">3-letter language code</a> to match the language in the text?</p>
+<hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TO DO</span>
-<span class="c1"># Write code to bring in additional languages</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the Sample Page Image</span>
+<span class="c1"># Change the list `download_urls` to bring in other documents</span>
+
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="n">download_urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/cien-an%CC</span><span class="si">%83o</span><span class="s1">s-de-soledad.png&#39;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">download_urls</span><span class="p">:</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Spanish language support</span>
+<span class="c1"># Change `spa` to match the language code of your choice</span>
+<span class="o">!</span>apt install tesseract-ocr-spa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR),</span>
+<span class="c1"># and then print the results for us to see here.</span>
+
+<span class="c1"># Try changing the language paramater to &#39;eng&#39;. Does it change the output?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;CHANGE-THE-FILENAME-HERE&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;CHANGE-LANGUAGE-CODE&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <h3 style="color:red; display:inline">Try it! &lt; / &gt; </h3>
-<p>Try OCR’ing a page from Dr. Faust: (<a class="reference external" href="https://archive.org/details/fausteinetragodi00goet/page/n7/mode/2up">Source</a>). Change the <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">3-letter language code</a> to match the language in that document. You’ll also need to download the page in question, rename it to something simple, and upload it to the Constellate Analytics Lab.</p>
+<p>Try OCR’ing a page with multiple languages, such as The Bible in Hindi: (<a class="reference external" href="https://archive.org/details/holybibleinhindi00alla">Source</a>). The syntax will be <code class="docutils literal notranslate"><span class="pre">lang=&quot;lan+gua&quot;</span></code> – replace <code class="docutils literal notranslate"><span class="pre">lan</span></code> and <code class="docutils literal notranslate"><span class="pre">gua</span></code> with the correct language codes.</p>
+<p>Can you figure out how to bring the document into the Analytics Lab and OCR with two languages?</p>
+<p><strong>Note:</strong> The first language will be the “primary” language. Try changing the order of the languages to see how the output changes.</p>
 <hr class="docutils" />
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR),</span>
-<span class="c1"># and then print the results for us to see here.</span>
-
-<span class="c1"># Modify the following line of code to work with your image file.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;REPLACE_THIS_FILE_NAME.jpg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;REPLACE_THIS_LANGUAGE&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Try OCR’ing a page with multiple languages, such as The Bible in Hindi: (<a class="reference external" href="https://archive.org/details/holybibleinhindi00alla">Source</a>). The syntax will be <code class="docutils literal notranslate"><span class="pre">lang=&quot;lan+gua&quot;</span></code> – replace <code class="docutils literal notranslate"><span class="pre">lan</span></code> and <code class="docutils literal notranslate"><span class="pre">gua</span></code> with the correct language codes. <em>The first language will be the “primary” language. Try changing the order of the languages to see how the output changes.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR),</span>
