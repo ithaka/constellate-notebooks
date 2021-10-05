@@ -960,7 +960,8 @@ y
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Spanish language support</span>
 <span class="c1"># Change `spa` to match the language code of your choice</span>
-<span class="o">!</span>apt install tesseract-ocr-spa
+<span class="o">!</span>apt-get install tesseract-ocr-spa
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Language installed.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1034,9 +1035,10 @@ y
     <span class="c1"># Run OCR on the open file.</span>
     <span class="n">ocrText</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">custom_oem_psm_config</span><span class="p">)</span>
         
-    <span class="c1"># Get a file name--without the extension-- </span>
-    <span class="c1"># to use when we name the output file.</span>
-    <span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>
+<span class="c1"># Get a file name--without the extension-- </span>
+<span class="c1"># to use when we name the output file.</span>
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># The image file above will be closed before moving on to this line.</span>
 <span class="c1"># The OCR&#39;ed text has been pulled from the image and stored in</span>
