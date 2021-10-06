@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating an OCR Workflow (Pre-Processing) &#8212; Teaching Text Analysis with Constellate</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/constellate-beta.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Teaching Text Analysis with Constellate</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   About
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/schedule.html">
+   Course Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/syllabus.html">
+   Course Syllabus
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Open Educational Directory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/all-notebooks.html">
+   Open Notebook Lessons Directory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/add-my-lesson.html">
+   Add your lesson or class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/how-to-create-a-course-website">
+   Create Course from this template
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org">
+   Constellate Platform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs">
+   Constellate Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/key-terms">
+   Text Analysis Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://jupyterbook.org/intro.html">
+   Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/keep-learning.html">
+   More ways to keep learning
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ocr-workflow-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Focr-workflow-1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/ocr-workflow-1.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="http://backend.constellate.org/binder/launch/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/ocr-workflow-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-full-ocr-workflow">
+   A Full OCR Workflow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#opening-questions-for-your-ocr-workflow">
+   Opening questions for your OCR workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-much-text-a-id-how-much-a">
+     How much text?
+     <a id="how-much">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#born-digital-or-digitized-a-id-born-digital-a">
+     Born-digital or digitized?
+     <a id="born-digital">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hand-written-manuscript-or-printed-using-a-press-a-id-hand-written-a">
+     Hand-written manuscript or printed using a press?
+     <a id="hand-written">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-formatting-a-id-formatting-a">
+     Text formatting?
+     <a id="formatting">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#text-condition-and-image-quality-a-id-text-condition-a">
+     Text condition and image quality?
+     <a id="text-condition">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#historical-script-a-id-historical-script-a">
+     Historical script?
+     <a id="historical-script">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#language-support-a-id-language-support-a">
+     Language support?
+     <a id="language-support">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-prepare-image-files">
+   Preprocessing (prepare image files)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-files-a-id-convert-files-a">
+     Convert files
+     <a id="convert-files">
+     </a>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-a-pdf-to-an-image-file-using-pdf2image">
+       Convert a pdf to an image file using pdf2image
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-correction-a-id-image-correction-a">
+     Image correction
+     <a id="image-correction">
+     </a>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-note-on-cropping">
+       A Note on Cropping
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quality-check-a-id-pre-quality-check-a">
+     Quality check
+     <a id="pre-quality-check">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://hannahlangstonjacobs.com/">Hannah Jacobs</a> for the <a class="reference external" href="https://nkelber.github.io/tapi2021/book/intro.html">2021 Text Analysis Pedagogy Institute</a>.</p>
+<p>Adapted by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<div class="section" id="creating-an-ocr-workflow-pre-processing">
+<h1>Creating an OCR Workflow (Pre-Processing)<a class="headerlink" href="#creating-an-ocr-workflow-pre-processing" title="Permalink to this headline">¶</a></h1>
+<p>These <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebooks</a> describe how to turn images and/or pdf documents into plain text using Tesseract <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>. The goal of this notebook is to help users design a workflow for a research project.</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Intermediate</p>
+<p><strong>Completion time:</strong> 90 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p>Python Basics (<a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Start Python Basics I</span></a>)</p></li>
+<li><p><a class="reference internal" href="ocr-basics.html"><span class="doc std std-doc">Optical Character Recognition Basics</span></a></p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong></p>
+<p><strong>Data Format:</strong></p>
+<ul class="simple">
+<li><p>image files (.jpg, .png)</p></li>
+<li><p>document files (.pdf)</p></li>
+<li><p>plain text (.txt)</p></li>
+</ul>
+<p><strong>Libraries Used:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tesseract-ocr.github.io/">Tesseract</a> for performing <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/cbrunet/python-poppler">poppler</a> for working with pdf files</p></li>
+<li><p><a class="reference external" href="https://pdf2image.readthedocs.io/en/latest/">pdf2image</a> for converting pdf files into image files</p></li>
+</ul>
+<p><strong>Learning Objectives:</strong></p>
+<ol class="simple">
+<li><p>Describe and implement an OCR workflow for pre-processing</p></li>
+<li><p>Explain the importance of performing adjustments (pre-processing) to inputs before running OCR</p></li>
+<li><p>Identify possible technical challenges presented by specific texts and propose potential solutions</p></li>
+</ol>
+<p><strong>Research Pipeline:</strong></p>
+<ol class="simple">
+<li><p>Digitize documents</p></li>
+<li><p><strong>Optical Character Recognition</strong></p></li>
+<li><p>Tokenize your texts</p></li>
+<li><p>Perform analysis</p></li>
+</ol>
+<hr class="docutils" />
+<div class="section" id="a-full-ocr-workflow">
+<h2>A Full OCR Workflow<a class="headerlink" href="#a-full-ocr-workflow" title="Permalink to this headline">¶</a></h2>
+<p>In addition to examining your documents and tools, you also need to carefully consider issues of time, labor, and funding. Is this project small enough for a single person to complete? How many labor-hours will it take? How many computing hours? As you complete each step, keep in mind how long certain processes take. You may need to make some hard decisions about how much to do, how accurate your text will be, or whether the project is even feasible without more funding and support. It is common for OCR project planners to greatly underestimate the necessary time, so leave generous cushion for budget and labor-hour overruns.</p>
+<p>The full OCR workflow will look something like this:</p>
+<ol class="simple">
+<li><p>Digitize</p>
+<ul class="simple">
+<li><p>Acquire materials</p></li>
+<li><p>Photograph (at high-resolution using archival format, such as tiff/jpeg2000)</p></li>
+<li><p>Quality check (for missing pages, blurry scans, etc.)</p></li>
+<li><p>Organize</p></li>
+<li><p>Archive (into a long-term digital repository)</p></li>
+</ul>
+</li>
+<li><p>Pre-processing (prepare image files)</p>
+<ul class="simple">
+<li><p>Convert files (to a compatible image format)</p></li>
+<li><p>Organize files (into folders by volume)</p></li>
+<li><p>Image correction (adjust skew, warp, noise, rotatation, scale, layout order, etc.)</p></li>
+<li><p>Quality check</p></li>
+</ul>
+</li>
+<li><p>OCR batch processing</p></li>
+<li><p>Post-processing (quality assessment)</p>
+<ul class="simple">
+<li><p>Dictionary assessment</p></li>
+<li><p>Random sample assessment</p></li>
+</ul>
+</li>
+<li><p>Archive</p>
+<ul class="simple">
+<li><p>Choosing a repository</p></li>
+<li><p>Data and metadata format</p></li>
+<li><p>Backup and hashing</p></li>
+</ul>
+</li>
+</ol>
+<p>This notebook focuses on the OCR process (including both pre- and post-processing), but the digitization and archiving steps take significant consideration, time, expertise, and effort. Ideally, these processes should be completed by experts in each domain.</p>
+<p>In practice, many of these steps are more recursive and looping. As problems are discovered, the workflow will need to be adapted and improved. Again, leave cushion for budget and labor-hour overruns; you will find problems that were not obvious at the beginning of the process. For large projects with limited budgets, you will need to set goals for your accuracy and speed. Be ready to make compromises.</p>
+<p><strong>A note on digitizing your own corpus:</strong>
+If you’re doing the scanning yourself or will be working with someone to digitize materials, it’s a good idea to carefully plan your scanning process. Every step matters in terms of generating the best possible OCR results. <a class="reference external" href="https://www.digitalnc.org/">Digital NC</a> have posted their <a class="reference external" href="https://www.digitalnc.org/policies/digitization-guidelines/">digitization guidelines</a> along with <a class="reference external" href="https://www.digitalnc.org/about/what-we-use-to-digitize-materials/">descriptions of their scanning equipment</a>. These can provide a helpful starting point if you will be beginning your project with undigitized materials.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="opening-questions-for-your-ocr-workflow">
+<h2>Opening questions for your OCR workflow<a class="headerlink" href="#opening-questions-for-your-ocr-workflow" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#how-much">How much text?</a></p></li>
+<li><p><a class="reference external" href="#born-digital">Born-digital or digitized?</a></p></li>
+<li><p><a class="reference external" href="#hand-written">Hand-written manuscript or printed using a press?</a></p></li>
+<li><p><a class="reference external" href="#formatting">Text formatting?</a></p></li>
+<li><p><a class="reference external" href="#text-condition">Text condition and image quality?</a></p></li>
+<li><p><a class="reference external" href="#historical-script">Historical script?</a></p></li>
+<li><p><a class="reference external" href="#language-support">Language support?</a></p></li>
+</ol>
+<div class="section" id="how-much-text-a-id-how-much-a">
+<h3>How much text? <a id="how-much"></a><a class="headerlink" href="#how-much-text-a-id-how-much-a" title="Permalink to this headline">¶</a></h3>
+<p>We begin with this question because if you have only a few pages, there may be merit in typing them out by hand in a text editor, and perhaps working with a team to do so. If you have hundreds of thousands of pages, though, it may take far longer than you have time, even working with a team, to manually transcribe every page you need to complete a project. That may mean that you’ll want to start with an automated transcription (OCR) process and then work to correct what the computer outputs.</p>
+</div>
+<div class="section" id="born-digital-or-digitized-a-id-born-digital-a">
+<h3>Born-digital or digitized?<a id="born-digital"></a><a class="headerlink" href="#born-digital-or-digitized-a-id-born-digital-a" title="Permalink to this headline">¶</a></h3>
+<p>In most cases, born-digital texts in PDF and image formats are easier for a computer to “recognize” than scanned documents, even if the scanners use the highest resolution equipment. This is particularly true of older printed texts with unique scripts or layouts.</p>
+<p>An exception to this is if a born-digital text is stored in an image or other non-text-editable format that is uncommon, proprietary, or outdated. Then computers may have a hard time accessing the file in order to parse the text contained. (So always save documents in an interoperable—can be opened by different software programs—file format either as <a class="reference external" href="https://www.archives.gov/records-mgmt/policy/transfer-guidance-tables.html#textualdata">editable text</a> or as <a class="reference external" href="https://www.archives.gov/records-mgmt/policy/transfer-guidance-tables.html#scannedtext">non-editable image or archival document–PDF–formats</a>.)</p>
+</div>
+<div class="section" id="hand-written-manuscript-or-printed-using-a-press-a-id-hand-written-a">
+<h3>Hand-written manuscript or printed using a press?<a id="hand-written"></a><a class="headerlink" href="#hand-written-manuscript-or-printed-using-a-press-a-id-hand-written-a" title="Permalink to this headline">¶</a></h3>
+<p>OCR technologies were initially developed to deal only with digitized texts created using a <a class="reference external" href="https://en.wikipedia.org/wiki/Printing_press">printing press</a>. This was because printing presses offer a certain amount of consistency in typeface, font, and layout that programmers could use to create rules for computers to follow (algorithms!).</p>
+<p>Meanwhile, handwriting is, by and large, more individualistic and inconsistent. Most programs for OCR still focus only on printed texts, but there are a growing number of projects and toolkits now available for what’s called variously <a class="reference external" href="https://academic.oup.com/dsh/article/32/suppl_2/ii89/4259068">“digital paleography”</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Handwriting_recognition">“handwriting recognition” (HWR)</a>, and <a class="reference external" href="https://en.wikipedia.org/wiki/Handwriting_recognition">“handwritten text recognition” (HTR)</a>. <a class="reference external" href="https://readcoop.eu/transkribus/">Transkribus</a> is a popular example.</p>
+<p>As an example, let’s compare excerpts from Toni Morrison’s <em>Beloved</em>. The first image below is a page from an early draft, written in Morrison’s own hand on a legal pad. The second image is a segment from a digitized print version. These are not the same passages, but they are noticably different in how we read them: Try reading each. What’s different about the experience–think about order of reading, ease of reading, and any other differences that come to mind:</p>
+<p><img alt="A page from Toni Morrison's early draft of Beloved. Courtesy of Princeton University Library&quot; title=&quot;A page from Toni Morrison's early draft of Beloved. Courtesy of Princeton University Library" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-03.jpeg" /></p>
+<p><strong>An early draft of Toni Morrison’s <em>Beloved</em>. Image credit: <a class="reference external" href="https://blogs.princeton.edu/manuscripts/2016/06/07/toni-morrison-papers-open-for-research/">Princeton University Library</a></strong></p>
+<p><img alt="Screenshot of a page in Toni Morrison's Beloved. Preview hosted on Google Books." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-02.jpeg" /></p>
+<p><strong>Screenshot from a digitized version of the published <em>Beloved</em>, available in <a class="reference external" href="https://www.google.com/books/edition/Beloved/sfmp6gjZGP8C?hl=en&amp;gbpv=1&amp;dq=toni+morrison+beloved&amp;printsec=frontcover">Google Books</a>.</strong></p>
+</div>
+<div class="section" id="text-formatting-a-id-formatting-a">
+<h3>Text formatting?<a id="formatting"></a><a class="headerlink" href="#text-formatting-a-id-formatting-a" title="Permalink to this headline">¶</a></h3>
+<p><em>Look at the texts above again: How are they formatted similarly or differently?</em> While both use a left-to-right writing system, the printed version appears in a single column that is evenly spaced both horizontally and vertically. The manuscript text appears on lined paper in a single column, but it includes a number of corrections written between lines or even in different directions (vertically) on the page. You might have tilted your head to read some of that text–if you had been holding the paper in your hands, you might have turned the paper 90 degrees. But computers don’t necessarily know to do that (yet). They need a predictable pattern to follow, which the printed text provides.</p>
+<p>That said, not all historical printings are as regular as this <em>Beloved</em> excerpt. Let’s take a look at one more example from <em>On The Books</em>:</p>
+<p><img alt="Screenshot from the 1887 North Carolina session laws digitized by UNC Libraries and shared via the Internet Archive." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-04.jpeg" /></p>
+<p><strong>Screenshot from the 1887 North Carolina session laws digitized by UNC Libraries and shared via the Internet Archive.</strong></p>
+<p>Like the printed <em>Beloved</em> example, this selection from the <a class="reference external" href="https://archive.org/details/lawsresolutionso1887nort/page/776/mode/2up">1887 North Carolina session laws</a> was created using a printing press and with mostly even vertical spacing between lines that run left to right. However, in addition to the changing typeface, there is in addition to the main column of text a much smaller column of annotations–<a class="reference external" href="https://en.wikipedia.org/wiki/Marginalia">“marginalia”</a>–created to aid readers who would have been looking for quick topical references rather than reading a volume from start to finish. These created a problem for the <em>On The Books</em> team because the computer read them as being part of the main text. What resulted (with other OCR errors removed) would have looked like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">SECTION</span> <span class="pre">1.</span> <span class="pre">The</span> <span class="pre">Julian</span> <span class="pre">S.</span> <span class="pre">Carr,</span> <span class="pre">of</span> <span class="pre">Durham,</span> <span class="pre">North</span> <span class="pre">Carolina,</span> <span class="pre">Mar-</span> <span class="pre">Body</span> <span class="pre">politic.</span> <span class="pre">cellus</span> <span class="pre">E.</span> <span class="pre">McDowell,</span> <span class="pre">Samuel</span> <span class="pre">H.</span> <span class="pre">Austin,</span> <span class="pre">Jr.,</span> <span class="pre">and</span> <span class="pre">John</span> <span class="pre">A.</span> <span class="pre">McDowell,</span></code></p>
+<p>What’s the problem here? The marginalia, <code class="docutils literal notranslate"><span class="pre">Body</span> <span class="pre">politic</span></code>, have been interspersed with the text as the computer “reads” all the way across the page. The line should read:</p>
+<p><code class="docutils literal notranslate"><span class="pre">SECTION</span> <span class="pre">1.</span> <span class="pre">The</span> <span class="pre">Julian</span> <span class="pre">S.</span> <span class="pre">Carr,</span> <span class="pre">of</span> <span class="pre">Durham,</span> <span class="pre">North</span> <span class="pre">Carolina,</span> <span class="pre">Mar-cellus</span> <span class="pre">E.</span> <span class="pre">McDowell,</span> <span class="pre">Samuel</span> <span class="pre">H.</span> <span class="pre">Austin,</span> <span class="pre">Jr.,</span> <span class="pre">and</span> <span class="pre">John</span> <span class="pre">A.</span> <span class="pre">McDowell,</span></code></p>
+<p>The computer doesn’t realize that it’s creating errors, and if the annotations are not in any way mispelled, the <em>On The Books</em> team might have a hard time finding and removing all of these insertions. The insertions might then have also caused major difficulties in future computational analyses.</p>
+<p>Because marginalia would have caused such havoc in their dataset, the <em>On The Books</em> team decided to remove the marginalia as part of preparing for OCR. You can <a class="reference external" href="https://github.com/UNC-Libraries-data/OnTheBooks/tree/master/examples/marginalia_determination">find the documentation about this in the team’s Github</a>.</p>
+</div>
+<div class="section" id="text-condition-and-image-quality-a-id-text-condition-a">
+<h3>Text condition and image quality?<a id="text-condition"></a><a class="headerlink" href="#text-condition-and-image-quality-a-id-text-condition-a" title="Permalink to this headline">¶</a></h3>
+<p>Even with the use of state of the art scanning equipment (<a class="reference external" href="https://www.digitalnc.org/about/what-we-use-to-digitize-materials/">for example</a>), annotations on or damage to analog physical media can interfere with OCR. Here are some examples.</p>
+<p><em>Someone writing on a printed text.</em> These check marks might be read as “l” or “V” by the computer:</p>
+<p><img alt="Screenshot of check marks written in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-05.jpeg" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">be</span> <span class="pre">worked</span> <span class="pre">on</span> <span class="pre">said</span> <span class="pre">railroad</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">counties</span> <span class="pre">of</span> <span class="pre">New</span> <span class="pre">l</span> <span class="pre">Hanover</span> <span class="pre">or</span> <span class="pre">Pender.</span></code></p>
+<p>The printed text has faded so that individual characters are broken up, and the ink is harder to read. (Historic newpapers are notorious for this. <a class="reference external" href="https://chroniclingamerica.loc.gov/lccn/sn85042104/1897-01-14/ed-1/seq-6/#date1=1890&amp;index=2&amp;rows=20&amp;words=asylum+ASYLUM+Asylum&amp;searchType=basic&amp;sequence=0&amp;state=North+Carolina&amp;date2=1910&amp;proxtext=asylum&amp;y=0&amp;x=0&amp;dateFilterType=yearRange&amp;page=1">Here’s an example</a>.):</p>
+<p><img alt="Screenshot of faded text printed in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-06.jpeg" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">three</span> <span class="pre">hundred</span> <span class="pre">dollars'</span> <span class="pre">t\&quot;Orth</span> <span class="pre">of</span> <span class="pre">property</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">arnouut</span></code></p>
+<p>A <em>smudge, spot, or spill has appeared on the page</em>, causing the computer to misinterpret a character or eroneously add characters:</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">S€1'.)arate</span> <span class="pre">fund,</span></code></p>
+<p>There is also one additional possibility that can be a result of close binding, or the human doing the scanning avoiding the possibility of breaking tight or damaged binding: that is, <strong>text that is rotated slightly</strong> on the digitized page so that it appears at a slight angle.</p>
+<p><img alt="Screenshot of tilted text in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-08.jpeg" /></p>
+</div>
+<div class="section" id="historical-script-a-id-historical-script-a">
+<h3>Historical script?<a id="historical-script"></a><a class="headerlink" href="#historical-script-a-id-historical-script-a" title="Permalink to this headline">¶</a></h3>
+<p>This applies mainly to students and scholars working with <em>historical texts printed or written in scripts that are not commonly legible to humans (or computers) today</em>. These could be anything from medieval scripts like <a class="reference external" href="https://en.wikipedia.org/wiki/Carolingian_minuscule">Carolingian miniscule</a> to neogothic scripts used in <a class="reference external" href="https://chroniclingamerica.loc.gov/lccn/sn84027107/1915-07-01/ed-1/seq-1/">twentieth-century German-American newspapers</a> to the many, many historic non-Western scripts. These are areas where research is in progress, but you might find this <a class="reference external" href="https://manuscriptocr.org/">Manuscript OCR</a> tool of interest as well as this <a class="reference external" href="http://digitalhumanities.org/dhq/vol/13/1/000412/000412.html">essay on the challenges medievalists continue to face when using OCR technologies</a>. When choosing an OCR tool, this is one of the capabilities you’ll want to check for.</p>
+</div>
+<div class="section" id="language-support-a-id-language-support-a">
+<h3>Language support?<a id="language-support"></a><a class="headerlink" href="#language-support-a-id-language-support-a" title="Permalink to this headline">¶</a></h3>
+<p>Similar to the historic script issue, for scholars and students working with or studying <em>less common, perhaps endangered, and especially non-Western languages</em>, you’ll want to see if an OCR tool supports your particular language. Tesseract offers <a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html">a list of the languages and scripts it supports</a>. Tesseract supports 125 languages and dialects–likely those most commonly spoken, based on shared <a class="reference external" href="https://en.wikipedia.org/wiki/Writing_system">writing systems</a>, and/or those that researchers may have invested time in training Tesseract to “read” for some specific reason. This is just a fraction of the languages and scripts in the world, though.</p>
+<p>Unfortunately, if you’re working with Indigenous writing systems such as <a class="reference external" href="https://en.wikipedia.org/wiki/Canadian_Aboriginal_syllabics">Canadian Aboriginal Syllabics</a>, you still may need to seek out additional support from computer scientists for developing OCR technologies to “read” these languages. This lack of support for many endangered languages is just one example of bias found in the broader technology industry.</p>
+</div>
+</div>
+<div class="section" id="preprocessing-prepare-image-files">
+<h2>Preprocessing (prepare image files)<a class="headerlink" href="#preprocessing-prepare-image-files" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#convert-files">Convert files</a></p></li>
+<li><p><a class="reference external" href="#image-correction">Image correction</a></p>
+<ul class="simple">
+<li><p>rotatation</p></li>
+<li><p>skew</p></li>
+<li><p>cropping</p></li>
+<li><p>warp</p></li>
+<li><p>noise</p></li>
+<li><p>scale</p></li>
+<li><p>layout order</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#pre-quality-check">Quality check</a></p></li>
+</ol>
+<div class="section" id="convert-files-a-id-convert-files-a">
+<h3>Convert files<a id="convert-files"></a><a class="headerlink" href="#convert-files-a-id-convert-files-a" title="Permalink to this headline">¶</a></h3>
+<p>Tesseract prefers image files. If you are starting from a PDF or a bunch of PDFs, here are a few ways you can convert each page into a separate image file:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.adobe.com/acrobat/online/pdf-to-jpg.html">Use Adobe online</a> (1 pdf at a time…)</p></li>
+<li><p><a class="reference external" href="https://helpx.adobe.com/acrobat/using/exporting-pdfs-file-formats.html?mv=product">Use Adobe Acrobat</a> (1 pdf at a time…)</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pdf2image/">Use pdf2image</a> (1 pdf or many)</p></li>
+</ul>
+<p><strong>Note:</strong> Technically, it’s possible to feed Tesseract a PDF, but breaking up a PDF into images breaks down the OCR process from one massive task into a bunch of smaller tasks that are better for your computer – if something happens, and the process is interrupted, you’ll be able to pick up from where you left off if you are working from images. If you are processing an entire PDF and your computer freezes, you’ll need to start over from the beginning…</p>
+<div class="section" id="convert-a-pdf-to-an-image-file-using-pdf2image">
+<h4>Convert a pdf to an image file using pdf2image<a class="headerlink" href="#convert-a-pdf-to-an-image-file-using-pdf2image" title="Permalink to this headline">¶</a></h4>
+<p>First, we need to install a few new tools. Run each one at a time. Wait for each to finish before moving to the next script.</p>
+<p>Install Poppler, a dependency for pdf2image. Note that depending on where you are working, Poppler has different installation processes. <a class="reference external" href="https://pypi.org/project/pdf2image/">(See pdf2image documentation.)</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+apt-get install poppler-utils
+y
+</pre></div>
+</div>
+</div>
+</div>
+<p>When Poppler is finished installing, run the following to install pdf2image:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install pdf2image</span>
+<span class="o">!</span>pip install pdf2image
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let’s create a folder to hold our sample pdfs and then download them into the folder we created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download sample PDFs from On the Books</span>
+
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Check if a folder exists to hold pdfs. If not, create it.</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;sample_pdfs&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;sample_pdfs&#39;</span><span class="p">)</span>
+
+<span class="c1"># Move into our new directory</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;sample_pdfs&#39;</span><span class="p">)</span>
+
+<span class="c1"># Download the pdfs into our directory</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="n">download_urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/sample_01.pdf&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/sample_02.pdf&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/sample_03.pdf&#39;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">download_urls</span><span class="p">:</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+<span class="c1">## Move back out of our directory</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;../&#39;</span><span class="p">)</span>
+
+<span class="c1">## Success message</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Folder created and pdfs added.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try converting a single pdf file first: <code class="docutils literal notranslate"><span class="pre">sample_01.pdf</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Convert a single PDF into a series of image files ###</span>
+
+<span class="c1"># Import pdf2image&#39;s convert_from_path module.</span>
+<span class="kn">from</span> <span class="nn">pdf2image</span> <span class="kn">import</span> <span class="n">convert_from_path</span>
+ 
+<span class="c1"># Get the PDF and convert to a group of PIL (Pillow) objects.</span>
+<span class="c1"># This does NOT save the images as files.</span>
+<span class="n">images</span> <span class="o">=</span> <span class="n">convert_from_path</span><span class="p">(</span><span class="s1">&#39;sample_pdfs/sample_01.pdf&#39;</span><span class="p">)</span>
+
+<span class="c1"># This step saves images as files:</span>
+
+<span class="c1"># For each PIL image object:</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)):</span>
+    
+    <span class="c1"># Remember the folder name where we want to store the images.</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="s1">&#39;sample_pdfs/&#39;</span>
+
+    <span class="c1"># Create a file name that includes the folder, file name, and</span>
+    <span class="c1"># a file number, as well as the file extension.</span>
+    <span class="n">fileName</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;sample_&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;.jpg&#39;</span>
+
+    <span class="c1"># Save each PIL image object using the file name created above</span>
+    <span class="c1"># and declare the image&#39;s file format. (Try also PNG or TIFF.)</span>
+    <span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="s1">&#39;JPEG&#39;</span><span class="p">)</span>
+
+<span class="c1"># Success message</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PDF converted successfully&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the file menu above, choose <strong>File &gt;&gt; Open</strong> to confirm <code class="docutils literal notranslate"><span class="pre">sample_01.pdf</span></code> was converted to images in the <code class="docutils literal notranslate"><span class="pre">sample_pdfs</span></code> folder.</p>
+<hr class="docutils" />
+<p>Now, let’s try multiple pdfs. This will require a more complicated file structure. Here, we create a new folder of images for each pdf.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Convert multiple pdfs into a set of image files ordered by folder ###</span>
+
+<span class="c1"># Import pdf2image&#39;s convert_from_path module.</span>
+<span class="kn">from</span> <span class="nn">pdf2image</span> <span class="kn">import</span> <span class="n">convert_from_path</span>
+
+<span class="c1"># Import os, a module for file management.</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Import glob, a module that helps with file management.</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Open the file folder where our sample pages are stored.</span>
+<span class="c1"># Look only for the files ending with the &quot;.pdf&quot; file extension.</span>
+<span class="n">pdf_folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;sample_pdfs/*.pdf&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the name of the folder where we&#39;ll store all of the images.</span>
+<span class="c1"># We&#39;ll end up creating subfolders within this to keep each pdf&#39;s</span>
+<span class="c1"># output separate. If the folder doesn&#39;t exist, we create it.</span>
+<span class="n">parent_image_folder</span> <span class="o">=</span> <span class="s1">&#39;sample_pdfs_images&#39;</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">parent_image_folder</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parent_image_folder</span><span class="p">)</span>
+
+<span class="c1"># For each pdf file in the pdf folder, do the following:</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pdf_folder</span><span class="p">:</span>
+
+    <span class="c1"># Get the pdf&#39;s name and split the folder name from the file name.</span>
+    <span class="c1"># (sample_pdfs/sample_0X.pdf)</span>
+    <span class="n">pdf_name</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Get just the file name (sample_0X) and remove the file extension.</span>
+    <span class="n">pdf_name</span> <span class="o">=</span> <span class="n">pdf_name</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.pdf&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Create a folder name for the images we&#39;ll create from this pdf.</span>
+    <span class="n">image_folder_name</span> <span class="o">=</span> <span class="n">pdf_name</span> <span class="o">+</span> <span class="s2">&quot;_jpgs&quot;</span>  
+    
+    <span class="c1"># Create the path for the new image folder, which is separate from </span>
+    <span class="c1"># the pdf folder. (pdf2image_example_jpgs/sample_0X_jpgs)</span>
+    <span class="n">image_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parent_image_folder</span><span class="p">,</span> <span class="n">image_folder_name</span><span class="p">)</span>
+
+    <span class="c1"># Check whether the new image folder already exists.</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+        
+        <span class="c1"># If the folder does NOT exist, create it.</span>
+        <span class="n">image_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    
+    <span class="c1"># Get the PDF and convert to a group of PIL (Pillow) objects.</span>
+    <span class="c1"># This does NOT save the images as files.</span>
+    <span class="n">images</span> <span class="o">=</span> <span class="n">convert_from_path</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    
+    <span class="c1"># For each PIL image object:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)):</span>
+
+        <span class="c1"># Create a file name that includes the folder, file name, and</span>
+        <span class="c1"># a file number, as well as the file extension.</span>
+        <span class="n">image_name</span> <span class="o">=</span> <span class="n">image_path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">pdf_name</span> <span class="o">+</span> <span class="s1">&#39;_0&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;.jpg&#39;</span>
+
+        <span class="c1"># Save each PIL image object using the file name created above</span>
+        <span class="c1"># and declare the image&#39;s file format. (Try also PNG or TIFF.)</span>
+        <span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">image_name</span><span class="p">,</span> <span class="s1">&#39;JPEG&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># When each pdf has been exported to image files, display the following:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pdf_name</span> <span class="o">+</span> <span class="s2">&quot; successfully exported.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the file menu above, choose <strong>File &gt;&gt; Open</strong> to confirm the pdf files were converted to image files.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="image-correction-a-id-image-correction-a">
+<h3>Image correction<a id="image-correction"></a><a class="headerlink" href="#image-correction-a-id-image-correction-a" title="Permalink to this headline">¶</a></h3>
+<p>This section introduces the most common types of image correction. The only way to discover the exact type and number of image corrections needed for your text is to try a sample of your documents. You want to create a sample that is diverse. Ideally, you would choose a large random sample of images, but it may also be worthwhile to hand-pick some examples (perhaps you know a particular volume has issues with spotting, rotation, or skewing?). Ideally, you can create a single set of image corrections that can be applied to any image and give a satisfactory result that is ready for OCR processing. In practice, you may have a custom set of operations for particular volumes that have unique problems. Depending on your images, more or less corrections may be necessary.</p>
+<p>This work requires trial-and-error to figure out the best adjustments and OCR settings for your corpus. The general discovery of the best method will resemble:</p>
+<ol class="simple">
+<li><p><strong>Create a folder of sample text from your corpus.</strong> The size of the sample may depend on the corpus’ size and homogeneity or heterogeneity, but it should be an amount that you and/or your team could review manually in a reasonably short period of time.</p></li>
+<li><p><strong>Look for potential issues &amp; needed adjustments.</strong> Issues may include skewed or rotated text, fade text, smudges or damage to the page, etc.</p></li>
+<li><p><strong>Run OCR on your sample.</strong></p></li>
+<li><p><strong>Review the output</strong> to identify errors, looking especially for error patterns that could be addressed at a corpus level.</p></li>
+<li><p><strong>Create a list of errors and possible adjustments</strong> that you might use to address the errors. Order the list based on which errors should be solved first–which might address the largest number of errors. For example, it would be more important to fix rotated or skewed pages across the sample/corpus before trying to use erosion or dilation to make specific pages more legible to Tesseract.</p></li>
+<li><p><strong>Make the first adjustment</strong> on your list to the sample.</p></li>
+<li><p><strong>Re-run OCR on your sample.</strong></p></li>
+<li><p><strong>Review the output.</strong> Has the output improved noticeably? Are there still errors and error patterns?</p></li>
+<li><p><strong>Repeat some or all of the above steps:</strong> Depending on your findings, you might continue applying adjustments from your list, re-running OCR, and reviewing outputs, or you might be ready to move on to the next step.</p></li>
+</ol>
+<p>These are common issues to address in pre-processing:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* rotatation
+* skew
+* cropping
+* warp
+* noise
+* scale
+* layout order
+</pre></div>
+</div>
+<div class="section" id="a-note-on-cropping">
+<h4>A Note on Cropping<a class="headerlink" href="#a-note-on-cropping" title="Permalink to this headline">¶</a></h4>
+<p>Our duplicate pages do also point out something else important: <strong>whether you need to crop scanned pages.</strong></p>
+<a class="reference internal image-reference" href="images/08-ocr-05.jpeg"><img alt="Screenshot of the duplicate images of page 592, the left image not cropped and the right image cropped." src="images/08-ocr-05.jpeg" style="width: 70%;" /></a>
+<p>When documents are scanned, often there is more included in the image than just the document itself: the stand or supports for the document, color calibration targets, rulers, and anything else in close proximity to the document.  Archivists preparing scanned materials for the Internet Archive and other digital repositories may crop out all parts of a scanned image that are <em>not</em> part of the document, aiming to create image files of a relatively uniform size.</p>
+<p>If your images have not been cropped already, <strong>here are a few resources for learning how to batch crop images:</strong></p>
+<ul class="simple">
+<li><p>In Python: <a class="reference external" href="https://github.com/UNC-Libraries-data/OnTheBooks/blob/master/examples/marginalia_determination/marginalia_determination.ipynb">this Jupyter Notebook explains how to prepare to crop</a>, and <a class="reference external" href="https://github.com/UNC-Libraries-data/OnTheBooks/blob/master/examples/adjustment_recommendation/adjRec.ipynb">this Notebook implements the crop along with other adjustments we’ll explore further here</a></p></li>
+<li><p><a class="reference external" href="https://helpx.adobe.com/photoshop/using/crop-straighten-photos.html">In Photoshop</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="quality-check-a-id-pre-quality-check-a">
+<h3>Quality check<a id="pre-quality-check"></a><a class="headerlink" href="#quality-check-a-id-pre-quality-check-a" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber and Ted Lawless<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-125778965-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

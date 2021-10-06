@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating an OCR Workflow (OCR &amp; Post-Processing) &#8212; Teaching Text Analysis with Constellate</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/constellate-beta.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Teaching Text Analysis with Constellate</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/intro.html">
+   About
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/schedule.html">
+   Course Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/syllabus.html">
+   Course Syllabus
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Open Educational Directory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/all-notebooks.html">
+   Open Notebook Lessons Directory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/add-my-lesson.html">
+   Add your lesson or class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/how-to-create-a-course-website">
+   Create Course from this template
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org">
+   Constellate Platform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs">
+   Constellate Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://constellate.org/docs/key-terms">
+   Text Analysis Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://jupyterbook.org/intro.html">
+   Jupyter Book Documentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="book/keep-learning.html">
+   More ways to keep learning
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ocr-workflow-2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/ithaka/tdm-notebooks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/ithaka/tdm-notebooks/issues/new?title=Issue%20on%20page%20%2Focr-workflow-2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/ithaka/tdm-notebooks/edit/master/ocr-workflow-2.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="http://backend.constellate.org/binder/launch/v2/gh/ithaka/tdm-notebooks/master?urlpath=tree/ocr-workflow-2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-tesseract">
+   Install Tesseract
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" class="align-left" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /><br /></p>
+<p>Created by <a class="reference external" href="http://hannahlangstonjacobs.com/">Hannah Jacobs</a> for the <a class="reference external" href="https://nkelber.github.io/tapi2021/book/intro.html">2021 Text Analysis Pedagogy Institute</a>.</p>
+<p>Adapted by <a class="reference external" href="http://nkelber.com">Nathan Kelber</a> under <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons CC BY License</a><br />
+For questions/comments/improvements, email <a class="reference external" href="mailto:nathan&#46;kelber&#37;&#52;&#48;ithaka&#46;org">nathan<span>&#46;</span>kelber<span>&#64;</span>ithaka<span>&#46;</span>org</a>.<br /></p>
+<hr class="docutils" />
+<div class="section" id="creating-an-ocr-workflow-ocr-post-processing">
+<h1>Creating an OCR Workflow (OCR &amp; Post-Processing)<a class="headerlink" href="#creating-an-ocr-workflow-ocr-post-processing" title="Permalink to this headline">¶</a></h1>
+<p>These <a class="reference external" href="https://docs.constellate.org/key-terms/#jupyter-notebook">notebooks</a> describe how to turn images and/or pdf documents into plain text using Tesseract <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>. The goal of this notebook is to help users design a workflow for a research project.</p>
+<p><strong>Use Case:</strong> For Learners (Detailed explanation, not ideal for researchers)</p>
+<p><strong>Difficulty:</strong> Intermediate</p>
+<p><strong>Completion time:</strong> 90 minutes</p>
+<p><strong>Knowledge Required:</strong></p>
+<ul class="simple">
+<li><p>Python Basics (<a class="reference internal" href="python-basics-1.html"><span class="doc std std-doc">Start Python Basics I</span></a>)</p></li>
+<li><p><a class="reference internal" href="ocr-basics.html"><span class="doc std std-doc">Optical Character Recognition Basics</span></a></p></li>
+<li><p><a class="reference internal" href="ocr-workflow-1.html"><span class="doc std std-doc">Creating an OCR Workflow (Pre-Processing)</span></a></p></li>
+</ul>
+<p><strong>Knowledge Recommended:</strong></p>
+<p><strong>Data Format:</strong></p>
+<ul class="simple">
+<li><p>image files (.jpg, .png)</p></li>
+<li><p>document files (.pdf)</p></li>
+<li><p>plain text (.txt)</p></li>
+</ul>
+<p><strong>Libraries Used:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tesseract-ocr.github.io/">Tesseract</a> for performing <a class="reference external" href="https://docs.constellate.org/key-terms/#ocr">optical character recognition</a>.</p></li>
+</ul>
+<p><strong>Learning Objectives:</strong></p>
+<ol class="simple">
+<li><p>Run OCR on a large batch of prepared images</p></li>
+<li><p>Assess the degree of accuracy achieved in performing OCR</p></li>
+<li><p>Identify post-processing strategies for improving OCR accuracy</p></li>
+</ol>
+<p><strong>Research Pipeline:</strong></p>
+<ol class="simple">
+<li><p>Digitize documents</p></li>
+<li><p><strong>Optical Character Recognition</strong></p></li>
+<li><p>Tokenize your texts</p></li>
+<li><p>Perform analysis</p></li>
+</ol>
+<hr class="docutils" />
+<div class="section" id="install-tesseract">
+<h2>Install Tesseract<a class="headerlink" href="#install-tesseract" title="Permalink to this headline">¶</a></h2>
+<p>We will install Tesseract on your machine using the command line. The following code cell install:</p>
+<ul class="simple">
+<li><p>tesseract-ocr</p></li>
+<li><p>pytesseract</p></li>
+<li><p>tesseract training data</p></li>
+<li><p>additional languages</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+apt install tesseract-ocr
+y
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install PyTesseract, the Python wrapper for Tesseract</span>
+<span class="c1"># An exclamation point runs the command on the command line</span>
+<span class="o">!</span>pip install pytesseract
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Tesseract training data in the Constellate Analytics Lab.</span>
+<span class="c1"># The exclamation runs the command as a terminal command.</span>
+
+<span class="o">!</span>wget https://github.com/tesseract-ocr/tessdata/raw/main/eng.traineddata
+<span class="o">!</span>mv eng.traineddata /usr/share/tesseract-ocr/4.00/tessdata/eng.traineddata
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Spanish language support</span>
+<span class="c1"># Change `spa` to match the language code of your choice</span>
+<span class="c1"># Full list of languages: https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html</span>
+<span class="o">!</span>apt-get install tesseract-ocr-spa
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Language installed.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Converting a folder of images into a single text file ###</span>
+
+<span class="c1"># Import packages #</span>
+
+<span class="c1"># Import os, a module for file management.</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Import re, a module that we can use to search text.</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Import glob, a module that helps with file management.</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Import the Image module from the Pillow Library, </span>
+<span class="c1"># which will help us access the image.</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># Import the pytesseract library, which will run the OCR process.</span>
+<span class="kn">import</span> <span class="nn">pytesseract</span>
+
+<span class="c1"># Configure Tesseract and input/output folders #</span>
+
+<span class="c1"># Specify OEM &amp; PSM configurations. </span>
+<span class="c1"># 3 is the default setting for both.</span>
+<span class="n">custom_oem_psm_config</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;--oem 3 --psm 3&#39;</span>
+
+<span class="c1"># Open the file folder where our sample pages are stored.</span>
+<span class="c1"># Look only for the files ending with the &quot;.jpg&quot; file extension.</span>
+<span class="n">sampleFilePath</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;sample/*.jpg&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a folder for the volume in the output directory (/sample).</span>
+<span class="n">outDir</span> <span class="o">=</span> <span class="s2">&quot;sample_output&quot;</span>
+<span class="n">newDir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">outDir</span><span class="p">)</span>
+
+<span class="c1"># Run OCR Process #</span>
+
+<span class="c1"># If you&#39;re running this script a second or third time, the sample_output folder will </span>
+<span class="c1"># already exist. </span>
+<span class="c1"># The following statement checks whether it already exists and then creates the</span>
+<span class="c1"># sample_output folder if it doesn&#39;t exist (e.g. if the statement below is False).</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">newDir</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">newDir</span><span class="p">)</span>
+
+<span class="c1"># Adding a &quot;/&quot; after newDir (&quot;sample_output&quot;) makes it into a file path that</span>
+<span class="c1"># we&#39;ll use to move our output file to the correct folder later in this script.</span>
+<span class="n">newDir</span> <span class="o">=</span> <span class="n">newDir</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
+    
+<span class="c1"># For each file in the sample folder:</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">sampleFilePath</span><span class="p">:</span>
+    
+    <span class="c1"># Open a file.</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inputFile</span><span class="p">:</span>
+        
+        <span class="c1"># Read the file using PIL&#39;s Image module.</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">inputFile</span><span class="p">)</span>
+    
+        <span class="c1"># Run OCR on the open file.</span>
+        <span class="n">ocrText</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Get a file name -- without the extension -- to use when we name the output file.</span>
+        <span class="n">fileName</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># The current file name also includes its folder name (sampleFilePath, &quot;sample/&quot;).</span>
+        <span class="c1"># We want to store our text output files in a different folder so that we can use </span>
+        <span class="c1"># them in future without altering the original image files. The following two </span>
+        <span class="c1"># lines use the re module to rename the path from &quot;sample/&quot; to &quot;sample_output/&quot;,</span>
+        <span class="c1"># which also changes the final destination for our next text file.</span>
+        <span class="n">currentFolder</span> <span class="o">=</span> <span class="s2">&quot;sample/&quot;</span>
+        <span class="n">fileName</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">currentFolder</span><span class="p">,</span> <span class="n">newDir</span><span class="p">,</span> <span class="n">fileName</span><span class="p">)</span>
+
+        <span class="c1"># Create and open a text file, name it to match its input file,</span>
+        <span class="c1"># and write the OCR&#39;ed text to the file.</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fileName</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outFile</span><span class="p">:</span>
+            <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ocrText</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="s2">&quot; successfully created.&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Loop back to check for another image file, run OCR on that file, </span>
+    <span class="c1"># and write its OCR to a new output file. When no more files remain,</span>
+    <span class="c1"># this loop will end, and the script will be finished.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Nathan Kelber and Ted Lawless<br/>
+        
+          <div class="extra_footer">
+            <div>
+<a href="https://creativecommons.org/licenses/by/2.0/"><img class="license" alt="Creative Commons License" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png" /></a> The tutorials and workshop materials are licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons BY License</a>.
+</div>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-125778965-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
