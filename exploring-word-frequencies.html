@@ -577,7 +577,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>`stop_words.append(‘word_to_add’)</p></td>
+<tr class="row-even"><td><p>stop_words.append(‘word_to_add’)</p></td>
 <td><p>Append a single word to the list</p></td>
 </tr>
 <tr class="row-odd"><td><p>stop_words = stop_words + [‘word_one’, ‘word_two’, ‘word_three’]</p></td>
@@ -611,6 +611,8 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
         <span class="k">if</span> <span class="n">clean_gram</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">clean_gram</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">clean_gram</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="n">word_frequency</span><span class="p">[</span><span class="n">clean_gram</span><span class="p">]</span> <span class="o">+=</span> <span class="n">count</span>
 </pre></div>
@@ -694,6 +696,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># Change the image size displayed</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;bilinear&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
