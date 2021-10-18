@@ -548,8 +548,11 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the unigrams collected for a particular document</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">document_titles</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># Change the value of n to see a different document</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">document_titles</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">documents</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -565,13 +568,6 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 
 <span class="n">word_freq</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">documents</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Change documents index to see a different document</span>
 <span class="n">word_freq</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">document_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -599,14 +595,6 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 </div>
 </div>
 </div>
-<p>Now that we have a <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a>, we can get a preview that displays the number of unique tokens across all of our texts.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>The <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> stores a unique identifier (starting with 0) for every unique token in the corpus. The <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> does not contain information on word frequencies; it only catalogs all the unique words in the corpus. You can see the unique ID for each token in the text using the .token2id() method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -621,7 +609,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the value for the key &#39;people&#39;. Return 0 if there is no token matching &#39;people&#39;. </span>
 <span class="c1"># The number returned is the gensim dictionary ID for the token. </span>
 
-<span class="n">dictionary</span><span class="o">.</span><span class="n">token2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;people&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> 
+<span class="n">dictionary</span><span class="o">.</span><span class="n">token2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;people&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -650,28 +638,37 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a bag of words corpus</span>
+<span class="n">bow_corpus</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="n">bow_corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">documents</span><span class="p">:</span>
+    <span class="n">bow_corpus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bag of words corpus created successfully.&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Examine the bag of words corpus for a specific document</span>
 
-<span class="nb">list</span><span class="p">(</span><span class="n">bow_corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># List out a slice of the first ten items</span>
+<span class="c1"># The for loop could also be written as a list comprehension</span>
+<span class="c1"># bow_corpus = [dictionary.doc2bow(document) for document in documents]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Using IDs can seem a little abstract, but we can discover the word associated with a particular ID. For demonstration purposes, the following code will replace the token IDs in the last example with the actual tokens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word_counts</span> <span class="o">=</span> <span class="p">[[(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">],</span> <span class="n">count</span><span class="p">)</span> <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">bow_corpus</span><span class="p">]</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">word_counts</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Examine the bag of words corpus for a specific document n</span>
+<span class="c1"># Change the value of n to see another document</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="n">bow_corpus</span><span class="p">[</span><span class="n">n</span><span class="p">][:</span><span class="mi">25</span><span class="p">])</span> <span class="c1"># List out a slice of the first 25 items</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using IDs can seem a little abstract, but we can discover the word associated with a particular ID. For demonstration purposes, the following code prints the associated token with the token counts. Each line printed below matches the token id and and count from above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each id and count in the bag of words corpus</span>
+<span class="c1"># Print the corresponding word from the Gensim dictionary and count</span>
+<span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">bow_corpus</span><span class="p">[</span><span class="n">n</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="n">count</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -701,7 +698,17 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <span class="n">corpus_tfidf</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="n">bow_corpus</span><span class="p">]</span>
 
 <span class="c1"># List out the TF-IDF scores for the first 10 tokens of the first text in the corpus</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">corpus_tfidf</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List out the TF-IDF scores for the nth document&#39;s first 10 tokens</span>
+<span class="c1"># Change n to change the document</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="n">corpus_tfidf</span><span class="p">[</span><span class="n">n</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -709,10 +716,8 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <p>Let’s display the tokens instead of the <a class="reference external" href="https://docs.constellate.org/key-terms/#gensim-dictionary">gensim dictionary</a> IDs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_tfidf_scores</span> <span class="o">=</span> <span class="p">[[(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">],</span> <span class="n">count</span><span class="p">)</span> <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">corpus_tfidf</span><span class="p">]</span>
-
-<span class="c1"># List out the TF-IDF scores for the first 10 tokens of the first text in the corpus</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">example_tfidf_scores</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">corpus_tfidf</span><span class="p">[</span><span class="n">n</span><span class="p">][:</span><span class="mi">10</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">score</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -727,18 +732,25 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 
 <span class="c1"># Choosing a document by its index number</span>
 <span class="c1"># Change n to see a different document</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">13</span>
 
-<span class="k">def</span> <span class="nf">Sort</span><span class="p">(</span><span class="n">tfidf_tuples</span><span class="p">):</span> 
-    <span class="n">tfidf_tuples</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">Sort</span><span class="p">(</span><span class="n">tfidf_tuples</span><span class="p">):</span>
+    <span class="s2">&quot;This sorts based on the second value in our tuple, the tf-idf score&quot;</span>
+    <span class="n">tfidf_tuples</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">tfidf_tuples</span> 
 
 <span class="c1"># Print the document id and title</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Title: &#39;</span><span class="p">,</span> <span class="n">document_titles</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ID: &#39;</span><span class="p">,</span> <span class="n">document_ids</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------------------------------------&#39;</span><span class="p">)</span>
 
-<span class="c1">#List the top twenty tokens in our example document by their TF-IDF scores</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">Sort</span><span class="p">(</span><span class="n">example_tfidf_scores</span><span class="p">[</span><span class="n">n</span><span class="p">])[:</span><span class="mi">20</span><span class="p">])</span> 
+<span class="c1"># List the top twenty tokens in our example document by their TF-IDF scores</span>
+<span class="c1"># First we sort the tokens with their scores</span>
+<span class="n">most_significant_terms</span> <span class="o">=</span> <span class="n">Sort</span><span class="p">(</span><span class="n">corpus_tfidf</span><span class="p">[</span><span class="n">n</span><span class="p">])[:</span><span class="mi">20</span><span class="p">]</span>
+
+<span class="c1"># Next we print the list, replacing the token ids with the tokens</span>
+<span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">most_significant_terms</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">score</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
