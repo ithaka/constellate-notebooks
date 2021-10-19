@@ -438,6 +438,20 @@ For questions/comments/improvements, email <a class="reference external" href="m
 <p><strong>Libraries Used:</strong> Pandas</p>
 <p><strong>Research Pipeline:</strong> None</p>
 <hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Download Sample Files for this Lesson</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="n">download_urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/sample2.csv&#39;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">download_urls</span><span class="p">:</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;./data/&#39;</span> <span class="o">+</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="when-to-use-pandas">
 <h2>When to use Pandas<a class="headerlink" href="#when-to-use-pandas" title="Permalink to this headline">¶</a></h2>
 <p>Pandas is a Python data analysis and manipulation library. When it comes to viewing and manipulating data, most people are familiar with commercial spreadsheet software, such as Microsoft Excel or Google Sheets. While spreadsheet software and Pandas can accomplish similar tasks, each has significant advantages depending on the use-case.</p>
