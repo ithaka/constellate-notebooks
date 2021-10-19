@@ -306,9 +306,16 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#text-condition-and-image-quality-a-id-text-condition-a">
-     Text condition and image quality?
+    <a class="reference internal nav-link" href="#text-condition-a-id-text-condition-a">
+     Text condition?
      <a id="text-condition">
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-quality-a-id-image-quality-a">
+     Image Quality
+     <a id="image-quality">
      </a>
     </a>
    </li>
@@ -355,18 +362,16 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-note-on-cropping">
-       A Note on Cropping
+      <a class="reference internal nav-link" href="#rotation">
+       Rotation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cropping">
+       Cropping
       </a>
      </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quality-check-a-id-pre-quality-check-a">
-     Quality check
-     <a id="pre-quality-check">
-     </a>
-    </a>
    </li>
   </ul>
  </li>
@@ -473,10 +478,11 @@ If you’re doing the scanning yourself or will be working with someone to digit
 <li><p><a class="reference external" href="#how-much">How much text?</a></p></li>
 <li><p><a class="reference external" href="#born-digital">Born-digital or digitized?</a></p></li>
 <li><p><a class="reference external" href="#hand-written">Hand-written manuscript or printed using a press?</a></p></li>
-<li><p><a class="reference external" href="#formatting">Text formatting?</a></p></li>
-<li><p><a class="reference external" href="#text-condition">Text condition and image quality?</a></p></li>
-<li><p><a class="reference external" href="#historical-script">Historical script?</a></p></li>
-<li><p><a class="reference external" href="#language-support">Language support?</a></p></li>
+<li><p><a class="reference external" href="#formatting">Text formatting</a></p></li>
+<li><p><a class="reference external" href="#text-condition">Text condition</a></p></li>
+<li><p><a class="reference external" href="#image-quality">Image quality</a></p></li>
+<li><p><a class="reference external" href="#historical-script">Historical script</a></p></li>
+<li><p><a class="reference external" href="#language-support">Language support</a></p></li>
 </ol>
 <div class="section" id="how-much-text-a-id-how-much-a">
 <h3>How much text? <a id="how-much"></a><a class="headerlink" href="#how-much-text-a-id-how-much-a" title="Permalink to this headline">¶</a></h3>
@@ -510,8 +516,8 @@ If you’re doing the scanning yourself or will be working with someone to digit
 <p>The computer doesn’t realize that it’s creating errors, and if the annotations are not in any way mispelled, the <em>On The Books</em> team might have a hard time finding and removing all of these insertions. The insertions might then have also caused major difficulties in future computational analyses.</p>
 <p>Because marginalia would have caused such havoc in their dataset, the <em>On The Books</em> team decided to remove the marginalia as part of preparing for OCR. You can <a class="reference external" href="https://github.com/UNC-Libraries-data/OnTheBooks/tree/master/examples/marginalia_determination">find the documentation about this in the team’s Github</a>.</p>
 </div>
-<div class="section" id="text-condition-and-image-quality-a-id-text-condition-a">
-<h3>Text condition and image quality?<a id="text-condition"></a><a class="headerlink" href="#text-condition-and-image-quality-a-id-text-condition-a" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="text-condition-a-id-text-condition-a">
+<h3>Text condition?<a id="text-condition"></a><a class="headerlink" href="#text-condition-a-id-text-condition-a" title="Permalink to this headline">¶</a></h3>
 <p>Even with the use of state of the art scanning equipment (<a class="reference external" href="https://www.digitalnc.org/about/what-we-use-to-digitize-materials/">for example</a>), annotations on or damage to analog physical media can interfere with OCR. Here are some examples.</p>
 <p><em>Someone writing on a printed text.</em> These check marks might be read as “l” or “V” by the computer:</p>
 <p><img alt="Screenshot of check marks written in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-05.jpeg" /></p>
@@ -523,6 +529,17 @@ If you’re doing the scanning yourself or will be working with someone to digit
 <p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">S€1'.)arate</span> <span class="pre">fund,</span></code></p>
 <p>There is also one additional possibility that can be a result of close binding, or the human doing the scanning avoiding the possibility of breaking tight or damaged binding: that is, <strong>text that is rotated slightly</strong> on the digitized page so that it appears at a slight angle.</p>
 <p><img alt="Screenshot of tilted text in 1887 North Carolina sessions law digitized by UNC Libraries and shared via the Internet Archive." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-08.jpeg" /></p>
+</div>
+<div class="section" id="image-quality-a-id-image-quality-a">
+<h3>Image Quality<a id="image-quality"></a><a class="headerlink" href="#image-quality-a-id-image-quality-a" title="Permalink to this headline">¶</a></h3>
+<p>The higher quality the digitization, the better the OCR–this is the general rule. We can begin, though, with the number of pixels per image–that is, the number of pixels per <em>inch</em>. <strong>In an ideal world, you will start with images that were scanned at 300 ppi or better.</strong> Remember that computers present images as a grid of pixels, usually squares but sometimes rectangles, and that each carry specific color information. Put hundreds, thousands, millions of pixels together, and we have an image.</p>
+<p><img alt="Screenshot of text stored in an image format from a page of North Carolina laws" src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/07-ocr-01.jpeg" /></p>
+<p>A common way for computer programmers to measure image quality is by assessing the number of pixels per inch (ppi). This is important for many reasons: a photographer will want to keep their number of pixels high (perhaps 300 ppi) in preparation for printing, but a web designer will want a much lower number of pixels (72 ppi) to keep an image looking crisp while also keeping file sizes small to avoid slowing down webpage loading time. If you’ve ever opened a webpage and seen text but had to wait a few seconds for images to load, you’ve seen the difference between how long it takes for text vs. an image to load. The more pixels, the larger the file (in kilobytes, megabytes, or even gigabytes), and large files take longer to move from a server to your computer–add in low bandwidth internet, and the load time increases exponentially.</p>
+<p>So, what’s the difference? Let’s look:</p>
+<p><img alt="An image of the letter S at 72 ppi and 300 ppi." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/ppi-comparison.png" />
+The left image shows a scanned letter S at 72 ppi. The visible squares represent individual pixels. Note that each pixel represents one color from the page, and there is a transition between pixels representing ink and those representing paper.</p>
+<p>The right image is the same letter S rescaled to 300 ppi. The squares here appear smaller because there are far more of them. Note that instead of there being only a line 1-2 pixels wide making up the S shape, there are far more–far more for Tesseract to “read” and interpret.</p>
+<p><a class="reference external" href="https://tesseract-ocr.github.io/tessdoc/ImproveQuality">Per its documentation</a>, Tesseract works best with an image resolution of 300 ppi. The documentation actually uses “dpi”, or <a class="reference external" href="https://en.wikipedia.org/wiki/Dots_per_inch">dots per inch</a>. If you’re beginning your project by scanning materials, this unit will be important when you set up your scanner, but once you move into image processing, we’re dealing with <a class="reference external" href="https://en.wikipedia.org/wiki/Pixel_density">pixels per inch</a>. These are not the same, but many people use dpi and ppi interchangeably.</p>
 </div>
 <div class="section" id="historical-script-a-id-historical-script-a">
 <h3>Historical script?<a id="historical-script"></a><a class="headerlink" href="#historical-script-a-id-historical-script-a" title="Permalink to this headline">¶</a></h3>
@@ -742,20 +759,93 @@ y
 <li><p><strong>Review the output.</strong> Has the output improved noticeably? Are there still errors and error patterns?</p></li>
 <li><p><strong>Repeat some or all of the above steps:</strong> Depending on your findings, you might continue applying adjustments from your list, re-running OCR, and reviewing outputs, or you might be ready to move on to the next step.</p></li>
 </ol>
-<p>These are common issues to address in pre-processing:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* rotatation
-* skew
-* cropping
-* warp
-* noise
-* scale
-* layout order
+<p>These are common pre-processing tasks with example code offered here:</p>
+<ul class="simple">
+<li><p>rotatation</p></li>
+<li><p>cropping</p></li>
+<li><p>layout order</p></li>
+</ul>
+<p>These are additional pre-processing tasks described with links to examples:</p>
+<div class="section" id="rotation">
+<h4>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h4>
+<p>See <a class="reference external" href="https://github.com/UNC-Libraries-data/OnTheBooks/blob/master/examples/marginalia_determination/marginalia_determination.ipynb">On the Books</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Find the optimum rotation angle ###</span>
+
+<span class="c1">## Based on code by Lorin Bruckner for On the Books.</span>
+<span class="c1">## Lorin Bruckner derived find_score and rotation_angle from:</span>
+<span class="c1">## https://avilpage.com/2016/11/detect-correct-skew-images-python.html</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">interpolation</span> <span class="k">as</span> <span class="n">inter</span>
+
+<span class="k">def</span> <span class="nf">find_score</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Determine score for a given rotation angle.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">inter</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">reshape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">hist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">hist</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">hist</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hist</span><span class="p">,</span> <span class="n">score</span>
+
+<span class="k">def</span> <span class="nf">rotation_angle</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Determine the best angle to rotate the image to remove skew.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    img (PIL.Image.Image): Image</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    (int): Angle</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">wd</span><span class="p">,</span> <span class="n">ht</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">pix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getdata</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">bin_img</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">pix</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">ht</span><span class="p">,</span> <span class="n">wd</span><span class="p">))</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">)</span>
+   
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">.5</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">limit</span><span class="p">,</span> <span class="n">limit</span><span class="o">+</span><span class="n">delta</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">:</span>
+        <span class="n">hist</span><span class="p">,</span> <span class="n">score</span> <span class="o">=</span> <span class="n">find_score</span><span class="p">(</span><span class="n">bin_img</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+        <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+    
+    <span class="n">best_score</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+    <span class="n">best_angle</span> <span class="o">=</span> <span class="n">angles</span><span class="p">[</span><span class="n">scores</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">best_score</span><span class="p">)]</span>
+    
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">best_angle</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="a-note-on-cropping">
-<h4>A Note on Cropping<a class="headerlink" href="#a-note-on-cropping" title="Permalink to this headline">¶</a></h4>
-<p>Our duplicate pages do also point out something else important: <strong>whether you need to crop scanned pages.</strong></p>
-<a class="reference internal image-reference" href="images/08-ocr-05.jpeg"><img alt="Screenshot of the duplicate images of page 592, the left image not cropped and the right image cropped." src="images/08-ocr-05.jpeg" style="width: 70%;" /></a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the exampled rotated image into our directory</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/rotated_sample.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;rotated_sample.jpeg&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File retrieved.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the rotated image file</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./rotated_sample.jpeg&#39;</span><span class="p">)</span>
+<span class="n">orig1</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1">## Use rotation_angle and find_score to determine angle</span>
+<span class="n">angle_1</span> <span class="o">=</span> <span class="n">rotation_angle</span><span class="p">(</span><span class="n">orig1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">angle_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cropping">
+<h4>Cropping<a class="headerlink" href="#cropping" title="Permalink to this headline">¶</a></h4>
+<p><img alt="Two images, the one on the left is a full book that has not been cropped to the text. The right image only contains the text." src="https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/08-ocr-05.jpeg" /></p>
 <p>When documents are scanned, often there is more included in the image than just the document itself: the stand or supports for the document, color calibration targets, rulers, and anything else in close proximity to the document.  Archivists preparing scanned materials for the Internet Archive and other digital repositories may crop out all parts of a scanned image that are <em>not</em> part of the document, aiming to create image files of a relatively uniform size.</p>
 <p>If your images have not been cropped already, <strong>here are a few resources for learning how to batch crop images:</strong></p>
 <ul class="simple">
@@ -763,9 +853,6 @@ y
 <li><p><a class="reference external" href="https://helpx.adobe.com/photoshop/using/crop-straighten-photos.html">In Photoshop</a></p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="quality-check-a-id-pre-quality-check-a">
-<h3>Quality check<a id="pre-quality-check"></a><a class="headerlink" href="#quality-check-a-id-pre-quality-check-a" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
