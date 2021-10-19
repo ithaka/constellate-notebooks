@@ -696,8 +696,6 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create TF-IDF scores for the ``bow_corpus`` using our model</span>
 <span class="n">corpus_tfidf</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="n">bow_corpus</span><span class="p">]</span>
-
-<span class="c1"># List out the TF-IDF scores for the first 10 tokens of the first text in the corpus</span>
 </pre></div>
 </div>
 </div>
@@ -732,7 +730,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 
 <span class="c1"># Choosing a document by its index number</span>
 <span class="c1"># Change n to see a different document</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">def</span> <span class="nf">Sort</span><span class="p">(</span><span class="n">tfidf_tuples</span><span class="p">):</span>
     <span class="s2">&quot;This sorts based on the second value in our tuple, the tf-idf score&quot;</span>
@@ -759,6 +757,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a dictionary ``td`` where each document gather</span>
+
 <span class="n">td</span> <span class="o">=</span> <span class="p">{</span> 
 <span class="n">dictionary</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_id</span><span class="p">):</span> <span class="n">value</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">corpus_tfidf</span>
 <span class="k">for</span> <span class="n">_id</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">doc</span>
@@ -823,9 +822,14 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <span class="n">search_term</span> <span class="o">=</span> <span class="s1">&#39;coriolanus&#39;</span>
 
 <span class="c1"># Display a list of documents and scores for the search term</span>
+
 <span class="n">matching</span> <span class="o">=</span> <span class="n">terms_to_docs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search_term</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">doc_id</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">matching</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">document_ids</span><span class="p">[</span><span class="n">doc_id</span><span class="p">],</span> <span class="n">score</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span> 
+    <span class="k">for</span> <span class="n">doc_id</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">matching</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">document_ids</span><span class="p">[</span><span class="n">doc_id</span><span class="p">],</span> <span class="n">score</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Search term not found. Change the term or expand the corpus size.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
