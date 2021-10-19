@@ -540,7 +540,7 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doc_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
 <span class="n">num_topics</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Change the number of topics</span>
-<span class="n">passes</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># The number of passes the model runs</span>
+<span class="n">passes</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># The number of passes the model runs</span>
 <span class="c1"># Remove terms that appear in less than 50 documents and terms that occur in more than 90% of documents.</span>
 <span class="n">dictionary</span><span class="o">.</span><span class="n">filter_extremes</span><span class="p">(</span><span class="n">no_below</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">no_above</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
 </pre></div>
@@ -593,6 +593,16 @@ This <a class="reference external" href="https://docs.constellate.org/key-terms/
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyLDAvis.gensim</span>
 <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">enable_notebook</span><span class="p">()</span>
 <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">gensim</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">bow_corpus</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export this visualization as an HTML file</span>
+<span class="c1"># An internet connection is still required to view the HTML</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">gensim</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">bow_corpus</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">)</span>
+<span class="n">pyLDAvis</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s1">&#39;my_visualization.html&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
