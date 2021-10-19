@@ -690,6 +690,23 @@ y
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the Sample Page Images for this lesson</span>
+<span class="c1"># Change the list `download_urls` to bring in other documents</span>
+
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="n">download_urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/ocr_sample.jpg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/cien-an%CC</span><span class="si">%83o</span><span class="s1">s-de-soledad.png&#39;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">download_urls</span><span class="p">:</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;./data/&#39;</span> <span class="o">+</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>We will convert a <span class="xref myst">sample .jpg image</span> to text. The sample comes from the Session Laws of the State of North Carolina. The material was OCRed for the <a class="reference external" href="https://www.neh.gov/">NEH-funded</a>, <a class="reference external" href="https://collectionsasdata.github.io/">Collections as Data</a> project <a class="reference external" href="https://onthebooks.lib.unc.edu/">On the Books: Jim Crow and Algorithms of Resistance</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -701,14 +718,14 @@ y
 
 <span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR),</span>
 <span class="c1"># and then print the results for us to see here.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Let’s break down the above code, from the inside out:</p>
 <ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Image.open(&quot;./data/ocr_sample.jpeg&quot;),</span> <span class="pre">lang=&quot;eng&quot;)</span></code> - Open the image file <code class="docutils literal notranslate"><span class="pre">ocr_sample.jpeg</span></code> in the <code class="docutils literal notranslate"><span class="pre">/data</span></code> folder. Set the language to English.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Image.open(&quot;./data/ocr_sample.jpg&quot;),</span> <span class="pre">lang=&quot;eng&quot;)</span></code> - Open the image file <code class="docutils literal notranslate"><span class="pre">ocr_sample.jeg</span></code> in the <code class="docutils literal notranslate"><span class="pre">/data</span></code> folder. Set the language to English.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pytesseract.image_to_string()</span></code> - Using PyTesseract’s <code class="docutils literal notranslate"><span class="pre">image_to_string</span></code> function, detect alphanumeric characters in the image and convert them into computer-readable text.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> - Display the computer-readable text output.</p></li>
 </ol>
@@ -749,7 +766,7 @@ y
 <span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR)</span>
 <span class="c1"># following the language and mode configuration we specify,</span>
 <span class="c1"># and then print the results for us to see here.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">custom_oem_config</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">custom_oem_config</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -777,7 +794,7 @@ y
 <span class="c1"># Open a specific image file, convert the text in the image to computer-readable text (OCR)</span>
 <span class="c1"># following the language and mode configuration we specify,</span>
 <span class="c1"># and then print the results for us to see here.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">custom_psm_config</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpg&quot;</span><span class="p">),</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">custom_psm_config</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -796,7 +813,7 @@ y
 <span class="c1"># and then print the results for us to see here.</span>
 <span class="nb">print</span><span class="p">(</span>
     <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span>
-        <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span><span class="p">),</span>
+        <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;./data/ocr_sample.jpg&quot;</span><span class="p">),</span>
         <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;eng&quot;</span><span class="p">,</span>
         <span class="n">config</span><span class="o">=</span><span class="n">custom_oem_psm_config</span><span class="p">)</span>
 <span class="p">)</span>
@@ -818,7 +835,7 @@ y
 
 <span class="c1"># File location</span>
 <span class="c1"># You can change the filename in quotes below to OCR a different file.</span>
-<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpg&quot;</span>
 
 <span class="c1"># Open the file named above. </span>
 <span class="c1"># While it&#39;s open, do several things:</span>
@@ -862,7 +879,7 @@ y
 
 <span class="c1"># File location</span>
 <span class="c1"># You can change the filename in quotes below to OCR a different file.</span>
-<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpg&quot;</span>
 
 <span class="c1"># Get a file name--without the extension-- </span>
 <span class="c1"># to use when we name the output file.</span>
@@ -893,7 +910,7 @@ y
 
 <span class="c1"># File location</span>
 <span class="c1"># You can change the filename in quotes below to OCR a different file.</span>
-<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpeg&quot;</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;./data/ocr_sample.jpg&quot;</span>
 
 <span class="c1"># Get a file name--without the extension-- </span>
 <span class="c1"># to use when we name the output file.</span>
@@ -943,25 +960,9 @@ y
 <hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the Sample Page Image</span>
-<span class="c1"># Change the list `download_urls` to bring in other documents</span>
-
-<span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="n">download_urls</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/cien-an%CC</span><span class="si">%83o</span><span class="s1">s-de-soledad.png&#39;</span>
-<span class="p">]</span>
-
-<span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">download_urls</span><span class="p">:</span>
-    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Spanish language support</span>
 <span class="c1"># Change `spa` to match the language code of your choice</span>
-<span class="o">!</span>apt-get install tesseract-ocr-spa
+<span class="o">!</span>apt-get install tesseract-ocr-deu
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Language installed.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
