@@ -8,3 +8,4 @@ Seventh line
 Eighth line
 Ninth line
 Tenth line. This is the end of the text file!
+This is the eleventh line
