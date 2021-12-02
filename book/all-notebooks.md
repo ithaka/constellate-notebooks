@@ -14,6 +14,7 @@
 * [Finding Significant Words using TF/IDF](../finding-significant-terms.ipynb)
 * [Working with Dataset Files](../working-with-dataset-files.ipynb)
 * [Pandas 1](../pandas-1.ipynb)
+* [Pandas 2](../pandas-2.ipynb)
 * [Creating a Stopwords List](../creating-stopwords-list.ipynb)
 * [Counter Objects](../counter-objects.ipynb)
 * [Sentiment Analysis with VADER](../sentiment-analysis-with-vader.ipynb)
