@@ -1,5 +1,7 @@
 # Lesson Directory
 
+## Python
+
 **Introduction to Text Analysis (12 sessions)** An introduction to text analysis, assuming no prior experience with Jupyter Notebooks or Python. 
 ___
 **Python Basics (4 sessions)** An introduction to basic Python programming including operators, expressions, data types, variables, functions, flow control, lists, and dictionaries.
