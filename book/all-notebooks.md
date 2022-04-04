@@ -10,6 +10,7 @@ ___
 * [Python Basics 1](../python-basics-1.ipynb)
 * [Python Basics 2](../python-basics-2.ipynb)
 * [Python Basics 3](../python-basics-3.ipynb)
+* [Python Basics 4](../python-basics-4.ipynb)
 ___
 
 ### Intermediate Lessons
