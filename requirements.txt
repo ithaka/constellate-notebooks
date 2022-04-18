@@ -12,3 +12,4 @@ vaderSentiment
 numpy
 Pillow
 wordcloud
+spacy
