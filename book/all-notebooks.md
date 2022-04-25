@@ -26,5 +26,6 @@ ___
 
 ### Advanced Research Notebooks
 * [LDA Topic Modeling](../topic-modeling.ipynb)
-* [Tokenize Text Files](../tokenizing-text-files.ipynb)
-* [Tokenizing Text Files with NLTK](../tokenize-text-files-with-nltk-for-research.ipynb)
+* [Tokenizers](../tokenizers.ipynb)
+* [Tokenizing Text Files with NLTK](../tokenize-text-files-with-nltk.ipynb)
+* [Tokenizing Text Files](../tokenizing-text-files.ipynb)
