@@ -11,6 +11,7 @@ ___
 * [Python Basics 2](../python-basics-2.ipynb)
 * [Python Basics 3](../python-basics-3.ipynb)
 * [Python Basics 4](../python-basics-4.ipynb)
+* [Python Basics 5](../python-basics-5.ipynb)
 ___
 
 ### Intermediate Lessons
@@ -29,3 +30,7 @@ ___
 * [Tokenizers](../tokenizers.ipynb)
 * [Tokenizing Text Files with NLTK](../tokenize-text-files-with-nltk.ipynb)
 * [Tokenizing Text Files](../tokenizing-text-files.ipynb)
+
+```python
+
+```
