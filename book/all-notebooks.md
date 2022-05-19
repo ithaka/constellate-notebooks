@@ -24,6 +24,7 @@ ___
 * [Creating a Stopwords List](../creating-stopwords-list.ipynb)
 * [Counter Objects](../counter-objects.ipynb)
 * [Sentiment Analysis with VADER](../sentiment-analysis-with-vader.ipynb)
+* [Regular Expressions](../regular-expressions.ipynb)
 
 ### Advanced Research Notebooks
 * [LDA Topic Modeling](../topic-modeling.ipynb)
