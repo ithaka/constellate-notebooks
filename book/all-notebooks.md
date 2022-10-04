@@ -2,10 +2,8 @@
 
 ## Python
 
-### Beginner Lessons
-**Introduction to Text Analysis (12 sessions)** An introduction to text analysis, assuming no prior experience with Jupyter Notebooks or Python. 
-___
-**Python Basics (4 sessions)** An introduction to basic Python programming including operators, expressions, data types, variables, functions, flow control, lists, and dictionaries.
+### Beginner Lessons 
+**Python Basics (5 sessions)** An introduction to basic Python programming including operators, expressions, data types, variables, functions, flow control, lists, and dictionaries.
 * [Getting Started with Jupyter Notebooks](../getting-started-with-jupyter.ipynb)
 * [Python Basics 1](../python-basics-1.ipynb)
 * [Python Basics 2](../python-basics-2.ipynb)
@@ -25,6 +23,10 @@ ___
 * [Counter Objects](../counter-objects.ipynb)
 * [Sentiment Analysis with VADER](../sentiment-analysis-with-vader.ipynb)
 * [Regular Expressions](../regular-expressions.ipynb)
+* [Text Analysis: What Every Digital Humanist Should know](../dh.ipynb)
+* [OCR Basics](../ocr-basics.ipynb)
+* [OCR Workflow 1](../ocr-workflow-1.ipynb)
+* [OCR Workflow 2](../ocr-workflow-2.ipynb)
 
 ### Advanced Research Notebooks
 * [LDA Topic Modeling](../topic-modeling.ipynb)
@@ -32,6 +34,4 @@ ___
 * [Tokenizing Text Files with NLTK](../tokenize-text-files-with-nltk.ipynb)
 * [Tokenizing Text Files](../tokenizing-text-files.ipynb)
 
-```python
 
-```
