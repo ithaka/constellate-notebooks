@@ -1,4 +1,4 @@
-# Constellate Collaborative Notebooks and Lessons:::::::
+# Constellate Collaborative Notebooks and Lessons
 Constellate is a platform to learn and perform text analysis, build datasets, and share analytics course materials. Open the black box of text analysis with [Constellate](https://constellate.org/), from JSTOR and Portico. 
 
 This repository is a collection of Jupyter Notebooks that may be used by individuals for learning or teaching text analytics.  You may access them in our textbook, [Teaching Text Analysis with Constellate](https://ithaka.github.io/tdm-notebooks/book/intro.html), and also interact with a number of them from your [Constellate datasets](https://constellate.org/dataset/dashboard/).  All these Notebooks will run in the Constellate environment.  
