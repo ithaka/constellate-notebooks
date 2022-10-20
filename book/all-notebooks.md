@@ -25,6 +25,8 @@ ___
 * [OCR Basics](../ocr-basics.ipynb)
 * [OCR Workflow 1](../ocr-workflow-1.ipynb)
 * [OCR Workflow 2](../ocr-workflow-2.ipynb)
+* [Python Intermediate 1](../python-intermediate-1.ipynb)
+* [Python Intermediate 2](../python-intermediate-2.ipynb)
 
 ### Advanced Research Notebooks
 * [LDA Topic Modeling](../topic-modeling.ipynb)
