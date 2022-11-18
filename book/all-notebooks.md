@@ -28,6 +28,7 @@ ___
 * [Python Intermediate 1](../python-intermediate-1.ipynb)
 * [Python Intermediate 2](../python-intermediate-2.ipynb)
 * [Python Intermediate 3](../python-intermediate-3.ipynb)
+* [Python Intermediate 4](../Python-intermediate-4.ipynb)
 
 ### Advanced Research Notebooks
 * [LDA Topic Modeling](../topic-modeling.ipynb)
