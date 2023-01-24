@@ -31,6 +31,7 @@ ___
 * [Python Intermediate 3](../python-intermediate-3.ipynb)
 * [Python Intermediate 4](../python-intermediate-4.ipynb)
 * [NER 1](../NER-1.ipynb)
+* [NER 2](../NER-2.ipynb)
 
 ### Advanced Research Notebooks
 * [LDA Topic Modeling](../topic-modeling.ipynb)
