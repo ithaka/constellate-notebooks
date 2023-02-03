@@ -1,5 +1,9 @@
 # Lesson Directory
 
+## Python
+
+### Beginner Lessons 
+
 ## Why Learn Text Analysis? (Pre-Code)
 Learn how text analysis can help your research.
 * [Text Analysis: What Every Digital Humanist Should Know](../dh.ipynb)
