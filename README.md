@@ -21,10 +21,10 @@ Some of the examples use [nltk](https://www.nltk.org/) model files. Download the
 
 # About Constellate
 ## Problem:
-Text analytics, or the process of deriving new information from pattern and trend analysis of the written word, has the potential to revolutionize research across disciplines. Sadly, there is a massive hurdle facing those eager to unleash its power.  The coding skills and statistical knowledge that text mining requires can take years to develop.   All too often, researchers learn about the promise of text mining, only to have it revealed that the promise can be realized solely by the select few with the necessary technical skills.  Ted Underwood, Professor of English at the University of Illinois, likens this scenario to researchers being presented with a “[deceptively gentle welcome mat, followed by a trapdoor](https://tedunderwood.com/2018/01/04/a-broader-purpose/)."
+Text analytics, or the process of deriving new information from pattern and trend analysis of the written word, has the potential to revolutionize research across disciplines. Sadly, there is a massive hurdle facing those eager to unleash its power.  The coding skills and statistical knowledge that text mining requires can take years to develop.   All too often, researchers learn about the promise of text mining, only to have it revealed that the promise can be realized solely by the select few with the necessary technical skills.  Ted Underwood, Professor of English at the University of Illinois, likens this scenario to researchers being presented with a "[deceptively gentle welcome mat, followed by a trapdoor](https://tedunderwood.com/2018/01/04/a-broader-purpose/)."
 
 ## Solution:
-ITHAKA has addressed this problem by building Constellate, a text analytics platform aimed at teaching and enabling a generation of researchers to text mine. Two of ITHAKA’s services, [JSTOR](https://www.jstor.org/) and [Portico](https://www.portico.org/), are the initial sources of content for the new platform, which now includes [Chronicling America](https://chroniclingamerica.loc.gov/), collections from [Documenting the American South](https://docsouth.unc.edu/docsouthdata/), the [South Asia Open Archives](https://www.jstor.org/site/saoa/) and [Independent Voices](http://revealdigital.com/independent-voices/) from [Reveal Digital](http://revealdigital.org/).  
+ITHAKA has addressed this problem by building Constellate, a text analytics platform aimed at teaching and enabling a generation of researchers to text mine. Two of ITHAKA's services, [JSTOR](https://www.jstor.org/) and [Portico](https://www.portico.org/), are the initial sources of content for the new platform, which now includes [Chronicling America](https://chroniclingamerica.loc.gov/), collections from [Documenting the American South](https://docsouth.unc.edu/docsouthdata/), the [South Asia Open Archives](https://www.jstor.org/site/saoa/) and [Independent Voices](http://revealdigital.com/independent-voices/) from [Reveal Digital](http://revealdigital.org/).  
 
 Constellate provides value to users in three core areas -- they can teach and learn text analytics, build datasets from across multiple content sources, and visualize and analyze their datasets:
 
@@ -34,7 +34,7 @@ Constellate provides value to users in three core areas -- they can teach and le
 * Collaborative Teaching Materials Creation: Users may create, edit, reuse and collaborate in the creation of tutorials, code, documentation, and other educational resources for text analysis.
 
 ### Build
-* Multiple Collections: Anchor collections from JSTOR and Portico, with additional content sources continually added (such as Library of Congress’ Chronicling America). Further [details about the collections](https://constellate.org/docs/data-sources/) are available.
+* Multiple Collections: Anchor collections from JSTOR and Portico, with additional content sources continually added (such as Library of Congress' Chronicling America). Further [details about the collections](https://constellate.org/docs/data-sources/) are available.
 * Data Download in JSON
     * All content - bibliographic metadata, unigrams, bigrams, trigrams
     * Open content - bibliographic metadata, full-text, unigrams, bigrams, trigrams
