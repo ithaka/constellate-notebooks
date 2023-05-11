@@ -86,6 +86,14 @@ Automate reading, cleaning, and manipulating tabular data.
 * [Pandas 2](../pandas-2.ipynb)
 * [Pandas 3](../pandas-3.ipynb)
 
+### Data Visualization (Intermediate)
+
+Applied charting and plotting using Matplotlib. 
+
+* [DataViz 1](../DataViz1.ipynb)
+* [DataViz 2](../DataViz2.ipynb)
+* [DataViz 3](../DataViz3.ipynb)
+
 ## Advanced
 
 ### Tokenization (Advanced)
