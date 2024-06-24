@@ -52,7 +52,9 @@ In this introductory series, we will use R notebooks to demonstrate how to use R
 
 # R Notebooks
 
-This is your first R notebook. R notebooks are documents that contain both R code and explanatory text, images, figures, plots, videos and links. The R code chunks in an R notebook can be executed, modified and deleted. While you explore this notebook, feel free to modify the text, the code and to play with the RStudio environment. To get the best experience, select the Visual mode in the Source Pane to read the R notebook. In today's lesson, you will learn how to create, modify and save your own R notebooks to share with others.
+This is your first R notebook. R notebooks are documents that contain both R code and explanatory content, such as text, images, figures, plots, videos and links. The R code chunks in an R notebook can be executed, modified and deleted. While you explore this notebook, feel free to modify the text, tinker with the code, and play with the RStudio environment. The "Visual" mode in the Source Pane will give you the most polished and presentable view of this notebook. The "Source" mode will reveal all the underlying markdown code, and it can be useful for making modifications to your code. Try examining the notebook in both versions
+
+To get the best experience, select the Visual mode in the Source Pane to read the R notebook. In today's lesson, you will learn how to create, modify and save your own R notebooks to share with others.
 
 ### Content in an R notebook
 
@@ -62,13 +64,15 @@ There are two kinds of content in R Notebooks:
 
 2\. Code chunks - Code chunks in an R notebook contain code in the R language that can be executed inline.
 
-A code chunk can be distinguished from the markdown content by the fact that it has a gray background. Moreover, the R code is enclosed by the delimiters \```{r}" and \```.
+
+In the Visual mode, a code chunk can be distinguished from the markdown content by the fact that it has a gray background and contains `{r}`. In the source mode, a code chunk is additionally enclosed by triple back ticks (shift + \~, left of the 1 key).
+
 
 ```{r}
 #This is a code chunk
 ```
 
-In the code chunk above, there is no executable content, only a text comment. We can tell the text in the code chunk is a comment because it is prefixed with `#`. In R, any time a line if prefaced by a `#` that line is a comment and will not be executed if the code is run. In a code chunk, comments are blueish-green in color.
+In the code chunk above, there is no executable content, only a text comment. We can tell the text in the code chunk is a comment because it is prefixed with `#`. In R, any time a line begins with a `#` that line is a comment and will not be executed if the code is run. In a code chunk, comments are blueish-green in color.
 
 ## Hello World: Your first code
 
@@ -79,12 +83,12 @@ It is traditional in programming education to begin with a program that prints `
 Let's write the code into a code chunk.
 
 ```{r}
-print("Hello World!")
+
 ```
 
 ## Create a code chunk
 
-To create a code chunk, you have a couple options.
+To create a code chunk in visual mode, you have a couple options.
 
 1.  Go up to the top menu and click on **Insert -\> Executable Cell -\> R**. Note that you can write code chunks in other programming languages in an R notebook too.
 
@@ -96,9 +100,10 @@ To create a code chunk, you have a couple options.
 
 To run a code chunk, you also have a couple options.
 
-1.  Go up to the top right to find the **Run** button. You will find the different running options in the drop down. To run the current code chunk, select **Run Current Chunk**. ![](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/run-R-code-chunk.gif)
+1.  Go up to the top right to find the **Run** button. You will find the different running options in the drop down. To run the current code chunk, select **Run Current Chunk**. ![An animation showing how to run a code chunk](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/run-R-code-chunk.gif)
 
-2.  Click on the right-facing green triangle on the top right corner of the code chunk to run the current chunk. You also have another option that allows you to run all code chunks above the current one. ![](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/run-current-code-chunk-green-triangle.gif)
+2.  Click on the right-facing green triangle on the top right corner of the code chunk to run the current chunk. You also another option to run all code chunks above the current one. ![An animation showing how to run a code chunk](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/run-current-code-chunk-green-triangle.gif)
+
 
 ## Modify the content
 
@@ -108,7 +113,9 @@ In an R notebook, the text content can be modified directly. In order to see the
 
 ### Code
 
-You can modify a code chunk by selecting it to make changes.
+
+You can modify the code chunks by selecting the code chunk and changing it.
+
 
 ## Create a new R notebook
 
@@ -116,7 +123,7 @@ R notebooks are great for teaching because they allow both markdown content and 
 
 To create a new R notebook, go to the top menu, click on **File -\> New File -\> R Notebook**.
 
-![](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/create-new-rnotebook.gif)
+![An animation showing how to create a new notebook.](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/create-new-rnotebook.gif)
 
 In order to make the document easy to follow for the learners, open an R notebook in the visual mode. In this mode, all the markdown content will be rendered and viewers see the rendered text with formatting or hyperlinks, images and videos instead of the markdown syntax underneath.
 
@@ -174,10 +181,6 @@ Create a horizontal rule with three asterisks, hyphens or underscores!
 
 ## Lesson Complete
 
-Congratulations! You have completed "Getting Started with R Notebooks." If you have never programmed in [R](https://www.r-project.org) before, we recommend you complete:
+Congratulations! You have completed "Getting Started with R Notebooks." If you have never programmed in the [R Language](https://constellate.org/docs/key-terms/#r) before, we recommend you complete:
 
-*Introduction to text analysis with R* I
-
-*Introduction to text analysis with R* II
-
-*Introduction to text analysis with R* III
+*Introduction to text analysis with R*
