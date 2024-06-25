@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with RStudio"
+title: "Getting Started with R"
 output: 
   html_notebook:
     toc: true
@@ -12,9 +12,9 @@ Created by Zhuo Chen for [JSTOR Labs](https://labs.jstor.org/) under [Creative C
 
 For questions/comments/improvements, email [zhuo.chen\@ithaka.org](mailto:zhuo.chen@ithaka.org)
 
-# Getting Started with R Notebooks
+# Getting Started with R
 
-Welcome to the Constellate RStudio lab! This lesson introduces the basics of RStudio and R notebooks. If you are new to R, this is a good place to start.
+Welcome to Constellate lab with R! This lesson introduces the basics of RStudio and R notebooks. If you are new to R, this is a good place to start.
 
 **Use case** : For learners (detailed explanation, not ideal for researchers)
 
