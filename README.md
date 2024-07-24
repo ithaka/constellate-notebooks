@@ -11,7 +11,7 @@ These Jupyter Notebooks were designed to work in the Constellate lab environment
 
 `pip install constellate-client`
 
-Maintained by [Nathan Kelber](http://nkelber.com) and Zhuo Chen for [JSTOR Labs](https://labs.jstor.org/) under [Creative Commons CC BY License](https://creativecommons.org/licenses/by/4.0/)
+Maintained by [Nathan Kelber](http://nkelber.com) and Zhuo Chen for [JSTOR Labs](https://labs.jstor.org/) under [Creative Commons CC BY License](https://creativecommons.org/licenses/by/4.0/).
 
 **For questions/comments/improvements, email [constellate@ithaka.org](mailto:constellate@ithaka.org).**
 
