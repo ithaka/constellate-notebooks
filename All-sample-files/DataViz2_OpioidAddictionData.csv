@@ -1,0 +1,93 @@
+﻿Category: Addiction,,,,
+Source: Massachusetts DPH Opioid Report,,,,
+Chart: Opioid-Related Overdose Death Rates (2014-2020),,,,
+"Note: Data for Asian, NH females were excluded due to rate instability from low death counts",,,,
+,,,,
+Year,Race/Ethnicity,Measure,Sex,"Age-Adjusted Rate per 100,000"
+2014,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Female,13.8
+2015,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Female,15.6
+2016,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Female,19.9
+2017,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Female,16.7
+2018,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Female,19.5
+2019,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Female,17.4
+2020,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Female,18.8
+2014,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Female,8.2
+2015,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Female,9
+2016,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Female,10.7
+2017,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Female,8.8
+2018,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Female,9.1
+2019,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Female,12.3
+2020,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Female,16.2
+2014,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Female,4.8
+2015,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Female,7
+2016,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Female,11
+2017,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Female,9.1
+2018,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Female,10.5
+2019,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Female,8.2
+2020,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Female,13.8
+2014,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Male,34.2
+2015,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Male,46.9
+2016,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Male,53.3
+2017,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Male,51
+2018,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Male,49.5
+2019,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Male,49.5
+2020,"White, NH",Confirmed Opioid-Related Overdose Death Rate,Male,47.6
+2014,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Male,14.5
+2015,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Male,22.8
+2016,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Male,22.7
+2017,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Male,34.8
+2018,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Male,22.8
+2019,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Male,32.6
+2020,"Black, NH",Confirmed Opioid-Related Overdose Death Rate,Male,57.1
+2014,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Male,27.1
+2015,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Male,34.7
+2016,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Male,54
+2017,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Male,55
+2018,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Male,53
+2019,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Male,57.2
+2020,Hispanic,Confirmed Opioid-Related Overdose Death Rate,Male,59.8
+2014,"Asian/Pacific Islander, NH",Confirmed Opioid-Related Overdose Death Rate,Male,3.6
+2015,"Asian/Pacific Islander, NH",Confirmed Opioid-Related Overdose Death Rate,Male,3.5
+2016,"Asian/Pacific Islander, NH",Confirmed Opioid-Related Overdose Death Rate,Male,4.8
+2017,"Asian/Pacific Islander, NH",Confirmed Opioid-Related Overdose Death Rate,Male,4.9
+2018,"Asian/Pacific Islander, NH",Confirmed Opioid-Related Overdose Death Rate,Male,6.6
+2019,"Asian/Pacific Islander, NH",Confirmed Opioid-Related Overdose Death Rate,Male,4
+2020,"Asian/Pacific Islander, NH",Confirmed Opioid-Related Overdose Death Rate,Male,6.2
+,,,,
+,,,,
+Category: Addiction,,,,
+Source: Bureau of Substance Addiction Services,,,,
+"Notes: Opioid includes heroin, fentanyl, non-Rx opiates, Rx opiates, and other opiates; FY2020 & FY2021 admissions were impacted by the COVID-19 pandemic.",,,,
+"Chart: Median Age of New Clients at Initial Admission to a BSAS Funded/Licensed Program where Opioid* was reported as Primary SubstanceBy Race/Ethnicity, FY2017-FY2021",,,,
+,,,,
+Year,Race/Ethnicity,Measure,Years,
+2017,"White, NH",Median Age at Initial Admission,29,
+2017,"Black, NH",Median Age at Initial Admission,33,
+2017,Hispanic,Median Age at Initial Admission,32,
+2017,Multiracial,Median Age at Initial Admission,28,
+2017,"Asian, NH",Median Age at Initial Admission,28,
+2017,Other,Median Age at Initial Admission,29,
+2018,"White, NH",Median Age at Initial Admission,32,
+2018,"Black, NH",Median Age at Initial Admission,34,
+2018,Hispanic,Median Age at Initial Admission,33,
+2018,Multiracial,Median Age at Initial Admission,29,
+2018,"Asian, NH",Median Age at Initial Admission,30,
+2018,Other,Median Age at Initial Admission,30,
+2019,"White, NH",Median Age at Initial Admission,33,
+2019,"Black, NH",Median Age at Initial Admission,33,
+2019,Hispanic,Median Age at Initial Admission,34,
+2019,Multiracial,Median Age at Initial Admission,31,
+2019,"Asian, NH",Median Age at Initial Admission,35,
+2019,Other,Median Age at Initial Admission,30,
+2020,"White, NH",Median Age at Initial Admission,33,
+2020,"Black, NH",Median Age at Initial Admission,37,
+2020,Hispanic,Median Age at Initial Admission,34,
+2020,Multiracial,Median Age at Initial Admission,31,
+2020,"Asian, NH",Median Age at Initial Admission,35,
+2020,Other,Median Age at Initial Admission,30,
+2021,"White, NH",Median Age at Initial Admission,34,
+2021,"Black, NH",Median Age at Initial Admission,35,
+2021,Hispanic,Median Age at Initial Admission,34,
+2021,Multiracial,Median Age at Initial Admission,36,
+2021,"Asian, NH",Median Age at Initial Admission,33,
+2021,Other,Median Age at Initial Admission,34,

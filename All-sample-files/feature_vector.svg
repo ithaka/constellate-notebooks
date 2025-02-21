@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <!-- Neuron label -->
+  <text x="170" y="40" font-family="Arial" font-size="16" font-weight="bold">Neuron</text>
+  
+  <!-- Input vector -->
+  <text x="10" y="250" font-family="Arial" font-size="14">[5, 2, 1]</text>
+  <text x="60" y="270" font-family="Arial" font-size="14" font-style="italic">Feature Vector</text>
+  
+  <!-- Input arrow -->
+  <line x1="10" y1="140" x2="90" y2="140" stroke="black" stroke-width="2"/>
+  <polygon points="90,136 100,140 90,144" fill="black"/>
+  
+  <!-- Connecting line from vector to input -->
+  <line x1="50" y1="245" x2="50" y2="145" stroke="black" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Neuron cell body -->
+  <circle cx="200" cy="140" r="80" fill="lightblue" stroke="blue" stroke-width="2"/>
+  
+  <!-- Nucleus -->
+  <circle cx="200" cy="140" r="20" fill="darkblue"/>
+  
+  <!-- Axon -->
+  <path d="M280,140 L380,140" fill="none" stroke="blue" stroke-width="2"/>
+  
+  <!-- Output arrow -->
+  <line x1="380" y1="140" x2="390" y2="140" stroke="black" stroke-width="2"/>
+  <polygon points="390,136 400,140 390,144" fill="black"/>
+  
+  <!-- Labels -->
+  <text x="40" y="130" font-family="Arial" font-size="14">Input</text>
+  <text x="350" y="130" font-family="Arial" font-size="14">Output</text>
+</svg>
