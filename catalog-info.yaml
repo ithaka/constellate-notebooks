@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: constellate-notebooks
+  description: Auto-generated catalog-info.yaml.
+  tags:
+  - jupyter notebook
+  - javascript
+  - python
+spec:
+  type: unknown
+  owner: group:labs
+  lifecycle: unknown
