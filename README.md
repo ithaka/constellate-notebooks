@@ -38,7 +38,14 @@ Local solutions can be classified into either JupyterLab or Integrated Developme
 
 ### Installing JupyterLab locally (the best solution)
 
-These notebooks use the Jupyter notebook (.ipynb) standard created by [Project Jupyter](https://jupyter.org/). Their [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) software remains free and open source. It is the best platform for using these notebooks. If you do not feel comfortable on the command line, Project Jupyter offers [JupyterLab Desktop](https://github.com/jupyterlab/jupyterlab-desktop) with a traditional application installer for Windows, Mac, and Linux.
+These notebooks use the Jupyter notebook (.ipynb) standard created by [Project Jupyter](https://jupyter.org/). Their [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) software remains free and open source. It is the best platform for using these notebooks. 
+
+For beginners without command line experience, we recommend Project Jupyter's [JupyterLab Desktop](https://github.com/jupyterlab/jupyterlab-desktop) with traditional application installers for Windows, Mac, and Linux.
+
+For those comfortable using the command line, we offer basic instructions for:
+
+* [Mac OS X](./install-jupyterlab-mac.md)
+* [Windows 10](./install-jupyterlab-windows.md)
 
 ### Not recommended local JupyterLab installation methods
 
