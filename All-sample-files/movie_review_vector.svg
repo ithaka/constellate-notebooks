@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <!-- Vector brackets -->
+  <text x="10" y="60" font-family="Arial" font-size="40">[</text>
+  <text x="280" y="60" font-family="Arial" font-size="40">]</text>
+  
+  <!-- Vector elements -->
+  <text x="50" y="60" font-family="Arial" font-size="30" text-anchor="middle">5</text>
+  <text x="140" y="60" font-family="Arial" font-size="30" text-anchor="middle">2</text>
+  <text x="230" y="60" font-family="Arial" font-size="30" text-anchor="middle">1</text>
+  
+  <!-- Commas -->
+  <text x="90" y="55" font-family="Arial" font-size="30">,</text>
+  <text x="180" y="55" font-family="Arial" font-size="30">,</text>
+</svg>

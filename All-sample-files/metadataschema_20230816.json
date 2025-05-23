@@ -1,0 +1,275 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://backend.constellate.org/schema/",
+    "title": "Constellate Document Format",
+    "description": "constellate.org data format",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "Provider specific identifier",
+            "type": "string"
+        },
+        "title": {
+            "description": "Document title",
+            "type": "string"
+        },
+        "subTitle": {
+            "description": "Document subtitle",
+            "type": "string"
+        },
+        "docType": {
+            "description": "Document type. E.g. book, article, chapter",
+            "type": "string",
+            "enum": [
+                "article",
+                "book",
+                "chapter",
+                "newspaper",
+                "report",
+                "magazine",
+                "newsletter",
+                "issue",
+                "pamphlet",
+                "document"
+            ]
+        },
+        "docSubType": {
+            "description": "Document subtype. E.g. book review, research article. Single value.",
+            "type": "string"
+        },
+        "publicationYear": {
+            "description": "Year published",
+            "type": "integer"
+        },
+        "provider": {
+            "description": "Content provider",
+            "type": "string"
+        },
+        "collection": {
+            "description": "Collection information as identified by the source.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "doi": {
+            "type": "string"
+        },
+        "datePublished": {
+            "description": "Date in ISO 8601 format",
+            "type": "string",
+            "format": "date"
+        },
+        "url": {
+            "description": "URL for web version of document",
+            "type": "string"
+        },
+        "creator": {
+            "description": "Creators/authors of document",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "editor": {
+            "description": "Editors of document",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "pageStart": {
+            "description": "Starting page if in paginated volume.",
+            "type": "string"
+        },
+        "pageEnd": {
+            "type": "string"
+        },
+        "pageCount": {
+            "type": "integer"
+        },
+        "wordCount": {
+            "type": "integer"
+        },
+        "pagination": {
+            "description": "Human readable page sequence string",
+            "type": "string"
+        },
+        "language": {
+            "description": "Three letter language codes from ISO 639-2",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "publisher": {
+            "type": "string"
+        },
+        "placeOfPublication": {
+            "type": "string",
+            "description": "Place of publication"
+        },
+        "holdingOrganization": {
+            "type": "string",
+            "description": "For digitized items, the organization that holds the physical items."
+        },
+        "abstract": {
+            "type": "string"
+        },
+        "isPartOf": {
+            "description": "Container title. Usually book or journal title.",
+            "type": "string"
+        },
+        "hasPartTitle": {
+            "description": "Title of sub-items, e.g. book chapters when the described document is a book.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "identifier": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Lowercased identifier name, e.g. doi, issn",
+                        "type": "string",
+                        "enum": [
+                            "doi",
+                            "issn",
+                            "isbn",
+                            "oclc",
+                            "lccn",
+                            "pubmed",
+                            "pmc",
+                            "who_covidence",
+                            "microsoft_academic",
+                            "newspaper_id",
+                            "journal_id",
+                            "issue_id",
+                            "local_doi",
+                            "local_publisher_id",
+                            "local_content_set",
+                            "local_uuid"
+                        ]
+                    },
+                    "value": {
+                        "description": "Identifier value",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "value"
+                ]
+            }
+        },
+        "tdmCategory": {
+            "description": "Inferred category",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "keyphrase": {
+            "description": "Inferred key terms and phrases",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "sourceCategory": {
+            "description": "Category/discipline/subjects assigned by provider",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "sequence": {
+            "description": "Article or chapter sequence if available.",
+            "type": "integer"
+        },
+        "issueNumber": {
+            "type": "string"
+        },
+        "volumeNumber": {
+            "type": "string"
+        },
+        "outputFormat": {
+            "type": "array",
+            "description": "Available outputs, e.g. ngrams, fulltext",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "unigram",
+                    "bigram",
+                    "trigram",
+                    "fullText",
+                    "fulltext"
+                ]
+            }
+        },
+        "unigramCount": {
+            "type": "object",
+            "description": "Unigrams and frequency in the document.",
+            "patternProperties": {
+                "^.*$": {
+                    "description": "Raw ngram"
+                },
+                "^[0-9]+$": {
+                    "description": "Frequency within the document",
+                    "type": "integer"
+                }
+            }
+        },
+        "bigramCount": {
+            "type": "object",
+            "description": "Unigrams and frequency in the document.",
+            "patternProperties": {
+                "^.*$": {
+                    "description": "Raw ngram"
+                },
+                "^[0-9]+$": {
+                    "description": "Frequency within the document",
+                    "type": "integer"
+                }
+            }
+        },
+        "trigramCount": {
+            "type": "object",
+            "description": "Unigrams and frequency in the document.",
+            "patternProperties": {
+                "^.*$": {
+                    "description": "Raw ngram"
+                },
+                "^[0-9]+$": {
+                    "description": "Frequency within the document",
+                    "type": "integer"
+                }
+            }
+        },
+        "fullText": {
+            "type": [
+                "array"
+            ],
+            "description": "Full text of the item. Each page of the document is an item in the array.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "dateModified": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date the document was modified."
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "id",
+        "title",
+        "docType",
+        "publicationYear",
+        "provider"
+    ]
+}
