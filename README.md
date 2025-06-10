@@ -124,7 +124,7 @@ Binder is a free platform useful for demonstrating notebooks, but it has no pers
 
 Regardless of the solution you choose, you will need to become familiar with installing Python packages that these notebooks use. If you get an error that a package could not be imported when running a cell, that probably means it is not installed. You will need to install it (and may also need to restart the notebook kernel) before it will be recognized.
 
-There are two main package managers for working with Python: pip and conda. (More advanced projects may use poetry or pipenv.)
+There are two main package managers for working with Python: pip and conda. (More advanced projects may use virtual environment, such as [venv](https://docs.python.org/3/library/venv.html) or [poetry](https://python-poetry.org/).
 
 ## Pip
 
@@ -149,3 +149,48 @@ See the official [pip documentation](https://pip.pypa.io/en/stable/) and/or the 
 ## Conda
 
 The Conda package manager is usually part of an Anaconda solution, such as Anaconda Cloud, Anaconda, or Miniconda. It can be used from the command line, but there are also graphical ways to manage packages with Conda. See the particular documentation for the version of Anaconda you are using.
+
+## Common text analysis packages used in these notebooks
+
+* [gensim](https://radimrehurek.com/gensim/auto_examples/index.html) - Create word embeddings, topic models, and other natural language processing outputs using modern statistical machine learning. 
+* [matplotlib](https://matplotlib.org/stable/index.html) - Create static, animated, and interactive visualizations in Python.
+* [nltk](https://www.nltk.org/) (Natural Language Tool Kit) - Work with over 50 corpora and lexical resources, such as Wordnet. Deploy a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.
+* [numpy](https://numpy.org/doc/) - Speed up scientific analysis, taking advantage of large, multidimensional arrays and matrices. 
+* [pandas](https://pandas.pydata.org/docs/) - Automate high-performance analysis of structured (tabular, multidimensional, potentially heterogeneous) and time series data.   
+* [pillow](https://pillow.readthedocs.io/en/stable/) - A successor project that forked the Python Image Library (PIL) repository, Pillow has been adopted as a replacement for the original PIL.
+* [pyLDAvis](https://pyldavis.readthedocs.io/en/latest/) - Visualize and transform topic models created with Latent Dirichlet Allocation.
+* [spaCy](https://spacy.io/api/doc) - Analyze 70+ languages with trained pipelines for different language tasks, including support for transformers, word vectors, embeddings, named entity recognition, part-of-speech tagging, dependency parsing, and more.
+* [tesseract-ocr](https://github.com/tesseract-ocr/tesseract) - Convert images and pdfs into plain text in over 100 languages.
+* [vaderSentiment](https://vadersentiment.readthedocs.io/en/latest/) - Extract the sentiment of a text with a lexicon and rule-based tool.
+* [wordcloud](https://amueller.github.io/word_cloud/) - Visualize document word frequencies in artistic, customizable word clouds.
+
+## Package versions used for these notebooks
+
+There is no need to install every package. This would use up significant space on your computer and lead to conflicts between different package versions. If you have installed enough packages that conflicts are arising between various package versions, it is a good idea to start using virtual environments with [venv](https://docs.python.org/3/library/venv.html) or [poetry](https://python-poetry.org/). If you can't get packages to work well together, here are the versions we used to create these notebooks:
+
+beautifulsoup4==4.12.2
+click==8.1.3
+gensim==4.3.1
+ipympl==0.9.3
+jupyter-ai==2.19.1
+jupyter-ai-magics==2.19.0
+jupyterlab-git==0.50.0
+matplotlib==3.8.4
+numpy >=1.16
+nltk==3.9.1
+openai==1.51.0
+pandas >=2.0.3
+pillow==10.3.0
+pyarrow==14.0.1
+pyldavis==3.4.1
+pytesseract==0.3.10
+regex==2023.6.3
+requests==2.32.3
+scikit-learn==1.5.1
+scipy==1.11.1
+seaborn==0.12.2
+spacy==3.5.4
+urllib3==2.2.2
+vadersentiment==3.3.2
+wordcloud==1.9.2
+zipp==3.19.2
