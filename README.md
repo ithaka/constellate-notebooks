@@ -1,7 +1,7 @@
 # Constellate notebooks
 This repository of Jupyter notebooks was designed by the educators at ITHAKA's Constellate project. The project was sunset on July 1, 2025. These notebooks are Open Educational Resources (OER), free for re-use under a [Creative Commons CC BY License](https://creativecommons.org/licenses/by/4.0/).
 
-![CC BY License Logo](https://ithaka-labs.s3.amazonaws.com/static-files/images/tdm/tdmdocs/CC_BY.png)
+![CC BY License Logo](../All-sample-files/CC_BY.png)
 
 # Creating a copy of these notebooks
 
